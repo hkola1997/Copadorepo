@@ -20,9 +20,5 @@
         <members>Admin</members>
         <name>Profile</name>
     </types>
-    <types>
-        <members>chandudev1object__c</members>
-        <name>SharingRules</name>
-    </types>
     <version>57.0</version>
 </Package>

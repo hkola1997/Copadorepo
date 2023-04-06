@@ -954,6 +954,7 @@ var copadoApp = {
                         $el.closest('.dataRow').remove();
                         reloadHistory();
                         me.showMessage('CONFIRM', copadoLabels.STEP_DELETED);
+                        me.reorderStepsController();
                     } else {
                         // Delete failed so throw and error to UI
                         me.showMessage('ERROR', event.message);
