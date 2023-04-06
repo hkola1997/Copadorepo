@@ -268,8 +268,9 @@ var operationTypeAttachmentName;
      * @see app.config.data.orgId
      */
     app.refreshCache = function () {
-        app.grid.refreshCache();
         rerenderRefreshCachePoller();
+        $copado('[id="refreshComplete"]').val('false');
+        app.grid.refreshCache();
     };
     app.refreshRecentChanges = function (orgId) {
         const core = app.conf.ns ? window[app.conf.ns.split('__')[0]] : window;
@@ -280,11 +281,11 @@ var operationTypeAttachmentName;
                     const mdtAtt = dw.u.getDecodedAttach(orgId, 'MetaData');
                     const allMdt = JSON.parse(mdtAtt.Body);
                     for (const member of sourceMembers) {
-                        const isEqual = (mdt) => mdt.t === member.MemberType && (mdt.n === encodeURIComponent(member.MemberName).replace(/%20/g," "));
+                        const isEqual = (mdt) => mdt.t === member.MemberType && (mdt.n === member.MemberName.replace(/%20/g," "));
                         const index = allMdt.findIndex(isEqual);                       
                         const mdtWrapper = {
                             t: member.MemberType,
-                            n: encodeURIComponent(member.MemberName).replace(/%20/g," "),
+                            n: member.MemberName.replace(/%20/g," "),
                             b: dw.u.getHtmlDecodedString(member.LastModifiedBy.Name),
                             d: member.LastModifiedDate.substr(0, member.LastModifiedDate.indexOf('T')),
                             cb: dw.u.getHtmlDecodedString(member.CreatedBy.Name),

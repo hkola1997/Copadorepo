@@ -143,7 +143,7 @@ body .lookupInput > a {
 
 .co-pipeline-container #pipelineContainer .wrapper .pipeline .column .box-container.manager .env-box {
     min-height: 60px;
-    max-height: 60px;
+    max-height: 80px;
 }
 
 .co-pipeline-container .env-box .info {
@@ -788,4 +788,3 @@ input.toggle {
 #confirmDeletePopup > div {
     z-index: 9998;
 }
-
