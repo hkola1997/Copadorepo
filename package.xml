@@ -8,6 +8,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>Account.school__c</members>
+        <name>CustomField</name>
+    </types>
+    <types>
         <members>copado__ALL</members>
         <name>CustomLabel</name>
     </types>
