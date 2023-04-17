@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Account.school__c</members>
-        <name>CustomField</name>
+        <members>copado__ACPromotionDeploymentToBackPromotion</members>
+        <members>copado__AutomationRule</members>
+        <members>copado__AutomationRuleActivationCtrl</members>
+        <members>copado__AutomationRuleActivationCtrlTest</members>
+        <name>ApexClass</name>
     </types>
     <types>
-        <members>Admin</members>
-        <name>Profile</name>
+        <members>copado__ALL</members>
+        <name>CustomLabel</name>
+    </types>
+    <types>
+        <members>copado__Deployment_Job__c</members>
+        <members>copado__Deployment__c</members>
+        <name>Workflow</name>
     </types>
     <version>57.0</version>
 </Package>
