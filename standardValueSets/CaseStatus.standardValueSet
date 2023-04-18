@@ -25,4 +25,10 @@
         <label>Closed</label>
         <closed>true</closed>
     </standardValue>
+    <standardValue>
+        <fullName>January status field</fullName>
+        <default>false</default>
+        <label>January status field</label>
+        <closed>false</closed>
+    </standardValue>
 </StandardValueSet>
