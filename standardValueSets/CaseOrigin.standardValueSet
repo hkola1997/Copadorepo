@@ -16,4 +16,29 @@
         <default>false</default>
         <label>Web</label>
     </standardValue>
+    <standardValue>
+        <fullName>China</fullName>
+        <default>false</default>
+        <label>China</label>
+    </standardValue>
+    <standardValue>
+        <fullName>India</fullName>
+        <default>false</default>
+        <label>India</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Japan</fullName>
+        <default>false</default>
+        <label>Japan</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Russia</fullName>
+        <default>false</default>
+        <label>Russia</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chandana</fullName>
+        <default>false</default>
+        <label>Chandana</label>
+    </standardValue>
 </StandardValueSet>
