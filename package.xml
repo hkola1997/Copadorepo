@@ -5,7 +5,7 @@
         <name>CustomField</name>
     </types>
     <types>
-        <members>Case.ChanduDev1recordtype</members>
+        <members>Case.ChanduDev1recordtypenotsupport</members>
         <name>RecordType</name>
     </types>
     <types>

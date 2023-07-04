@@ -581,6 +581,47 @@
             </values>
         </picklistValues>
     </recordTypes>
+    <recordTypes>
+        <fullName>ChanduDev1recordtypenotsupport</fullName>
+        <active>true</active>
+        <businessProcess>chandu dev1 record type</businessProcess>
+        <label>ChanduDev1recordtypeonlynot support</label>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chandana</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>India</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Japan</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Phone</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Russia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
     <searchLayouts>
         <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
         <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
