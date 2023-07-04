@@ -8,5 +8,9 @@
         <members>Case.ChanduDev1recordtype</members>
         <name>RecordType</name>
     </types>
+    <types>
+        <members>CaseOrigin</members>
+        <name>StandardValueSet</name>
+    </types>
     <version>57.0</version>
 </Package>
