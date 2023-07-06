@@ -20,9 +20,13 @@
     <tabs>standard-Feed</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>chandudev1object__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>chandudev1object__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

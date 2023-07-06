@@ -7,5 +7,6 @@
     <label>Queue Management</label>
     <navType>Standard</navType>
     <tabs>standard-Location</tabs>
+    <tabs>chandudev1object__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

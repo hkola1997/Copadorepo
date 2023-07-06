@@ -20,4 +20,5 @@
     <tabs>copado__Artifact__c</tabs>
     <tabs>copado__Account_Summary</tabs>
     <tabs>standard-report</tabs>
+    <tabs>chandudev1object__c</tabs>
 </CustomApplication>

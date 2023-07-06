@@ -601,10 +601,10 @@
         <label>WorkflowTask</label>
     </customValue>
     <customValue>
-        <fullName>InstalledPackageLayout</fullName>
+        <fullName>FlexiPaFlow</fullName>
         <default>false</default>
         <isActive>false</isActive>
-        <label>InstalledPackageLayout</label>
+        <label>FlexiPaFlow</label>
     </customValue>
     <customValue>
         <fullName>FlowDefinitioGroup</fullName>
@@ -613,10 +613,10 @@
         <label>FlowDefinitioGroup</label>
     </customValue>
     <customValue>
-        <fullName>FlexiPaFlow</fullName>
+        <fullName>InstalledPackageLayout</fullName>
         <default>false</default>
         <isActive>false</isActive>
-        <label>FlexiPaFlow</label>
+        <label>InstalledPackageLayout</label>
     </customValue>
     <customValue>
         <fullName>ReportTyRole</fullName>

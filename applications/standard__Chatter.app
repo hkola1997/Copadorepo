@@ -10,4 +10,5 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>chandudev1object__c</tabs>
 </CustomApplication>

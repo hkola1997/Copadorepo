@@ -180,7 +180,11 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>chandudev1object__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>chandudev1object__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

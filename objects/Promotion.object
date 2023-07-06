@@ -147,6 +147,11 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>ExclusivityType</fullName>
+        <inlineHelpText>To combine the promotion with other promotions, select No. To prevent combining the promotion with promotions of the same class, select Class. To let it be the only promotion used for an entire order, select Global.</inlineHelpText>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>IsActive</fullName>
         <trackHistory>false</trackHistory>
     </fields>

@@ -174,7 +174,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>chandudev1objects</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

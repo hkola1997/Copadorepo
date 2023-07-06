@@ -280,16 +280,6 @@
         <label>Copado License Manager</label>
     </fieldSets>
     <fields>
-        <fullName>Department_poc__c</fullName>
-        <externalId>false</externalId>
-        <label>Department poc</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>ManagerId</fullName>
         <trackFeedHistory>true</trackFeedHistory>
         <type>Hierarchy</type>
@@ -334,6 +324,15 @@
         <trackFeedHistory>false</trackFeedHistory>
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>teamlead__c</fullName>
+        <externalId>false</externalId>
+        <label>Teamlead</label>
+        <relationshipName>Users</relationshipName>
+        <restrictedAdminField>true</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
     </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>
