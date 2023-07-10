@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Pavan_permission_set</members>
-        <name>PermissionSet</name>
+        <members>chandutestobject__c.Mynumber__c</members>
+        <members>chandutestobject__c.nation__c</members>
+        <name>CustomField</name>
     </types>
     <types>
-        <members>Pavan Profile</members>
-        <name>Profile</name>
+        <members>chandutestobject__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>chandutestobject__c-chandutestobject Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>chandutestobject__c.All</members>
+        <name>ListView</name>
     </types>
     <version>57.0</version>
 </Package>
