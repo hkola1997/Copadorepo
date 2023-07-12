@@ -143,8 +143,8 @@
                     <div class="buttons slds-m-top--xx-large">
                         <apex:commandButton styleClass="slds-button slds-button_outline-brand" onClick="lockScreen();" value="{!$Label.copado__BACK}" action="{!goToPreviousStep}"
                             onComplete="dw.buttonOnComplete();unlockScreen();" reRender="errorPanel,headerComponent" />
-                        <a class="slds-button slds-button_outline-brand" onclick="lockScreen();dw.createStep(true);">{!$Label.SAVE_AND_CLOSE}</a>
-                        <a class="slds-button slds-button_brand" onclick="lockScreen();dw.createStep(false);">{!$Label.Confirm_Metadata}</a>
+                        <a class="slds-button slds-button_outline-brand" onclick="lockScreen();dw.createStep(true, '{!JSENCODE(namespace)}');">{!$Label.SAVE_AND_CLOSE}</a>
+                        <a class="slds-button slds-button_brand" onclick="lockScreen();dw.createStep(false, '{!JSENCODE(namespace)}');">{!$Label.Confirm_Metadata}</a>
                     </div>
 
                 </div>

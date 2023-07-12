@@ -2,7 +2,7 @@
 <ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>hkola@prod.copado</sharedTo>
+        <sharedTo>hkola@dev3.copado</sharedTo>
         <sharedToType>User</sharedToType>
     </folderShares>
     <name>Copado Compliance Hub Reports</name>

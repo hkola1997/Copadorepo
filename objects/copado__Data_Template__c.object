@@ -353,10 +353,10 @@
         <customTabListAdditionalFields>copado__Active__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Main_Object__c</customTabListAdditionalFields>
         <customTabListAdditionalFields>copado__Template_Source_Org__c</customTabListAdditionalFields>
-        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
-        <excludedStandardButtons>Accept</excludedStandardButtons>
-        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>OpenListInQuip</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
         <listViewButtons>copado__Import_Templates</listViewButtons>
         <lookupDialogsAdditionalFields>copado__Active__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>copado__Main_Object__c</lookupDialogsAdditionalFields>

@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldSets>
+        <label><!-- Add Test Classes --></label>
+        <name>cmcSf__Add_Test_Classes</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Pipeline Based Package Distribution --></label>
+        <name>cmcSf__PipelineBasedPackageDistribution</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- Bundle --></label>
         <name>copado__Bundle</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Bundle Sync Fields --></label>
         <name>copado__Bundle_Sync_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Bundled Stories --></label>
+        <name>copado__Bundled_Stories</name>
     </fieldSets>
     <fieldSets>
         <label><!-- CBM Fields --></label>
@@ -64,6 +76,10 @@
         <label><!-- Work Manager Relations --></label>
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
+    <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
     <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
@@ -452,8 +468,8 @@
             <translation><!-- FieldSet --></translation>
         </picklistValues>
         <picklistValues>
-            <masterLabel>FlexiPaFlow</masterLabel>
-            <translation><!-- FlexiPaFlow --></translation>
+            <masterLabel>FlexiPage</masterLabel>
+            <translation><!-- FlexiPage --></translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>FlowDefinitioGroup</masterLabel>

@@ -198,18 +198,18 @@ IF(INCLUDES(copado__Actions__c , &quot;PackageDistribution&quot; ), &quot;Packag
                 <controllingFieldValue>Before</controllingFieldValue>
                 <controllingFieldValue>After</controllingFieldValue>
                 <controllingFieldValue>When branch is ready</controllingFieldValue>
+                <valueName>Commit</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Before</controllingFieldValue>
+                <controllingFieldValue>After</controllingFieldValue>
+                <controllingFieldValue>When branch is ready</controllingFieldValue>
                 <valueName>Promotion</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Before</controllingFieldValue>
                 <controllingFieldValue>After</controllingFieldValue>
                 <valueName>PromotionDeployment</valueName>
-            </valueSettings>
-            <valueSettings>
-                <controllingFieldValue>Before</controllingFieldValue>
-                <controllingFieldValue>After</controllingFieldValue>
-                <controllingFieldValue>When branch is ready</controllingFieldValue>
-                <valueName>Commit</valueName>
             </valueSettings>
             <valueSettings>
                 <controllingFieldValue>Before</controllingFieldValue>
@@ -262,6 +262,7 @@ IF(INCLUDES(copado__Actions__c , &quot;PackageDistribution&quot; ), &quot;Packag
     </fields>
     <fields>
         <fullName>copado__Status__c</fullName>
+        <defaultValue>&quot;Inactive&quot;</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Status</label>

@@ -141,7 +141,7 @@
         <type>CustomApplication</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Copado_DevOps_N_A</name>
-        <type>ConnectedApp</type>
+        <name>cmcSf__CMC_SFDX</name>
+        <type>CustomApplication</type>
     </appMenuItems>
 </AppMenu>

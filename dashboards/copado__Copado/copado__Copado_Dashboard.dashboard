@@ -95,7 +95,7 @@
             <sortBy>RowLabelAscending</sortBy>
         </components>
     </rightSection>
-    <runningUser>hkola@prod.copado</runningUser>
+    <runningUser>hkola@dev3.copado</runningUser>
     <textColor>#000000</textColor>
     <title>Copado Dashboard</title>
     <titleColor>#000000</titleColor>

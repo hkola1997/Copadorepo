@@ -36,16 +36,16 @@
                 <outputField>LastName</outputField>
             </mappingFields>
             <mappingFields>
-                <inputField>Phone</inputField>
-                <outputField>Phone</outputField>
-            </mappingFields>
-            <mappingFields>
                 <inputField>MailingStreet</inputField>
                 <outputField>Street</outputField>
             </mappingFields>
             <mappingFields>
                 <inputField>Title</inputField>
                 <outputField>Title</outputField>
+            </mappingFields>
+            <mappingFields>
+                <inputField>Phone</inputField>
+                <outputField>Phone</outputField>
             </mappingFields>
             <mappingFields>
                 <inputField>MailingPostalCode</inputField>

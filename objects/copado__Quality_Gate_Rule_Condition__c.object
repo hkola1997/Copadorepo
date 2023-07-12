@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Quality_Gate_Rule_Condition</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Quality_Gate_Rule_Condition</fullName>
         <fields>copado__Quality_Gate_Rule__c</fields>

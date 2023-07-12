@@ -14,8 +14,19 @@
         <name>copado__Base_Branch__c</name>
     </fields>
     <fields>
+        <help><!-- Update this date when the release is complete. --></help>
+        <label><!-- Completion Date --></label>
+        <name>copado__Completion_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Description --></label>
         <name>copado__Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Informative field to define a parent release --></help>
+        <label><!-- Parent Release --></label>
+        <name>copado__Parent_Release__c</name>
+        <relationshipLabel><!-- Releases --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Planned Date --></label>
@@ -25,6 +36,11 @@
         <label><!-- Project --></label>
         <name>copado__Project__c</name>
         <relationshipLabel><!-- Releases --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Describe the outcome of the release. If it was released, how it went? If canceled, why? --></help>
+        <label><!-- Status Notes --></label>
+        <name>copado__Status_Notes__c</name>
     </fields>
     <fields>
         <label><!-- Status --></label>
@@ -44,6 +60,28 @@
         <picklistValues>
             <masterLabel>Released</masterLabel>
             <translation>リリース済</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Update this date when all the Testing activities are completed. --></help>
+        <label><!-- Testing Completed --></label>
+        <name>copado__Testing_Completed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Update these values via the &quot;Set Version&quot; option --></help>
+        <label><!-- Type --></label>
+        <name>copado__Type__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation><!-- Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patch</masterLabel>
+            <translation><!-- Patch --></translation>
         </picklistValues>
     </fields>
     <fields>

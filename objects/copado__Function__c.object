@@ -141,7 +141,15 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Function_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__Function_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>copado__API_Name__c</fields>
+        <fields>copado__Type__c</fields>
+        <fields>copado__Version__c</fields>
+        <label>Function Compact Layout</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <description>A function is a script that contains a series of commands and can be executed from Copado.</description>
@@ -272,6 +280,18 @@
         <visibleLines>20</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Result_Viewer_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the name of the lightning component that you want to render on the related result record. The name must be in the namespace:componentName format.</inlineHelpText>
+        <label>Result Viewer Component</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Script__c</fullName>
         <deprecated>false</deprecated>
         <description>Provide the script with the commands you would like the function to execute.</description>
@@ -305,7 +325,7 @@
         <externalId>false</externalId>
         <inlineHelpText>Type of Copado function.</inlineHelpText>
         <label>Type</label>
-        <required>false</required>
+        <required>true</required>
         <trackTrending>false</trackTrending>
         <type>Picklist</type>
         <valueSet>

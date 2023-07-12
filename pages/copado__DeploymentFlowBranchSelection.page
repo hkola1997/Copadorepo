@@ -27,7 +27,7 @@
                         if(result === true){
                             copadoNavigateToUrl(recordId,"{!URLFOR($Action.copado__Deployment_Flow__c.View,copado__Deployment_Flow__c.Id)}");
                         } else {
-                            alert('Branch selection couldn\'t be completed.');
+                            alert('{!JSENCODE($Label.copado__Branch_Selection_Could_Not_Be_Completed)}');
                         }
                     }
                 );

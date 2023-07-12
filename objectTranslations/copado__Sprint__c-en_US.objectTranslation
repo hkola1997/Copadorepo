@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fields>
-        <help><!-- Calculated by adding up the points of User Stories based on their status changes to Completed. This can be changed in the &quot;Actual Velocity Statuses&quot; Custom Metadata Type. Refer to Copado Docs for more info. --></help>
+        <help><!-- This value is calculated by adding up the total planned points of the user stories in the sprint when their status is changed to Completed. This status can be configured in the Actual Velocity Statuses custom metadata type. Please refer to the Copado Sprint Velocity article for more information. --></help>
         <label><!-- Actual Velocity --></label>
-        <name>copado__ActualVelocity__c</name>
+        <name>copado__Actual_Velocity__c</name>
     </fields>
     <fields>
         <label><!-- Days in sprint --></label>
@@ -27,9 +27,9 @@
         <name>copado__Objective__c</name>
     </fields>
     <fields>
-        <help><!-- Recalculated with every change made to the points assigned to all User Stories in the Sprint. It also gets recalculated when new User Stories are added. --></help>
+        <help><!-- This value is recalculated with every change made to the Planned Points or Planned Points Other assigned to all the user stories in the sprint or when new user stories are added. --></help>
         <label><!-- Planned Velocity --></label>
-        <name>copado__PlannedVelocity__c</name>
+        <name>copado__Planned_Velocity__c</name>
     </fields>
     <fields>
         <label><!-- Project --></label>

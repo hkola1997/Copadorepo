@@ -7,100 +7,7 @@
     <enableCoepHeader>false</enableCoepHeader>
     <enableCoopHeader>false</enableCoopHeader>
     <enableRequireHttpsConnection>true</enableRequireHttpsConnection>
-    <networkAccess>
-        <ipRanges>
-            <end>104.196.211.229</end>
-            <start>104.196.211.229</start>
-        </ipRanges>
-        <ipRanges>
-            <end>75.101.241.39</end>
-            <start>75.101.241.39</start>
-        </ipRanges>
-        <ipRanges>
-            <end>52.212.32.52</end>
-            <start>52.212.32.52</start>
-        </ipRanges>
-        <ipRanges>
-            <end>52.7.118.168</end>
-            <start>52.7.118.168</start>
-        </ipRanges>
-        <ipRanges>
-            <end>35.243.255.155</end>
-            <start>35.243.255.155</start>
-        </ipRanges>
-        <ipRanges>
-            <end>35.236.3.65</end>
-            <start>35.236.3.65</start>
-        </ipRanges>
-        <ipRanges>
-            <end>35.235.92.254</end>
-            <start>35.235.92.254</start>
-        </ipRanges>
-        <ipRanges>
-            <end>35.234.89.246</end>
-            <start>35.234.89.246</start>
-        </ipRanges>
-        <ipRanges>
-            <end>35.189.30.198</end>
-            <start>35.189.30.198</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.142.127.171</end>
-            <start>34.142.127.171</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.141.10.40</end>
-            <start>34.141.10.40</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.124.152.83</end>
-            <start>34.124.152.83</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.107.90.223</end>
-            <start>34.107.90.223</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.94.128.245</end>
-            <start>34.94.128.245</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.91.173.111</end>
-            <start>34.91.173.111</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.91.55.187</end>
-            <start>34.91.55.187</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.90.11.138</end>
-            <start>34.90.11.138</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.89.110.11</end>
-            <start>34.89.110.11</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.87.210.227</end>
-            <start>34.87.210.227</start>
-        </ipRanges>
-        <ipRanges>
-            <end>34.73.251.138</end>
-            <start>34.73.251.138</start>
-        </ipRanges>
-        <ipRanges>
-            <end>18.203.104.35</end>
-            <start>18.203.104.35</start>
-        </ipRanges>
-        <ipRanges>
-            <end>18.202.59.38</end>
-            <start>18.202.59.38</start>
-        </ipRanges>
-        <ipRanges>
-            <end>3.216.108.92</end>
-            <start>3.216.108.92</start>
-        </ipRanges>
-    </networkAccess>
+    <networkAccess/>
     <passwordPolicies>
         <complexity>AlphaNumeric</complexity>
         <expiration>NinetyDays</expiration>
@@ -155,9 +62,11 @@
         <redirectBlockModeEnabled>false</redirectBlockModeEnabled>
         <redirectionWarning>true</redirectionWarning>
         <referrerPolicy>true</referrerPolicy>
+        <referrerPolicyDirective>origin-when-cross-origin</referrerPolicyDirective>
         <requireHttpOnly>false</requireHttpOnly>
         <sessionTimeout>TwoHours</sessionTimeout>
         <sidToken3rdPartyAuraApp>false</sidToken3rdPartyAuraApp>
+        <skipSFAWhenMFADirectUILogin>false</skipSFAWhenMFADirectUILogin>
         <useLocalStorageForLogoutUrl>false</useLocalStorageForLogoutUrl>
     </sessionSettings>
     <singleSignOnSettings>
