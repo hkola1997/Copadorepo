@@ -31,6 +31,15 @@
         <name>copado__Compliance_Status__c</name>
     </fields>
     <fields>
+        <help><!-- You can use www.cronmaker.com to create more sophisticated cron expressions. Please keep in mind that certain cron expressions might not be supported by Salesforce. --></help>
+        <label><!-- Cron Expression --></label>
+        <name>copado__Cron_Expression__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copado__External_Id__c</name>
+    </fields>
+    <fields>
         <help><!-- Schedule automatic metadata backups. With the frequency set, Copado will automatically commit the metadata components of the Org into the Branch. --></help>
         <label><!-- Frequency --></label>
         <name>copado__Frequency__c</name>
@@ -93,6 +102,34 @@
         <label><!-- Credential --></label>
         <name>copado__Org__c</name>
         <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Other Information --></label>
+        <name>copado__Other_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Pipeline where the Git snapshot will be applied. It must be associated to the specified credential. --></help>
+        <label><!-- Pipeline --></label>
+        <name>copado__Pipeline__c</name>
+        <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Use this field to specify the files for which you want to take the snapshot. The format may vary depending on the extension that you are using. Please refer to your extension documentation. --></help>
+        <label><!-- Scope --></label>
+        <name>copado__Scope__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field to configure automatic metadata backups. Copado will automatically commit the metadata components of the Org as per the frequency and cron expression defined. --></help>
+        <label><!-- Frequency --></label>
+        <name>copado__Snapshot_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Schedule</masterLabel>
+            <translation><!-- Schedule --></translation>
+        </picklistValues>
     </fields>
     <fields>
         <help><!-- Link to the branch in your Git Repository. --></help>

@@ -79,6 +79,16 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>copado__Version_Name__c</fields>
+        <fields>copado__Version_number__c</fields>
+        <fields>copado__Version_Description__c</fields>
+        <fields>copado__Branch__c</fields>
+        <fields>copado__Is_released__c</fields>
+        <fields>copado__Release__c</fields>
+        <relatedList>copado__Artifact_Version__c.copado__Artifact__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
@@ -87,7 +97,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0Y000005NhpR</masterLabel>
+        <masterLabel>00h2w00000Mi0hB</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

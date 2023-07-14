@@ -1,7 +1,7 @@
 <apex:page standardController="copado__OrgDiff__c" extensions="copado.EditOrgDiffExtension" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <head>
-      <title>Edit Org Differences {!copado__OrgDiff__c.Name} | Copado</title>
+      <title>{!$Label.Edit} {!$Label.Org_Difference} {!copado__OrgDiff__c.Name} | Copado</title>
         <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJQuery="true"/>
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
@@ -42,7 +42,7 @@
                     <div class="slds-col slds-has-flexi-truncate">
                       <div class="slds-media">
                           <div class="slds-media__figure">
-                              <span class="slds-icon_container slds-icon-custom-custom95" title="Description of icon when needed">
+                              <span class="slds-icon_container slds-icon-custom-custom95" title="{!$Label.Description_Icon}">
                                 <svg class="slds-icon" aria-hidden="true">
                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/custom-sprite/svg/symbols.svg#custom95')}"></use>
                                 </svg>

@@ -150,6 +150,7 @@
         <fields>copado__User_Story__c</fields>
         <fields>copado__Reference__c</fields>
         <fields>LastModifiedById</fields>
+        <fields>copado__Latest_Result_Status__c</fields>
         <label>Test Highlight Panel</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -160,7 +161,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>false</enableReports>
+    <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
@@ -263,6 +264,25 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__Latest_Result_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(
+  ISPICKVAL(copado__LatestJobExecution__r.copado__Status__c, &apos;Successful&apos;), &apos;Success&apos;, 
+  IF(
+    ISPICKVAL(copado__LatestJobExecution__r.copado__Status__c, &apos;Error&apos;), &apos;Failed&apos;, 
+    IF(
+      ISBLANK(copado__LatestJobExecution__c), &apos;Not Started&apos;, TEXT(copado__LatestJobExecution__r.copado__Status__c)
+    )
+  )
+)</formula>
+        <label>Latest Result Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>copado__Parent_Id__c</fullName>

@@ -5,6 +5,15 @@
         <value><!-- Environment --></value>
     </caseValues>
     <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this field as an identifier for the Environment record when referencing it in an action. --></help>
+        <label><!-- API Name --></label>
+        <name>copado__API_Name__c</name>
+    </fields>
+    <fields>
         <label><!-- Compliance Rule Group --></label>
         <name>copado__Compliance_Rule_Group__c</name>
         <relationshipLabel><!-- Environments --></relationshipLabel>
@@ -125,6 +134,10 @@
             <translation>他</translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Salesforce</masterLabel>
             <translation>セールスフォース</translation>
         </picklistValues>
@@ -177,6 +190,10 @@
         </picklistValues>
     </fields>
     <nameFieldLabel><!-- Environment Name --></nameFieldLabel>
+    <validationRules>
+        <errorMessage><!-- We do not recommend to set “Run Specified Test” on an environment level, unless you are 100% sure that ALL deployments contain Apex. If this is the case, you can deactivate this Validation Rule. --></errorMessage>
+        <name>cmcSf__Prevent_RunSpecifiedTest_For_Environment</name>
+    </validationRules>
     <webLinks>
         <label><!-- Find_Replace_Rule_Editor --></label>
         <name>copado__Find_Replace_Rule_Editor</name>

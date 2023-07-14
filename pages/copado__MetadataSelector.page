@@ -36,8 +36,8 @@
         </script>
     </head>
     <apex:form ><c:ScreenLocker msg="{!$Label.copado__LOADING}" /></apex:form>
-    <apex:sectionHeader rendered="{!mode=='ApexTests'}" id="sectionHeaderApex" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="Apex Test Class selector" />
-    <apex:sectionHeader rendered="{!mode=='MetaData'}" id="sectionHeaderAll" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="Metadata selector" />
+    <apex:sectionHeader rendered="{!mode=='ApexTests'}" id="sectionHeaderApex" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="{!$Label.copado__Metadata_Selector_Apex_Test_Class}" />
+    <apex:sectionHeader rendered="{!mode=='MetaData'}" id="sectionHeaderAll" title="{!$Label.copado__COPADO_CHANGE_MANAGEMENT}" subtitle="{!$Label.copado__Metadata_Selector}" />
     
     <apex:outputPanel id="msg" styleClass="fixedMsg">
         <apex:pageMessages id="theMessages" />
@@ -60,7 +60,7 @@
                 <apex:commandButton id="btnSave" value="{!$Label.site.save}"  onclick="return copadoApp.save();" rerender="pb" />&nbsp;
                 <apex:commandButton id="btnClose" value="{!$Label.copado__CLOSE}" onclick="return copadoApp.cancel();" />
                 &nbsp;
-                <apex:commandButton id="btnDelete" value="Clear All and Save" onclick="if (window.confirm('Are you sure you want to Clear All Selections and Save?')){return copadoApp.deleteAttachment();}else{return false}" />&nbsp;
+                <apex:commandButton id="btnDelete" value="{!$Label.copado__Clear_All_and_Save}" onclick="if (window.confirm('{!$Label.copado__Clear_All_and_Save_Confirmation}')){return copadoApp.deleteAttachment();}else{return false}" />&nbsp;
                 <apex:outputPanel id="removeCacheContainer">&nbsp;
                     <apex:commandLink style="display:none;" value="{!$Label.copado__CACHE_REFRESHED_NOW}" onclick="return copadoApp.refreshCache();" rerender="opDummy" id="removeCache"/>
                 </apex:outputPanel>
@@ -74,7 +74,7 @@
                       </ul>
                       <div>
                           <div class="mg2_scaleFilterFrame" style="padding: 5px; display: none;">
-                            <label class="mg2_mtFilter">Metadata Type Filter</label>&nbsp;
+                            <label class="mg2_mtFilter">{!$Label.Metadata_Type_Filter}</label>&nbsp;
                             <apex:commandLink value="({!$Label.copado__REFRESH})"  onclick="return metadataGrid2.refreshMetadataTypes();" rerender="opDummy" id="removeMTCache"/>
                             <div class="mg2_scaleFilter" style="margin-bottom: 10px;"></div>
                           </div>

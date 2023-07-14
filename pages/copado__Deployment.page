@@ -97,6 +97,10 @@
                     bottom: -.5rem;
                     margin-left: -.5rem;
                 }
+                .dLater {
+                    font-size: large;
+                    font-weight: 500;
+                }
             </style>
             <c:GAnalytics />
             <c:ShowWebhook url="webhook/deploy" recordId="{!copado__Deployment__c.Id}" />
@@ -108,7 +112,18 @@
             <apex:includeScript value="{!URLFOR($Resource.urlcallout) }" />
             <script type="text/javascript">
                 var Copado_Licenses = {!CurrentUserLicenses};
+                const updateDeployment = () => {
+                    setTimeout(confirmDeployment, 3000);
+                };
+                function showSchedule(){
+                    document.getElementById('schedule-popup').style.display='block';
+                }
+                function hideSchedule(){
+                    document.getElementById('schedule-popup').style.display='none';
+                    $copado('#js-status').text('');
+                }
             </script>
+            
             <c:IncludeConnectionJsComponent />
             <apex:stylesheet value="{!IF(OR($User.UIThemeDisplayed == 'Theme4d', $User.UITheme == 'Theme4d', $User.UIThemeDisplayed == 'Theme4t', $User.UITheme == 'Theme4t'),URLFOR($Resource.copado__CopadoLightningCSS),'')}"
             />
@@ -127,6 +142,33 @@
                 <img src="/img/loading.gif" /> {!$Label.LOADING}</p>
         </div>
         <div class="fixedMsg" tyle="display:none;" id="msg"></div>
+        <apex:outputPanel layout="block" id="messagesPanel">
+            <apex:outputPanel layout="none" styleClass="error-panel" rendered="{!PageMessageSize != 0}">
+                <div id="divToast" class="slds-notify_container slds-is-relative">
+                    <apex:repeat value="{!pageMessagesByMessageSeverity}" var="severity">
+                        <div class="slds-notify slds-notify_toast slds-theme_{!severity}" role="status">
+                            <span class="slds-assistive-text"></span>
+                            <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top">
+                                <span class="slds-icon_container slds-icon__svg--default {!severity}ToastIcon"></span>
+                            </span>
+                            <div class="slds-notify__content">
+                                <apex:repeat value="{!pageMessagesByMessageSeverity[severity]}" var="messages">
+                                    <h2 class="slds-text-heading_small ">{!messages}</h2>
+                                </apex:repeat>
+                            </div>
+                            <div class="slds-notify__close">
+                                <button type="button"
+                                        class="slds-button slds-button_icon slds-button_icon-inverse"
+                                        title="{!$Label.CLOSE}"
+                                        onclick="$copado('[id=divToast]').addClass('slds-hide');">
+                                    <span class="slds-icon_container slds-icon__svg--default closeToastIcon"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </apex:repeat>
+                </div>
+            </apex:outputPanel>
+        </apex:outputPanel>
         <div style="display:none;">
             <apex:pageMessage title="{!$Label.copado__WARNING}" summary="__MSG__" severity="warning" strength="3" id="js-msg-WARNING" />
             <apex:pageMessage title="{!$Label.copado__SUCCESS}" summary="__MSG__" severity="confirm" strength="3" id="js-msg-CONFIRM" />
@@ -187,7 +229,67 @@
                         <apex:pagemessages id="messages" />
                         <c:ComplianceScanResult sId="{!copado__Deployment__c.Id}" apiName="Deployment__c" />
                     </apex:outputPanel>
+                    <apex:outputPanel layout="block" id="proceedToDeploymentBlock">
+                        <script>
+                            function proceedToDeployment() {
+                                var goToDeployment = '{!goToDeployment}';
+                                if(goToDeployment == 'true') {
+                                    if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
+                                        sforce.one.navigateToSObject('{!deployment.Id}', 'view');
+                                    } else {
+                                            window.location.href = '/{!deployment.Id}';
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            }
+                        </script>
+                    </apex:outputPanel>
                     <apex:form id="jobsManagerForm" style="padding-bottom:12px;">
+                        <div id="schedule-popup" style="display:none;position: absolute;z-index: 10;background-color: rgba(33,33,33,0.2);width: 100%;height: 100%;">
+                            <center>
+                                <span id="scheduleWrapper" style="width:40%; height:75%; overflow:auto;display: block;position: inherit;margin-top: 10%;">
+                                    <apex:pageBlock id="schedule_pb" mode="edit">
+                                        <apex:pageblockSection columns="1">
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputPanel >
+                                                    <center class="dLater">Deploy Later</center>
+                                                </apex:outputPanel>
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageblockSection>
+                                        <apex:pageblockSection columns="1">
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputPanel >
+                                                    <center>
+                                                        <apex:inputField id="scheduleInput" value="{!deployment.copado__Date__c}"/>
+                                                    </center>
+                                                </apex:outputPanel>
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageblockSection>
+                                        <apex:pageblockSection columns="1">
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputPanel >
+                                                    <center>
+                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();hideSchedule();resetStatusForDeployment('Deploy later');return false;" id="btnDeploy2"/>
+                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();hideSchedule();resetStatusDeploymentOutstanding('Deploy later'); return false;" id="btnDeployOutstanding2"/>
+                                                        <button id="btnScheduleCancel" class="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="hideSchedule();return false;">Close</button>
+                                                    </center>
+                                                </apex:outputPanel>
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageblockSection>
+                                        
+                                    </apex:pageBlock>
+                                </span>
+                            </center>
+                        </div>
+                        <apex:actionFunction action="{!confirmAll}" name="resetStatusForDeployment" oncomplete="updateDeployment();" status="buttonStatus">
+                            <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}"/>    
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!confirmOutstanding}" name="resetStatusDeploymentOutstanding" oncomplete="updateDeployment();" reRender="messagesPanel">
+                            <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}"/>    
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!confirm}" name="confirmDeployment" oncomplete="deployCall();" status="buttonStatus"/>
+                        <apex:actionFunction action="{!deployCall}" name="deployCall" oncomplete="proceedToDeployment();unlockScreen();" reRender="messagesPanel, proceedToDeploymentBlock" />
                         <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}" />
                     </apex:form>
                     <apex:outputPanel layout="block" styleClass="slds-grid" id="lexHeaderContainer">
@@ -242,12 +344,13 @@
                 </apex:outputPanel>
                 <div id="form" class="copado-lightning-container" style="padding-top:12px;">
                     <apex:form id="theForm" rendered="{!!showStepsOnly}">
+                        <c:CopadoSpinner />
                         <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}, {!$User.UIThemeDisplayed != 'Theme4d'}"
                         />
                         <div class="row">
                             <apex:panelGrid id="theGrid" columns="2" style="width:100%;" columnClasses="co-info-panel">
                                 <apex:pageblock title="{!$Label.copado__INFORMATION}" id="pbInformation">
-                                    <apex:pageBlockButtons id="pbbInfo" location="top">
+                                    <apex:pageBlockButtons id="pbbInfo" location="top" style="text-align:left;">
                                         <apex:commandButton id="btnDeploymentSave" value="{!$Label.site.save}" onclick="copadoApp.dirty=false;" action="{!saveDeployment}"
                                             rerender="pbsDestinations,otherInfoSection,msg,pJSConfig,headerFields,lexHeaderContainer,sectionHeaderContainer"
                                         />
@@ -378,8 +481,10 @@
                                             width: 10% !important;
                                         }
                                     </style>
-                                    <apex:pageBlockButtons id="pbbStatus" location="top">
-                                        <apex:commandButton value="{!$Label.copado__DEPLOY}" onclick="copadoApp.deploy();return false;" id="btnDeploy" />
+                                    <apex:pageBlockButtons id="pbbStatus" location="top" style="text-align:center;">
+                                        <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();resetStatusForDeployment('Deploy now');return false;" id="btnDeploy" />
+                                        <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();resetStatusDeploymentOutstanding('Deploy now'); return false;" id="btnDeployOutstanding"/>
+                                        <apex:commandButton value="{!$Label.copado__DEPLOY_LATER}" onclick="showSchedule();return false;" id="btnLegacyDeploy" />
                                         <apex:commandButton value="{!$Label.copado__CANCEL_DEPLOYMENT}" onclick="copadoApp.cancelDeploy();return false;" id="btnCancelDeploy"
                                         />
                                         <input id="btnViewStatus" type="button" class="btn" style="display:none" value="{!$Label.VIEW_DEPLOYMENT_STATUS}" onclick="openIframeBox()"
