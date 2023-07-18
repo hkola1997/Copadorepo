@@ -25,8 +25,16 @@
         <label><!-- Extension Tool --></label>
         <name>copado__ExtensionTool__c</name>
         <picklistValues>
+            <masterLabel>Copado Robotic Testing</masterLabel>
+            <translation><!-- Copado Robotic Testing --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Manual Tests</masterLabel>
             <translation><!-- Manual Tests --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PMD</masterLabel>
+            <translation><!-- PMD --></translation>
         </picklistValues>
     </fields>
     <fields>

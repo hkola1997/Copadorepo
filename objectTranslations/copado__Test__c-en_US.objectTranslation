@@ -34,6 +34,10 @@
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Latest Result Status --></label>
+        <name>copado__Latest_Result_Status__c</name>
+    </fields>
+    <fields>
         <label><!-- Parent Id --></label>
         <name>copado__Parent_Id__c</name>
     </fields>

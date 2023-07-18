@@ -20,7 +20,7 @@
                 <field>copado__API_Name__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Required</behavior>
                 <field>copado__Type__c</field>
             </layoutItems>
         </layoutColumns>

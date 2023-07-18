@@ -173,6 +173,10 @@
             <translation>他</translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Salesforce</masterLabel>
             <translation>セールスフォース</translation>
         </picklistValues>

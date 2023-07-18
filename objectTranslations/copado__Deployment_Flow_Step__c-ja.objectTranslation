@@ -10,7 +10,7 @@
     </fields>
     <fields>
         <help>ソース環境にリンクされているGitブランチ。</help>
-        <label><!-- Branch --></label>
+        <label><!-- Source Branch --></label>
         <name>copado__Branch__c</name>
     </fields>
     <fields>

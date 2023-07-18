@@ -131,7 +131,7 @@
                                                         </div>
                                                     </header>
                                                     <div class="slds-no-flex">
-                                                        <a href="https://www.copado.com/support" target="_blank" class="slds-card__header-link slds-truncate">
+                                                        <a href="https://success.copado.com/" target="_blank" class="slds-card__header-link slds-truncate">
                                                             <button class="slds-button slds-button_neutral" type="button">{!$Label.HELP_GET}</button>
                                                         </a>
                                                     </div>

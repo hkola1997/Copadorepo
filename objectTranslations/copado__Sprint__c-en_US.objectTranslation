@@ -6,6 +6,11 @@
         <name>copado__ActualVelocity__c</name>
     </fields>
     <fields>
+        <help><!-- This value is calculated by adding up the total planned points of the user stories in the sprint when their status is changed to Completed. This status can be configured in the Actual Velocity Statuses custom metadata type. Please refer to the Copado Sprint Velocity article for more information. --></help>
+        <label><!-- Actual Velocity --></label>
+        <name>copado__Actual_Velocity__c</name>
+    </fields>
+    <fields>
         <label><!-- Days in sprint --></label>
         <name>copado__Days_in_sprint__c</name>
     </fields>
@@ -30,6 +35,11 @@
         <help><!-- Recalculated with every change made to the points assigned to all User Stories in the Sprint. It also gets recalculated when new User Stories are added. --></help>
         <label><!-- Planned Velocity --></label>
         <name>copado__PlannedVelocity__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value is recalculated with every change made to the Planned Points or Planned Points Other assigned to all the user stories in the sprint or when new user stories are added. --></help>
+        <label><!-- Planned Velocity --></label>
+        <name>copado__Planned_Velocity__c</name>
     </fields>
     <fields>
         <label><!-- Project --></label>
@@ -81,6 +91,22 @@
     <fields>
         <label><!-- Working days in sprint --></label>
         <name>copado__Working_days_in_sprint__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoccmint__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
     <validationRules>
         <errorMessage><!-- You must introduce an End Date greater than the Start Date. --></errorMessage>

@@ -3,5 +3,9 @@
     <apiVersion>55.0</apiVersion>
     <environments>Default</environments>
     <label>Execute Next Job Step</label>
+    <processMetadataValues>
+        <name>AssociatedRecord</name>
+        <value/>
+    </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
 </Flow>
