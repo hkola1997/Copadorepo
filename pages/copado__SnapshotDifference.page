@@ -5,7 +5,7 @@
     <!-- rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" -->
 
     <head>
-        <title>Snapshot Differences {!copado__Snapshot_Difference__c.Name} | Copado</title>
+        <title>{!$Label.Snapshot_Difference} {!copado__Snapshot_Difference__c.Name} | Copado</title>
         <c:GAnalytics />
         <c:WizardUtils />
         <c:IncludeStaticsResourceComponent addJquery="true" addDVcss="true" addDLjs="true" addDVjs="true" addWizardcss="true" addCometdjs="true"
@@ -148,6 +148,7 @@
             </style>
         </apex:outputPanel>
         <script type="text/javascript">
+            
             function showUsModal() {
                 setTimeout(function () {
                     $copado('#usBackdrop').addClass('slds-backdrop--open');
@@ -241,6 +242,7 @@
                 leftContent: '',
                 rightContent: ''
             };
+            
             /**
              * Handler app for Snapshot_Difference__c UI
              * @type {Object}
@@ -255,7 +257,6 @@
                     leftFileName: '',
                     rightFileName: ''
                 },
-
                 updateDeepDiff: function (lastRun) {
                     var sd = new sforce.SObject(copadoApp.ns + "Snapshot_Difference__c");
                     sd.Id = copadoApp.data.Id;
@@ -363,12 +364,15 @@
                     var obj = me.getSelectedItems();
 
                     if (!obj.length) {
-                        alert('Select first at least one item to save.');
+                        window.$Label = window.$Label || {};
+                        let notifySelectOneMsg = '{!JSENCODE($Label.copado__Select_First)}';
+                        alert(notifySelectOneMsg);
                         return false;
                     }
                     //save file
                     dw.u.upsertAttach(me.data.Id, me.data.FILENAME_TO_SAVE, JSON.stringify(obj));
-                    alert('The selected data has been saved.');
+                    let notifySelectedSavedMsg = '{!JSENCODE($Label.copado__Selected_Saved)}';
+                    alert(notifySelectedSavedMsg);
                     copadoApp.isDirty = false; // NR
                     return false;
                 },
@@ -446,7 +450,7 @@
                     var cellsrendererView = function (row, column, value, defaultHtml) {
                         if (me.data.index[row].d == 'update') {
                             var element = $copado(defaultHtml);
-                            element.append('<a class=js-show-diff > Show Diff </a>');
+                            element.append('<a class=js-show-diff > {!$Label.copado__Show_Diff} </a>');
                             element.css({ 'cursor': 'pointer' });
                             return element[0].outerHTML;
                         }
@@ -486,14 +490,15 @@
                     // NR: check if there are unsaved changes in Selections for Difference Calculation
                     console.log('snapshotDifferences.diffCalculationGridDirty=', snapshotDifferences.diffCalculationGridDirty);
                     if (snapshotDifferences.diffCalculationGridDirty) {
-                        // { ! $Label.MUST SAVE }
-                        alert('You must save or cancel the changes made on the Selections for Difference Calculation grid first.');
+                        let notifyMustSavemsg = '{!JSENCODE($Label.copado__Must_Save)}';
+                        alert(notifyMustSavemsg);
                         return false;
                     }
 
                     var selectedItemsInGrid = snapshotDifferences.getSelectedElementList();
                     if (_config.data.isPartialDiff && selectedItemsInGrid.length === 0) {
-                        alert('You must select at least one item on the Selections for Difference Calculation grid first.');
+                        let notifyMustSelectAtLeastMsg = '{!JSENCODE($Label.copado__Must_Select_Least_One)}';
+                        alert(notifyMustSelectAtLeastMsg);
                         return false;
                     }
                     try {
@@ -573,14 +578,20 @@
 
                 if(opt.hasRun === "true"){
                     $copado('#sectionDiv').show();
-            me.initList();
-            me.bind();
-                    }
+                    me.initList();
+                    me.bind();
+                }
                     /*window.setTimeout(function() {
                         snapshotDifferences.loadData(null, function() {console.warn('ya!');});
                     }, 5000)*/
-                },
+            },
+            unZipDecode: async function(content,fileName) {
+                zip = await JSZip.loadAsync(content, { base64: true });
+                zipReady = [zip, Object.keys(zip.files)];
+                zipContent = await zipReady[0].file(fileName).async("string");
+                return zipContent;
 
+            },
             /**
              * get attachment, unzip content
              * then search the file name (this must be full relative name)
@@ -590,22 +601,40 @@
              * @param  {[type]} parentId   [description]
              * @return {[type]}            [description]
              */
-            getZippedFileContentByName: function(fileName, attachName, parentId) {
-                var zip;
+            getZippedFileContentByName: async function(fileName, attachName, parentId, isLeft) {
+                var me = copadoApp;
                 let content = dw.u.getFileContent(copadoApp.data.Id, attachName);
                 if (content != null) {
-                    zip = new JSZip(content, { base64: true });
+                    me.unZipDecode(content, fileName).then( function (zipContent) {
+                        if(isLeft) { 
+                            _config.leftContent = zipContent ? zipContent : '';
+                        }
+                        else { 
+                            _config.rightContent = zipContent ? zipContent : '';
+                            me.renderDiff();
+                        }
+                    }, function (e) {
+                        console.log(e);
+                    });
                 } else {
-                    let attachment = dw.u.getDecodedAttach(copadoApp.data.Id, attachName);
+                    // JSZip requires non-decoded Base64 which is returned at a[0].Body
+                    let attachment = dw.u.getDecodedAttach(copadoApp.data.Id, attachName)[0].Body;
                     if (attachment != null) {
-                        zip = new JSZip(attachment.Body, { base64: true });
+                        me.unZipDecode(attachment, fileName).then( function (zipContent){
+                            if(isLeft) { 
+                                _config.leftContent = zipContent; 
+                            }
+                            else { 
+                                _config.rightContent = zipContent; me.renderDiff();
+                            }
+                        }, function (e) {
+                            console.log(e);
+                        });
                     } else {
                         console.warn("no attach?");
                         cb && cb([]);
                     }
                 }
-                console.log('prepare ZIP file: ' + attachName, fileName);
-                return zip.file(fileName).asText();
             },
 
             /**
@@ -630,16 +659,18 @@
                 var me = copadoApp;
 
                 //recover first string from wrapper div
-                fileName = $el.parent().text().replace(' Show Diff ', '');
+                fileName = $el.parent().text().replace(' {!$Label.copado__Show_Diff} ', '');
 
                 console.log('reading left side content ...');
-                _config.leftContent = me.getZippedFileContentByName(fileName, 'source.zip', copadoApp.data.Id);
-                console.log('reading right side content ...');
-                _config.rightContent = me.getZippedFileContentByName(fileName, 'destination.zip', copadoApp.data.Id);
-                _config.data.leftFileName = fileName + ' in Source';
-                _config.data.rightFileName = fileName + ' in Destination';
-                console.log('rendering diff');
-                me.renderDiff();
+                me.getZippedFileContentByName(fileName, 'source.zip', copadoApp.data.Id, true).then( function(leftBody) {
+                    console.log('reading right side content ...');
+                    me.getZippedFileContentByName(fileName, 'destination.zip', copadoApp.data.Id, false).then( function(rightBody) {
+                        _config.data.leftFileName = fileName + ' in Source';
+                        _config.data.rightFileName = fileName + ' in Destination';
+                        console.log('rendering diff');
+                    });
+                });
+                
             },
 
             renderDiff: function() {
@@ -692,13 +723,15 @@
 
                 // NR: check that there are no unsaved changes.
                 if (copadoApp.isDirty) {
-                    alert('You must save the changes before creating a Deployment');
+                    let notifyMustSaveDeployement = '{!JSENCODE($Label.copado__Must_Save_Deployment)}';
+                    alert(notifyMustSaveDeployement);
                     return false;
                 }
 
                 //validate is possible
                 if (!me.hasSelectedItems()) {
-                    alert('You must select at least one item before creating a Deployment');
+                    let notifyMustSelectDeployement = '{!JSENCODE($Label.copado__Must_Select_Deployment )}';
+                    alert(notifyMustSelectDeployement);
                     return false;
                 }
 
@@ -827,7 +860,7 @@
                         <div class="slds-col slds-has-flexi-truncate">
                             <div class="slds-media">
                                 <div class="slds-media__figure">
-                                    <span class="slds-icon_container slds-icon-custom-custom87" title="Description of icon when needed">
+                                    <span class="slds-icon_container slds-icon-custom-custom87" title="{!$Label.Description_Icon}">
                                         <svg class="slds-icon" aria-hidden="true">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/custom-sprite/svg/symbols.svg#custom87')}"></use>
                                         </svg>
@@ -994,7 +1027,7 @@
                                             <div>
                                                 <!-- div required for jqxTabs -->
                                                 <div class="mg2_scaleFilterFrame" style="padding: 5px;">
-                                                    <label class="mg2_mtFilter">Metadata Type Filter</label>&nbsp;
+                                                    <label class="mg2_mtFilter">{!$Label.Metadata_Type_Filter}</label>&nbsp;
                                                     <apex:commandLink value="({!$Label.copado__REFRESH})" onclick="return metadataGrid2.refreshMetadataTypes();" rerender="opDummy" id="removeMTCache"
                                                     />
                                                     <div class="mg2_scaleFilter" style="margin-bottom: 10px;"></div>
@@ -1017,7 +1050,7 @@
                             </apex:outputPanel>
                         </apex:pageBlockSection>
                         <div id="sectionDiv" style="display:none;">
-                            <apex:pageBlockSection id="pbds_pb3" columns="1" title="File Differences">
+                            <apex:pageBlockSection id="pbds_pb3" columns="1" title="{!$Label.copado__FILE_DIFFERENCES}">
                                 <apex:outputPanel layout="block" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}">
                                     <center>
                                         <apex:commandButton onclick="copadoApp.saveGrid(event);return false;" value="{!$Label.site.save}" />
@@ -1074,19 +1107,19 @@
                         </script>
                         <apex:pageBlockSection >
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel >Display Differences</apex:outputLabel>
+                                <apex:outputLabel >{!$Label.copado__Display_Differences}</apex:outputLabel>
                                 <apex:outputPanel >
                                     <select id="viewTypeSelector" size="1" onchange="reRenderFromRenderOption(this);">
-                                        <option value="0" label="Side by Side">Side by Side</option>
-                                        <option value="1" label="Inline">Inline</option>
+                                        <option value="0" label="{!$Label.SidebySide}">{!$Label.SidebySide}</option>
+                                        <option value="1" label="{!$Label.Inline}">{!$Label.Inline}</option>
                                     </select>
                                 </apex:outputPanel>
                             </apex:pageBlockSectionItem>
                             <apex:pageBlockSectionItem >
-                                <apex:outputLabel >Context size (optional)</apex:outputLabel>
+                                <apex:outputLabel >{!$Label.copado__Context_size_optional}</apex:outputLabel>
                                 <apex:outputPanel >
                                     <select id="contextSelector" size="1" onChange="reRenderFromContextSelector(this);">
-                                        <option value="0" label="View All">View All</option>
+                                        <option value="0" label="{!$Label.View_All}">{!$Label.View_All}</option>
                                         <option value="1" label="1">1</option>
                                         <option value="5" label="5">5</option>
                                         <option value="10" label="10">10</option>
@@ -1101,7 +1134,7 @@
                     </apex:pageBlock>
                 </apex:form>
                 <apex:outputPanel styleClass="copado-lightning-container" layout="block">
-                    <apex:relatedList title="Snapshot Attachments" list="CombinedAttachments" rendered="false" />
+                    <apex:relatedList title="{!$Label.copado__Snapshot_Attachments}" list="CombinedAttachments" rendered="false" />
                 </apex:outputPanel>
                 <script>
                     ga('send', 'pageview', {

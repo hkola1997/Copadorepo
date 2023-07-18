@@ -141,13 +141,11 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Result</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Result</fullName>
         <fields>Name</fields>
         <fields>copado__Status__c</fields>
-        <fields>copado__Start_Time__c</fields>
-        <fields>copado__End_Time__c</fields>
         <fields>copado__Parent__c</fields>
         <label>Result</label>
     </compactLayouts>
@@ -213,7 +211,7 @@
         <description>Time taken in minutes to execute the function.</description>
         <externalId>false</externalId>
         <inlineHelpText>Time taken in minutes to execute the function.</inlineHelpText>
-        <label>Custom Function Used Minutes</label>
+        <label>Function Used Minutes</label>
         <precision>18</precision>
         <required>false</required>
         <scale>0</scale>
@@ -385,6 +383,20 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__Job_Execution__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record link shortcutting to Job Step&apos;s Job Execution</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp;  copado__JobStep__r.copado__JobExecution__c ,  copado__JobStep__r.copado__JobExecution__r.Name , &quot;_blank&quot;)</formula>
+        <inlineHelpText>Record link shortcutting to Job Step&apos;s Job Execution</inlineHelpText>
+        <label>Job Execution</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Job_Id__c</fullName>
         <deprecated>false</deprecated>
         <description>Unique identifier used to map the result with an external job.</description>
@@ -450,17 +462,22 @@
         <fullName>copado__Parent__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <formula>HYPERLINK(&quot;/&quot;&amp; IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Id,
-   IF( !ISBLANK(copado__Test__c), copado__Test__r.Id,
+        <formula>IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.copado__JobExecution__r.copado__Context__c,
+    HYPERLINK(&quot;/&quot;&amp; IF( !ISBLANK(copado__Test__c), copado__Test__r.Id,
        IF(!ISBLANK(copado__User_Story__c), copado__User_Story__r.Id,
-           IF(!ISBLANK( copado__Function__c ), copado__Function__r.Id ,&apos;&apos;)))
-  ) , 
-IF( !ISBLANK(copado__JobStep__c), copado__JobStep__r.Name,
-   IF( !ISBLANK(copado__Test__c), copado__Test__r.Name,
-       IF(!ISBLANK(copado__User_Story__c), copado__User_Story__r.Name,
-           IF(!ISBLANK( copado__Function__c ), copado__Function__r.Name ,&apos;&apos;)))
-  ))</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+            IF(!ISBLANK(copado__Deployment__c), copado__Deployment__r.Id,
+                IF(!ISBLANK(copado__Promotion__c), copado__Promotion__r.Id,
+                    IF(!ISBLANK( copado__Function__c ), copado__Function__r.Id,
+                        IF(!ISBLANK( copado__ParentId__c ), copado__ParentId__c, &apos;&apos;)))))
+  ) ,
+
+    IF( !ISBLANK(copado__Test__c), copado__Test__r.Name,
+        IF(!ISBLANK(copado__User_Story__c), copado__User_Story__r.Name,
+            IF(!ISBLANK(copado__Deployment__c), copado__Deployment__r.Name,
+                IF(!ISBLANK(copado__Promotion__c), copado__Promotion__r.Name,
+                    IF(!ISBLANK( copado__Function__c ), copado__Function__r.Name ,
+                        IF(!ISBLANK( copado__ParentId__c ), &apos;Record : &apos; + copado__ParentId__c,&apos;&apos;)))))
+  )))</formula>
         <label>Parent</label>
         <required>false</required>
         <trackHistory>false</trackHistory>

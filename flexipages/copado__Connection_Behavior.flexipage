@@ -145,6 +145,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Execute_promotions_in_parallel__c</fieldItem>
                 <identifier>RecordExecute_promotions_in_parallel__cField</identifier>
             </fieldInstance>
@@ -155,6 +159,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Promotion_Criteria__c</fieldItem>
                 <identifier>RecordPromotion_Criteria__cField</identifier>
                 <visibilityRule>
@@ -233,8 +241,22 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Execute_back_promotions_in_parallel__c</fieldItem>
                 <identifier>RecordExecute_back_promotions_in_parallel__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__DisableEnvironmentBranch__c</fieldItem>
+                <identifier>RecordDisableEnvironmentBranch_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9e45a206-07a6-4228-bacd-4c7422f6dc2f</name>
@@ -243,6 +265,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Back_Promotion_Criteria__c</fieldItem>
                 <identifier>RecordBack_Promotion_Criteria__cField</identifier>
                 <visibilityRule>
