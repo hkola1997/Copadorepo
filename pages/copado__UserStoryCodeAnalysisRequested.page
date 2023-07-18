@@ -113,7 +113,7 @@
     				
                     <div class="slds-col slds-no-flex slds-grid slds-align-top ">
                         <div class="slds-button-group" role="group">
-    						<button class="slds-button slds-button_neutral" onclick="goBack();return false;">Back</button>
+    						<button class="slds-button slds-button_neutral" onclick="goBack();return false;">{!$Label.copado__BACK}</button>
                         </div>
                     </div>
                 </div>

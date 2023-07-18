@@ -1,6 +1,6 @@
 <apex:page id="ArtifactPackage" standardController="copado__Artifact__c" lightningStylesheets="true" extensions="copado.ArtifactPackageController"
     sideBar="false">
-    <title>{!copado__Artifact__c.Name} Source Package Management</title>
+    <title>{!copado__Artifact__c.Name} {!$Label.copado__Source_Package_Management}</title>
     <c:WizardUtils id="cmpWizardUtilities" />
     <c:IncludeStaticsResourceComponent addJquery="true" />
     <c:IncludeConnectionJsComponent />
@@ -36,24 +36,24 @@
         </apex:actionFunction>
         <apex:pageBlock id="pb" title="{!copado__Artifact__c.Name}">
             <apex:pageBlockButtons location="top">
-                <apex:commandButton id="btnSave" value="{!$Label.site.save}" title="Save selections" onclick="lockScreen();processPW($copado('#packageKey').val());return false;"
+                <apex:commandButton id="btnSave" value="{!$Label.copado__Save}" title="{!$Label.copado__Save_selections}" onclick="lockScreen();processPW($copado('#packageKey').val());return false;"
                     reRender="xx" />
-                <apex:commandButton id="btnRefresh" value="Refresh List of Packages" title="Refresh List of Packages" onclick="lockScreen();"
+                <apex:commandButton id="btnRefresh" value="{!$Label.copado__Refresh_List_of_Packages}" title="{!$Label.copado__Refresh_List_of_Packages}" onclick="lockScreen();"
                     action="{!refreshPackageList}" onComplete="" />
-                <apex:commandButton id="btnClose" value="{!$Label.site.cancel}" title="{!$Label.site.cancel}" onclick="lockScreen();" action="{!cancel}"
+                <apex:commandButton id="btnClose" value="{!$Label.copado__Cancel}" title="{!$Label.copado__Cancel}" onclick="lockScreen();" action="{!cancel}"
                 />
             </apex:pageBlockButtons>
             <apex:pageBlockSection columns="2" showHeader="false">
                 <apex:pageBlockSectionItem >
-                    <apex:outputLabel value="Package Key" for="packagePw" />
+                    <apex:outputLabel value="{!$Label.copado__Package_Key}" for="packagePw" />
                     <input type="password" autocomplete="off" id="packageKey" />
                 </apex:pageBlockSectionItem>
                 <apex:pageBlockSectionItem >
-                    <apex:outputLabel value="Source Org" for="source" />
+                    <apex:outputLabel value="{!$Label.copado__SourceOrg}" for="source" />
                     <apex:outputField value="{!copado__Artifact__c.copado__Org_Credential__c}" id="source" />
                 </apex:pageBlockSectionItem>
             </apex:pageBlockSection>
-            <apex:pageBlockSection columns="1" showHeader="true" title="List of packages" collapsible="false">
+            <apex:pageBlockSection columns="1" showHeader="true" title="{!$Label.copado__List_of_Packages}" collapsible="false">
                 <div id="jqxgrid" style="width:99%;"></div>
             </apex:pageBlockSection>
         </apex:pageBlock>
@@ -64,10 +64,7 @@
         <apex:inputHidden value="{!pw}" id="hid" />
     </apex:form>
 
-
     <script type="text/javascript">
-
-
         $copado(document).ready(function () {
             prepareGrid();
         });
@@ -75,11 +72,11 @@
         var metadataRecords;
         var selectedPackageIndex;
 
-        var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!$Label.copado__LOADING}<span id="retry-label"></span></i></center>';
+        var loadingHTML = '<center><img src="/img/loading.gif" /> <i>{!JSENCODE($Label.copado__LOADING)}<span id="retry-label"></span></i></center>';
         $copado('#jqxgrid').html(loadingHTML);
         var saveSelection = function () {
             setTimeout(function () {
-                setLockScreenMessage("saving...");
+                setLockScreenMessage('{!JSENCODE($Label.copado__Saving)}');
                 var json = {};
                 if (metadataRecords) {
                     var selectedPackage = metadataRecords[selectedPackageIndex];
@@ -91,11 +88,11 @@
                         dw.u.upsertAttach('{!JSENCODE(copado__Artifact__c.Id)}', 'PackageInfo', JSON.stringify(json), false);
                         setTimeout(function () { cancelOperation() }, 250);
                     } else {
-                        alert('Please Select a Package');
+                        alert('{!JSENCODE($Label.copado__Select_package)}');
                         unlockScreen();
                     }
                 } else {
-                    alert('No Package Selected, Please Refresh List of Packages');
+                    alert('{!JSENCODE($Label.copado__No_Package_Selected_Please_Refresh_List_of_Packages)}');
                     unlockScreen();
                 }
             }, 100);

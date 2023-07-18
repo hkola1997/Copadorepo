@@ -20,7 +20,7 @@
                 <apex:inputField value="{!dummyUserStoryLookup.copado__User_Story__c}" />
             </apex:pageBlockSection>
 
-            <apex:pageBlockSection id="metadatapanel" title="Previously committed metadata selections">
+            <apex:pageBlockSection id="metadatapanel" title="{!$Label.copado__User_Story_Import_Previously_Committed}">
                 <apex:outputPanel layout="none" rendered="{!AND(allMetadata != null, allMetadata.size<1000)}">
                     <apex:dataList value="{!allMetadata}" var="m">
                         <apex:outputText value="{!m.t}.{!m.n}"/>

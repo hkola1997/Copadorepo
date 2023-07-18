@@ -85,7 +85,7 @@
 				<div class="slds-col slds-has-flexi-truncate">
 					<div class="slds-media">
 						<div class="slds-media__figure">
-	                                <span class="slds-icon_container slds-icon-standard-opportunity" title="Description of icon when needed">
+	                                <span class="slds-icon_container slds-icon-standard-opportunity" title="{!$Label.Description_Icon}">
 	                                    <svg class="slds-icon" aria-hidden="true">
 	                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/standard-sprite/svg/symbols.svg#process')}"></use>
 	                                    </svg>
@@ -166,7 +166,7 @@
 								<c:LightningReadyOutputFields SObject="{!externalCIJob}"  Field="Job_Api_Name__c"></c:LightningReadyOutputFields>
 							</div>
 							<div class="slds-col slds-region-sidebar--right" style="margin-left:20px;border: 1px solid darkgray;border-collapse: collapse;padding:10px;">
-								<span class="slds-form-element__label">Parameters</span>
+								<span class="slds-form-element__label">{!$Label.Parameters}</span>
 								<div id="urlParameters">
 
 								</div>
@@ -197,7 +197,7 @@
 					<apex:facet name="start" >
 						<div id="overlay" style="height: 100%;">
 							<div role="status" class="slds-spinner slds-spinner_medium">
-								<span class="slds-assistive-text">Loading</span>
+								<span class="slds-assistive-text">{!$Label.Loading}</span>
 								<div class="slds-spinner__dot-a"></div>
 								<div class="slds-spinner__dot-b"></div>
 							</div>

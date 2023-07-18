@@ -1430,6 +1430,16 @@ var MetadataGrid3 = (() => {
         });
     };
 
+    var unZipDecode = async function(content) {
+        var zip = await JSZip.loadAsync(content, { base64: true });
+        return [zip, Object.keys(zip.files)];
+    };
+
+    var getContent = async function(zipFile) {
+        var zipBody = await zipFile.async("string");
+        return zipBody;
+    };
+
     app.showDifferences = (elem) => {
         var index = $copado(elem).data('index');
         if (isRollback) {
@@ -1438,35 +1448,23 @@ var MetadataGrid3 = (() => {
             var sourceJSON = app.source[index];
             window.preSourceRollback = [sourceJSON, ''];
             var targetJSONbytes = targetJSON.zipBytes;
-            var zip = new JSZip(targetJSONbytes, { base64: true });
-            var bundleTarget = [zip, Object.keys(zip.files)];
-            var preTarget = [];
-            preTarget[0] =
-                Object.keys(bundleTarget[0].files)[0] != 'package.xml' ? bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0]).asText() : '';
-            preTarget[1] = bundleTarget[1][0];
-            window.preTargetRollback = preTarget;
+            unZipDecode(targetJSONbytes).then( function (zipContent){
+                var bundleTarget = zipContent ? zipContent : '';
+                var preTarget = [];
+                if(Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
+                    getContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then( function (content) {
+                        preTarget[0] = content ? content: '';
+                        preTarget[1] = bundleTarget[1][0];
+                        window.preTargetRollback = preTarget;
+                    });
+                }
+            }, function (e) {
+                console.log(e);
+            });
+            
         } else {
             assignFileData(JSON.parse(app.source[index]).zipBytes, JSON.parse(app.target[index]).zipBytes);
         }
-    };
-
-    var isZipBytesEqual = (zipbSource, zipbTarget) => {
-        if (!zipbSource && zipbTarget) {
-            return false;
-        }
-        var zip1 = new JSZip(zipbSource, { base64: true });
-        var zip2 = new JSZip(zipbTarget, { base64: true });
-        var isEqual = true;
-        var currentName;
-        for (var i = 0; i < Object.keys(zip1.files).length; i++) {
-            currentName = Object.keys(zip1.files)[i];
-            if (currentName && currentName.toLowerCase() != 'package.xml') {
-                if (zip1.file(currentName).asText() != zip2.file(currentName).asText()) {
-                    isEqual = false;
-                }
-            }
-        }
-        return isEqual;
     };
 
     app.previewVlocityMetadata = (elem) => {
@@ -1477,38 +1475,63 @@ var MetadataGrid3 = (() => {
             var index = $copado(elem).data('index');
             var gitPromotionZip;
             var deleteMetadataZip;
+            var targetText = 'PREVIEW NOT AVAILABLE';
+            var preTarget = [];
+            var sourceContent;
 
             if (jqxdatatable_config.data.stepId) {
                 let gitPromotionContent = dw.u.getFileContent(jqxdatatable_config.data.stepId, 'Rollback vlocity.zip');
                 if (gitPromotionContent != null) {
-                    gitPromotionZip = new JSZip(gitPromotionContent, { base64: true });
+                    unZipDecode(gitPromotionContent, { base64: true }).then( function (gitPromo){
+                        gitPromotionZip = Object.keys(gitPromo[0].files).length ? gitPromo : '';
+                        if (gitPromotionZip != '' && gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) {
+                            sourceContent = gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
+                            getContent(sourceContent).then( function(content) {
+                                content = content ? content : '';
+                                app.target[index] = targetText;
+                                preTarget[0] = targetText;
+                                window.preSourceRollback = [content, ''];
+                                window.preTargetRollback = preTarget;
+                                app.showDifferences(elem);
+                            }, function (e) {
+                                console.log(e);
+                            });
+                        } else {
+                            showCompareColumnMessage('previewErrorMsg', index);
+                            return;
+                        }
+                    }, function (e) {
+                        console.log(e);
+                    });
                 }
             }
 
             if (jqxdatatable_config.data.deleteStepId) {
                 let deleteMetadataContent = dw.u.getFileContent(jqxdatatable_config.data.deleteStepId, 'Rollback vlocity.zip');
                 if (deleteMetadataContent != null) {
-                    deleteMetadataZip = new JSZip(deleteMetadataContent, { base64: true });
+                    unZipDecode(deleteMetadataContent, { base64: true }).then( function (deleteMtData){
+                        deleteMetadataZip = Object.keys(deleteMtData[0].files).length ? deleteMtData : '';
+                        if (deleteMetadataZip && deleteMetadataZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) {
+                            sourceContent = deleteMetadataZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
+                            getContent(sourceContent).then( function(content) {
+                                content = content ? content : '';
+                                app.target[index] = targetText;
+                                preTarget[0] = targetText;
+                                window.preSourceRollback = [content, ''];
+                                window.preTargetRollback = preTarget;
+                                app.showDifferences(elem);
+                            }, function (e) {
+                                console.log(e);
+                            });
+                        } else {
+                            showCompareColumnMessage('previewErrorMsg', index);
+                            return;
+                        }
+                    }, function (e) {
+                        console.log(e);
+                    });
                 }
             }
-            var targetText = 'PREVIEW NOT AVAILABLE';
-            var preTarget = [];
-            var sourceContent;
-            if (gitPromotionZip && gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) {
-                sourceContent = gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
-            } else if (deleteMetadataZip && deleteMetadataZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) {
-                sourceContent = deleteMetadataZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
-            } else {
-                showCompareColumnMessage('previewErrorMsg', index);
-                return;
-            }
-
-            app.source[index] = sourceContent.asText();
-            app.target[index] = targetText;
-            preTarget[0] = targetText;
-            window.preSourceRollback = [app.source[index], ''];
-            window.preTargetRollback = preTarget;
-            app.showDifferences(elem);
         }
     };
 
@@ -1542,21 +1565,6 @@ var MetadataGrid3 = (() => {
         if (isRollback) {
             var gitPromotionZip;
             var deleteMetadataZip;
-
-            if (jqxdatatable_config.data.stepId) {
-                let gitPromotionContent = dw.u.getFileContent(jqxdatatable_config.data.stepId, 'Rollback metadata.zip');
-                if (gitPromotionContent != null) {
-                    gitPromotionZip = new JSZip(gitPromotionContent, { base64: true });
-                }
-            }
-
-            if (jqxdatatable_config.data.deleteStepId) {
-                let deleteMetadataContent = dw.u.getFileContent(jqxdatatable_config.data.deleteStepId, 'Rollback metadata.zip');
-                if (deleteMetadataContent != null) {
-                    deleteMetadataZip = new JSZip(deleteMetadataContent, { base64: true });
-                }
-            }
-
             const nestedMetadataTypes = {
                 CustomField: 'objects:object',
                 ValidationRule: 'objects:object',
@@ -1586,13 +1594,47 @@ var MetadataGrid3 = (() => {
 
             var ext = folderAndExt.split(':')[1];
             var folder = folderAndExt.split(':')[0];
-            if (gitPromotionZip && gitPromotionZip.file(folder + '/' + name + '.' + ext) != null) {
-                app.source[index] = gitPromotionZip.file(folder + '/' + name + '.' + ext).asText();
-            } else if (deleteMetadataZip && deleteMetadataZip.file(folder + '/' + name + '.' + ext) != null) {
-                app.source[index] = deleteMetadataZip.file(folder + '/' + name + '.' + ext).asText();
-            } else {
-                app.source[index] = '';
+
+            if (jqxdatatable_config.data.stepId) {
+                let gitPromotionContent = dw.u.getFileContent(jqxdatatable_config.data.stepId, 'Rollback metadata.zip');
+                if (gitPromotionContent != null) {
+                    unZipDecode(gitPromotionContent, { base64: true }).then( function (gitPromo){
+                        gitPromotionZip = Object.keys(gitPromo[0].files).length ? gitPromo : '';
+                        if (gitPromotionZip != '' && gitPromotionZip[0].file(folder + '/' + name + '.' + ext) != null) {
+                            getContent(gitPromotionZip[0].file(folder + '/' + name + '.' + ext)).then( function (content) {
+                                app.source[index] = content ? content : '';
+                            }, function (e) {
+                                console.log(e);
+                            });
+                        } else {
+                            app.source[index] = '';
+                        }
+                    }, function (e) {
+                        console.log(e);
+                    });
+                }
             }
+
+            if (jqxdatatable_config.data.deleteStepId) {
+                let deleteMetadataContent = dw.u.getFileContent(jqxdatatable_config.data.deleteStepId, 'Rollback metadata.zip');
+                if (deleteMetadataContent != null) {
+                    unZipDecode(deleteMetadataContent, { base64: true }).then( function (deleteMtData){
+                        deleteMetadataZip = Object.keys(deleteMtData[0].files).length ? deleteMtData : '';
+                        if (deleteMetadataZip != '' && deleteMetadataZip.file(folder + '/' + name + '.' + ext) != null) {
+                            getContent(gitPromotionZip.file(folder + '/' + name + '.' + ext)).then( function (content) {
+                                app.source[index] = content ? content : '';
+                            }, function (e) {
+                                console.log(e);
+                            });
+                        } else {
+                            app.source[index] = '';
+                        }
+                    }, function (e) {
+                        console.log(e);
+                    });
+                }
+            }
+
         } else {
             deferreds.push(deferredSource);
             httpRequest(
@@ -1632,10 +1674,45 @@ var MetadataGrid3 = (() => {
                 (isRollback || !sourceJSON.messages || (sourceJSON.messages && !sourceJSON.messages[0].problem)) &&
                 (!targetJSON.messages || (targetJSON.messages && !targetJSON.messages[0].problem))
             ) {
-                if (isZipBytesEqual(sourceJSON.zipBytes, targetJSON.zipBytes) || (isRollback && sourceJSON == preTarget[0])) {
+                let zipbSource = sourceJSON.zipBytes;
+                let zipbTarget = targetJSON.zipBytes;
+                if(isRollback && sourceJSON == preTarget[0]) {
                     showCompareColumnMessage('noDifferencesMsg', index);
-                } else {
+                }
+                if ((!zipbSource && zipbTarget) || (!isRollback && sourceJSON != preTarget[0])) {
                     showCompareColumnMessage('differencesBothMsg', index);
+                } else {
+                    try{
+                        var isEqual = true;
+                        var currentName;
+                        unZipDecode(zipbSource, { base64: true }).then( function (body1){
+                            var zip1 = body1 ? body1 : '';
+                            unZipDecode(zipbTarget, { base64: true }).then( function (body2){
+                                var zip2 = body2 ? body2 : '';
+                                for (var i = 0; i < Object.keys(zip1[0].files).length; i++) {
+                                    currentName = Object.keys(zip1[0].files)[i];
+                                    if (currentName && currentName.toLowerCase() != 'package.xml') {
+                                        getContent(zip1[0].file(currentName)).then( function (content1){
+                                            getContent(zip2[0].file(currentName)).then( function (content2){
+                                                let src = content1 ? content1 : '';
+                                                let tgt = content2 ? content2 : '';
+                                                isEqual = (src != tgt) ? false : true;
+                                                if(isEqual) {
+                                                    showCompareColumnMessage('noDifferencesMsg', index)
+                                                } else {
+                                                    showCompareColumnMessage('differencesBothMsg', index);
+                                                }
+                                            });
+                                        });
+                                    }
+                                }
+                                
+                            });
+                        });
+                    } catch (error) {
+                        console.error(error);
+                        return '';
+                    }
                 }
             } else {
                 if (targetJSON.messages && targetJSON.messages[0].problem && targetJSON.messages[0].problem.includes('cannot be found')) {

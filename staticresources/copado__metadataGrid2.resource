@@ -459,7 +459,7 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
             width: '30%',
             validation: function (cell, value) {
                     if (!value || value == ' ') {
-                        return { result: false, message: 'You must specify a value' };
+                        return { result: false, message: copadoLabels.YOU_MUST_SPECIFY_A_VALUE };
                 }
                 return true;
             }
@@ -474,10 +474,10 @@ MetadataGrid2.prototype._getColumnsByGridMode = function() {
             width: '10%',
             validation: function (cell, value) {
                     if (!value || value == ' ') {
-                        return { result: false, message: 'You must specify a value' };
+                        return { result: false, message: copadoLabels.YOU_MUST_SPECIFY_A_VALUE };
                 }
                 if (value.indexOf(' ') >= 0) {
-                        return { result: false, message: 'Remove all blank spaces' };
+                        return { result: false, message: copadoLabels.REMOVE_ALL_BLANK_SPACES };
                 }
                 return true;
             }

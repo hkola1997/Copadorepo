@@ -101,14 +101,14 @@
 
                                     <div class="slds-form slds-form_horizontal">
                                         <div class="slds-form-element" >
-                                            <label class="slds-form-element__label" for="input-unique-id">Previous {!$ObjectType.Release__c.Label}</label>
+                                            <label class="slds-form-element__label" for="input-unique-id">{!$Label.Previous} {!$ObjectType.Release__c.Label}</label>
                                             <div class="slds-form-element__control">
                                                 <apex:inputField value="{!lookupAux.copado__Release__c}" onchange="changePreviousRelease();" />&nbsp;
                                             </div>
                                             <apex:actionFunction name="changePreviousRelease" action="{!getPreviousRelease}" reRender="previousRelease,previousReleaseVersion,releaseVersionOptions,releaseVersionSript" />
                                         </div>
                                         <div class="slds-form-element">
-                                            <label class="slds-form-element__label" for="previousReleaseVersion">Previous {!$Label.copado__RELEASE_VERSION}</label>
+                                            <label class="slds-form-element__label" for="previousReleaseVersion">{!$Label.copado__Previous} {!$Label.copado__RELEASE_VERSION}</label>
                                             <div class="slds-form-element__control">
                                                 <apex:outputText value="{!previousRelease.copado__Version__c}" id="previousReleaseVersion" />
                                                 <apex:outputText id="previousRelease" value="{!IF(previousRelease==null,$Label.copado__RELEASE_NOT_FOUND,'')}" />
@@ -123,7 +123,7 @@
                                                             <input type="radio" id="major" name="options" value="on" onclick="updateNewReleaseVersion('major');" />
                                                             <label class="slds-radio__label" for="major">
                                                                 <span class="slds-radio_faux"></span>
-                                                                <span class="slds-form-element__label">Major: {!JSENCODE(versionWrapper.major)}</span>
+                                                                <span class="slds-form-element__label">{!$Label.MAJOR}: {!JSENCODE(versionWrapper.major)}</span>
                                                             </label>
                                                             </span>
 
@@ -131,7 +131,7 @@
                                                             <input type="radio" id="minor" name="options" value="on" onclick="updateNewReleaseVersion('minor');" />
                                                             <label class="slds-radio__label" for="minor">
                                                                 <span class="slds-radio_faux"></span>
-                                                                <span class="slds-form-element__label">Minor: {!JSENCODE(versionWrapper.minor)}</span>
+                                                                <span class="slds-form-element__label">{!$Label.MINOR}: {!JSENCODE(versionWrapper.minor)}</span>
                                                             </label>
                                                             </span>
 
@@ -139,7 +139,7 @@
                                                             <input type="radio" id="patch" name="options" value="on" onclick="updateNewReleaseVersion('patch');" />
                                                             <label class="slds-radio__label" for="patch">
                                                                 <span class="slds-radio_faux"></span>
-                                                                <span class="slds-form-element__label">Patch: {!JSENCODE(versionWrapper.patch)}</span>
+                                                                <span class="slds-form-element__label">{!$Label.PATCH}: {!JSENCODE(versionWrapper.patch)}</span>
                                                             </label>
                                                             </span>
                                                 </div>

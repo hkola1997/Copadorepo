@@ -5,7 +5,7 @@
         <c:WizardUtils />
         
             <script type="text/javascript">
-                var Copado_Licenses = {!CurrentUserLicenses};
+                var Copado_Licenses = {!JSENCODE(CurrentUserLicenses)};
             </script>
             <c:IncludeConnectionJsComponent />
             <apex:stylesheet value="{!URLFOR($Resource.copado__CopadoLightningCSS)}" />
@@ -39,9 +39,6 @@
         <!-- THIS URL CAN BE CHANGED TO REPLACE THE LOGO-->
         <img src="https://copado--c.eu2.content.force.com/servlet/servlet.ImageServer?id=015b0000005no4X&oid=00Db0000000YN5R&lastMod=1496992954000" style="margin: 16px 16px 0 0" />
         <br />
-        <div class="noprint">
-            <apex:pageMessage strength="1" severity="info" summary="{!$Label.copado__APEX_TEST_RESULT_SUMMARY_INFO}"  />
-        </div>
         <apex:form styleClass="copado-lightning-container">
             <apex:pageBlock title="{!$Label.copado__SUMMARY}" id="pbSummary">
                 <apex:pageBlockSection id="pbsMain">
