@@ -262,6 +262,7 @@ IF(INCLUDES(copado__Actions__c , &quot;PackageDistribution&quot; ), &quot;Packag
     </fields>
     <fields>
         <fullName>copado__Status__c</fullName>
+        <defaultValue>&quot;Inactive&quot;</defaultValue>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Status</label>

@@ -65,6 +65,10 @@
         <label><!-- Source Format --></label>
         <name>copado__Source_Format__c</name>
         <picklistValues>
+            <masterLabel>DX</masterLabel>
+            <translation><!-- DX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Metadata</masterLabel>
             <translation>メタデータ</translation>
         </picklistValues>
@@ -80,4 +84,8 @@
         <name>copado__URI__c</name>
     </fields>
     <nameFieldLabel><!-- Git Repository Name --></nameFieldLabel>
+    <webLinks>
+        <label><!-- Initialize_Salesforce_Project --></label>
+        <name>cmcSf__Initialize_Salesforce_Project</name>
+    </webLinks>
 </CustomObjectTranslation>

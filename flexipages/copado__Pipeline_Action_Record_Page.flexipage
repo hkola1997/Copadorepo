@@ -33,6 +33,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Name</fieldItem>
                 <identifier>RecordNameField1</identifier>
             </fieldInstance>
@@ -123,60 +127,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Pipeline__c</fieldItem>
-                <identifier>RecordPipeline_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Default__c</fieldItem>
-                <identifier>RecordDefault_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-91a95e83-3821-4cf4-b02b-be33b810af73</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Platform__c</fieldItem>
-                <identifier>RecordPlatform_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-0d0d8601-bbfc-4418-bbdf-173fb38112d2</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-91a95e83-3821-4cf4-b02b-be33b810af73</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column5</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-0d0d8601-bbfc-4418-bbdf-173fb38112d2</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-80ae55e5-69ef-4951-a862-fe7c797a7310</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
                 <fieldItem>Record.copado__Environment__c</fieldItem>
                 <identifier>RecordEnvironment_cField1</identifier>
             </fieldInstance>
@@ -225,6 +179,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
                 <identifier>RecordCreatedByIdField1</identifier>
             </fieldInstance>
@@ -235,6 +193,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.LastModifiedById</fieldItem>
                 <identifier>RecordLastModifiedByIdField1</identifier>
             </fieldInstance>
@@ -275,7 +237,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection1</identifier>
@@ -295,24 +257,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Settings</value>
+                    <value>{!$Label.copado__Settings}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-80ae55e5-69ef-4951-a862-fe7c797a7310</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Pipeline</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -323,7 +271,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Environment Override</value>
+                    <value>{!$Label.copado__ENVIRONMENT_OVERRIDE}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
@@ -344,7 +292,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>System Information</value>
+                    <value>{!$Label.copado__SYSTEM_INFORMATION}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
@@ -372,7 +320,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
                 <identifier>force_relatedListContainer</identifier>
@@ -408,7 +356,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Overrides</value>
+                    <value>{!$Label.copado__OVERRIDES}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>relatedListsTab</identifier>

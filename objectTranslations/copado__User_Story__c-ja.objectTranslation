@@ -5,12 +5,24 @@
         <value><!-- User Story --></value>
     </caseValues>
     <fieldSets>
+        <label><!-- Add Test Classes --></label>
+        <name>cmcSf__Add_Test_Classes</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Pipeline Based Package Distribution --></label>
+        <name>cmcSf__PipelineBasedPackageDistribution</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- Bundle --></label>
         <name>copado__Bundle</name>
     </fieldSets>
     <fieldSets>
         <label><!-- Bundle Sync Fields --></label>
         <name>copado__Bundle_Sync_Fields</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Bundled Stories --></label>
+        <name>copado__Bundled_Stories</name>
     </fieldSets>
     <fieldSets>
         <label><!-- CBM Fields --></label>
@@ -68,6 +80,10 @@
         <label><!-- Work Manager Relations --></label>
         <name>copado__Work_Manager_Relations</name>
     </fieldSets>
+    <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
     <fields>
         <label><!-- Acceptance Criteria Status --></label>
         <name>copado__Acceptance_Criteria_Status__c</name>
@@ -842,6 +858,30 @@
     <fields>
         <label><!-- So that... --></label>
         <name>copado__userStory_reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enable Logs --></label>
+        <name>copadoccmint__Enable_Logs__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoccmint__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA key --></label>
+        <name>copadoccmint__JIRA_key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
     <nameFieldLabel><!-- User Story Reference --></nameFieldLabel>
     <recordTypes>

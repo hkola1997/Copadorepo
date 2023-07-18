@@ -141,14 +141,15 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Job_Step</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Job_Step</fullName>
         <fields>Name</fields>
-        <fields>copado__CustomType__c</fields>
-        <fields>copado__JobTemplate__c</fields>
-        <fields>copado__JobExecution__c</fields>
         <fields>copado__Status__c</fields>
+        <fields>copado__JobExecution__c</fields>
+        <fields>copado__JobTemplate__c</fields>
+        <fields>copado__CustomType__c</fields>
+        <fields>copado__Order__c</fields>
         <label>Job Step</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -267,6 +268,15 @@
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__IsSkipped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Skipped?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <fields>
         <fullName>copado__JobExecution__c</fullName>
@@ -416,6 +426,18 @@
         <visibleLines>3</visibleLines>
     </fields>
     <fields>
+        <fullName>copado__Result_Viewer_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the name of the lightning component that you want to render on the related result record. The name must be in the namespace:componentName format.</inlineHelpText>
+        <label>Result Viewer Component</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Result__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -429,6 +451,17 @@
         <required>false</required>
         <trackTrending>false</trackTrending>
         <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copado__SkipCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Expression that if evaluates to true, the step execution will be skipped and Copado will continue with the next step or complete the job execution. If left empty or the expression evaluates to false, the job step will execute as usual.</inlineHelpText>
+        <label>Skip Step Condition</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>copado__Source_Id__c</fullName>
@@ -449,7 +482,8 @@
         <description>The status of the Job Step.</description>
         <externalId>false</externalId>
         <formula>IF(NOT(ISBLANK(copado__JobTemplate__c)), &apos;NA&apos;, 
-    if(ISBLANK(copado__Result__c), &apos;Pending&apos;, TEXT(copado__Result__r.copado__Status__c)))</formula>
+  IF(copado__IsSkipped__c , &apos;Skipped&apos;,
+    IF(ISBLANK(copado__Result__c), &apos;Pending&apos;, TEXT(copado__Result__r.copado__Status__c))))</formula>
         <inlineHelpText>The status of the Job Step.</inlineHelpText>
         <label>Status</label>
         <required>false</required>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldSets>
+        <label><!-- SFDX Extension Fields --></label>
+        <name>cmcSf__SFDX_Extension_Fields</name>
+    </fieldSets>
+    <fieldSets>
         <label><!-- Copado Header Fields --></label>
         <name>copado__Copado_Header_Fields</name>
     </fieldSets>
@@ -16,6 +20,24 @@
         <label><!-- Pipeline Manager --></label>
         <name>copado__Pipeline_Manager</name>
     </fieldSets>
+    <fields>
+        <label><!-- Apex Test Level --></label>
+        <name>cmcSf__Apex_Test_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enabling this, you can see the source files deployed (as part of this promotion) to the destination org on your git repository branch named copadoDebug/&lt;PromotionNumber&gt; --></help>
+        <label><!-- Debug Mode --></label>
+        <name>cmcSf__Debug_Mode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Recreate Promotion Branch --></label>
+        <name>cmcSf__Recreate_Promotion_Branch__c</name>
+    </fields>
+    <fields>
+        <help><!-- After a validation, if Quick Deploy is available on the target org, this field contains the validation id. If the promotion is deployed, the quick deploy will be used automatically. --></help>
+        <label><!-- Validate Deploy Request Id --></label>
+        <name>cmcSf__Validate_Deploy_Request_Id__c</name>
+    </fields>
     <fields>
         <help><!-- Select this checkbox if you are promoting from a higher to a lower environment in the pipeline. --></help>
         <label><!-- Is Back-Promotion --></label>

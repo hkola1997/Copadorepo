@@ -75,12 +75,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Start_Date__c</fieldItem>
                 <identifier>RecordStart_Date_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__End_Date__c</fieldItem>
                 <identifier>RecordEnd_Date_cField1</identifier>
             </fieldInstance>
@@ -101,8 +109,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__PlannedVelocity__c</fieldItem>
-                <identifier>RecordPlannedVelocity_cField1</identifier>
+                <fieldItem>Record.copado__Planned_Velocity__c</fieldItem>
+                <identifier>RecordPlanned_Velocity_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -111,8 +119,8 @@
                     <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__ActualVelocity__c</fieldItem>
-                <identifier>RecordActualVelocity_cField1</identifier>
+                <fieldItem>Record.copado__Actual_Velocity__c</fieldItem>
+                <identifier>RecordActual_Velocity_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-e64f08ea-5c4d-4a49-8a5a-331f0ad4e30a</name>
@@ -121,30 +129,50 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Objective__c</fieldItem>
                 <identifier>RecordObjective_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Status__c</fieldItem>
                 <identifier>RecordStatus_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Team__c</fieldItem>
                 <identifier>RecordTeam_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Project__c</fieldItem>
                 <identifier>RecordProject_cField1</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Working_Days_Left__c</fieldItem>
                 <identifier>RecordWorking_Days_Left_cField1</identifier>
             </fieldInstance>
@@ -185,7 +213,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection1</identifier>
@@ -235,7 +263,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Sprint Wall</value>
+                    <value>{!$Label.copado__SprintWall_Title}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab</identifier>
@@ -259,7 +287,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>actualVelocityField</name>
-                    <value>copado__ActualVelocity__c</value>
+                    <value>copado__Actual_Velocity__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>legendPosition</name>
@@ -267,7 +295,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>plannedVelocityField</name>
-                    <value>copado__PlannedVelocity__c</value>
+                    <value>copado__Planned_Velocity__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>

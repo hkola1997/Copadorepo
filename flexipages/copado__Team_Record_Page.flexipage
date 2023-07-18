@@ -85,6 +85,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Sprint_Wall_FieldSet_Name__c</fieldItem>
                 <identifier>RecordSprint_Wall_FieldSet_Name_cField1</identifier>
             </fieldInstance>
@@ -143,6 +147,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Description__c</fieldItem>
                 <identifier>RecordDescription_cField1</identifier>
             </fieldInstance>
@@ -183,6 +191,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField1</identifier>
             </fieldInstance>
@@ -243,7 +255,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Information</value>
+                    <value>{!$Label.copado__INFORMATION}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection1</identifier>
@@ -257,7 +269,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Description</value>
+                    <value>{!$Label.copado__Description}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
@@ -271,7 +283,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Owners</value>
+                    <value>{!$Label.copado__Owners}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
