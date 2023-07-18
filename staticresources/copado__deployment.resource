@@ -97,7 +97,9 @@ var copadoApp = {
         }
 
         copadoApp.disabledBtn('[id$=btnCancelDeploy]', copadoLabels.CANCELLED);
-        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY);
+        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY_ALL);
+        copadoApp.enabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOY_OUTSTANDING);
+        copadoApp.enabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOY_LATER);
         copadoApp.unlock();
         ga('send', 'event', 'Deployment', 'deploy', 'cancel');
     },
@@ -814,7 +816,7 @@ var copadoApp = {
         var panelHtml = msg
             ? $copado('[id$=js-msg-' + type + ']')
                 .html()
-                .replaceAll('__MSG__', msg)
+                .replace('__MSG__', msg)
             : $copado('[id$=js-msg-' + type + ']').html();
         $copado('.fixedMsg')
             .html(panelHtml)
@@ -876,10 +878,10 @@ var copadoApp = {
     mirrorBlockHeight: function () {
         var statusHeight = $copado('div[id$="pbStatus"]').height();
         var infoHeight = $copado('div[id$="pbInformation"]').height();
-        if (parseInt(statusHeight) <= parseInt(infoHeight)) {
-            $copado('div[id$="pbStatus"]').height($copado('div[id$="pbInformation"]').height());
-        } else {
+        if (parseInt(statusHeight) >= parseInt(infoHeight)) {
             $copado('div[id$="pbInformation"]').height($copado('div[id$="pbStatus"]').height());
+        } else {
+            $copado('div[id$="pbStatus"]').height($copado('div[id$="pbInformation"]').height());
         }
     },
 
@@ -954,7 +956,6 @@ var copadoApp = {
                         $el.closest('.dataRow').remove();
                         reloadHistory();
                         me.showMessage('CONFIRM', copadoLabels.STEP_DELETED);
-                        me.reorderStepsController();
                     } else {
                         // Delete failed so throw and error to UI
                         me.showMessage('ERROR', event.message);
@@ -1519,9 +1520,13 @@ var copadoApp = {
                     $copado('.js-status-icon').attr('src', copadoApp.data.dep[copadoApp.ns + 'Flag_Status__c']);
 
                     if (copadoApp.data.dep[copadoApp.ns + 'Status__c'].indexOf('Completed') === 0) {
-                        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY);
+                        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY_ALL);
+                        copadoApp.enabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOY_OUTSTANDING);
+                        copadoApp.enabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOY_LATER);
                     } else if (copadoApp.data.dep[copadoApp.ns + 'Status__c'] == 'In Progress') {
                         copadoApp.disabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOYING);
+                        copadoApp.disabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOYING);
+                        copadoApp.disabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOYING);
                     }
 
                     if (copadoApp.data.dep[copadoApp.ns + 'Status__c'] != '' || copadoApp.data.dep[copadoApp.ns + 'Status__c'] != 'Draft') {
@@ -1546,6 +1551,8 @@ var copadoApp = {
         if (!copadoApp.statusCheckerTimer) {
             if (!dontDisableButton) {
                 copadoApp.disabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOYING);
+                copadoApp.disabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOYING);
+                copadoApp.disabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOYING);
             }
             copadoApp.statusCheckerTimer = setInterval(copadoApp.statusChecker, 30000);
         }
@@ -1554,7 +1561,9 @@ var copadoApp = {
     stopStatusChecker: function () {
         copadoApp.statusCheckerTimer && clearInterval(copadoApp.statusCheckerTimer);
         copadoApp.statusCheckerTimer = false;
-        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY);
+        copadoApp.enabledBtn('[id$=btnDeploy]', copadoLabels.DEPLOY_ALL);
+        copadoApp.enabledBtn('[id$=btnDeployOutstanding]', copadoLabels.DEPLOY_OUTSTANDING);
+        copadoApp.enabledBtn('[id$=btnLegacyDeploy]', copadoLabels.DEPLOY_LATER);
     },
 
     statusChecker: function (avoidStatusRefresh) {
@@ -2300,7 +2309,16 @@ var copadoStep = {
             //update step data for commit and repository
             //copadoStep
             //update metadata selected attach
-            dw.u.upsertAttach(copadoStep.stepId, 'MetaData', JSON.stringify(list));
+            let MetaDataList = [], GitDeletionList=[];
+            for(let l of list){
+                if(l.cmm === 'deleted'){
+                    GitDeletionList.push(l);
+                }else{
+                    MetaDataList.push(l);
+                }
+            }
+            dw.u.upsertAttach(copadoStep.stepId, 'MetaData', JSON.stringify(MetaDataList));
+            dw.u.upsertAttach(copadoStep.stepId, 'Git Deletion', JSON.stringify(GitDeletionList));
             cb && cb();
         };
         me.handlers['Git Promotion'].updateStepFields = function (step, obj) {
@@ -2898,12 +2916,12 @@ var copadoGrid = {
 
     addSelectedFilter: function ($grid) {
         try {
-            var filtergroup2 = new $copado.jqx.filter();
-            var filter2 = filtergroup2.createfilter('booleanfilter', true, 'EQUAL');
+            let filtergroup2 = new $copado.jqx.filter();
+            let filter2 = filtergroup2.createfilter('booleanfilter', true, 'EQUAL');
             filtergroup2.addfilter(1, filter2);
             $grid.jqxGrid('clearfilters');
             $grid.jqxGrid('addfilter', 's', filtergroup2);
-            $grid.jqxGrid('applyfilters');
+            $grid.jqxGrid('applyfilters');            
         } catch (e) {
             console.error('addfilter', e);
         }
@@ -3843,6 +3861,7 @@ rock.getSelectedObj = function () {
                 t: data[len].t,
                 n: data[len].n,
                 vk: data[len].vk,
+                cmm : data[len].hasOwnProperty('cmm') ? data[len].cmm : '',
                 s: true
             });
     }
@@ -5636,11 +5655,10 @@ var copadoGitPromotionStep = {
             ],
             ready: function () {
                 copadoApp.unlock();
+                //filtering the grid to see only the components that are part of the user story when deploying.
+                copadoGrid.addSelectedFilter($grid2);
             }
         });
-
-        //filtering the grid to see only the components that are part of the user story when deploying.
-        copadoGrid.addSelectedFilter($grid2);
 
         if (me && rock.EditGitPromotion == 'true') {
             $grid2.on('cellvaluechanged', function (event) {
@@ -5678,12 +5696,17 @@ var copadoGitPromotionStep = {
             //get saved data
             if (me.stepObj.Id) {
                 var prev = dw.u.getDecodedAttach(me.stepObj.Id, 'MetaData');
+                var prevDel = dw.u.getDecodedAttach(me.stepObj.Id, 'Git Deletion');
                 if (prev) {
                     me.data.prevAttId = prev.Id;
                 }
             }
 
             prev = prev ? JSON.parse(prev.Body) : [];
+            prevDel = prevDel ? JSON.parse(prevDel.Body) : [];
+            if(prevDel.length>0){
+                prev.push(...prevDel);
+            }
 
             setTimeout(function () {
                 cb && cb(att, prev);

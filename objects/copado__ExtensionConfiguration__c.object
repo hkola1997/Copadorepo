@@ -160,7 +160,7 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableLicensing>false</enableLicensing>
-    <enableReports>false</enableReports>
+    <enableReports>true</enableReports>
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
@@ -232,6 +232,16 @@
                     <fullName>Manual Tests</fullName>
                     <default>false</default>
                     <label>Manual Tests</label>
+                </value>
+                <value>
+                    <fullName>PMD</fullName>
+                    <default>false</default>
+                    <label>PMD</label>
+                </value>
+                <value>
+                    <fullName>Copado Robotic Testing</fullName>
+                    <default>false</default>
+                    <label>Copado Robotic Testing</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

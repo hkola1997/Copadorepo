@@ -14,8 +14,8 @@
 			<apex:form id="theForm" styleClass="copado-lightning-container" html-novalidate="true">
 				<apex:pageBlock id="pb" mode="edit">
 					<apex:pageBlockButtons id="pbButtons" location="bottom">
-						<apex:commandButton id="btnCancel" value="Cancel" action="{!cancel}" />
-						<apex:commandButton id="btnAssign" value="Assign" action="{!assign}" />
+						<apex:commandButton id="btnCancel" value="{!$Label.copado__Cancel}" action="{!cancel}" />
+						<apex:commandButton id="btnAssign" value="{!$Label.copado__Assign}" action="{!assign}" />
 					</apex:pageBlockButtons>
 					<apex:pageBlockSection id="pbs">
 						<apex:inputField id="if_Release" value="{!dummy.copado__Release__c}" />

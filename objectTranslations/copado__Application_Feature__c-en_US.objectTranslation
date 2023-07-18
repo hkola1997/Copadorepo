@@ -114,4 +114,8 @@
             <translation><!-- Time Savings --></translation>
         </picklistValues>
     </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
 </CustomObjectTranslation>

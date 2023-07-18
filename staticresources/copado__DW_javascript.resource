@@ -257,7 +257,8 @@ var isRollback = isRollback ? isRollback : undefined;
         dw.closeModals(modalId);
     };
 
-    app.createStep = (justSaveAndClose) => {
+    app.createStep = (justSaveAndClose, ns) => {
+        namespace = ns ? ns : '';
         getMetadataGridConfig();
         app.conf.jsonData.selectedMetadata = app.grid.selectedMetadata;
         var noMetadataSelected = !app.conf.jsonData.selectedMetadata || !app.conf.jsonData.selectedMetadata.length;
@@ -289,6 +290,18 @@ var isRollback = isRollback ? isRollback : undefined;
         sel = sel || coGridHelper.getSelectedObj();
         // Attachment Name
         var attachmentName = isRollback ? 'Selected items to rollback' : 'MetaData';
+        // get originalDeployment
+        let attachmentSize;
+        if (isRollback) {
+            var originalDeployment =  sforce.connection.query("Select "+namespace+"Rolled_Back_Deployment__c FROM "+namespace+"Deployment__c WHERE Id  = '" + app.conf.data.deploymentId + "'");
+            Object.keys(originalDeployment.records).forEach(function(key){
+                if (key.includes('Rolled_back_Deployment__c')){
+                    var oldDeploymentId = originalDeployment.records[key];
+                    var result = sforce.connection.query("SELECT Id,(SELECT Id FROM ContentDocumentLinks WHERE ContentDocument.Title = 'Rollback Index' OR ContentDocument.Title = 'Rollback Index.json') FROM "+namespace+"Step__c WHERE "+namespace+"Deployment__c  = '" + oldDeploymentId+ "'");
+                    attachmentSize = result.records.length;
+                }
+            });
+        }
         app.conf.data.stepId &&
             coGridHelper.saveSelected(
                 app.conf.data.stepId,
@@ -304,7 +317,8 @@ var isRollback = isRollback ? isRollback : undefined;
                     return;
                 },
                 sel,
-                isRollback
+                isRollback,
+                attachmentSize
             );
     };
 

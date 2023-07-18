@@ -18,4 +18,8 @@
         <field>copado__Test_Readiness_Logic__c</field>
         <value xsi:nil="true"/>
     </values>
+    <values>
+        <field>copado__UserStoryBundleTestsUnifierLogic__c</field>
+        <value xsi:nil="true"/>
+    </values>
 </CustomMetadata>

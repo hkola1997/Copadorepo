@@ -262,7 +262,6 @@ dw.u.upsertFile = function(parentId, filename, data) {
     cv.Title=filename;
     cv.PathOnClient= filename+'.json';
     cv.VersionData= Base64.encode(data);
-
     var existingFile = dw.u.getFile(parentId, filename);
     if (existingFile && existingFile[0]) {
         //cv.ContentDocumentId = getContentDocuments(parentId)[0].ContentDocumentId;
@@ -393,7 +392,7 @@ function getContentDocuments(parentId) {
 }
 
 function getContentVersion(documentIds, fileName) {
-    var query = "SELECT VersionData,ContentDocumentId FROM ContentVersion WHERE PathOnClient = '" + htmlEntities(fileName).replace(/'/g, "\\'") + "' AND ContentDocumentId IN ('" + documentIds + "') AND IsLatest = true ORDER BY LastModifiedDate DESC LIMIT 1";
+    var query = "SELECT VersionData,ContentDocumentId FROM ContentVersion WHERE PathOnClient IN ('" + htmlEntities(fileName).replace(/'/g, "\\'") + "', '" + htmlEntities(fileName+'.json').replace(/'/g, "\\'") + "') AND ContentDocumentId IN ('" + documentIds + "') AND IsLatest = true ORDER BY LastModifiedDate DESC LIMIT 1";
     var versions = sforce.connection.query(query);
     return versions.getArray("records");
 }
@@ -839,7 +838,7 @@ var coGridHelper = {
      * @param  {[type]} callcack
      * @return {[type]}                      false
      */
-    saveSelected: function(id, type, additionalValidation, allowEmpty, callback, sel, isRollback) {
+    saveSelected: function(id, type, additionalValidation, allowEmpty, callback, sel, isRollback, attachmentSize) {
         console.debug('... Saving Attachment');
         var me = coGridHelper;
         //validations
@@ -855,7 +854,7 @@ var coGridHelper = {
             return false;
         }
         var valid = !additionalValidation ? true : additionalValidation(me._selectedNames);
-        valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback, isRollback);
+        valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback, isRollback, attachmentSize);
 
         return false;
     },
@@ -869,26 +868,38 @@ var coGridHelper = {
      * @return {[type]}          void
      */
     // write
-    remoteSaveMeta: function(id, items, type, callback, isRollback) {
+    remoteSaveMeta: function(id, items, type, callback, isRollback, attachmentSize) {
         if (isRollback) {
             if (type === 'Selected items to rollback') {
-                var deletedItems=[];
-                var createdUpdatedItems=[];
-                items.forEach((item) => {
-                    if(item.a === 'create'){
-                        deletedItems.push(item);
+                //we need to support both scenarios when only one single step is created for promotion and deletion. 
+                //So if the attachment size is more than 1 it is supporting old version of backend
+                if(attachmentSize && attachmentSize == 2) {
+                    let deletedItems=[];
+                    let createdUpdatedItems=[];
+                    items.forEach((item) => {
+                        if(item.a === 'create'){
+                            deletedItems.push(item);
+                        }
+                        else{
+                            createdUpdatedItems.push(item);
+                        }
+                    });
+                    if (createdUpdatedItems.length) {
+                        dw.u.upsertFile(id, type+'_Git Promotion', JSON.stringify(createdUpdatedItems));
                     }
-                    else{
+                    if (deletedItems.length) {
+                        dw.u.upsertFile(id, type+'_Delete Metadata', JSON.stringify(deletedItems));
+                    }
+                } else {
+                    let createdUpdatedItems=[];
+                    items.forEach((item) => {
                         createdUpdatedItems.push(item);
+                    });
+                    if (createdUpdatedItems.length) {
+                        dw.u.upsertFile(id, type+'_Git Promotion', JSON.stringify(createdUpdatedItems));
                     }
-                });
-                if (createdUpdatedItems.length) {
-                    dw.u.upsertFile(id, type+'_Git Promotion', JSON.stringify(createdUpdatedItems));
                 }
-
-                if (deletedItems.length) {
-                    dw.u.upsertFile(id, type+'_Delete Metadata', JSON.stringify(deletedItems));
-                }
+                
             }
             else {
                 dw.u.upsertFile(id, type, JSON.stringify(items));

@@ -130,6 +130,11 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>AppointmentCategoryId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>ApptStartTimeIntvlInMin</fullName>
         <trackHistory>false</trackHistory>
     </fields>

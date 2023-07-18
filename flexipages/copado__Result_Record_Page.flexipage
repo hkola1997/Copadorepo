@@ -45,52 +45,22 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Name</fieldItem>
-                <identifier>RecordNameField</identifier>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Progress_Status__c</fieldItem>
+                <identifier>RecordProgress_Status_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-68fc5a92-c54a-4bdd-88d2-20395962a098</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-24df46c5-db9c-47bc-8cf8-63abb52ba48e</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-68fc5a92-c54a-4bdd-88d2-20395962a098</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-24df46c5-db9c-47bc-8cf8-63abb52ba48e</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-a1d3fe90-012c-4cbb-b90a-2331c7058c01</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Error_Message__c</fieldItem>
-                <identifier>RecordError_Message__cField</identifier>
+                <identifier>RecordError_Message_cField</identifier>
                 <visibilityRule>
                     <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
@@ -106,20 +76,18 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Result_Data__c</fieldItem>
-                <identifier>RecordResult_Data__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-b6f883e8-7c45-4a93-8594-4538b5b5ee71</name>
+        <name>Facet-c6c078b6-4dea-4642-99e2-b6010f793b5d</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Error_Code__c</fieldItem>
-                <identifier>RecordError_Code__cField</identifier>
+                <identifier>RecordError_Code_cField</identifier>
                 <visibilityRule>
                     <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
@@ -135,7 +103,7 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-c50dd905-be87-4e80-95fe-9412ef254618</name>
+        <name>Facet-b6212c33-2a4f-4187-9be1-35c02a21fef0</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -143,7 +111,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-b6f883e8-7c45-4a93-8594-4538b5b5ee71</value>
+                    <value>Facet-c6c078b6-4dea-4642-99e2-b6010f793b5d</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column3</identifier>
@@ -153,24 +121,132 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-c50dd905-be87-4e80-95fe-9412ef254618</value>
+                    <value>Facet-b6212c33-2a4f-4187-9be1-35c02a21fef0</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:column</componentName>
                 <identifier>flexipage_column4</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-43587e76-cbc3-4d61-b670-8d0838719892</name>
+        <name>Facet-b256e32a-30f7-403b-ab02-0399ef24a0c4</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-b256e32a-30f7-403b-ab02-0399ef24a0c4</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__SUMMARY}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:resultViewerPublishMessage</componentName>
+                <identifier>c_resultViewerPublishMessage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:dynamicResultViewer</componentName>
+                <identifier>c_dynamicResultViewer2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>AQF.Result.Viewer</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Test Tool</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-4e172a7f-05d4-4f34-aefb-c429ace28604</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Result_Data__c</fieldItem>
+                <identifier>RecordResult_Data_cField2</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-71211411-6d33-47f3-8009-4e66b9dabb38</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-71211411-6d33-47f3-8009-4e66b9dabb38</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-121b0e74-f63f-4c46-bae0-258b0595321d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-121b0e74-f63f-4c46-bae0-258b0595321d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__ResultData}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-8c38fb0c-87bc-4786-b5ad-5dd214c08396</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:resultLogVisualizer</componentName>
+                <identifier>c_resultLogVisualizer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-c34c6fb7-1bf3-4107-9f74-4f0868a67169</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Start_Time__c</fieldItem>
                 <identifier>RecordStart_Time__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__End_Time__c</fieldItem>
                 <identifier>RecordEnd_Time__cField</identifier>
             </fieldInstance>
@@ -181,6 +257,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Duration__c</fieldItem>
                 <identifier>RecordDuration__cField</identifier>
             </fieldInstance>
@@ -215,6 +295,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Custom_Function_Used_Credits__c</fieldItem>
                 <identifier>RecordCustom_Function_Used_Credits__cField</identifier>
             </fieldInstance>
@@ -225,6 +309,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Timeout__c</fieldItem>
                 <identifier>RecordTimeout__cField</identifier>
             </fieldInstance>
@@ -259,21 +347,15 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__ApexCallback__c</fieldItem>
                 <identifier>RecordApexCallback__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__ApexCallback__c}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-961a0685-b22b-4d61-bae7-f161fc3e9b55</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <name>Facet-47866bbc-08ad-4bf6-9837-9179ce6c54d9</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -287,62 +369,62 @@
                 <identifier>flexipage_column9</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-47866bbc-08ad-4bf6-9837-9179ce6c54d9</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column10</identifier>
-            </componentInstance>
-        </itemInstances>
         <name>Facet-0664e780-19ba-4aca-8ada-144846cfd4b6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.LastModifiedById</fieldItem>
+                <identifier>RecordLastModifiedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-0feed173-dd9d-4c48-acbb-ccf0f564c7c6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CreatedById</fieldItem>
+                <identifier>RecordCreatedByIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f76687ac-e1ac-4ba2-b0da-ea8a5446836f</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-a1d3fe90-012c-4cbb-b90a-2331c7058c01</value>
+                    <name>body</name>
+                    <value>Facet-0feed173-dd9d-4c48-acbb-ccf0f564c7c6</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Result Information</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection</identifier>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-43587e76-cbc3-4d61-b670-8d0838719892</value>
+                    <name>body</name>
+                    <value>Facet-f76687ac-e1ac-4ba2-b0da-ea8a5446836f</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Execution Result</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection2</identifier>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>locationId</name>
-                    <value>AQF.Result.Viewer</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>requiredInformation</name>
-                    <value>Test Tool</value>
-                </componentInstanceProperties>
-                <componentName>copado:dynamicUISectionContainer</componentName>
-                <identifier>c_dynamicUISectionContainer2</identifier>
-            </componentInstance>
-        </itemInstances>
+        <name>Facet-9ddbcad3-430a-42f8-9431-1db828ed28ec</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -351,7 +433,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Execution Time</value>
+                    <value>{!$Label.copado__ExecutionTime}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
@@ -365,7 +447,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Execution Size</value>
+                    <value>{!$Label.copado__ExecutionSize}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
@@ -379,7 +461,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Functional Information</value>
+                    <value>{!$Label.copado__ProcessTriggered}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
@@ -387,14 +469,16 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>copado:resultViewerPublishMessage</componentName>
-                <identifier>c_resultViewerPublishMessage</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>force:recordDetailPanelMobile</componentName>
-                <identifier>force_recordDetailPanelMobile</identifier>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-9ddbcad3-430a-42f8-9431-1db828ed28ec</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__SYSTEM_INFORMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -404,16 +488,14 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentName>copado:resultLogVisualizer</componentName>
-                <identifier>c_resultLogVisualizer</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-c34c6fb7-1bf3-4107-9f74-4f0868a67169</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__Result__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>AttachedContentDocuments</value>
+                </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
@@ -426,12 +508,11 @@
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListContainer</componentName>
-                <identifier>force_relatedListContainer</identifier>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer2</identifier>
             </componentInstance>
         </itemInstances>
-        <mode>Replace</mode>
-        <name>relatedTabContent</name>
+        <name>Facet-q52ujjuj5t</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -443,14 +524,32 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>detailTabContent</value>
+                    <value>Facet-4e172a7f-05d4-4f34-aefb-c429ace28604</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Execution</value>
+                    <value>{!$Label.copado__ExecutionOutcome}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>customTab</identifier>
+                <identifier>flexipage_tab2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-8c38fb0c-87bc-4786-b5ad-5dd214c08396</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__OutputData}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -461,7 +560,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Logs</value>
+                    <value>{!$Label.copado__Logs}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
@@ -470,15 +569,33 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>body</name>
-                    <value>relatedTabContent</value>
+                    <value>detailTabContent</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Standard.Tab.relatedLists</value>
+                    <value>{!$Label.copado__ExecutionDetails}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
+                <identifier>customTab</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-q52ujjuj5t</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__Files}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab4</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -503,11 +620,25 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Function__c</fieldItem>
-                <identifier>RecordFunction__cField</identifier>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Parent__c</fieldItem>
+                <identifier>RecordParent_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Job_Execution__c</fieldItem>
+                <identifier>RecordJob_Execution_cField</identifier>
                 <visibilityRule>
                     <criteria>
-                        <leftValue>{!Record.copado__Function__r.Name}</leftValue>
+                        <leftValue>{!Record.copado__JobStep__r.copado__JobExecution__r.Name}</leftValue>
                         <operator>NE</operator>
                     </criteria>
                 </visibilityRule>
@@ -515,42 +646,10 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Promotion__c</fieldItem>
-                <identifier>RecordPromotion__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Promotion__r.Name}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__User_Story__c</fieldItem>
-                <identifier>RecordUser_Story__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__User_Story__r.Name}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.copado__Deployment__c</fieldItem>
-                <identifier>RecordDeployment__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Deployment__r.Name}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__JobStep__c</fieldItem>
                 <identifier>RecordJobStep__cField</identifier>
                 <visibilityRule>
@@ -563,6 +662,58 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Promotion__c</fieldItem>
+                <identifier>RecordPromotion__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Promotion__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__User_Story__c</fieldItem>
+                <identifier>RecordUser_Story__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__User_Story__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Deployment__c</fieldItem>
+                <identifier>RecordDeployment__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Deployment__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Test__c</fieldItem>
                 <identifier>RecordTest__cField</identifier>
                 <visibilityRule>
@@ -573,26 +724,82 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-2ad7d5c4-467c-4c22-88ac-e8aa8505acbf</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-2ad7d5c4-467c-4c22-88ac-e8aa8505acbf</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2aff16dc-085d-4e62-bfc6-c7b57f82dd67</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Function__c</fieldItem>
+                <identifier>RecordFunction__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Function__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Job_Type__c</fieldItem>
                 <identifier>RecordJob_Type__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.copado__Job_Id__c</fieldItem>
-                <identifier>RecordJob_Id__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__ParentId__c</fieldItem>
                 <identifier>RecordParentId__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Job_Id__c</fieldItem>
+                <identifier>RecordJob_Id__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Job_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Link__c</fieldItem>
                 <identifier>RecordLink__cField</identifier>
             </fieldInstance>
@@ -617,6 +824,20 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-2aff16dc-085d-4e62-bfc6-c7b57f82dd67</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>{!$Label.copado__ParentRecord}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>copado:resultStatusMonitor</componentName>
                 <identifier>resultStatusMonitor</identifier>
             </componentInstance>
@@ -629,36 +850,10 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
-                    <value>Job Identification</value>
+                    <value>{!$Label.copado__JobIdentification}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection6</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>copado__Result__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>AttachedContentDocuments</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>ADVGRID</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
