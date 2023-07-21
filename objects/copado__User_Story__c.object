@@ -8624,6 +8624,11 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
             <operation>equals</operation>
             <value>0</value>
         </filters>
+        <filters>
+            <field>copado__Promote_Change__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
         <label>All</label>
     </listViews>
     <listViews>
