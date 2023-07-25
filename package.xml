@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>duplicateobjectindev1anduat__c</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>duplicateobjectindev1anduat__c-duplicateobjectindev1anduat Layout</members>
-        <name>Layout</name>
+        <members>Account.school__c</members>
+        <members>chanduFLSTestObject__c.First_Name__c</members>
+        <name>CustomField</name>
     </types>
     <version>58.0</version>
 </Package>
