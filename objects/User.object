@@ -325,6 +325,15 @@
         <type>LongTextArea</type>
         <visibleLines>2</visibleLines>
     </fields>
+    <fields>
+        <fullName>teamlead__c</fullName>
+        <externalId>false</externalId>
+        <label>Teamlead</label>
+        <relationshipName>Users</relationshipName>
+        <restrictedAdminField>true</restrictedAdminField>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Hierarchy</type>
+    </fields>
     <listViews>
         <fullName>ActiveUsers</fullName>
         <filterScope>Everything</filterScope>
