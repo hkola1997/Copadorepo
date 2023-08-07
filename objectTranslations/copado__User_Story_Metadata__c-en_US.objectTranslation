@@ -8,6 +8,10 @@
         <label><!-- MC Promotion User Story Metadata --></label>
         <name>copado__MC_Promotion_User_Story_Metadata</name>
     </fieldSets>
+    <fieldSets>
+        <label><!-- User Story Bundle Metadata --></label>
+        <name>copado__User_Story_Bundle_Metadata</name>
+    </fieldSets>
     <fields>
         <help><!-- Action to be performed with the current metadata when committing --></help>
         <label><!-- Action --></label>

@@ -2,8 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Burndown Item --></value>
+        <value><!-- Sprint Snapshot --></value>
     </caseValues>
+    <fields>
+        <help><!-- Sprint Actual Velocity on a particular date on which Sprint Snapshot Batch is executed --></help>
+        <label><!-- Actual Velocity --></label>
+        <name>copado__Actual_Velocity__c</name>
+    </fields>
     <fields>
         <label><!-- Date --></label>
         <name>copado__Date__c</name>
@@ -13,9 +18,17 @@
         <name>copado__Expected_Story_Point__c</name>
     </fields>
     <fields>
+        <label><!-- Planned Velocity --></label>
+        <name>copado__Planned_Velocity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Snapshot Date --></label>
+        <name>copado__Snapshot_Date__c</name>
+    </fields>
+    <fields>
         <label><!-- Sprint --></label>
         <name>copado__Sprint__c</name>
-        <relationshipLabel><!-- Burndown Items --></relationshipLabel>
+        <relationshipLabel><!-- Sprint Snapshot --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Total Story Point --></label>

@@ -118,6 +118,10 @@
                 .kanbanDescription {
                     margin-top: 10px !important;
                 }
+
+                .slds-scope .slds-theme_error, .slds-scope .slds-theme--error {
+                    background-color: red !important;
+                }
             </style>
         </apex:outputPanel>
     </head>
@@ -193,8 +197,7 @@
                         </ul>
                     </div>
                     <div class="slds-scrollable_x" style="width:100%;background-color: white;border-radius: 15px;">
-                        <!--picklistValuesMap-- <br/> {!picklistValuesMap}  <br/> <br/> columnOrderMap-- <br/> {!columnOrderMap} <br/> <br/> numberOfItemMap-- <br/> {!numberOfItemMap}  <br/> <br/> allRecordsMap-- <br/> {!allRecordsMap} <br/> <br/> {!isReference} <br/> <br/>-->
-                        <!--Column Headers-->
+                       <!--Column Headers-->
                         <div class="slds-grid">
                             <div class="slds-tabs--path" role="application">
                                 <ul class="slds-tabs--path__nav" role="tablist">
@@ -304,8 +307,7 @@
                             <h2 id="viewsHeader" class="slds-text-heading_medium slds-hyphenate">{!$Label.Kanban_View_Editor}</h2>
                         </header>
 
-                        <apex:pageMessages id="viewComponentMessages" />
-
+                        <apex:pageMessages id="viewComponentMessages"/>
                         <apex:outputPanel layout="block" styleClass="slds-modal__content slds-p-around_medium" id="viewsContent">
                             <apex:outputPanel layout="none" rendered="{!showQueryEditor}">
                                 <c:QueryEditor dynamicSOQL="{!qEditor}" componentMode="{!queryEditorMode}" />

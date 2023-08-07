@@ -60,7 +60,7 @@
                 sourceOrgId: '{!JSENCODE(copado__Promotion__c.copado__Source_Org_Credential__c)}',
                 destinationOrgId: '{!JSENCODE(copado__Promotion__c.copado__Destination_Org_Credential__c)}',
 
-                createDeployment: function (deploymentName, isTestOnly, testLevel, attachdeploymentfile) {
+                createDeployment: function (deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow) {
                     if (copadoApp.sourceOrgId == '') {
                         alert(copadoLabels.SOURCE_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
@@ -71,13 +71,13 @@
                     }
                     if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__Creating_Validation_Deployment_Message}');
 
-                    copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile);
+                    copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile, deployNow);
                 },
                 sforceFailure: function (error) {
                     console.error('An error has occured with the Salesforce Ajax Toolkit: ', error);
                     alert(error);
                 },
-                callBackEnd: function (deploymentName, isTestOnly, testLevel, att, attachdeploymentfile) {
+                callBackEnd: function (deploymentName, isTestOnly, testLevel, att, attachdeploymentfile, deployNow) {
                     var isTestOnly = isTestOnly || false;
                     if (deploymentName == null) {
                         unlockScreen();
@@ -86,13 +86,13 @@
                     else {
                         console.log('Calling Copado for: ', copadoApp.promotionId);
                         deploymentName = deploymentName.substring(0, 80);
-                        var url = '{!JSENCODE(urlBase)}promote/' + copadoApp.promotionId + '{!JSENCODE(urlParameters)}&deploy=false&deploymentName=' + encodeURIComponent(deploymentName) + '&checkOnly=' + isTestOnly + '&testLevel=' + testLevel + '&attachDeploymentFile=' + attachdeploymentfile;
+                        var url = '{!JSENCODE(urlBase)}promote/' + copadoApp.promotionId + '{!JSENCODE(urlParameters)}&deploy='+deployNow+'&deploymentName=' + encodeURIComponent(deploymentName) + '&checkOnly=' + isTestOnly + '&testLevel=' + testLevel + '&attachDeploymentFile=' + attachdeploymentfile;
                         callBackendToCreateDeployment(url);
                     }
                 }
             }
 
-            var Copado_Licenses = {!CurrentUserLicenses};
+            const Copado_Licenses = {!(CurrentUserLicenses)};
 
             //Modal Open
             function openModal() {
@@ -696,13 +696,13 @@
                                                                 </div>
                                                             </div>
                                                             <div class="slds-form-element">
-                                                                <label class="slds-form-element__label" for="input-id-01">Test Level</label>
+                                                                <label class="slds-form-element__label" for="input-id-01">{!$Label.TestLevel}</label>
                                                                 <div class="slds-form-element__control">
                                                                     <select id="testLevel" data-selected="" class="slds-select">
-                                                                        <option value="NoTestRun" selected="selected">No Test Run</option>
-                                                                        <option value="RunSpecifiedTests">Run Specified Tests</option>
-                                                                        <option value="RunLocalTests">Run Local Tests</option>
-                                                                        <option value="RunAllTestsInOrg">Run All Tests In Org</option>
+                                                                        <option value="NoTestRun" selected="selected">{!$Label.NoTestRun}</option>
+                                                                        <option value="RunSpecifiedTests">{!$Label.RunSpecifiedTests}</option>
+                                                                        <option value="RunLocalTests">{!$Label.RunLocalTests}</option>
+                                                                        <option value="RunAllTestsInOrg">{!$Label.RunAllTestsInOrg}</option>
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -710,10 +710,13 @@
                                                     </apex:outputPanel>
                                                     <footer class="slds-modal__footer">
                                                         <button class="slds-button slds-button_neutral" onclick="closeModal(); return false;">
-                                                            Cancel
+                                                            {!$Label.Cancel}
                                                         </button>
-                                                        <button class="slds-button slds-button_brand" onclick="submitModal(); return false;">
-                                                            Submit
+                                                        <button class="slds-button slds-button_brand" onclick="submitModal(false); return false;">
+                                                            {!$Label.Submit}
+                                                        </button>
+                                                        <button class="slds-button slds-button_brand" onclick="submitModal(true); return false;">
+                                                            {!$Label.SubmitAndDeploy}
                                                         </button>
                                                     </footer>
                                                 </div>
@@ -730,7 +733,7 @@
                                                                     <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
                                                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Resource.SLDS,'/assets/icons/utility-sprite/svg/symbols.svg#close')}"></use>
                                                                     </svg>
-                                                                    <span class="slds-assistive-text">Close</span>
+                                                                    <span class="slds-assistive-text">{!$Label.CLOSE}</span>
                                                                 </button>
                                                                 <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$label.USDependency_USDependenciesTitle}</h2>
                                                             </header>
@@ -745,14 +748,16 @@
                                         </div>
 
                                         <script type="text/javascript">
-                                            function submitModal() {
-                                                var deploymentName = $copado('#deploymentName').val();
-                                                var isTestOnly = $copado('#validationOnly').is(':checked');
-                                                var testLevel = $copado('[id$="testLevel"]').val();
-                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
-                                                console.log(deploymentName, isTestOnly, testLevel);
-                                                closeModal();
-                                                copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile);
+                                            function submitModal(deployNow) {
+                                                if(!deployNow || (deployNow && confirm("{!$Label.PromoteAndDeployWarning}"))){
+                                                    var deploymentName = $copado('#deploymentName').val();
+                                                    var isTestOnly = $copado('#validationOnly').is(':checked');
+                                                    var testLevel = $copado('[id$="testLevel"]').val();
+                                                    var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
+                                                    console.log(deploymentName, isTestOnly, testLevel);
+                                                    closeModal();
+                                                    copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow);
+                                                }
                                             }
 
                                             function closeProgressModalFunction() {

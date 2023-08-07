@@ -145,8 +145,9 @@
     <compactLayouts>
         <fullName>copado__PackageCompactLayout</fullName>
         <fields>Name</fields>
-        <fields>copado__Pipeline__c</fields>
         <fields>copado__Package_Type__c</fields>
+        <fields>RecordTypeId</fields>
+        <fields>copado__Pipeline__c</fields>
         <fields>copado__Artifact_Version__c</fields>
         <fields>copado__DefaultBranch__c</fields>
         <fields>copado__DefaultPath__c</fields>
@@ -165,6 +166,48 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_Package_CustomFields</fullName>
+        <description>Display Custom Fields in Package Lightning Page in SFDX</description>
+        <label>SFDX Package Lightning Page</label>
+    </fieldSets>
+    <fields>
+        <fullName>cmcSf__Api_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The api version to be used for the packaging CLI commands. If this is not specified, the default value, i.e. the api version of the Dev Hub, will be used. Specify in the format, e.g. 54.0.
+Note that if Api Version has also been specified in the child Package Version, that value will be used.</inlineHelpText>
+        <label>Api Version</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__IsOrgDependent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Org Dependent</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__PackagePath__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this to specify the path for creating the package. This path should be available in sfdx-project.json of your repository.</inlineHelpText>
+        <label>Package Path</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>copado__Artifact_Repository__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
@@ -173,7 +216,6 @@
         <inlineHelpText>This is Repository where the Artifact can be stored, in the master branch</inlineHelpText>
         <label>Package Repository</label>
         <referenceTo>copado__Git_Repository__c</referenceTo>
-        <relationshipLabel>Packages</relationshipLabel>
         <relationshipName>Artifacts</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -216,7 +258,7 @@
     <fields>
         <fullName>copado__DefaultBranch__c</fullName>
         <deprecated>false</deprecated>
-        <description>Field to specify the default branch in the repository from where new packages, versions, builds, images... are created. This parameter is optional.</description>
+        <description>Field to specify the default branch in the repository from where new packages, versions, builds, images... are created.</description>
         <externalId>false</externalId>
         <inlineHelpText>Field to specify the default branch in the repository from where new packages, versions, builds, images... are created. This parameter is optional.</inlineHelpText>
         <label>Default Branch</label>
@@ -285,7 +327,6 @@
 The credential where the unmanaged package is created from.</inlineHelpText>
         <label>Source Credential</label>
         <referenceTo>copado__Org__c</referenceTo>
-        <relationshipLabel>Artifacts</relationshipLabel>
         <relationshipName>Artifacts</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -346,7 +387,6 @@ The credential where the unmanaged package is created from.</inlineHelpText>
         <externalId>false</externalId>
         <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
-        <relationshipLabel>Packages</relationshipLabel>
         <relationshipName>Packages</relationshipName>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -1281,6 +1321,21 @@ The credential where the unmanaged package is created from.</inlineHelpText>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
+        <fullName>cmcSf__Api_Version_Format</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Package_Artifact&apos; &amp;&amp; ISPICKVAL( copado__Pipeline__r.copado__Platform__c ,&apos;SFDX&apos;)  &amp;&amp; NOT(ISBLANK(cmcSf__Api_Version__c)) &amp;&amp; NOT(REGEX(cmcSf__Api_Version__c, &quot;^\\d*.0&quot;))</errorConditionFormula>
+        <errorDisplayField>cmcSf__Api_Version__c</errorDisplayField>
+        <errorMessage>The API version specified is not valid. It must be in the format, Number.0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cmcSf__No_Namespace_Validation</fullName>
+        <active>true</active>
+        <description>No Namespace cannot be set to true for a Managed package</description>
+        <errorConditionFormula>RecordType.DeveloperName = &apos;Package_Artifact&apos;   &amp;&amp;  ISPICKVAL( copado__Pipeline__r.copado__Platform__c ,&apos;SFDX&apos;)  &amp;&amp; ISPICKVAL(copado__Package_Type__c, &apos;Managed&apos;) &amp;&amp; copado__No_Namespace__c  = true</errorConditionFormula>
+        <errorDisplayField>copado__No_Namespace__c</errorDisplayField>
+        <errorMessage>No Namespace cannot be set to true for a Managed package</errorMessage>
+    </validationRules>
+    <validationRules>
         <fullName>copado__ArtifactNameCannotChange</fullName>
         <active>true</active>
         <errorConditionFormula>PRIORVALUE(Name) != Name</errorConditionFormula>
@@ -1308,7 +1363,7 @@ The credential where the unmanaged package is created from.</inlineHelpText>
     <validationRules>
         <fullName>copado__Name_should_not_contain_empty_space</fullName>
         <active>false</active>
-        <errorConditionFormula>CONTAINS(Name,&apos; &apos;)</errorConditionFormula>
+        <errorConditionFormula>CONTAINS(Name,&apos; &apos;) &amp;&amp; RecordType.DeveloperName != &apos;User_Story_Bundle&apos;</errorConditionFormula>
         <errorDisplayField>Name</errorDisplayField>
         <errorMessage>Package name cannot contain white spaces</errorMessage>
     </validationRules>

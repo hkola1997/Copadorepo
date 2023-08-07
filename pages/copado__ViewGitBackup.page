@@ -150,12 +150,12 @@
                     <apex:pageBlock id="pb_viewGitBackup" mode="detail" helpUrl="https://docs.copado.com/git-snapshot/git-snapshot-overview"
                         helpTitle="{!$Label.copado__HELP_FOR_THIS_PAGE}" rendered="{!AND(showOptions,!showError)}" title="{!$Label.copado__DETAILS}">
                         <apex:pageblockButtons id="pbbs" rendered="{!isBackupEnabled}">
-                            <apex:commandButton id="btnEdit" value="{!$Label.site.edit}" action="{!edit}" disabled="{!!isValid}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
+                            <apex:commandButton id="btnEdit" value="{!$Label.copado__EDIT}" action="{!goToGitSnapshotEditPage}" disabled="{!!isValid}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
                             />
                             <apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!deleteGitSnapshot}" rendered="{!$Setup.copado__Copado_License__c.copado__Enable_Copado__c}"
                             />
-                            <apex:commandButton id="btnRetrieveCommits" value="{!$Label.copado__RetrieveCommits}" action="{!getCommits}" disabled="{!!isValid}" rendered="{!isBackupEnabled}"
-                            />
+                            <apex:commandButton id="btnRetrieveCommits" value="{!$Label.copado__RetrieveCommits}" action="{!getCommits}" disabled="{!!isValid}"
+                                rendered="{!isBackupEnabled}" />
                             <input id="btnDoSnapshot" type="button" class="btn" value="{!$Label.BACKUP_NOW}" onclick="openDoSnapshotModal();" />
                             <apex:commandButton id="btnCommitNow" action="{!goToGitCommitPage}" value="{!$Label.copado__COMMIT_NOW}" onClick="lockScreen();"
                                 onComplete="unlockScreen();" reRender="pmessage,pageMessages" />

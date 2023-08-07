@@ -162,6 +162,19 @@
         <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
+    <fields>
+        <fullName>my_picklist_country__c</fullName>
+        <externalId>false</externalId>
+        <label>my picklist country</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>chanducountry_global_value_set</valueSetName>
+        </valueSet>
+    </fields>
     <label>chandudev1object</label>
     <listViews>
         <fullName>All</fullName>
@@ -174,7 +187,7 @@
         <type>Text</type>
     </nameField>
     <pluralLabel>chandudev1objects</pluralLabel>
-    <searchLayouts />
+    <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

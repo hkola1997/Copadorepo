@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- SFDX Package Lightning Page --></label>
+        <name>cmcSf__SFDX_Package_CustomFields</name>
+    </fieldSets>
+    <fields>
+        <help><!-- The api version to be used for the packaging CLI commands. If this is not specified, the default value, i.e. the api version of the Dev Hub, will be used. Specify in the format, e.g. 54.0.
+Note that if Api Version has also been specified in the child Package Version, that value will be used. --></help>
+        <label><!-- Api Version --></label>
+        <name>cmcSf__Api_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Org Dependent --></label>
+        <name>cmcSf__IsOrgDependent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this to specify the path for creating the package. This path should be available in sfdx-project.json of your repository. --></help>
+        <label><!-- Package Path --></label>
+        <name>cmcSf__PackagePath__c</name>
+    </fields>
     <fields>
         <help><!-- This is Repository where the Artifact can be stored, in the master branch --></help>
         <label><!-- Package Repository --></label>
@@ -44,7 +63,7 @@
 The credential where the unmanaged package is created from. --></help>
         <label><!-- Source Credential --></label>
         <name>copado__Org_Credential__c</name>
-        <relationshipLabel><!-- Artifacts --></relationshipLabel>
+        <relationshipLabel><!-- Packages (Source Credential) --></relationshipLabel>
     </fields>
     <fields>
         <help><!-- Related package identifier. Being used as a Package Id for package version creation and also in use into the sfdx-project.json file as a package alias. --></help>
@@ -284,6 +303,14 @@ The credential where the unmanaged package is created from. --></help>
         <label><!-- User Story Bundle --></label>
         <name>copado__User_Story_Bundle</name>
     </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The API version specified is not valid. It must be in the format, Number.0 --></errorMessage>
+        <name>cmcSf__Api_Version_Format</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- No Namespace cannot be set to true for a Managed package --></errorMessage>
+        <name>cmcSf__No_Namespace_Validation</name>
+    </validationRules>
     <validationRules>
         <errorMessage><!-- Package names are in use for DX folder structure, therefore, package names are not editable. --></errorMessage>
         <name>copado__ArtifactNameCannotChange</name>
