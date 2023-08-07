@@ -8,6 +8,7 @@
     <label>Sales Console</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
+    <tabs>Chandu_Lightening_Page_Test</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
@@ -23,6 +24,9 @@
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Chandu_Lightening_Page_Test</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>

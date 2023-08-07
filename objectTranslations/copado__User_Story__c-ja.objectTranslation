@@ -859,6 +859,30 @@
         <label><!-- So that... --></label>
         <name>copado__userStory_reason__c</name>
     </fields>
+    <fields>
+        <label><!-- Enable Logs --></label>
+        <name>copadoccmint__Enable_Logs__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>copadoccmint__External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- JIRA key --></label>
+        <name>copadoccmint__JIRA_key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Connect log --></label>
+        <name>copadoconnect__Connect_log__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>copadoconnect__External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Synced Date --></label>
+        <name>copadoconnect__Last_Synced_Date__c</name>
+    </fields>
     <nameFieldLabel><!-- User Story Reference --></nameFieldLabel>
     <recordTypes>
         <label><!-- Bug --></label>

@@ -25,6 +25,10 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
+        <name>Chandu_Lightening_Page_Test</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>People</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>

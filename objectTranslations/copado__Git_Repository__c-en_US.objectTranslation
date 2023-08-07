@@ -61,6 +61,10 @@
         <label><!-- Source Format --></label>
         <name>copado__Source_Format__c</name>
         <picklistValues>
+            <masterLabel>DX</masterLabel>
+            <translation><!-- DX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Metadata</masterLabel>
             <translation><!-- Metadata --></translation>
         </picklistValues>
