@@ -83,6 +83,21 @@
     <description>Projects, Releases and Sprints Admin</description>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Actual_Velocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Planned_Velocity__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Burndown_Item__c.copado__Snapshot_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Project__c.copado__Deployment_Flow__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -148,7 +163,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Sprint__c.copado__ActualVelocity__c</field>
+        <field>copado__Sprint__c.copado__Actual_Velocity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -178,7 +193,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>copado__Sprint__c.copado__PlannedVelocity__c</field>
+        <field>copado__Sprint__c.copado__Planned_Velocity__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

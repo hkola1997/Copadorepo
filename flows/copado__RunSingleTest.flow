@@ -3,5 +3,9 @@
     <apiVersion>51.0</apiVersion>
     <environments>Default</environments>
     <label>Run Single Test</label>
+    <processMetadataValues>
+        <name>AssociatedRecord</name>
+        <value/>
+    </processMetadataValues>
     <processType>Flow</processType>
 </Flow>

@@ -86,12 +86,12 @@
                     <h1>
                         <apex:outputText value="{!currentUserStory.Name}"></apex:outputText>
                     </h1>
-                    <p class="subtitle">Submit Changes for Promotion</p>
+                    <p class="subtitle">{!$Label.Submit_Changes_for_Promotion}</p>
 
                     <div class="slds-col slds-size_1-of-1" style="text-align:center;">
                         <p>
-                            Your changes will be deployed from <b> {!currentUserStory.Environment__r.Name} </b> to
-                            <b>{!nextEnvironment}</b> environment
+                            {!$Label.Submit_Changes_for_Promotion_Detail_1} <b> {!currentUserStory.Environment__r.Name} </b> {!$Label.TO}
+                            <b>{!nextEnvironment}</b> {!$Label.Submit_Changes_for_Promotion_Detail_2}
                         </p>
                         <br />
                         <br />
@@ -149,7 +149,7 @@
                                 <div style="margin: 10px 20px 0px 0px; float:left;">
                                     <div class="slds-media__figure">
                                         <apex:image value="{!URLFOR($Resource.copado__SetupDashboardIcons, 'PipelineSvgIcons/pipeline-infinity.png')}" />
-                                        Deployment
+                                        {!$Label.DEPLOYMENT}
                                     </div>
                                 </div>
                             </div>
@@ -159,7 +159,7 @@
 
                                         <li>
                                             {!connectionBehavior} <br />
-                                            To {!nextEnvironment}
+                                            {!$Label.TO} {!nextEnvironment}
                                         </li>
                                     </ul>
                                     <br />
@@ -169,7 +169,7 @@
                                 <div style="margin: 10px 20px 0px 0px; float:left;">
                                     <div class="slds-media__figure">
                                         <apex:image value="{!URLFOR($Resource.copado__SetupDashboardIcons, 'PipelineSvgIcons/pipeline-shield.png')}" />
-                                        Quality Gate
+                                        {!$Label.copado__Quality_Gate}
                                     </div>
                                 </div>
                             </div>
@@ -197,8 +197,8 @@
 
                             <div class="slds-col slds-size_4-of-6" style="text-align:center;">
                                 <div class="buttons slds-m-top--xx-large">
-                                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" value="Back to User Story" action="{!goBackToUserStory}" />
-                                    <apex:commandButton styleClass="slds-button slds-button_brand" value="Submit Changes" action="{!submitChanges}" />
+                                    <apex:commandButton styleClass="slds-button slds-button_outline-brand" value="{!$Label.copado__BackToUserStory}" action="{!goBackToUserStory}" />
+                                    <apex:commandButton styleClass="slds-button slds-button_brand" value="{!$Label.copado__Submit_Changes}" action="{!submitChanges}" />
                                 </div>
                             </div>
 

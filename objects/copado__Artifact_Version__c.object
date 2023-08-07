@@ -144,12 +144,9 @@
     <compactLayoutAssignment>copado__PackageVersionCompactLayout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__PackageVersionCompactLayout</fullName>
-        <fields>copado__Version_number__c</fields>
-        <fields>copado__Release_Status__c</fields>
-        <fields>copado__Is_released__c</fields>
+        <fields>Name</fields>
         <fields>copado__Status__c</fields>
-        <fields>copado__Release__c</fields>
-        <fields>CreatedById</fields>
+        <fields>copado__Version_number__c</fields>
         <label>Package Version Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
@@ -165,6 +162,223 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_Extension_Fields</fullName>
+        <description>Fields containing SFDX extension specific information.</description>
+        <displayedFields>
+            <field>copado__Package_Version_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Subscriber_Version_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Has_Installation_Key__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Is_released__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__LastJobExecutionId__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Post_Install_Script__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Uninstall_Script__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Release_Notes_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__User_Story__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Version__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Ancestor_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Ancestor_Version__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__View_In_Git__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Post_Install_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Skip_Validation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Code_Coverage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Data_JSON__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Production_Installation_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Sandbox_Installation_URL__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SFDX Extension Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_PackageVersion_CustomFields</fullName>
+        <description>Display Custom Fields in Package Version Lightning Page in SFDX</description>
+        <label>SFDX Package Version Lightning Page</label>
+    </fieldSets>
+    <fields>
+        <fullName>cmcSf__Ancestor_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Ancestor Id is used to specify an existing promoted (published) package version. It is specified as a package version id (04t) or as a package version alias. In Copado, this field reflects the value in your project configuration (sfdx-project.json) and cannot be edited from the UI. Be mindful of what version is used as ancestor as package ancestry impacts which package version upgrades are allowed.</inlineHelpText>
+        <label>Ancestor Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Ancestor_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Ancestor Version is used to specify an existing promoted (published) package version. It is typically specified in the format, e.g., 4.6.0 or using a keyword like HIGHEST. In Copado, this field reflects the value in your project configuration (sfdx-project.json) and cannot be edited from the UI. Be mindful of what version is used as ancestor as package ancestry impacts which package version upgrades are allowed.</inlineHelpText>
+        <label>Ancestor Version</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Api_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The api version to be used for the packaging CLI commands. If this is not specified, the Api Version value from the parent Package will be used. If neither has been specified, the default value, i.e. the api version of the Dev Hub, will be used. Specify in the format, e.g. 54.0.</inlineHelpText>
+        <label>Api Version</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Code_Coverage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Calculate and store the code coverage percentage by running the Apex tests included in this package version.</inlineHelpText>
+        <label>Code Coverage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Has_Installation_Key__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if this is a password protected package version</inlineHelpText>
+        <label>Has Installation Key</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Post_Install_Script__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the Apex class implementing InstallHandler which will be executed in the subscriber org after the managed package is installed or upgraded.</inlineHelpText>
+        <label>Post Install Script</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Post_Install_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Post Install URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Release_Notes_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Release Notes URL</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Skip_Validation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if validation was skipped during package version generation.</inlineHelpText>
+        <label>Skip Validation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Uninstall_Script__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the Apex class implementing UninstallHandler which will be executed in the subscriber org before the managed package is uninstalled.</inlineHelpText>
+        <label>Uninstall Script</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>copado__Artifact__c</fullName>
         <deprecated>false</deprecated>
@@ -383,9 +597,9 @@ Open, Locked and Cancelled are used for packages related to User Story bundles.<
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>User Story</label>
+        <label>Bundle User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
-        <relationshipLabel>Bundle Versions</relationshipLabel>
+        <relationshipLabel>Bundle Package</relationshipLabel>
         <relationshipName>Bundle_Versions</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -467,7 +681,7 @@ Open, Locked and Cancelled are used for packages related to User Story bundles.<
     </fields>
     <label>Package Version</label>
     <nameField>
-        <label>Package Version Name</label>
+        <label>Artifact Versions Name</label>
         <type>Text</type>
     </nameField>
     <pluralLabel>Package Versions</pluralLabel>
@@ -510,6 +724,38 @@ Open, Locked and Cancelled are used for packages related to User Story bundles.<
         <searchResultsAdditionalFields>copado__Release__c</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>cmcSf__Api_Version_Format</fullName>
+        <active>true</active>
+        <errorConditionFormula>copado__Artifact__r.RecordType.DeveloperName = &apos;Package_Artifact&apos;  &amp;&amp; ISPICKVAL(copado__Artifact__r.copado__Pipeline__r.copado__Platform__c, &apos;SFDX&apos;) &amp;&amp; NOT(ISBLANK(cmcSf__Api_Version__c)) &amp;&amp; NOT(REGEX(cmcSf__Api_Version__c, &quot;^\\d*.0&quot;))</errorConditionFormula>
+        <errorDisplayField>cmcSf__Api_Version__c</errorDisplayField>
+        <errorMessage>The API version specified is not valid. It must be in the format, Number.0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cmcSf__Package_Version_Number_Format</fullName>
+        <active>true</active>
+        <description>Version Number should be in the format Major. Minor. Patch. Build.</description>
+        <errorConditionFormula>copado__Artifact__r.RecordType.DeveloperName = &apos;Package_Artifact&apos;  &amp;&amp;  ISPICKVAL( copado__Artifact__r.copado__Pipeline__r.copado__Platform__c , &quot;SFDX&quot;)  &amp;&amp; NOT(ISBLANK(copado__Version_number__c)) &amp;&amp; NOT(REGEX(copado__Version_number__c, &quot;^\\d+\\.\\d+\\.\\d+\\.(\\d+|NEXT)$&quot;))</errorConditionFormula>
+        <errorDisplayField>copado__Version_number__c</errorDisplayField>
+        <errorMessage>The Package version number specified is not valid. It must be in the format,  {whole number}.{whole number}.{whole number}.{whole number} or {whole number}.{whole number}.{whole number}.NEXT</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>cmcSf__Tag_Restriction</fullName>
+        <active>true</active>
+        <description>Tag should be in valid format as per Git documentation</description>
+        <errorConditionFormula>AND( copado__Artifact__r.RecordType.DeveloperName = &apos;Package_Artifact&apos;,
+ISPICKVAL(copado__Artifact__r.copado__Pipeline__r.copado__Platform__c, &apos;SFDX&apos;) , OR(REGEX( copado__Tag__c ,&quot;(.*[\\?\\*\\~\\^\\:\\[\\s\\\\].*)&quot;), 
+REGEX(copado__Tag__c, &quot;^(/).*&quot;),
+REGEX(copado__Tag__c, &quot;.*[/.]$&quot;), 
+REGEX(copado__Tag__c, &quot;.*(.lock)$&quot;), 
+REGEX(copado__Tag__c, &quot;.*(\\@\\{).*&quot;),
+REGEX(copado__Tag__c, &quot;.*(\\/\\/).*&quot;),
+REGEX(copado__Tag__c, &quot;.*(\\/\\.).*&quot;),
+REGEX(copado__Tag__c, &quot;.*(\\.\\.).*&quot;)
+))</errorConditionFormula>
+        <errorDisplayField>copado__Tag__c</errorDisplayField>
+        <errorMessage>The Tag field is used to create a Git tag during package version creation. Ensure there are no spaces or character sequences that are not allowed for the Git tag. For more details, review the Git documentation https://git-scm.com/docs/git-check-ref-format</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
     <webLinks>
         <fullName>copado__Merge_Version</fullName>

@@ -155,6 +155,33 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>cmcSf__Apex_Test_Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Test levels in order from least to most restrictive</description>
+        <externalId>false</externalId>
+        <label>Apex Test Level</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>cmcSf__Apex_Test_Level</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copado__API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Use this field as an identifier for the Environment record when referencing it in an action.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Use this field as an identifier for the Environment record when referencing it in an action.</inlineHelpText>
+        <label>API Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Compliance_Rule_Group__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
@@ -421,6 +448,11 @@
                     <default>false</default>
                     <label>Other</label>
                 </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
@@ -530,9 +562,9 @@
         <columns>copado__Org_ID__c</columns>
         <columns>CREATED_DATE</columns>
         <columns>LAST_UPDATE</columns>
+        <columns>copado__Platform__c</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
-        <language>en_US</language>
     </listViews>
     <nameField>
         <label>Environment Name</label>
@@ -560,6 +592,12 @@
         <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>cmcSf__Prevent_RunSpecifiedTest_For_Environment</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISPICKVAL(cmcSf__Apex_Test_Level__c,&apos;Run Specified Tests&apos;)</errorConditionFormula>
+        <errorMessage>We do not recommend to set “Run Specified Test” on an environment level, unless you are 100% sure that ALL deployments contain Apex. If this is the case, you can deactivate this Validation Rule.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
     <webLinks>
         <fullName>copado__Find_Replace_Rule_Editor</fullName>

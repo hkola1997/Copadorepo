@@ -49,6 +49,11 @@
         <name>copado__Parameters__c</name>
     </fields>
     <fields>
+        <help><!-- This is the name of the lightning component that you want to render on the related result record. The name must be in the namespace:componentName format. --></help>
+        <label><!-- Result Viewer Component --></label>
+        <name>copado__Result_Viewer_Component__c</name>
+    </fields>
+    <fields>
         <help><!-- Provide the script with the commands you would like the function to execute. --></help>
         <label><!-- Script --></label>
         <name>copado__Script__c</name>

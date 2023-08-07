@@ -16,7 +16,7 @@
     </fields>
     <fields>
         <help><!-- Time taken in minutes to execute the function. --></help>
-        <label><!-- Custom Function Used Minutes --></label>
+        <label><!-- Function Used Minutes --></label>
         <name>copado__Custom_Function_Used_Minutes__c</name>
     </fields>
     <fields>
@@ -82,6 +82,11 @@
         <label><!-- Job Step --></label>
         <name>copado__JobStep__c</name>
         <relationshipLabel><!-- Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Record link shortcutting to Job Step&apos;s Job Execution --></help>
+        <label><!-- Job Execution --></label>
+        <name>copado__Job_Execution__c</name>
     </fields>
     <fields>
         <help><!-- For devs to map this process with any other process that happens outside Copado. --></help>
