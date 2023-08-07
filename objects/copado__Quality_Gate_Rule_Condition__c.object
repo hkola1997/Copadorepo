@@ -281,6 +281,11 @@
                     <default>false</default>
                     <label>Other</label>
                 </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

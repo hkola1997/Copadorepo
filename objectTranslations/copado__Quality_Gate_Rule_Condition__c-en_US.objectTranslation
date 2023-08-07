@@ -43,6 +43,10 @@
             <translation><!-- Other --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>Salesforce</masterLabel>
             <translation><!-- Salesforce --></translation>
         </picklistValues>

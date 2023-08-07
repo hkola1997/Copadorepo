@@ -548,6 +548,11 @@ This value will prefill the order by field on related Promotion record creation 
                     <default>false</default>
                     <label>Other</label>
                 </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
