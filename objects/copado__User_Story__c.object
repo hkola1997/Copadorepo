@@ -1766,6 +1766,16 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Apex_Test_Level__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copadoccmint__Enable_Logs__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
         <label>Commit Page</label>
     </fieldSets>
     <fieldSets>
@@ -7779,6 +7789,11 @@ IMAGE(&quot;/img/samples/color_yellow.gif&quot;, &quot;white&quot;, 15,
             <field>copado__Priority__c</field>
             <operation>notEqual</operation>
             <value>3</value>
+        </filters>
+        <filters>
+            <field>copado__Promote_Change__c</field>
+            <operation>equals</operation>
+            <value>0</value>
         </filters>
         <label>All</label>
     </listViews>

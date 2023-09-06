@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>chanduFLSTestObject__c</members>
-        <name>CustomObject</name>
-    </types>
-    <types>
-        <members>chanduFLSTestObject__c-en_US</members>
-        <name>CustomObjectTranslation</name>
-    </types>
-    <types>
-        <members>chanduFLSTestObject__c-chanduFLSTestObject Layout</members>
-        <name>Layout</name>
-    </types>
-    <types>
-        <members>chanduFLSTestObject__c.All</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>Admin</members>
-        <name>Profile</name>
-    </types>
-    <types>
-        <members>chanduFLSTestObject__c</members>
-        <name>SharingRules</name>
-    </types>
-    <types>
-        <members>chanduFLSTestObject__c</members>
-        <name>TopicsForObjects</name>
+        <members>Account.HandsonTest__c</members>
+        <name>CustomField</name>
     </types>
     <version>58.0</version>
 </Package>
