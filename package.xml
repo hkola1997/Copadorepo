@@ -4,5 +4,10 @@
         <members>Account.automatedbackpromotionchecking__c</members>
         <name>CustomField</name>
     </types>
+    <types>
+        <members>Admin</members>
+        <members>Standard</members>
+        <name>Profile</name>
+    </types>
     <version>58.0</version>
 </Package>
