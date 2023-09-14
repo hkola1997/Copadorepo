@@ -233,11 +233,6 @@
             <sortOrder>16</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>XClean</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>20</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Share</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>17</sortOrder>
@@ -251,6 +246,11 @@
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>19</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>XClean</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>20</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>CallHighlightAction</actionName>
