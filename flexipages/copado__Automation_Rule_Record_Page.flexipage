@@ -196,6 +196,10 @@
                     <value>Facet-9f4a41db-e84c-475c-81f4-4972f54e9f06</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFORMATION}</value>
                 </componentInstanceProperties>
@@ -208,6 +212,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-1289550c-c106-4d76-a6ac-0318908ec5be</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -233,6 +241,16 @@
                 <identifier>c_automationRuleEvaluationScope</identifier>
             </componentInstance>
         </itemInstances>
+        <name>Facet-429eedf4-028d-48cc-9840-c479af23b17d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:automationRuleFilterCriteria</componentName>
+                <identifier>c_automationRuleFilterCriteria</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -256,6 +274,24 @@
                 <componentInstanceProperties>
                     <name>active</name>
                     <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-429eedf4-028d-48cc-9840-c479af23b17d</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__Scope}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>

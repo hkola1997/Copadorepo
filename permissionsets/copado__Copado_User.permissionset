@@ -1173,6 +1173,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__EnhancedResultDetailCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__Environment</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2093,6 +2097,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PromotionMetadatasRemovalController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionOperations</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -2238,6 +2246,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ResultStatusDetail</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ResultViewerPublishMessageCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2877,6 +2889,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStorySubmitCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3160,6 +3176,10 @@
         <apexClass>copado__webhookLookupController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customMetadataTypeAccesses>
+        <enabled>true</enabled>
+        <name>copado__Copado_Cloud_Regional_Instances__mdt</name>
+    </customMetadataTypeAccesses>
     <customMetadataTypeAccesses>
         <enabled>true</enabled>
         <name>copado__Copado_Setting__mdt</name>
@@ -4155,6 +4175,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Custom_Connected_App_Info__c.copado__Callback_URL__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Data_Set__c.copado__Data_Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4306,6 +4331,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Deployment_Flow_Step__c.copado__Next_Stage__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Deployment_Flow_Step__c.copado__Platform__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5366,6 +5396,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Org__c.copado__Compliance_Status__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Org__c.copado__Custom_Connected_App_Info__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -8047,6 +8082,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Copado_Notification__c</object>
+        <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>copado__Custom_Connected_App_Info__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

@@ -2460,11 +2460,13 @@
                                                 </h2>
                                             </td>
                                         </apex:repeat>
-                                        <td style="background-color: #fafaf9">
-                                            <h2 id="deploymentHT" class="slds-text-title_caps slds-hyphenate" style="padding-left:20px">
-                                                {!$Label.Action}
-                                            </h2>
-                                        </td>
+                                        <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == null,currentPipeline.copado__Platform__c == 'Salesforce')}">
+                                            <td style="background-color: #fafaf9">
+                                                <h2 id="deploymentHT" class="slds-text-title_caps slds-hyphenate" style="padding-left:20px">
+                                                    {!$Label.Action}
+                                                </h2>
+                                            </td>
+                                        </apex:outputPanel>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -2488,12 +2490,14 @@
                                                     <apex:image url="{!deployment[dep]}" rendered="{!dep.Label == $ObjectType.copado__Deployment__c.fields.copado__Flag_Status__c.Label}" height="20" width="20"/>
                                                 </td>
                                             </apex:repeat>
-                                            <td style="padding-left:28px">
-                                                <apex:outputPanel layout="none" rendered="{!deployment.Promotion__r.copado__Status__c == 'Merge Conflict'}">
-                                                    <a href="javascript:void(0)" target="_blank" class="slds-button" onclick="openConflictPage('{!deployment.Promotion__c}');return false;" style="border: none;">{!$Label.MERGE_CONFLICT_REVIEW}
-                                                    </a>
-                                                </apex:outputPanel>
-                                            </td>
+                                            <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == null,currentPipeline.copado__Platform__c == 'Salesforce')}">
+                                                <td style="padding-left:28px">
+                                                    <apex:outputPanel layout="none" rendered="{!deployment.Promotion__r.copado__Status__c == 'Merge Conflict'}">
+                                                        <a href="javascript:void(0)" target="_blank" class="slds-button" onclick="openConflictPage('{!deployment.Promotion__c}');return false;" style="border: none;">{!$Label.MERGE_CONFLICT_REVIEW}
+                                                        </a>
+                                                    </apex:outputPanel>
+                                                </td>
+                                            </apex:outputPanel>
                                         </tr>
                                     </apex:repeat>
                                     </tbody>

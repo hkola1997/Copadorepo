@@ -2,8 +2,8 @@
 <ApexTrigger xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <packageVersions>
-        <majorNumber>20</majorNumber>
-        <minorNumber>35</minorNumber>
+        <majorNumber>21</majorNumber>
+        <minorNumber>6</minorNumber>
         <namespace>copado</namespace>
     </packageVersions>
     <status>Active</status>

@@ -1927,6 +1927,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ACSubmitUserStoriesToPromotionDeployment</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ACSubmitUserStoriesToPromotionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ADD_DependencyHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1936,6 +1944,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ADD_RecordMatchingFormulaOperations_Test</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__APIProxy</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__APIProxyTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -2312,6 +2328,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__AutomationRuleEvaluationScopeCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleFilterCriteriaCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__AutomationRuleFilterCriteriaCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -3143,6 +3167,18 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CustomConnectedAppTriggerHandler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomConnectedAppTriggerHelper</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CustomConnectedAppTriggerHelper_TEST</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CustomHighlightPanelController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3851,6 +3887,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__EnhancedResultDetailCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnhancedResultDetailCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__Environment</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -3924,6 +3968,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ExecuteFlow</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ExecuteFunction</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4052,6 +4100,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__FindDuplicates</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FindFilterCriteria</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -4815,6 +4867,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MatchAutomationRuleFilterCriteria</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__MergeVersionController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5295,6 +5351,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PreventForbiddenPipelineActions</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PreventForbiddenPipelineActionsTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ProductionOrgServiceController</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -5388,6 +5452,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PromotionEditExtension</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionMetadatasRemovalController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionMetadatasRemovalControllerTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -5760,6 +5832,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ResultViewerCtrlTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ResultViewerPublishMessageCtrl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ResultViewerPublishMessageCtrlTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -6471,6 +6551,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__SubmitUserStoryServiceImpl</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__SubmitUserStoryServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__SubscribeNotificationsImpl</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -6516,6 +6604,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__TakeGitSnapshotServiceImplTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__TakeGitSnapshotServiceInv</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__TakeGitSnapshotServiceInvTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -7411,6 +7507,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UpdateUserStoryStatusAction</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__UpdateUserStoryStatusActionTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UpsertTestsAcceptanceCriteria</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7623,6 +7727,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__UserStorySubmitValidator</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__UserStoryTaskTriggerHandler</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -7732,6 +7840,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ValidateUserStoryBundleTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ValidateUserStoryHasSomethingToPromote</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -9701,6 +9813,11 @@
         <editable>true</editable>
         <field>Account.Fax</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.HandsonTest__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -13684,6 +13801,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Automation_Event__c.copado__Payload__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Automation_Event__c.copado__Pipeline_Id__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -13750,6 +13872,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Automation_Rule__c.copado__Execution__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Automation_Rule__c.copado__Filter_Criteria__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14339,6 +14466,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Copado_Cloud_Regional_Instances__mdt.copado__Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Copado_Feature__c.copado__Application__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -14490,6 +14622,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Copado_Smart_Help__mdt.copado__Triggering_Value__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Custom_Connected_App_Info__c.copado__Callback_URL__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -14675,6 +14812,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Deployment_Flow_Step__c.copado__Next_Stage__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Deployment_Flow_Step__c.copado__Platform__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16255,6 +16397,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>copado__Org__c.copado__Compliance_Status__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__Org__c.copado__Custom_Connected_App_Info__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20584,6 +20731,15 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>copado__Copado_Notification__c</object>
+        <viewAllRecords>true</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>false</allowCreate>
+        <allowDelete>false</allowDelete>
+        <allowEdit>false</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>false</modifyAllRecords>
+        <object>copado__Custom_Connected_App_Info__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

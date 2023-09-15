@@ -15,15 +15,29 @@
         <apex:includeScript value="{!URLFOR($Resource.utilsV2) }" />
         <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
         <apex:includeScript value="{!URLFOR($Resource.copado__pullRequest)}" />
-
         <!-- DataTable -->
         <apex:includeScript value="{!URLFOR($Resource.copado__DataTables10,'DataTables10/datatables.min.js')}" />
+        <script>
+            dtBaseVar.customLabels = {
+                'LoadingDot': '{!JSENCODE($Label.LoadingDot)}',
+                'ProcessingDOT': '{!JSENCODE($Label.ProcessingDOT)}',
+                'SearchCOLUMN': '{!JSENCODE($Label.SearchCOLUMN)}',
+                'ShowingEntries': '{!JSENCODE($Label.Showing_Entries)}',
+                'ShowingEmptyEntries': '{!JSENCODE($Label.Showing_Empty_Entries)}',
+                'ShowingFilteredEntries': '{!JSENCODE($Label.Showing_Filtered_Entries)}',
+                'NoDataAvailable': '{!JSENCODE($Label.No_Data_Available)}',
+                'NoMatchingData': '{!JSENCODE($Label.No_Matching_Data)}',
+                'First': '{!JSENCODE($Label.First)}',
+                'Last': '{!JSENCODE($Label.Last)}',
+                'Next': '{!JSENCODE($Label.Next)}',
+                'Previous': '{!JSENCODE($Label.Previous)}'
+            };
+        </script>    
         <link rel="stylesheet" typea="text/css" href="{!URLFOR($Resource.DataTables10,'DataTables10/datatables.min.css')}" />
-
         <apex:outputPanel id="hiddenVars">
             <input id="hiddenRollbackFlag" type="hidden" value="{!enableRollbackEnv}" />
         </apex:outputPanel>
-        
+
         <style type="text/css">
             .circle-info-half {
                 z-index: -1;
@@ -90,9 +104,9 @@
                         callBackendToCreateDeployment(url);
                     }
                 }
-            }
+            };
 
-            const Copado_Licenses = {!(CurrentUserLicenses)};
+            const Copado_Licenses = {!CurrentUserLicenses};
 
             //Modal Open
             function openModal() {
@@ -161,8 +175,8 @@
             var showReviewConflictButton = function () {
                 var reviewConflictButton = $copado('<input id="customReviewConflictButton" type="button" class="btn" value="{!JSENCODE($Label.copado__MERGE_CONFLICT_REVIEW)}" onclick="openResolveConflictsPage();"/>');
                 if ({!IF(copado__Promotion__c.copado__Merge_Conflict__c, 1, 0)} || '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE($Label.copado__MERGE_CONFLICT)}' || {!isSmartConflict}) {
-                    reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
-                }
+                reviewConflictButton.appendTo($copado('[Id^="topButtonRow"]'));
+            }
             }
 
             var showRollbackButton = function () {
@@ -172,6 +186,7 @@
                     '{!JSENCODE(copado__Promotion__c.copado__Status__c)}' == '{!JSENCODE(COMPLETED)}') {
                     rollbackButton.appendTo($copado('[Id^="topButtonRow"]'));
                 }
+
             }
 
             document.onreadystatechange = function () {
@@ -563,7 +578,7 @@
                                 <li id="staticcodeanalysissummary" class="slds-tabs_default__item" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();resetDomForSCA();"
                                     style="cursor:pointer;" title="Static Code Analysis Summary" role="presentation">
                                     <a class="slds-tabs_default__link" href="javascript:void(0);" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4"
-                                        id="tab-default-4__item">{!$Label.STATIC_CODE_ANALYSIS_SUMMARY}</a>
+                                        id="tab-default-4__item">{!$Label.copado__STATIC_CODE_ANALYSIS_SUMMARY}</a>
                                 </li>
                                 <li id="seleniumtest" class="slds-tabs_default__item" onclick="setLockScreenMessage(copadoLabels.loading);lockScreen();stsProcess();"
                                     style="cursor:pointer;" title="Selenium Test Results Summart & Promotion Selenium Tests"
@@ -749,17 +764,17 @@
 
                                         <script type="text/javascript">
                                             function submitModal(deployNow) {
-                                                if(!deployNow || (deployNow && confirm("{!$Label.PromoteAndDeployWarning}"))){
-                                                    var deploymentName = $copado('#deploymentName').val();
-                                                    var isTestOnly = $copado('#validationOnly').is(':checked');
-                                                    var testLevel = $copado('[id$="testLevel"]').val();
-                                                    var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
-                                                    console.log(deploymentName, isTestOnly, testLevel);
-                                                    closeModal();
+                                                if(!deployNow || (deployNow && confirm("{!JSENCODE($Label.PromoteAndDeployWarning)}"))){
+                                                var deploymentName = $copado('#deploymentName').val();
+                                                var isTestOnly = $copado('#validationOnly').is(':checked');
+                                                var testLevel = $copado('[id$="testLevel"]').val();
+                                                var attachdeploymentfile = $copado('#attachdeploymentfile').is(':checked');
+                                                console.log(deploymentName, isTestOnly, testLevel);
+                                                closeModal();
                                                     copadoApp.createDeployment(deploymentName, isTestOnly, testLevel, attachdeploymentfile, deployNow);
-                                                }
                                             }
 
+                                            }
                                             function closeProgressModalFunction() {
                                                 closeProgressModal();
                                             }
@@ -848,7 +863,7 @@
                                                 <apex:param id="url" name="url" value="" />
                                             </apex:actionFunction>
                                             <apex:actionFunction name="closeProgressModal" action="{!closeProgressModal}" reRender="copadoNotificationStatus" />
-                                            <apex:actionPoller oncomplete="verifyPollStatus({!isPollInProgress},'{!conflictMessage}'); return false;" enabled="{!isPollInProgress}"
+                                            <apex:actionPoller oncomplete="verifyPollStatus({!isPollInProgress},'{!JSENCODE(conflictMessage)}'); return false;" enabled="{!isPollInProgress}"
                                                 action="{!checkCopadoNotificationStatus}" interval="5" reRender="copadoNotificationStatus,jobManager"
                                             />
                                             <apex:outputPanel rendered="{!AND(isPollInProgress,NOT(isSpinnerHiddenByUser))}">
@@ -1014,24 +1029,24 @@
                             </div>
                             <div id="tab-default-4" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-4__item">
                                 <apex:outputPanel id="scaSummary" styleClass="slds-scope copado-lightning-container" layout="block">
-                                    <apex:pageBlock id="scas" title="Static Code Analysis Summary" rendered="{!scaAccess}">
+                                    <apex:pageBlock id="scas" title="{!$Label.copado__STATIC_CODE_ANALYSIS_SUMMARY}" rendered="{!scaAccess}">
                                         <div class="slds-grid slds-wrap slds-grid_pull-padded" style="min-height: 202px;">
                                             <div class="slds-p-horizontal_small slds-size_1-of-4 slds-medium-size_1-of-6 slds-large-size_2-of-12">
                                             </div>
                                             <div class="slds-p-horizontal_small slds-size_1-of-4 slds-medium-size_2-of-6 slds-large-size_4-of-12">
                                                 <br />
                                                 <b>
-                                                    <apex:outputLabel value="Average Score" />
+                                                    <apex:outputLabel value="{!$Label.copado__Average_Score}" />
                                                 </b>&nbsp;&nbsp;
                                                 <apex:outputText value="{!averageSCAscore}" />
                                                 <br />
                                                 <b>
-                                                    <apex:outputLabel value="Worst Score" />
+                                                    <apex:outputLabel value="{!$Label.copado__Worst_Score}" />
                                                 </b>&nbsp;&nbsp;
                                                 <apex:outputText value="{!worstSCAscore}" />
                                                 <br />
                                                 <b>
-                                                    <apex:outputLabel value="Worst Scored User Story" />
+                                                    <apex:outputLabel value="{!$Label.copado__Worst_Scored_User_Story}" />
                                                 </b>&nbsp;&nbsp;
                                                 <a href="/{!mockStoryWrapper.copado__User_Story__c}">
                                                     <img src="/img/icon/custom51_100/books24.png" />
@@ -1041,7 +1056,7 @@
                                             <script type="text/javascript">
                                                 $copado(document).ready(function () {
                                                     $copado("#test-circleSCA").circliful({
-                                                        text: 'Static Code Analysis Score',
+                                                        text: '{!JSENCODE($Label.Static_Code_Analysis_Score)}',
                                                         animationStep: 5,
                                                         foregroundBorderWidth: 5,
                                                         backgroundBorderWidth: 15,

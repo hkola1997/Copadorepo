@@ -1,6 +1,7 @@
 <apex:page standardController="copado__Deployment__c" extensions="copado.DeploymentExt,copado.Settings,copado.JsRemotingController" id="thePage" lightningStylesheets="true"
     showHeader="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}" standardStylesheets="true" sidebar="{!AND($User.UIThemeDisplayed=='Theme3',!showStepsOnly)}"
     applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0">
+
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
     <apex:outputPanel layout="block"></apex:outputPanel>
     <apex:outputPanel layout="block">
@@ -135,6 +136,8 @@
             <apex:includeScript value="{!URLFOR($Resource.copadoStreamingService) }" />
             <apex:includeScript value="{!URLFOR($Resource.deployment) }" />
             <apex:includeScript value="{!URLFOR($Resource.deploymentStreamingService) }" />
+            <apex:includeScript value="/support/console/42.0/integration.js"/>
+            <apex:includeScript value="/support/api/41.0/interaction.js"/> 
         </head>
 
         <div id="screenLocker">
@@ -207,6 +210,13 @@
                 deploymentStreamingService.ns = copadoApp.ns;
 
                 $copado(document).ready(function () {
+                    if (sforce.console.isInConsole()) {
+                        console.log('we are in console!');
+                        $copado('[id$=btnDeploy]').hide();
+                        $copado('[id$=btnDeployOutstanding]').hide();
+                        $copado('[id$=btnLegacyDeploy]').hide();
+                        $copado('[id$=btnDeployConsole]').show();
+                    } 
                     copadoApp.mirrorBlockHeight();
                 });
 
@@ -485,6 +495,7 @@
                                         <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();resetStatusForDeployment('Deploy now');return false;" id="btnDeploy" />
                                         <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();resetStatusDeploymentOutstanding('Deploy now'); return false;" id="btnDeployOutstanding"/>
                                         <apex:commandButton value="{!$Label.copado__DEPLOY_LATER}" onclick="showSchedule();return false;" id="btnLegacyDeploy" />
+                                        <apex:commandButton value="{!$Label.copado__DEPLOY}" onclick="copadoApp.lock();copadoApp.deploy();return false;" style="display: none;" id="btnDeployConsole" />
                                         <apex:commandButton value="{!$Label.copado__CANCEL_DEPLOYMENT}" onclick="copadoApp.cancelDeploy();return false;" id="btnCancelDeploy"
                                         />
                                         <input id="btnViewStatus" type="button" class="btn" style="display:none" value="{!$Label.VIEW_DEPLOYMENT_STATUS}" onclick="openIframeBox()"

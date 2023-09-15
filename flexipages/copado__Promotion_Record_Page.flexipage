@@ -317,6 +317,10 @@
                     <value>Facet-a312b45b-1390-4f97-a75c-1c94ad89b8ca</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -329,6 +333,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-44ce0c1f-d92f-40b0-be1b-cf8a63ba1afe</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -616,8 +624,8 @@
                     <name>noJobTitle</name>
                     <value>{!$Label.copado__Promotion_Job_Execution_Not_Started_Title}</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>c_resultMonitor</identifier>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
@@ -646,8 +654,11 @@
                     <name>noJobTitle</name>
                     <value>{!$Label.copado__Deployment_Job_Execution_Not_Started_Title}</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>c_resultMonitor2</identifier>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer2</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>

@@ -221,6 +221,7 @@
     </fields>
     <fields>
         <fullName>copado__Version__c</fullName>
+        <defaultValue>1</defaultValue>
         <deprecated>false</deprecated>
         <description>The version of the Job Template.</description>
         <externalId>false</externalId>
