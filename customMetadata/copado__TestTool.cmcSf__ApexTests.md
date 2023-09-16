@@ -20,6 +20,6 @@
     </values>
     <values>
         <field>copado__UserStoryBundleTestsUnifierLogic__c</field>
-        <value xsi:nil="true"/>
+        <value xsi:type="xsd:string">cmcSf.ApexTestsUnifier</value>
     </values>
 </CustomMetadata>
