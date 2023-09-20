@@ -317,6 +317,10 @@ var operationTypeAttachmentName;
             app.selectDx = false;
             app.grid.resetGrid(app.conf);
             app.grid.selectedMetadata = selectedMdt;
+            if (app.grid.isTypeFilterable && app.returnParameter('MetadataPreselectionId')) {
+                setWithoutRebinding(app.userStoryMD, selectedMdt);
+                app.grid.reloadSelectionsJSON(app.userStoryMD, 1);
+            }
             app.grid.render();
             app.grid.loadMetaData();
             app.grid._reapplyFilters(0);

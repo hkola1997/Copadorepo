@@ -787,7 +787,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                 that.render();
         };
         // Initialize the select all/unselect all buttons
-        var $unselectAll = $copado('<button id="unselectAll">Unselect All</button>').on('click', function(e) {
+        var $unselectAll = $copado('<button id="unselectAll">'+copadoLabels.unselect_all+'</button>').on('click', function(e) {
                 e.preventDefault();
                 selectAll(false);
             // setting tab to "All Metadata" when there is no selection.
@@ -796,7 +796,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             }
             });
 
-        var $selectAll = $copado('<button id="selectAll">Select All</button>').on('click', function(e) {
+        var $selectAll = $copado('<button id="selectAll">'+copadoLabels.select_all+'</button>').on('click', function(e) {
             e.preventDefault();
             selectAll(true);
         });
@@ -967,6 +967,10 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
                 );
             else allMetaData = [];
             var existingFlag = false;
+            // convert meatdata names from UTF-8 to ISO-8859-1 encoding
+            for(var i=0; i<allMetaData.length; i++){
+                allMetaData[i].n = decodeURIComponent(escape((allMetaData[i].n).replace(/%2F/gi, "/").replace(/%24/gi, "$")));
+            }
             for(var j=0; j<that.selectedMetadata.length; j++){
                 for(var i=0; i<allMetaData.length; i++){
                     if(allMetaData[i].n == that.selectedMetadata[j].n && allMetaData[i].t == that.selectedMetadata[j].t) existingFlag = true;

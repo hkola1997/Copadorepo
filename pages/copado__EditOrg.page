@@ -100,11 +100,12 @@
                             <apex:actionRegion id="ar_custom_domain">
                                 <apex:pageBlockSection id="pbs1" columns="1" showHeader="true" title="{!$Label.copado__BASIC_INFORMATION}">
                                     <apex:inputField id="if_name" value="{!org.Name}" required="true" />
+                                    <apex:inputField id="if_customConnectedApp" value="{!org.copado__Custom_Connected_App_Info__c}" rendered="{!hasCustomConnectedApps}" required="false" />
                                     <apex:selectList id="if_orgType" value="{!org.copado__Org_Type__c}" size="1" onchange="showHideCustomDomain()">
                                         <apex:selectOptions value="{!orgTypes}" />
                                     </apex:selectList>
 
-                                    <apex:inputField id="if_custom" value="{!org.copado__Custom_Domain__c}" />
+                                    <apex:inputField id="if_custom" value="{!org.copado__Custom_Domain__c}"/>
 
                                     <apex:inputField id="if_disableValidation" value="{!org.copado__Disable_Validation__c}" />
                                     <apex:inputField id="if_frequency" value="{!org.copado__Test_Frequency__c}" />

@@ -442,6 +442,14 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>Scheduled_bp_testing__c</fullName>
+        <externalId>false</externalId>
+        <label>Scheduled bp testing</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>ShippingAddress</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>

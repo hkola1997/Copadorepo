@@ -78,8 +78,36 @@ dw.u = {
     conf: {
         retryLimit: 300,
         retryUISelector: '#retry-label',
+        //below fields are all either not needed system fields or already in place our fields
+        //the values of the following variables must match the one returns from backend as a respond(SF system fields and our fields), and changes will change the grid columns
         fields2prevent: '==SetupOwnerId==, ==s==, ==Name==, ==type==, ==LastModifiedDate==, ==SystemModstamp==, ==IsDeleted==, ==CreatedById==, ==CreatedDate==, ==Id==, ==LastModifiedById=='
     }
+};
+
+//method sets grid column datatype attribute for customSetting component and deploymentJS.
+dw.u.prepareGridColumn = function(objColumns, res) {
+    let fieldsPrevented = dw.u.conf.fields2prevent.split(',').map(s => s.trim().slice(2).slice(0,-2));
+    let fieldsNeeded = objColumns.filter(val => !fieldsPrevented.includes(val));
+    //2D array of rows and columns for each custom setting record with their respective field's value per record
+    let arr = res.map(s => fieldsNeeded.map(x => s[x]));
+    //fixed length array with immutable size with mutable values.
+    let fieldDataType = new Array(fieldsNeeded.length);
+    if(Object.seal) {
+        fieldDataType.fill(undefined);
+        Object.seal(fieldDataType);
+    }
+    fieldDataType = fieldsNeeded;
+    arr.map( function( row ) {
+        return row.map( function( cell ) { 
+            if(cell === '') {
+                fieldDataType[row.indexOf(cell)] = fieldDataType[row.indexOf(cell)].split('-')[0]+'-false-final';
+            }
+            if(fieldDataType[row.indexOf(cell)].indexOf('final') == -1){
+                fieldDataType[row.indexOf(cell)] = ((cell === 'true') || (cell === 'false')) ? fieldDataType[row.indexOf(cell)].split('-')[0]+'-true' : fieldDataType[row.indexOf(cell)].split('-')[0]+'-false';
+            }
+        });
+    });
+    return fieldDataType;
 };
 
 dw.u.retry = function(url, cb, postData, avoidRetry, onError) {
@@ -765,6 +793,7 @@ var coGridHelper = {
             len = data.length;
 
         coGridHelper._selectedNames = [];
+        coGridHelper._retrieveOnlyNames = [];
 
         while (len--) {
             var o = {
@@ -780,6 +809,12 @@ var coGridHelper = {
                 f: data[len].f
             };
 
+            if (typeof data[len].ns != 'undefined') {
+                o.ns = data[len].ns;
+            } else {
+                o.t = data[len].t;
+            }
+
             if (typeof data[len].r !== 'undefined') {
                 o.r = data[len].r;
             } else {
@@ -787,18 +822,16 @@ var coGridHelper = {
                 //should never be undefined in the attachment that we create for backend to use
                 o.r = false;
             }
-
-            if (typeof data[len].ns != 'undefined') {
-                o.ns = data[len].ns;
-            } else {
-                o.t = data[len].t;
+           if(o.r == true) {
+               data[len].s && coGridHelper._retrieveOnlyNames.push(o);
             }
-
-            data[len].s && coGridHelper._selectedNames.push(o);
+                data[len].s && coGridHelper._selectedNames.push(o);
         }
         return coGridHelper._selectedNames;
     },
 
+    // retrieve only names
+    _retrieveOnlyNames: [],
     //selected "Names"
     _selectedNames: [],
 
@@ -844,6 +877,7 @@ var coGridHelper = {
         //validations
         //check global selected items
         me.getSelectedObj();
+        
         if (!allowEmpty && !me._selectedNames.length) {
             //check if copadoApp showmessage is active
             if (copadoApp.showMessage) {
@@ -855,10 +889,28 @@ var coGridHelper = {
         }
         var valid = !additionalValidation ? true : additionalValidation(me._selectedNames);
         valid && me.remoteSaveMeta(id, sel || me._selectedNames, type, callback, isRollback, attachmentSize);
-
         return false;
     },
 
+     /**
+     * Save in attachment the selected items of the grid
+     * @param  {[type]} id                   parentId
+     * @param  {[type]} type                 Attachment Name
+     * @param  {[type]} additionalValidation function for additional validations
+     * @param  {[type]} allowEmpty           skip length validation
+     * @param  {[type]} callcack
+     * @return {[type]}                      false
+     */
+      saveRetrieveOnly: function( id, type, additionalValidation, callback, ret, isRollback, attachmentSize) {
+        console.debug('... Saving RetrieveOnly Attachment');
+        var me = coGridHelper;
+        //validations
+        //check global selected items
+        //me.getSelectedObj();
+        var valid = !additionalValidation ? true : additionalValidation(me._retrieveOnlyNames);
+        valid && me.remoteSaveMeta(id, ret || me._retrieveOnlyNames, type, callback, isRollback, attachmentSize);
+        return false;
+    },
     /**
      * save an attachment
      * @param  {[type]} id       parentId
