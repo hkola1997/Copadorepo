@@ -25,6 +25,10 @@
         <name>copado__Log__c</name>
     </fields>
     <fields>
+        <label><!-- Payload --></label>
+        <name>copado__Payload__c</name>
+    </fields>
+    <fields>
         <label><!-- Pipeline Id --></label>
         <name>copado__Pipeline_Id__c</name>
     </fields>

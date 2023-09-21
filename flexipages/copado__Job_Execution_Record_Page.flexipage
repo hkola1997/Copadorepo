@@ -114,6 +114,16 @@
                 <identifier>RecordSource_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__DataJson__c</fieldItem>
+                <identifier>RecordDataJson_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a1f9e7a-4f69-49d5-bedb-af1a7ea835e2</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -287,6 +297,10 @@
                     <value>Facet-b5b90b60-c39c-4271-8159-f220e520aa4f</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFORMATION}</value>
                 </componentInstanceProperties>
@@ -301,6 +315,10 @@
                     <value>Facet-df926c7b-9d3b-4521-b941-23010d4b6643</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__ExecutionResult}</value>
                 </componentInstanceProperties>
@@ -313,6 +331,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-155b322f-0347-43c0-ae97-e34635b5a8dd</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -396,8 +418,17 @@
                     <name>fieldApiName</name>
                     <value>Id</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>resultMonitor</identifier>
+                <componentInstanceProperties>
+                    <name>noJobMessage</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobTitle</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

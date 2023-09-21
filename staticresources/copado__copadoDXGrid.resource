@@ -764,12 +764,12 @@ copadoDXGrid.prototype.render = function(cbAfterRender) {
                 that.render();
         };
         // Initialize the select all/unselect all buttons
-        var $unselectAll = $copado('<button>Unselect All</button>').on('click', function(e) {
+        var $unselectAll = $copado('<button>'+copadoLabels.unselect_all+'</button>').on('click', function(e) {
                 e.preventDefault();
                 selectAll(false);
             });
 
-        var $selectAll = $copado('<button>Select All</button>').on('click', function(e) {
+        var $selectAll = $copado('<button>'+copadoLabels.select_all+'</button>').on('click', function(e) {
             e.preventDefault();
             selectAll(true);
         });

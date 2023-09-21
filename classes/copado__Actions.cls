@@ -295,16 +295,22 @@ global class StatusResult implements copado.CopadoServiceResult {
     }
 }
 global class TakeGitSnapshotRequest implements copado.CopadoServiceRequest {
+    @InvocableVariable(label='Callback' description='Apex Callback Class that implements JobExecutionCallback' required=false)
     global String actionCallback;
+    @InvocableVariable(label='Snapshot Commit Message' description='Commit message' required=false)
     global String message;
+    @InvocableVariable(label='Additional Information' description='Additional snapshot information in JSON format (255 characters)' required=false)
     global String otherInformation;
+    @InvocableVariable(label='Snapshot Id' description='Id or External Id of the Git Snapshot Record' required=true)
     global String snapshotId;
     global TakeGitSnapshotRequest() {
 
     }
 }
 global class TakeGitSnapshotResult implements copado.CopadoServiceResult {
+    @InvocableVariable(label='job Execution Record' description='' required=false)
     global copado__JobExecution__c jobExecution;
+    @InvocableVariable(label='Snapshot Commit Record' description='' required=false)
     global copado__Git_Org_Commit__c snapshotCommit;
     global TakeGitSnapshotResult() {
 
