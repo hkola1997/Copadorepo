@@ -6123,6 +6123,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.few_FLS_test_choosing_few_profiles__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.school__c</field>
         <readable>true</readable>
     </fieldPermissions>
