@@ -141,7 +141,18 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Release_Compact_Layout</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>copado__Release_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>copado__Project__c</fields>
+        <fields>copado__Type__c</fields>
+        <fields>copado__Version__c</fields>
+        <fields>copado__Status__c</fields>
+        <fields>copado__Planned_Date__c</fields>
+        <fields>copado__Completion_Date__c</fields>
+        <label>Release Compact Layout</label>
+    </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
@@ -275,7 +286,7 @@
         <inlineHelpText>Informative field to define a parent release</inlineHelpText>
         <label>Parent Release</label>
         <referenceTo>copado__Release__c</referenceTo>
-        <relationshipLabel>Releases</relationshipLabel>
+        <relationshipLabel>Child Releases</relationshipLabel>
         <relationshipName>Releases</relationshipName>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -516,5 +527,23 @@
         <openType>sidebar</openType>
         <page>copado__ReleaseBranchSelection</page>
         <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>copado__Switch_to_previous_UI</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Switch to previous UI</masterLabel>
+        <openType>newWindow</openType>
+        <page>copado__ViewRelease</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
     </webLinks>
 </CustomObject>

@@ -92,6 +92,16 @@
                 </visibilityRule>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>communicationId</name>
+                    <value>extensionConfigurationAlert</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>c_copadoAlertPlaceHolder</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -201,6 +211,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-3101d2a6-69ef-47cd-8bc9-8e6f53a6848a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

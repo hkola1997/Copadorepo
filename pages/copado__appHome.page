@@ -4,6 +4,7 @@
 
     <head>
         <c:GAnalytics />
+        <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addCometdjs="true" addJSON2js="true" addJcometdjs="true" addUIcss="true" addATRcss="true" addWizardcss="true"/>
         <apex:stylesheet id="lexss" value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
             <style>
@@ -23,6 +24,9 @@
                 .rich-tabhdr-cell-disabled,
                 .rich-tabhdr-cell-inactive {
                     padding-top: 0px !important;
+                }
+                .input-text-content {
+                    width: 100%;
                 }
             </style>
         </apex:outputPanel>
@@ -44,6 +48,9 @@
 
     <body>
         <apex:form id="theForm">
+            <apex:actionFunction name="performRemoteSiteSettingsCallout" action="{!setRemoteSite}" oncomplete="createNamedCredentials();"/>
+            <apex:actionFunction name="performNamedCredentialsCallout" action="{!setNamedCredential}" oncomplete="callRegisterCopadoBackend();"/>
+            <apex:actionFunction name="performCallOut" action="{!registerBackend}"/>
             <div class="copado-lightning-VF">
                 <apex:sectionHeader id="theHeader" title="Copado" subtitle="{!$Label.copado__ACCOUNT_SUMMARY}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
                     <div class="slds-grid" style="text-align: center;">
@@ -65,7 +72,16 @@
                                                             </span>
                                                         </div>
                                                         <div class="slds-media__body">
-                                                            <p>{!defaultServerUrl}</p>
+                                                            <apex:outputPanel id="cloudInstanceDiv">
+                                                                <!--<p>{!defaultServerUrl}</p>-->
+                                                                <apex:inputText value="{!customInstanceUrl}" id="customInstaceUrl" rendered="{!isCustomUrlSelected}" styleClass="input-text-content"/>
+                                                                  <!-- dropdown -->
+                                                                <apex:selectList size="1" value="{!defaultServerUrl}" rendered="{!!isCustomUrlSelected}">
+                                                                    <apex:actionSupport event="onchange" action="{!setCloudInstanceURL}" rerender="cloudInstanceDiv"/>
+                                                                        <apex:selectOptions value="{!cloudInstances}"/>
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                    <!--dropdown ends-->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -104,7 +120,7 @@
                                     <apex:outputPanel id="registerApplication" layout="block">
                                         <apex:outputPanel layout="block" rendered="{!NOT(isApplicationRegistered)}">
                                             <apex:commandButton styleClass="slds-button_brand" onclick="return showModal();" value="Register Application" />
-                                            <c:GenericBaseModal title="Register Copado Application" actionButtonText="Register" onActionRerender="messagesContainer, registerApplication, registerApiKeyButtonContainer, serverURLContainer"
+                                            <c:GenericBaseModal title="Register Copado Application" actionButtonText="Register" onActionRerender="messagesContainer,  serverURLContainer"
                                                 actionToInvokeParamName="{!registerCopado}">
                                                 <div class="slds-m-around_medium">
                                                     <p>{!$Label.Registration_Server_Acknowledge}</p>
@@ -117,7 +133,31 @@
                                                                 </span>
                                                             </div>
                                                             <div class="slds-media__body">
-                                                                <p>{!defaultServerUrl}</p>
+                                                                <apex:outputPanel id="cloudInstanceDiv">
+                                                                <!--<p>{!defaultServerUrl}</p>-->
+                                                                <apex:inputText value="{!customInstanceUrl}" id="customInstaceUrl" rendered="{!isCustomUrlSelected}" styleClass="input-text-content"/>
+                                                                  <!-- dropdown -->
+                                                                <apex:selectList size="1" value="{!defaultServerUrl}" rendered="{!!isCustomUrlSelected}">
+                                                                    <apex:actionSupport event="onchange" action="{!setCloudInstanceURL}" rerender="cloudInstanceDiv"/>
+                                                                        <apex:selectOptions value="{!cloudInstances}"/>
+                                                                </apex:selectList>
+                                                            </apex:outputPanel>
+                                                    <!--dropdown ends-->
+                                                    <apex:outputPanel id="script-block">
+                                                        <script>
+                                            function validateInput() {
+                                                if(!{!hasError}) {
+                                                    performRemoteSiteSettingsCallout();
+                                                }
+                                            }                
+                                            function createNamedCredentials() {
+                                                performNamedCredentialsCallout();       
+                                            }
+                                            function callRegisterCopadoBackend() {
+                                                performCallOut();   
+                                            }
+                                                        </script>
+                                                    </apex:outputPanel>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -160,7 +200,7 @@
                                     <apex:outputPanel rendered="{!isApplicationRegistered}">
                                         <li>
                                             <p class="slds-text-title slds-truncate slds-m-bottom_xx-small" title="{!$Label.copado__Server_URL}">{!$Label.copado__Server_URL}</p>
-                                            <p class="slds-text-body_regular slds-truncate" title="{!defaultServerUrl}">{!defaultServerUrl}</p>
+                                            <p class="slds-text-body_regular slds-truncate" title="{!defaultServerUrl}">{!defaultServerUrlName}</p>
                                         </li>
                                     </apex:outputPanel>
                                 </apex:outputPanel>

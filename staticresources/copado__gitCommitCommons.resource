@@ -71,15 +71,15 @@ var operationTypeAttachmentName;
             var gitMetadataAttachment = dw.u.getAttach(app.conf.data.userStoryId, 'Git MetaData');
             var gitMetadataItems = Base64.decode(gitMetadataAttachment[0].Body);
             allMetadataItems.push(...JSON.parse(gitMetadataItems));
-            
+
             var retrieveOnlyMetaDataAttachment = dw.u.getAttach(app.conf.data.userStoryId, 'RetrieveOnly MetaData');
             var retrieveOnlyMetaDataItems = Base64.decode(retrieveOnlyMetaDataAttachment[0].Body);
             allMetadataItems.push(...JSON.parse(retrieveOnlyMetaDataItems));
-            
+
             var commitedMetadataItems = getCommitedMetadata(app.conf.data.userStoryId);
             allMetadataItems.push(...commitedMetadataItems);
             var reCommitItems = processRetrieveOnly(allMetadataItems);
-            
+
             setWithoutRebinding(app.userStoryMD, reCommitItems);
         }
         app.grid.reloadSelectionsJSON(app.userStoryMD, 1);
@@ -282,7 +282,7 @@ var operationTypeAttachmentName;
                     const allMdt = JSON.parse(mdtAtt.Body);
                     for (const member of sourceMembers) {
                         const isEqual = (mdt) => mdt.t === member.MemberType && (mdt.n === member.MemberName.replace(/%20/g," "));
-                        const index = allMdt.findIndex(isEqual);                       
+                        const index = allMdt.findIndex(isEqual);
                         const mdtWrapper = {
                             t: member.MemberType,
                             n: member.MemberName.replace(/%20/g," "),
@@ -318,6 +318,10 @@ var operationTypeAttachmentName;
             app.selectDx = false;
             app.grid.resetGrid(app.conf);
             app.grid.selectedMetadata = selectedMdt;
+            if (app.grid.isTypeFilterable && app.returnParameter('MetadataPreselectionId')) {
+                setWithoutRebinding(app.userStoryMD, selectedMdt);
+                app.grid.reloadSelectionsJSON(app.userStoryMD, 1);
+            }
             app.grid.render();
             app.grid.loadMetaData();
             app.grid._reapplyFilters(0);
@@ -434,8 +438,8 @@ var operationTypeAttachmentName;
         var selectedDate;
         if (usId) {
             (latestCommitQuery = `SELECT Id,${namespace}Snapshot_Commit__r.${namespace}Commit_Date__c FROM ${namespace}User_Story_Commit__c WHERE  ${namespace}User_Story__c ='${usId}' AND ${namespace}Snapshot_Commit__r.${namespace}Status__c = 'Complete' ORDER BY ${namespace}Snapshot_Commit__r.${namespace}Commit_Date__c DESC LIMIT 1`),
-                (commitResult = sforce.connection.query(latestCommitQuery)),
-                (commitResults = commitResult.getArray("records"));
+            (commitResult = sforce.connection.query(latestCommitQuery)),
+            (commitResults = commitResult.getArray("records"));
             if (Array.isArray(commitResults) && commitResults.length) {
                 selectedDate = new Date(
                     commitResults[0][`${namespace}Snapshot_Commit__r`][`${namespace}Commit_Date__c`]
@@ -445,8 +449,8 @@ var operationTypeAttachmentName;
         if (!usId || !Array.isArray(commitResults) || !commitResults.length) {
             //SOQL query to get the latest commit date from the Org credential in case user story has no commit or it is a git snapshot commit
             (latestCommitQuery = `SELECT Id,${namespace}Commit_Date__c FROM ${namespace}Git_Org_Commit__c WHERE ${namespace}Org__c = '${orgId}' AND ${namespace}Status__c = 'Complete' ORDER BY ${namespace}Commit_Date__c DESC LIMIT 1`),
-                (commitResult = sforce.connection.query(latestCommitQuery)),
-                (commitResults = commitResult.getArray("records"));
+            (commitResult = sforce.connection.query(latestCommitQuery)),
+            (commitResults = commitResult.getArray("records"));
             if (Array.isArray(commitResults) && commitResults.length) {
                 selectedDate = new Date(
                     commitResults[0][`${namespace}Commit_Date__c`]
