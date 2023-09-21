@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Property_Compact_Layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Hover_Layout</fullName>
         <fields>Name</fields>
@@ -152,6 +152,17 @@
         <fields>copado__Environment__c</fields>
         <fields>copado__User__c</fields>
         <label>Hover Layout</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>copado__Property_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>copado__API_Name__c</fields>
+        <fields>OwnerId</fields>
+        <fields>copado__Is_Sensitive__c</fields>
+        <fields>copado__Pipeline__c</fields>
+        <fields>copado__Environment__c</fields>
+        <fields>copado__User__c</fields>
+        <label>System Property Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>

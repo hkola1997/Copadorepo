@@ -236,10 +236,6 @@ customSetting.ops.createGrid = function(res, prev,readonly) {
     lock();
 
     var me = customSetting;
-    //below fields are all either not needed system fields or already in place our fields
-    //the values of the following variables must match the one returns from backend as a respond(SF system fields and our fields), and changes will change the grid columns
-    //If you change this, you should also change the same lines in Deployment.Resource
-    var fields2prevent = '==SetupOwnerId==, ==s==, ==Name==, ==type==, ==LastModifiedDate==, ==SystemModstamp==, ==IsDeleted==, ==CreatedById==, ==CreatedDate==, ==Id==, ==LastModifiedById==';
     //reset flag
     copadoGrid.hasPreviousSelected = false;
     //merge previous selected
@@ -285,17 +281,12 @@ customSetting.ops.createGrid = function(res, prev,readonly) {
         }
     };
     if(objColumns){
-        for(var c=0;c<objColumns.length;c++){
-            if(fields2prevent.indexOf(objColumns[c]) < 0){
-                if(objColumns[c].indexOf('Date') > -1){
-                    source2.datafields.push({name:objColumns[c],type: 'date'});
-                }
-                else if(res[0] && res[0][objColumns[c]] == 'true' || res[0][objColumns[c]] == 'false'){
-                    source2.datafields.push({name:objColumns[c],type: 'bool'});
-                }
-                else source2.datafields.push({name:objColumns[c],type: 'string'});
-            }
-        }
+        let fieldDataType = dw.u.prepareGridColumn(objColumns, res);
+        fieldDataType.forEach(element => {
+            let fieldAPIName = element.split('-')[0];
+            let isBoolean = element.split('-')[1];
+            isBoolean == 'true' ? source2.datafields.push({name:fieldAPIName,type: 'bool'}) : source2.datafields.push({name:fieldAPIName,type: 'string'});
+        });
     }
 
     source2.localdata = prev;
@@ -367,32 +358,24 @@ customSetting.ops.createGrid = function(res, prev,readonly) {
     }
 
     if(objColumns){
-        for(var c=0;c<objColumns.length;c++){
-            if(fields2prevent.indexOf(objColumns[c]) < 0){
-                if(objColumns[c].indexOf('Date') > -1){
-                    gridObject.columns.push({text: objColumns[c].replace('__c','').replace('_',' '),
-                          filtertype: 'textbox',
-                          filtercondition: 'contains',
-                          editable: false,
-                          datafield: objColumns[c]});
-                }
-                else if(res[0] && res[0][objColumns[c]] == 'true' || res[0][objColumns[c]] == 'false'){
-                    gridObject.columns.push({text: objColumns[c].replace('__c','').replace('_',' '),
-                           columntype: 'checkbox',
-                           filtertype: 'bool',
-                           editable: false,
-                           datafield: objColumns[c],
-                           width: 100});
-                }
-                else{
-                    gridObject.columns.push({text: objColumns[c].replace('__c','').replace('_',' '),
-                           filtertype: 'textbox',
-                           filtercondition: 'contains',
-                           editable: false,
-                           datafield: objColumns[c]});
-                }
+        console.time('GridColumn');
+        let fieldDataType = dw.u.prepareGridColumn(objColumns, res);
+        fieldDataType.forEach(element => {
+            let fieldAPIName = element.split('-')[0];
+            let isBoolean = element.split('-')[1];
+            let columnAttributes = {text: fieldAPIName.replace('__c','').replace('_',' '),
+                                        columntype: isBoolean == 'true' ? 'checkbox' : '',
+                                        filtertype: isBoolean == 'true'  ? 'bool' : 'textbox',
+                                        filtercondition: isBoolean == 'true' ? '' : 'contains',
+                                        editable: false,
+                                        datafield: fieldAPIName
+                                    };
+            if(isBoolean == 'true') {
+                columnAttributes.width = 100;
             }
-        }
+            gridObject.columns.push(columnAttributes);
+        });
+        console.timeEnd('GridColumn');
     }
     $grid2.jqxGrid(gridObject);
     copadoGrid.addSelectAll($grid2);

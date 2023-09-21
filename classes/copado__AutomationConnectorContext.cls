@@ -8,6 +8,7 @@ To enable code to compile, all methods return null.
 global class AutomationConnectorContext {
     global String actionCallback;
     global List<copado__Automation_Event__c> automationEvents;
+    global copado__Automation_Rule__c automationRule;
     global AutomationConnectorContext() {
 
     }

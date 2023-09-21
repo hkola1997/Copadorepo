@@ -22,7 +22,7 @@
         <help><!-- Informative field to define a parent release --></help>
         <label><!-- Parent Release --></label>
         <name>copado__Parent_Release__c</name>
-        <relationshipLabel><!-- Releases --></relationshipLabel>
+        <relationshipLabel><!-- Child Releases --></relationshipLabel>
     </fields>
     <fields>
         <label><!-- Planned Date --></label>
@@ -116,5 +116,9 @@
     <webLinks>
         <label><!-- Select_Base_Branch --></label>
         <name>copado__Select_Base_Branch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Switch_to_previous_UI --></label>
+        <name>copado__Switch_to_previous_UI</name>
     </webLinks>
 </CustomObjectTranslation>

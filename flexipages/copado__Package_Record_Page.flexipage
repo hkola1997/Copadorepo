@@ -305,6 +305,10 @@
                     <value>Facet-4d180e75-7d02-4de9-af8c-555ffdf35ede</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Package Information</value>
                 </componentInstanceProperties>
@@ -317,6 +321,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-ddbd4cdb-b905-4fbc-b623-6d2d4b70e3ac</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -411,8 +419,17 @@
                     <name>fieldApiName</name>
                     <value>LastJobExecutionId__c</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>resultMonitor</identifier>
+                <componentInstanceProperties>
+                    <name>noJobMessage</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobTitle</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer2</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.RecordType.Name}</leftValue>

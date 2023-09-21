@@ -14,6 +14,12 @@
         <name>copado__Compliance_Status__c</name>
     </fields>
     <fields>
+        <help><!-- A mechanism for customers to create their own Connected Apps, and reference them for each Org Credential that would be authenticated against the custom connected app versus the central, Copado Connected App. It will be legacy behavior if not selected. --></help>
+        <label><!-- Custom Connected App Info --></label>
+        <name>copado__Custom_Connected_App_Info__c</name>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
+    </fields>
+    <fields>
         <help>例えば：https://company.my.salesforce.com</help>
         <label><!-- Custom Domain --></label>
         <name>copado__Custom_Domain__c</name>

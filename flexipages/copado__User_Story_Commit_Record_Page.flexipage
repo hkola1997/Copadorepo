@@ -124,8 +124,8 @@
                     <name>fieldApiName</name>
                     <value>LastJobExecutionId__c</value>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>resultMonitor</identifier>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__User_Story__r.copado__Platform__c}</leftValue>
