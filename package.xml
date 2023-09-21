@@ -4,5 +4,11 @@
         <members>Account.few_FLS_test_choosing_few_profiles__c</members>
         <name>CustomField</name>
     </types>
+    <types>
+        <members>Admin</members>
+        <members>Read Only</members>
+        <members>Standard</members>
+        <name>Profile</name>
+    </types>
     <version>58.0</version>
 </Package>
