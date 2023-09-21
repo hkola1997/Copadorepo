@@ -148,12 +148,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__View_in_Git__c</fieldItem>
                 <identifier>RecordView_in_Git_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Git_Backup__r.copado__Pipeline__r.Name}</leftValue>
-                        <operator>EQUAL</operator>
-                    </criteria>
-                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-cd184f2a-ab9b-457f-846d-f88c0a338457</name>
@@ -243,6 +237,10 @@
                     <value>Facet-b7e9f417-7466-4875-99f2-6b4bbfc09246</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -255,6 +253,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-bd0f7ce7-ee56-4a25-b72f-9dad243710b1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -271,6 +273,9 @@
                     <value>300</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>pageName</name>
                     <value>copado__CommittedMetadata</value>
                 </componentInstanceProperties>
@@ -281,8 +286,14 @@
                 <componentName>flexipage:visualforcePage</componentName>
                 <identifier>flexipage_visualforcePage</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.copado__Git_Backup__r.copado__Pipeline__r.Name}</leftValue>
+                        <leftValue>{!Record.copado__Org__r.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Org__r.copado__Platform__c}</leftValue>
                         <operator>EQUAL</operator>
                     </criteria>
                 </visibilityRule>
@@ -293,6 +304,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-6d371070-a00b-423e-8dea-66c08a234647</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -442,8 +457,8 @@
                     <name>noJobTitle</name>
                     <value>{!$Label.copado__Job_Execution_Not_Started}</value>
                 </componentInstanceProperties>
-                <componentName>copado:jobExecutionMonitor</componentName>
-                <identifier>c_jobExecutionMonitor2</identifier>
+                <componentName>copado:enhancedJobMonitor</componentName>
+                <identifier>c_enhancedJobMonitor</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>

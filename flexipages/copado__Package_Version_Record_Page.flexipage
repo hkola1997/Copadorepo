@@ -343,6 +343,10 @@
                     <value>Facet-2412487b-e8bf-469b-b8d6-71bad679f96e</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Package_Version_Information}</value>
                 </componentInstanceProperties>
@@ -357,6 +361,10 @@
                     <value>Facet-fffe6200-05ab-4328-a1d7-33031766394a</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Release_Details}</value>
                 </componentInstanceProperties>
@@ -369,6 +377,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-54c4d07e-16cc-46bf-b591-519eea42942b</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -639,6 +651,10 @@
                     <value>Facet-vbdjpakzc0m</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Package_Version_Information}</value>
                 </componentInstanceProperties>
@@ -653,6 +669,10 @@
                     <value>Facet-empaxiqitkp</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Release_Details}</value>
                 </componentInstanceProperties>
@@ -665,6 +685,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-hnyvo3bidf</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -869,6 +893,10 @@
                     <value>Facet-ba0c8ed0-105e-4b1c-b238-88b1b57da54b</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Bundle}</value>
                 </componentInstanceProperties>
@@ -881,6 +909,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-41e726ca-0f1d-451b-b9d4-366bf9bddcfa</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -1212,6 +1244,10 @@
                     <value>Facet-3836eedd-e457-485b-bcd8-c3b07d50aa41</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Bundle}</value>
                 </componentInstanceProperties>
@@ -1224,6 +1260,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-28c170ae-1a27-4cc3-a31b-e72bc715cde2</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -1414,8 +1454,11 @@
                 <componentInstanceProperties>
                     <name>noJobTitle</name>
                 </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>c_resultMonitor1</identifier>
+                <componentInstanceProperties>
+                    <name>recordId</name>
+                </componentInstanceProperties>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Artifact__r.RecordType.DeveloperName}</leftValue>

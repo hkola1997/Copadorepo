@@ -16,6 +16,10 @@
         <c:ShowWebhook url="webhook/gitSnapshot" recordId="{!copado__Git_Backup__c.Id}" />
         <script>
             var Copado_Licenses = {!CurrentUserLicenses};
+            jqxBaseVar.customLabels = {
+                'SELECT_FILTER': '{!JSENCODE($Label.copado__Select_Filter)}',
+                'SELECT_ALL': '{!JSENCODE($Label.copado__SELECT_ALL)}'
+            };
         </script>
         <c:IncludeConnectionJsComponent />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />

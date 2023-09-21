@@ -320,6 +320,17 @@ var isRollback = isRollback ? isRollback : undefined;
                 isRollback,
                 attachmentSize
             );
+         // retrieveonly metadata
+         app.conf.data.stepId &&
+         coGridHelper.saveRetrieveOnly(
+             app.conf.data.stepId,
+             'RetrieveOnly.json',
+             null,
+             null,
+             coGridHelper._retrieveOnlyNames,
+             isRollback,
+             attachmentSize
+         );
     };
 
     // Errors grid

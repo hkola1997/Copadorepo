@@ -58,6 +58,10 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Filter Criteria --></label>
+        <name>copado__Filter_Criteria__c</name>
+    </fields>
+    <fields>
         <label><!-- Last Execution Date Time --></label>
         <name>copado__Last_Execution_Date_Time__c</name>
     </fields>

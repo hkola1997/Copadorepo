@@ -2,6 +2,15 @@
 <CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>View</actionName>
+        <comment>Action override updated by Lightning App Builder during activation.</comment>
+        <content>cmcSf__DX_Snapshot_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>copado__Git_Backup__c</pageOrSobjectType>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
         <comment>Action override created by Lightning App Builder during activation.</comment>
         <content>cmcSf__Package_Record_Page_SFDX</content>
         <formFactor>Large</formFactor>
@@ -50,6 +59,9 @@
     <tabs>copado__StandardRecordStatus</tabs>
     <tabs>copado__License_Manager</tabs>
     <tabs>copado__Account_Summary</tabs>
+    <tabs>copado__Git_Backup__c</tabs>
+    <tabs>copado__ExtensionConfiguration__c</tabs>
+    <tabs>copado__Function__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>cmcSf__CMC_SFDX_UtilityBar</utilityBar>
 </CustomApplication>

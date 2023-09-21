@@ -340,6 +340,10 @@
                     <value>Facet-62c2f41e-a5ed-4260-ab93-b6d9964d4371</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -354,6 +358,10 @@
                     <value>Facet-2258c0d2-22ff-43e6-bee2-ce50fbd6b0a5</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__Repository_Details}</value>
                 </componentInstanceProperties>
@@ -366,6 +374,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-e1d10a92-611d-4078-bd95-a0cb0cf1eecb</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -412,6 +424,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-c0d6363e-3f30-49d3-b7e3-33b160f9454f</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -527,7 +543,7 @@
                             <value>copado__Commit_Message__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>copado__Commit_Id__c</value>
+                            <value>copado__View_in_Git__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Status__c</value>
@@ -587,8 +603,8 @@
                     <name>noJobTitle</name>
                     <value>{!$Label.copado__GitSnapshotNotStarted}</value>
                 </componentInstanceProperties>
-                <componentName>copado:jobExecutionMonitor</componentName>
-                <identifier>c_jobExecutionMonitor</identifier>
+                <componentName>copado:enhancedJobMonitor</componentName>
+                <identifier>c_enhancedJobMonitor</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>

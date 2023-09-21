@@ -24,6 +24,10 @@
         <enabled>true</enabled>
         <name>copado__UISection__mdt</name>
     </customMetadataTypeAccesses>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__Access_AQF</name>
+    </customPermissions>
     <description>Allow users to access AQF configurations. This doesn&apos;t allow users to execute tests.</description>
     <fieldPermissions>
         <editable>false</editable>

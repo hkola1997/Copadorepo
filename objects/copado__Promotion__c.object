@@ -167,7 +167,47 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fieldSets>
+        <fullName>cmcSf__Rollback_Page</fullName>
+        <description>Used in Promotion Rollback page header</description>
+        <displayedFields>
+            <field>copado__Project__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Platform__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Source_Environment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Destination_Environment__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Release__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Rollback_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Rollback Page</label>
+    </fieldSets>
+    <fieldSets>
         <fullName>cmcSf__SFDX_Extension_Fields</fullName>
+        <availableFields>
+            <field>cmcSf__Attach_Vlocity_Build_File__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
         <availableFields>
             <field>cmcSf__Debug_Mode__c</field>
             <isFieldManaged>false</isFieldManaged>
@@ -661,6 +701,17 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>cmcSf__Attach_Vlocity_Build_File__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Attach Deployment File to Vlocity Deploy result record.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enable this checkbox if you want to review Vlocity logs regardless of the status of the deployment. If you include Vlocity logs, these can consume a considerable amount of file storage.</inlineHelpText>
+        <label>Attach Vlocity(SFI) Build File</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>cmcSf__Debug_Mode__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -672,6 +723,17 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>cmcSf__Last_Rollback_Execution_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Last Rollback Execution Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>cmcSf__Recreate_Promotion_Branch__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -680,6 +742,65 @@
         <label>Recreate Promotion Branch</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Rollback_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rollback Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Started</fullName>
+                    <default>true</default>
+                    <label>Not Started</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>In Progress (Validation Only)</fullName>
+                    <default>false</default>
+                    <label>In Progress (Validation Only)</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Validated</fullName>
+                    <default>false</default>
+                    <label>Validated</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Validation Failed</fullName>
+                    <default>false</default>
+                    <label>Validation Failed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>cmcSf__Rolled_Back_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Rolled Back Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
     </fields>
     <fields>
         <fullName>cmcSf__Validate_Deploy_Request_Id__c</fullName>
