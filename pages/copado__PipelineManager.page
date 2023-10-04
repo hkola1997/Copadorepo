@@ -359,9 +359,11 @@
             var message = $copado('.slds-notify__content').text();
             var messageOne = '{!JSENCODE($Label.Pipeline_Environment_500_US_Limit_Message)}';
             var messageTwo = '{!JSENCODE($Label.Pipeline_One_promotion_per_release)}';
+            var messageThree = '{!JSENCODE($Label.Pipeline_Manager_Project_Release_Info_Message)}';
             var messageIncludesMessageOne = message.includes(messageOne);
             var messageIncludesMessageTwo = message.includes(messageTwo);
-            if(message && !messageIncludesMessageOne && !messageIncludesMessageTwo) {
+            var messageIncludesMessageThree = message.includes(messageThree);
+            if(message && !messageIncludesMessageOne && !messageIncludesMessageTwo && !messageIncludesMessageThree) {
                 unlockScreen();
                 return;
             }
@@ -404,7 +406,8 @@
             removeDatatableFilterBox();
             var tabDatatable = $copado('[Id$="userStoriesTable"]');
             tabDatatable.dataTable({
-                paging:false,
+                paging: true,
+                pageLength: 50,
                 language: {
                     lengthMenu: '{!JSENCODE($Label.Display_MENU_records_per_page)}',
                     zeroRecords: '{!JSENCODE($Label.Nothing_found_sorry)}',
@@ -641,11 +644,11 @@
                                                         </label>
                                                     </span>
                                                     <span class="slds-radio">
-                                                        <apex:outputPanel layout="none" rendered="{!IF(selectedFilter.thisFilter.Id != null && selectedFilter.thisFilter.copado__Share_With__c == 'ALL', '', 'none')}">
-                                                            <input type="radio" id="allUsers" value="ALL" name="sharingOption" onclick="setSharingMode(this.value);" checked="checked" />
+                                                        <apex:outputPanel layout="none" rendered="{!IF(selectedFilter.thisFilter.Id != null && selectedFilter.thisFilter.copado__Share_With__c == 'All', '', 'none')}">
+                                                            <input type="radio" id="allUsers" value="All" name="sharingOption" onclick="setSharingMode(this.value);" checked="checked" />
                                                         </apex:outputPanel>
-                                                        <apex:outputPanel layout="none" rendered="{!IF(selectedFilter.thisFilter.Id == null || selectedFilter.thisFilter.copado__Share_With__c != 'ALL', '', 'none')}">
-                                                            <input type="radio" id="allUsers" value="ALL" name="sharingOption" onclick="setSharingMode(this.value);" />
+                                                        <apex:outputPanel layout="none" rendered="{!IF(selectedFilter.thisFilter.Id == null || selectedFilter.thisFilter.copado__Share_With__c != 'All', '', 'none')}">
+                                                            <input type="radio" id="allUsers" value="All" name="sharingOption" onclick="setSharingMode(this.value);" />
                                                         </apex:outputPanel>
                                                         <label class="slds-radio__label" for="allUsers">
                                                             <span class="slds-radio_faux"></span>
@@ -2105,6 +2108,25 @@
                                 <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                             </apex:outputPanel>
                         </div>
+                        <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
+                            <div id="divToast" class="slds-notify_container slds-is-relative">
+                                <div class="slds-notify slds-notify_toast slds-theme_info" role="status">
+                                    <span class="slds-icon_container slds-icon-utility-success slds-m-right_small slds-no-flex slds-align-top">
+                                        <span class="slds-icon_container slds-icon__svg--default infoToastIcon"></span>
+                                    </span>
+                                    <div class="slds-notify__content">
+                                            <h2 class="slds-text-heading_small ">{!$Label.Pipeline_Manager_Project_Release_Info_Message}</h2>
+                                    </div>
+                                    <div class="slds-notify__close">
+                                        <button type="button" class="slds-button slds-button_icon slds-button_icon-inverse" title="{!$Label.CLOSE}" onclick="$copado('[id=divToast]').addClass('slds-hide');">
+                                            <svg class="slds-button__icon" aria-hidden="true">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, 'assets/icons/utility-sprite/svg/symbols.svg#close')}" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
                         <div class="slds-grid slds-wrap slds-clearfix">
                             <div id="headtitle" class="slds-col slds-align-middle slds-size_1-of-3">
                                 <h2 class="slds-text-heading_medium slds-hyphenate">
