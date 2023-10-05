@@ -13,6 +13,11 @@
         </picklistValues>
     </fields>
     <fields>
+        <label><!-- Data Template --></label>
+        <name>copado__Data_Template__c</name>
+        <relationshipLabel><!-- Deployment Tasks --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Disable Task for Back-Promotions --></label>
         <name>copado__Disable_Task_for_Back_Promotions__c</name>
     </fields>

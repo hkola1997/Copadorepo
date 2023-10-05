@@ -285,7 +285,7 @@ var operationTypeAttachmentName;
                         const index = allMdt.findIndex(isEqual);
                         const mdtWrapper = {
                             t: member.MemberType,
-                            n: member.MemberName.replace(/%20/g," "),
+                            n: decodeURI(member.MemberName).replace(/%2F/gi, "/"),
                             b: dw.u.getHtmlDecodedString(member.LastModifiedBy.Name),
                             d: member.LastModifiedDate.substr(0, member.LastModifiedDate.indexOf('T')),
                             cb: dw.u.getHtmlDecodedString(member.CreatedBy.Name),
@@ -303,7 +303,6 @@ var operationTypeAttachmentName;
                             allMdt.splice(i, 0, mdtWrapper);
                         }
                     }
-
                     dw.u.upsertAttach(orgId, 'MetaData', JSON.stringify(allMdt));
                 }
             }
