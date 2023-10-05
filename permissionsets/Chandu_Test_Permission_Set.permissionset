@@ -7,4 +7,12 @@
         <tab>copado__Account_Summary</tab>
         <visibility>Visible</visibility>
     </tabSettings>
+    <tabSettings>
+        <tab>standard-EnhancedLetterhead</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>standard-SecurityCenterNotification</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
 </PermissionSet>
