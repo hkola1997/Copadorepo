@@ -71,15 +71,15 @@ var operationTypeAttachmentName;
             var gitMetadataAttachment = dw.u.getAttach(app.conf.data.userStoryId, 'Git MetaData');
             var gitMetadataItems = Base64.decode(gitMetadataAttachment[0].Body);
             allMetadataItems.push(...JSON.parse(gitMetadataItems));
-            
+
             var retrieveOnlyMetaDataAttachment = dw.u.getAttach(app.conf.data.userStoryId, 'RetrieveOnly MetaData');
             var retrieveOnlyMetaDataItems = Base64.decode(retrieveOnlyMetaDataAttachment[0].Body);
             allMetadataItems.push(...JSON.parse(retrieveOnlyMetaDataItems));
-            
+
             var commitedMetadataItems = getCommitedMetadata(app.conf.data.userStoryId);
             allMetadataItems.push(...commitedMetadataItems);
             var reCommitItems = processRetrieveOnly(allMetadataItems);
-            
+
             setWithoutRebinding(app.userStoryMD, reCommitItems);
         }
         app.grid.reloadSelectionsJSON(app.userStoryMD, 1);
@@ -268,8 +268,9 @@ var operationTypeAttachmentName;
      * @see app.config.data.orgId
      */
     app.refreshCache = function () {
-        app.grid.refreshCache();
         rerenderRefreshCachePoller();
+        $copado('[id="refreshComplete"]').val('false');
+        app.grid.refreshCache();
     };
     app.refreshRecentChanges = function (orgId) {
         const core = app.conf.ns ? window[app.conf.ns.split('__')[0]] : window;
@@ -280,11 +281,11 @@ var operationTypeAttachmentName;
                     const mdtAtt = dw.u.getDecodedAttach(orgId, 'MetaData');
                     const allMdt = JSON.parse(mdtAtt.Body);
                     for (const member of sourceMembers) {
-                        const isEqual = (mdt) => mdt.t === member.MemberType && (mdt.n === encodeURIComponent(member.MemberName).replace(/%20/g," "));
-                        const index = allMdt.findIndex(isEqual);                       
+                        const isEqual = (mdt) => mdt.t === member.MemberType && (mdt.n === member.MemberName.replace(/%20/g," "));
+                        const index = allMdt.findIndex(isEqual);
                         const mdtWrapper = {
                             t: member.MemberType,
-                            n: encodeURIComponent(member.MemberName).replace(/%20/g," "),
+                            n: decodeURI(member.MemberName).replace(/%2F/gi, "/"),
                             b: dw.u.getHtmlDecodedString(member.LastModifiedBy.Name),
                             d: member.LastModifiedDate.substr(0, member.LastModifiedDate.indexOf('T')),
                             cb: dw.u.getHtmlDecodedString(member.CreatedBy.Name),
@@ -302,7 +303,6 @@ var operationTypeAttachmentName;
                             allMdt.splice(i, 0, mdtWrapper);
                         }
                     }
-
                     dw.u.upsertAttach(orgId, 'MetaData', JSON.stringify(allMdt));
                 }
             }
@@ -437,8 +437,8 @@ var operationTypeAttachmentName;
         var selectedDate;
         if (usId) {
             (latestCommitQuery = `SELECT Id,${namespace}Snapshot_Commit__r.${namespace}Commit_Date__c FROM ${namespace}User_Story_Commit__c WHERE  ${namespace}User_Story__c ='${usId}' AND ${namespace}Snapshot_Commit__r.${namespace}Status__c = 'Complete' ORDER BY ${namespace}Snapshot_Commit__r.${namespace}Commit_Date__c DESC LIMIT 1`),
-                (commitResult = sforce.connection.query(latestCommitQuery)),
-                (commitResults = commitResult.getArray("records"));
+            (commitResult = sforce.connection.query(latestCommitQuery)),
+            (commitResults = commitResult.getArray("records"));
             if (Array.isArray(commitResults) && commitResults.length) {
                 selectedDate = new Date(
                     commitResults[0][`${namespace}Snapshot_Commit__r`][`${namespace}Commit_Date__c`]
@@ -448,8 +448,8 @@ var operationTypeAttachmentName;
         if (!usId || !Array.isArray(commitResults) || !commitResults.length) {
             //SOQL query to get the latest commit date from the Org credential in case user story has no commit or it is a git snapshot commit
             (latestCommitQuery = `SELECT Id,${namespace}Commit_Date__c FROM ${namespace}Git_Org_Commit__c WHERE ${namespace}Org__c = '${orgId}' AND ${namespace}Status__c = 'Complete' ORDER BY ${namespace}Commit_Date__c DESC LIMIT 1`),
-                (commitResult = sforce.connection.query(latestCommitQuery)),
-                (commitResults = commitResult.getArray("records"));
+            (commitResult = sforce.connection.query(latestCommitQuery)),
+            (commitResults = commitResult.getArray("records"));
             if (Array.isArray(commitResults) && commitResults.length) {
                 selectedDate = new Date(
                     commitResults[0][`${namespace}Commit_Date__c`]

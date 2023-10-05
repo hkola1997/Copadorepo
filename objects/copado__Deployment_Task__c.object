@@ -180,6 +180,19 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__Data_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Data Template</label>
+        <referenceTo>copado__Data_Template__c</referenceTo>
+        <relationshipLabel>Deployment Tasks</relationshipLabel>
+        <relationshipName>Deployment_Tasks</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Disable_Task_for_Back_Promotions__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>

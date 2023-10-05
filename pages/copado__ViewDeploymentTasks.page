@@ -310,6 +310,7 @@
 										</script>
 									</apex:outputPanel>
 									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Data Template'}">
+										<c:LightningReadyOutputFields id="dataTemplateLookup" sObject="{!copado__Deployment_Task__c}" field="Data_Template__c" dividerBottom="true"/>
 										<c:DataTemplateTaskComponent isEdit="false" />
 										<script type="text/javascript">
 											getDataSetDetailsById = function (dataSetId) {
@@ -332,6 +333,7 @@
 													$copado('[id$=dataSetTemplate]').text(dataSetDataTemplateName);
 													$copado('[id$=dataSetTemplate]').data('recordid', dataSetDataTemplateId);
 													$copado('[id$=description]').text(description);
+													$copado('[id$=dataTemplateLookup]').hide();
 													let contentDocuments = sforce.connection.query('SELECT ContentDocumentId '
 														+ 'FROM ContentDocumentLink '
 														+ 'WHERE LinkedEntityId = \'' + dataSetId + '\'');
@@ -377,16 +379,13 @@
 																	if (records.length == 1) {
 																		var recordData = records[0];
 																		var name = recordData.Name;
-																		var header = name + ' | ' + recordData[_config.ns + 'Main_Object__c'];
 																		var btchrec = recordData[_config.ns + 'Batch_Size__c'] ? recordData[_config.ns + 'Batch_Size__c'] : 0;
-																		$copado('[id$=headerDataTemplate]').text(header);
 																		$copado('[id$=sourceOrg]').text(recordData[_config.ns + 'Template_Source_Org__r'].Name);
 																		$copado('[id$=totalObjects]').text(deferredData.count);
 																		$copado('[id$=objectFilter]').text(deferredData.filterLogic);
 																		$copado('[id$=editFilterIconText]').text(deferredData.editIconText);
 																		$copado('[id$=batchSize]').text(btchrec);
 																		$copado('[id$=maxRecordLimit]').text(recordData[_config.ns + 'Max_Record_Limit__c']);
-																		$copado('[id$=opentemplate]').show();
 																		$copado('[id$=openRelationshipDiagram]').show();
 																	}
 																},
