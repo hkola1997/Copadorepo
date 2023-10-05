@@ -796,6 +796,12 @@
                 <identifier>c_dynamicUISectionContainer2</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:testJobStepPublishMessage</componentName>
+                <identifier>c_testJobStepPublishMessage</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-3b63cb5e-216a-49ad-8644-4dfc7031aaf7</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -875,6 +881,15 @@
                 <componentInstanceProperties>
                     <name>fieldApiName</name>
                     <value>Sub_Job_Execution__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobMessage</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobTitle</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recordId</name>
                 </componentInstanceProperties>
                 <componentName>copado:enhancedResultViewer</componentName>
                 <identifier>c_enhancedResultViewer</identifier>

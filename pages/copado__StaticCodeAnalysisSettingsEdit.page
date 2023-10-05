@@ -4,7 +4,7 @@
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 
     <head>
-        <title>Edit SCA Settings| Copado</title>
+        <title>{!$Label.EDIT} {!$Label.SCA_Settings}| {!$Label.Copado}</title>
         <c:GAnalytics />
         <apex:stylesheet value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
         <c:IncludeStaticsResourceComponent addJQuery="true" />

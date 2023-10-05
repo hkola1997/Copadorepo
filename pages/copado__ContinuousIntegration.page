@@ -74,7 +74,7 @@
 				
 				<script type="text/javascript">
 					var ci = {
-						ns: '{!namespace}',
+						ns: '{!JSENCODE(namespace)}',
 						isCheckOnly: false,
 						buildTasks: [],
 						buildTaskIds: [],
@@ -271,8 +271,7 @@
 				</script>
 				<script type="text/javascript">
 					var copadoApp = {
-						ns: '{!namespace}',
-
+						ns: '{!JSENCODE(namespace)}',
 						init: function(){
 							ci.ciId='{!ci.Id}';
                             ci.isCheckOnly = {!ci.Check_Only__c                        
@@ -325,7 +324,8 @@
 					<apex:pageBlock id="pb" title="">
 						<apex:pageBlockButtons id="pbbs" location="top" rendered="{!isCIenabled}">
 							<apex:commandButton id="btnEdit" value="{!$Label.copado__EDIT}" action="{!edit}" />
-							<apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}" onclick="if(!confirm('{!$Label.copado__ARE_YOU_SURE}')){return false;};"/>
+                            <apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}"
+                                onclick="if(!confirm('{!JSENCODE($Label.copado__ARE_YOU_SURE)}')){return false;};" />
 							<apex:commandButton id="btnRun" value="Run Continuous Integration" action="{!executeCI}" disabled="{!!ci.copado__Active__c}" />
 							<apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;"/>
 						</apex:pageBlockButtons>

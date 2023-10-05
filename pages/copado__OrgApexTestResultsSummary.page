@@ -54,6 +54,10 @@
                         <apex:outputLabel value="{!$Label.copado__TESTS_PASSED}" />
                         <div class="jstxt_TestsPassed"> </div>
                     </apex:pageBlockSectionItem>
+                    <apex:pageBlockSectionItem >
+                        <apex:outputLabel value="{!$Label.copado__TEST_RUN_DATE}" />
+                        <div class="jstxt_CreatedDate"> </div>
+                    </apex:pageBlockSectionItem>
                 </apex:pageBlockSection>
             </apex:pageBlock>
 
@@ -108,6 +112,7 @@
             var apexTestResult = {
                 ns: '{!JSENCODE(namespace)}',
                 attachmentBody: '',
+                createdDate: '',
                 userStoryClassesArray: [],
                 userStoryTriggersArray: [],
                 testClassesArray: [],
@@ -132,11 +137,12 @@
                         var result = sforce.connection.query("select id from "+me.ns+"Apex_Test_Result__c where "+me.ns+"Org__c='"+copadoApp.orgId+"' order by createddate desc limit 1");
                         var records = result.getArray("records");
                         if(records.length==1){
-                            result = sforce.connection.query("Select Id, Body from Attachment where Name='ApexTestResult' and ParentId='"+records[0].Id+"' limit 1");
+                            result = sforce.connection.query("Select Id, Body, format(CreatedDate) from Attachment where Name='ApexTestResult' and ParentId='"+records[0].Id+"' limit 1");
                             records = result.getArray("records");
                             if(records.length==1){
                                 console.log('Apex Test Result attachment found');
                                 me.attachmentBody = Base64.decode(records[0].Body);
+                                me.createdDate = records[0].CreatedDate;
                             }
                             else{
                                 console.error('No Apex Test result attachment found');
@@ -294,7 +300,6 @@
                     var me = apexTestResult;
 
                     me.getOrgMinCoverage(me.getLatestApexTestResult);
-                    
 
                     if(!me.showError)me.parseJSON();
                     if(me.renderTables)$copado('#globalWrapper').show();
@@ -383,7 +388,7 @@
                     
                     var duration = reformatMilliseconds(apexTestResult.globalObject.time);
                     $copado('.jstxt_Duration').text(duration);
-                    
+                    $copado('.jstxt_CreatedDate').text(apexTestResult.createdDate);
                     var perecent = ((apexTestResult.globalObject.tests-apexTestResult.globalObject.failures)/apexTestResult.globalObject.tests)*100
                     var testPassedCalc = (apexTestResult.globalObject.tests>0)?(apexTestResult.globalObject.tests-apexTestResult.globalObject.failures)+'/'+apexTestResult.globalObject.tests+' ('+Math.floor(perecent)+'%)':'0/0 0%';
                     $copado('.jstxt_TestsPassed').text(testPassedCalc);
