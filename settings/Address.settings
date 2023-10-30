@@ -1100,15 +1100,6 @@
         </countries>
         <countries>
             <active>true</active>
-            <integrationValue>Cuba</integrationValue>
-            <isoCode>CU</isoCode>
-            <label>Cuba</label>
-            <orgDefault>false</orgDefault>
-            <standard>true</standard>
-            <visible>true</visible>
-        </countries>
-        <countries>
-            <active>true</active>
             <integrationValue>Cape Verde</integrationValue>
             <isoCode>CV</isoCode>
             <label>Cape Verde</label>
@@ -2076,15 +2067,6 @@
             <integrationValue>Iraq</integrationValue>
             <isoCode>IQ</isoCode>
             <label>Iraq</label>
-            <orgDefault>false</orgDefault>
-            <standard>true</standard>
-            <visible>true</visible>
-        </countries>
-        <countries>
-            <active>true</active>
-            <integrationValue>Iran, Islamic Republic of</integrationValue>
-            <isoCode>IR</isoCode>
-            <label>Iran, Islamic Republic of</label>
             <orgDefault>false</orgDefault>
             <standard>true</standard>
             <visible>true</visible>
@@ -3455,15 +3437,6 @@
         </countries>
         <countries>
             <active>true</active>
-            <integrationValue>Korea, Democratic People&apos;s Republic of</integrationValue>
-            <isoCode>KP</isoCode>
-            <label>Korea, Democratic People&apos;s Republic of</label>
-            <orgDefault>false</orgDefault>
-            <standard>true</standard>
-            <visible>true</visible>
-        </countries>
-        <countries>
-            <active>true</active>
             <integrationValue>Korea, Republic of</integrationValue>
             <isoCode>KR</isoCode>
             <label>Korea, Republic of</label>
@@ -4350,15 +4323,6 @@
         </countries>
         <countries>
             <active>true</active>
-            <integrationValue>Sudan</integrationValue>
-            <isoCode>SD</isoCode>
-            <label>Sudan</label>
-            <orgDefault>false</orgDefault>
-            <standard>true</standard>
-            <visible>true</visible>
-        </countries>
-        <countries>
-            <active>true</active>
             <integrationValue>Sweden</integrationValue>
             <isoCode>SE</isoCode>
             <label>Sweden</label>
@@ -4488,15 +4452,6 @@
             <integrationValue>Sint Maarten (Dutch part)</integrationValue>
             <isoCode>SX</isoCode>
             <label>Sint Maarten (Dutch part)</label>
-            <orgDefault>false</orgDefault>
-            <standard>true</standard>
-            <visible>true</visible>
-        </countries>
-        <countries>
-            <active>true</active>
-            <integrationValue>Syrian Arab Republic</integrationValue>
-            <isoCode>SY</isoCode>
-            <label>Syrian Arab Republic</label>
             <orgDefault>false</orgDefault>
             <standard>true</standard>
             <visible>true</visible>

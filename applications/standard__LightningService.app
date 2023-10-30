@@ -9,7 +9,6 @@
     <navType>Console</navType>
     <setupExperience>service</setupExperience>
     <tabs>standard-Case</tabs>
-    <tabs>Chandu_Lightening_Page_Test</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-report</tabs>
@@ -21,9 +20,6 @@
     <uiType>Lightning</uiType>
     <utilityBar>LightningService_UtilityBar</utilityBar>
     <workspaceConfig>
-        <mappings>
-            <tab>Chandu_Lightening_Page_Test</tab>
-        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
