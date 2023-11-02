@@ -9,8 +9,9 @@
     <label>Sales</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
-    <tabs>Chandu_Lightening_Page_Test</tabs>
+    <tabs>standard-WaveHome</tabs>
     <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Quote</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Task</tabs>
     <tabs>standard-File</tabs>

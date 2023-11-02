@@ -112,17 +112,6 @@
     <relatedLists>
         <fields>Name</fields>
         <fields>ExecutionOrder</fields>
-        <relatedList>NewWorkPlans</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Name</fields>
-        <fields>Status</fields>
-        <fields>ExecutionOrder</fields>
-        <relatedList>NewWorkSteps</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>Name</fields>
-        <fields>ExecutionOrder</fields>
         <fields>WorkOrderLineItem</fields>
         <relatedList>WorkPlans</relatedList>
     </relatedLists>
