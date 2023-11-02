@@ -6,4 +6,54 @@
         <default>false</default>
         <label>None</label>
     </standardValue>
+    <standardValue>
+        <fullName>Multiplay</fullName>
+        <default>false</default>
+        <label>Multiplay</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Electricity</fullName>
+        <default>false</default>
+        <label>Electricity</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Mobile</fullName>
+        <default>false</default>
+        <label>Mobile</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Landline</fullName>
+        <default>false</default>
+        <label>Landline</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internet</fullName>
+        <default>false</default>
+        <label>Internet</label>
+    </standardValue>
+    <standardValue>
+        <fullName>TV</fullName>
+        <default>false</default>
+        <label>TV</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Support</fullName>
+        <default>false</default>
+        <label>Support</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Internet+TV</fullName>
+        <default>false</default>
+        <label>Internet+TV</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Accessories</fullName>
+        <default>false</default>
+        <label>Accessories</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Device</fullName>
+        <default>false</default>
+        <label>Device</label>
+    </standardValue>
 </StandardValueSet>

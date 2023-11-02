@@ -25,10 +25,6 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
-        <name>Chandu_Lightening_Page_Test</name>
-        <type>CustomTab</type>
-    </appMenuItems>
-    <appMenuItems>
         <name>People</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
@@ -53,11 +49,15 @@
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
+        <name>Forecasting</name>
+        <type>StandardAppMenuItem</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>LightningInstrumentation</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>
-        <name>LightningSchedulerSetupAssistant</name>
+        <name>OnlineSalesHome</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
     <appMenuItems>

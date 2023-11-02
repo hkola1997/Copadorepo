@@ -3,10 +3,10 @@
     <enableCMSC2CConnections>true</enableCMSC2CConnections>
     <enableChatterFileLink>true</enableChatterFileLink>
     <enableContent>true</enableContent>
-    <enableContentAutoAssign>true</enableContentAutoAssign>
-    <enableContentDistForPortalUsers>false</enableContentDistForPortalUsers>
-    <enableContentDistPwOptionsBit1>true</enableContentDistPwOptionsBit1>
-    <enableContentDistPwOptionsBit2>true</enableContentDistPwOptionsBit2>
+    <enableContentAutoAssign>false</enableContentAutoAssign>
+    <enableContentDistForPortalUsers>true</enableContentDistForPortalUsers>
+    <enableContentDistPwOptionsBit1>false</enableContentDistPwOptionsBit1>
+    <enableContentDistPwOptionsBit2>false</enableContentDistPwOptionsBit2>
     <enableContentDistribution>true</enableContentDistribution>
     <enableContentSupportMultiLanguage>false</enableContentSupportMultiLanguage>
     <enableContentWorkspaceAccess>true</enableContentWorkspaceAccess>
@@ -16,7 +16,7 @@
     <enableJPGPreviews>false</enableJPGPreviews>
     <enableLibraryManagedFiles>false</enableLibraryManagedFiles>
     <enableSiteGuestUserToUploadFiles>false</enableSiteGuestUserToUploadFiles>
-    <enableUploadFilesOnAttachments>false</enableUploadFilesOnAttachments>
+    <enableUploadFilesOnAttachments>true</enableUploadFilesOnAttachments>
     <setValidContentTypeForAtchDocDownload>false</setValidContentTypeForAtchDocDownload>
     <skipContentAssetTriggers>false</skipContentAssetTriggers>
     <skipContentAssetTriggersOnDeploy>true</skipContentAssetTriggersOnDeploy>
