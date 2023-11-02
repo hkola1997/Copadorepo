@@ -9,7 +9,6 @@
     <label>Sales</label>
     <navType>Standard</navType>
     <tabs>standard-home</tabs>
-    <tabs>Chandu_Lightening_Page_Test</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
     <tabs>standard-Task</tabs>
@@ -25,6 +24,8 @@
     <tabs>standard-OtherUserProfile</tabs>
     <tabs>standard-Case</tabs>
     <tabs>standard-Forecasting3</tabs>
+    <tabs>standard-Quote</tabs>
+    <tabs>vlocity_cmt__ObjectClass__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSales_UtilityBar</utilityBar>
 </CustomApplication>

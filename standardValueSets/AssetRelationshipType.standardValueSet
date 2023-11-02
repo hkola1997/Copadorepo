@@ -16,4 +16,29 @@
         <default>false</default>
         <label>Crossgrade</label>
     </standardValue>
+    <standardValue>
+        <fullName>Reassignment</fullName>
+        <default>false</default>
+        <label>Reassignment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Suspend</fullName>
+        <default>false</default>
+        <label>Suspend</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Resume</fullName>
+        <default>false</default>
+        <label>Resume</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Movement</fullName>
+        <default>false</default>
+        <label>Movement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ReliesOn</fullName>
+        <default>false</default>
+        <label>ReliesOn</label>
+    </standardValue>
 </StandardValueSet>
