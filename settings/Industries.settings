@@ -11,6 +11,7 @@
     <enableMultiResourceOrgPref>false</enableMultiResourceOrgPref>
     <enableMultipleTopicsForShiftsOrgPref>false</enableMultipleTopicsForShiftsOrgPref>
     <enableOverbookingOrgPref>false</enableOverbookingOrgPref>
+    <enablePreBookedFallbackMechOrgPref>false</enablePreBookedFallbackMechOrgPref>
     <enableShareSaWithArOrgPref>false</enableShareSaWithArOrgPref>
     <enableTopicOrTemplate>false</enableTopicOrTemplate>
     <enableTopicTimeSlot>true</enableTopicTimeSlot>

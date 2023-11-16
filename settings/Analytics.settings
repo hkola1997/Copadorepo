@@ -15,8 +15,10 @@
     <enableAutoCompleteCombo>true</enableAutoCompleteCombo>
     <enableAzureDLGen2OutputConnector>false</enableAzureDLGen2OutputConnector>
     <enableCreateLegacyDataflows>true</enableCreateLegacyDataflows>
+    <enableDashboardChangeOwnerPref>false</enableDashboardChangeOwnerPref>
     <enableDashboardComponentSnapshot>false</enableDashboardComponentSnapshot>
     <enableDashboardFlexiTable>true</enableDashboardFlexiTable>
+    <enableDataCloudReportingPref>true</enableDataCloudReportingPref>
     <enableEmailReportsToPortalUsers>false</enableEmailReportsToPortalUsers>
     <enableFirebirdEditor>false</enableFirebirdEditor>
     <enableFloatingReportHeaders>true</enableFloatingReportHeaders>
@@ -57,6 +59,7 @@
     <isDiscoveryOptimizationEnabled>false</isDiscoveryOptimizationEnabled>
     <isHighVolumePushbackEnabled>false</isHighVolumePushbackEnabled>
     <maxHoursAppInProgress>48</maxHoursAppInProgress>
+    <queryCachingOptOut>false</queryCachingOptOut>
     <recipeDirectDataPref>true</recipeDirectDataPref>
     <recipeFiscalPref>false</recipeFiscalPref>
     <recipePreCachingOptOut>false</recipePreCachingOptOut>

@@ -5,6 +5,7 @@
     <enableEndUserForSCV>false</enableEndUserForSCV>
     <enableOmniCapacityForSCV>false</enableOmniCapacityForSCV>
     <enableSCVBYOT>false</enableSCVBYOT>
+    <enableSCVSupportBannerDisplayed>false</enableSCVSupportBannerDisplayed>
     <enableServiceCloudVoice>false</enableServiceCloudVoice>
     <enableVoiceInGovCloudOptIn>false</enableVoiceInGovCloudOptIn>
 </ServiceCloudVoiceSettings>
