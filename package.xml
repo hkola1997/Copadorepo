@@ -107,6 +107,7 @@
         <members>RecordPage</members>
         <members>RetailExecution</members>
         <members>Sandbox</members>
+        <members>SceGlobalModelOptOut</members>
         <members>Schema</members>
         <members>Search</members>
         <members>Security</members>
