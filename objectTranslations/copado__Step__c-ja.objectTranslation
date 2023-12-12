@@ -184,11 +184,11 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Test</masterLabel>
-            <translation><!-- Test --></translation>
+            <translation>テスト</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Translations</masterLabel>
-            <translation><!-- Translations --></translation>
+            <translation>翻訳</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>URL Callout</masterLabel>

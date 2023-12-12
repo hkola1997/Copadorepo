@@ -411,6 +411,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__DataDeployFunctionCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DataDeployFunctionCallbackTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__DataFilter</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -687,6 +695,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__HasVlocitySnapshotJobTemplate</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__HasVlocitySnapshotJobTemplateTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__HttpCallout</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -812,6 +828,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ListAllSobjectsInOrgTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__LwcLabelsTranslation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__LwcLabelsTranslationTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1196,6 +1220,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__Settings</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__Snapshot</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -2807,6 +2835,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CheckCCHEnabled</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckCCHEnabledTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CheckContentDocumentPermissionAction</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3863,6 +3899,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DeploymentConstant</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DeploymentEmailController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4244,6 +4284,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__ExternalCIJobsExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__Feature</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4711,6 +4755,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__IndexMetadataJobMC</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__IndexMetadataJobMCTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__IndexMetadataJobTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4843,11 +4895,11 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__JobTemplatePromoteAndDeployTest</apexClass>
+        <apexClass>copado__JobTemplateService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>copado__JobTemplateService</apexClass>
+        <apexClass>copado__JobTemplateServiceTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -5652,6 +5704,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PromotionEditExtension</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionJobExecutionsCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PromotionJobExecutionsCtrlTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -15809,6 +15869,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Environment__c.copado__Run_all_tests__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Environment__c.copado__Run_specified_tests__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

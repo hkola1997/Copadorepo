@@ -225,16 +225,6 @@
                 <identifier>RecordBlock_Commits_cField1</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Enable_Smart_Conflict_Resolution__c</fieldItem>
-                <identifier>RecordEnable_Smart_Conflict_Resolution_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-50022b6b-6cc1-4641-911f-f668b8c92909</name>
         <type>Facet</type>
     </flexiPageRegions>

@@ -148,6 +148,12 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__View_in_Git__c</fieldItem>
                 <identifier>RecordView_in_Git_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Git_Backup__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-cd184f2a-ab9b-457f-846d-f88c0a338457</name>

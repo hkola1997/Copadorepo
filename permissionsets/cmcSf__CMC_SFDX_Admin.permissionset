@@ -93,6 +93,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__HasVlocitySnapshotJobTemplate</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__InitializeSFDXProject</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -114,6 +118,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__JobStepDataDeployController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__LwcLabelsTranslation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

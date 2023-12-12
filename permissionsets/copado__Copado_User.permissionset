@@ -2093,6 +2093,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__PromotionJobExecutionsCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PromotionMetadatasRemovalController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4943,6 +4947,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Environment__c.copado__Run_all_tests__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Environment__c.copado__Run_specified_tests__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

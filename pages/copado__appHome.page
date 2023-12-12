@@ -32,6 +32,19 @@
         </apex:outputPanel>
 
         <script>
+            function confirmationDialog(vlocityEnabled){
+                let VLOCITY_DISCLAIMER = '{!JSENCODE($Label.copado__VLOCITY_DISCLAIMER)}';
+                let choice = vlocityEnabled === 'true' ? 'false' : confirm(VLOCITY_DISCLAIMER);
+
+                if(choice) {
+                    vlocityToggle();
+                } else {
+                    toggleVlocityCheckbox(choice)
+                    return;
+                }
+                
+            }
+
             function toggleVlocityCheckbox(vlocityEnabled) {
                 if (vlocityEnabled === 'true') {
                     $copado('#vlocityInputCheckbox').attr('checked', 'checked');
@@ -40,9 +53,12 @@
                 }
             }
 
-            $(document).ready(() => {
-                toggleVlocityCheckbox('{!AND(VlocityFeature != null,VlocityFeature.copado__Enabled__c)}');
-            });
+            (function ($) {
+                // jQuery code using $
+                $(document).ready(() => {
+                    toggleVlocityCheckbox('{!AND(VlocityFeature != null,VlocityFeature.copado__Enabled__c)}');
+                });
+            })(jQuery);
         </script>
     </head>
 
@@ -380,12 +396,12 @@
                                 <apex:pageBlock id="pbFeatures" title="{!$Label.copado__FEATURES}">
                                     <apex:pageBlockButtons location="top">
                                         <div class="slds-scope" style="display: flex;justify-content: flex-end;">
-                                            <apex:outputPanel title="{!$Label.copado__Vlocity_Activation_Info}" layout="block" styleClass="slds-form-element" style="width: 150px;margin-top: 7px;"
+                                            <apex:outputPanel title="{!$Label.copado__VLOCITY_SETTING}" layout="block" styleClass="slds-form-element" style="width: 150px;margin-top: 7px;"
                                                 rendered="{!canToggleVlocity}">
                                                 <label class="slds-checkbox_toggle slds-grid">
                                                     <span class="slds-form-element__label slds-m-bottom_none">{!$Label.Toggle_Vlocity}</span>
                                                     <input id="vlocityInputCheckbox" type="checkbox" name="checkbox-toggle" value="checkbox-toggle" aria-describedby="checkbox-toggle"
-                                                        onClick="vlocityToggle();" />
+                                                        onClick="confirmationDialog('{!AND(VlocityFeature != null,VlocityFeature.Enabled__c)}');return false;" />
                                                     <span id="checkbox-toggle" class="slds-checkbox_faux_container" aria-live="assertive">
                                                         <span class="slds-checkbox_faux"></span>
                                                     </span>

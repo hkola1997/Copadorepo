@@ -10,7 +10,7 @@
         <name>copado__Active__c</name>
     </fields>
     <fields>
-        <help><!-- Use this option if you want User Stories which already promoted in your Copado Pipeline to apply to the connection behaviours for back promotions which you create in Copado Continuous Delivery --></help>
+        <help>このオプションは、コパードパイプラインですでにプロモーションを行ったユーザーストーリーを、コパード継続的デリバリーで作成するバックプロモーションの接続動作に適用させたい場合に使用します。</help>
         <label><!-- Apply Connection Behaviors to All --></label>
         <name>copado__Apply_Connection_Behaviours_to_existing__c</name>
     </fields>
@@ -113,7 +113,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Commits Behind</masterLabel>
-            <translation><!-- Commits Behind --></translation>
+            <translation>コミット（Behind)</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Compliance Scan Results</masterLabel>

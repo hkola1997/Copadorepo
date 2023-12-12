@@ -2246,7 +2246,7 @@
                                                                 {!us.userStory[fld.fieldPath]}
                                                             </apex:outputPanel>
                                                             <apex:outputPanel layout="none" rendered="{!AND(fld.Type != 'reference', fld.Label == $ObjectType.copado__User_Story__c.fields.Name.Label)}">
-                                                                <a href="#" onclick="copadoNavigateToUrl('{!us.userStory.Id}','{!URLFOR($Action.copado__User_Story__c.View,us.userStory.Id)}', '_blank'); return false;"> {!us.userStory[fld.fieldPath]} </a>
+                                                                <a href="#" onclick="copadoNavigateToUrl('{!us.userStory.Id}','{!URLFOR($Action.copado__User_Story__c.View,us.userStory.Id)}', '_blank'); return false;" onauxclick="copadoNavigateToUrl('{!us.userStory.Id}','{!URLFOR($Action.copado__User_Story__c.View,us.userStory.Id)}', '_blank'); return false;"> {!us.userStory[fld.fieldPath]} </a>
                                                             </apex:outputPanel>
                                                         </div>
                                                     </td>
@@ -2297,7 +2297,7 @@
                                                                 {!cr[fld.fieldPath]}
                                                             </apex:outputPanel>
                                                             <apex:outputPanel layout="none" rendered="{!isNameField}">
-                                                                <a href="#" onclick="copadoNavigateToUrl('{!cr.Id}','{!URLFOR($Action.copado__Compliance_Scan_Result__c.View,cr.Id)}', '_blank'); return false;">{!cr[fld.fieldPath]}</a>
+                                                                <a href="#" onclick="copadoNavigateToUrl('{!cr.Id}','{!URLFOR($Action.Compliance_Scan_Result__c.View,cr.Id)}', '_blank'); return false;" onauxclick="copadoNavigateToUrl('{!cr.Id}','{!URLFOR($Action.Compliance_Scan_Result__c.View,cr.Id)}', '_blank'); return false;">{!cr[fld.fieldPath]}</a>
                                                             </apex:outputPanel>
                                                         </div>
                                                     </td>
@@ -2497,14 +2497,14 @@
                                             <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != null,currentPipeline.copado__Platform__c != 'Salesforce')}">
                                                 <td style="padding-left:28px">
                                                     <apex:repeat value="{!deployment.JobExecutions__r}" var="executions">
-                                                        <a href="#" onclick="copadoNavigateToUrl('{!executions.Id}','{!URLFOR($Action.copado__JobExecution__c.View,executions.Id)}', '_blank'); return false;"> {!executions.Name} </a>
+                                                        <a href="#" onclick="copadoNavigateToUrl('{!executions.Id}','{!URLFOR($Action.JobExecution__c.View,executions.Id)}', '_blank'); return false;" onauxclick="copadoNavigateToUrl('{!executions.Id}','{!URLFOR($Action.JobExecution__c.View,executions.Id)}', '_blank'); return false;"> {!executions.Name} </a>
                                                     </apex:repeat>
                                                 </td>
                                             </apex:outputPanel>
                                             <apex:repeat value="{!$ObjectType.copado__Deployment__c.FieldSets.copado__Pipeline_Deployment_Modal}" var="dep">
                                                 <td style="padding-left:28px">
                                                     <apex:outputPanel layout="none" rendered="{!dep.Label == $ObjectType.copado__Deployment__c.fields.Name.Label}">
-                                                        <a href="#" onclick="copadoNavigateToUrl('{!deployment.Id}','{!URLFOR($Action.copado__Deployment__c.View,deployment.Id)}', '_blank'); return false;"> {!deployment[dep.fieldPath]} </a>
+                                                        <a href="#" onclick="copadoNavigateToUrl('{!deployment.Id}','{!URLFOR($Action.Deployment__c.View,deployment.Id)}', '_blank'); return false;" onauxclick="copadoNavigateToUrl('{!deployment.Id}','{!URLFOR($Action.Deployment__c.View,deployment.Id)}', '_blank'); return false;"> {!deployment[dep.fieldPath]} </a>
                                                     </apex:outputPanel>
                                                     <apex:outputPanel layout="none" rendered="{!dep.Label != $ObjectType.copado__Deployment__c.fields.Name.Label}">
                                                         <apex:outputField value="{!deployment[dep]}" rendered="{!dep.Label != $ObjectType.copado__Deployment__c.fields.copado__Flag_Status__c.Label}"/>
@@ -2659,7 +2659,7 @@
                                                     {!prom.promotion[pf.fieldPath]}
                                                 </apex:outputPanel>
                                                 <apex:outputPanel layout="none" rendered="{!AND(pf.Type != 'reference', pf.Label == $ObjectType.copado__Promotion__c.fields.Name.Label)}">
-                                                    <a href="#" onclick="copadoNavigateToUrl('{!prom.promotion.Id}','{!URLFOR($Action.copado__Promotion__c.View,prom.promotion.Id)}', '_blank'); return false;"> {!prom.promotion[pf.fieldPath]}</a>
+                                                    <a href="#" onclick="copadoNavigateToUrl('{!prom.promotion.Id}','{!URLFOR($Action.Promotion__c.View,prom.promotion.Id)}', '_blank'); return false;" onauxclick="copadoNavigateToUrl('{!prom.promotion.Id}','{!URLFOR($Action.Promotion__c.View,prom.promotion.Id)}', '_blank'); return false;"> {!prom.promotion[pf.fieldPath]}</a>
                                                 </apex:outputPanel>
                                             </td>
                                         </apex:repeat>
