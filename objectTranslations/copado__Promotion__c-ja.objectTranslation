@@ -92,12 +92,12 @@
         <name>cmcSf__Validate_Deploy_Request_Id__c</name>
     </fields>
     <fields>
-        <help><!-- Select this checkbox if you are promoting from a higher to a lower environment in the pipeline. --></help>
+        <help>パイプラインで上位の環境から下位の環境にプロモートする場合は、このチェックボックスを選択します。</help>
         <label><!-- Is Back-Promotion --></label>
         <name>copado__Back_Promotion__c</name>
     </fields>
     <fields>
-        <help><!-- This field is checked by Copado once the promotion is merged and deployed successfully for multi-cloud platform. --></help>
+        <help>このフィールドは、プロモーションがマージされ、マルチクラウドプラットフォームに正常にデプロイされると、コパードによってチェックされます。</help>
         <label><!-- Completed --></label>
         <name>copado__Completed__c</name>
     </fields>
@@ -154,7 +154,7 @@
         <name>copado__Order_by__c</name>
     </fields>
     <fields>
-        <help><!-- This field auto-populates and displays the pipeline platform. --></help>
+        <help>このフィールドには、パイプラインのプラットフォームが自動入力され表示されます。</help>
         <label><!-- Platform --></label>
         <name>copado__Platform__c</name>
     </fields>
@@ -170,7 +170,7 @@
         <relationshipLabel><!-- Promotions --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Select this checkbox if you want the promotion owner to receive an email notification when the promotion is complete. --></help>
+        <help>プロモーションが完了した際に、プロモーションオーナーにメール通知を送信する場合は、このチェックボックスを選択します。</help>
         <label><!-- Notify When Complete --></label>
         <name>copado__Send_Deployment_Complete_email__c</name>
     </fields>

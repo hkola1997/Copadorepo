@@ -126,6 +126,19 @@
                 </visibilityRule>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>cmcSf:emptySnapshotAlert</componentName>
+                <identifier>c_emptySnapshotAlert</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Pipeline__r.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>SFDX</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -412,7 +425,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>true</value>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
@@ -430,7 +443,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>active</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>

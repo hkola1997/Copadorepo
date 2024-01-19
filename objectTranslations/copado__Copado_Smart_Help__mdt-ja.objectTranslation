@@ -13,11 +13,11 @@
         <name>copado__Base_Page__c</name>
         <picklistValues>
             <masterLabel>GitCommitChanges</masterLabel>
-            <translation><!-- GitCommitChanges --></translation>
+            <translation>Gitコミット変更</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>GitCommitMain</masterLabel>
-            <translation><!-- GitCommitMain --></translation>
+            <translation>Gitコミットメイン</translation>
         </picklistValues>
     </fields>
     <fields>

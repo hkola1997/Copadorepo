@@ -5,7 +5,7 @@ This read-only file shows the class's global constructors,
 methods, variables, and properties.
 To enable code to compile, all methods return null.
 */
-global class DeploymentExt {
+global class DeploymentExt extends copado.DeploymentConstant {
     @RemoteAction
     global static void deleteStep(String stepId) {
 

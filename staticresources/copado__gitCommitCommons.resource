@@ -285,7 +285,7 @@ var operationTypeAttachmentName;
                         const index = allMdt.findIndex(isEqual);
                         const mdtWrapper = {
                             t: member.MemberType,
-                            n: decodeURI(member.MemberName).replace(/%2F/gi, "/"),
+                            n: decodeURI(member.MemberName.replace(/%20/g," ")),
                             b: dw.u.getHtmlDecodedString(member.LastModifiedBy.Name),
                             d: member.LastModifiedDate.substr(0, member.LastModifiedDate.indexOf('T')),
                             cb: dw.u.getHtmlDecodedString(member.CreatedBy.Name),
@@ -302,6 +302,10 @@ var operationTypeAttachmentName;
                             const i = allMdt.findIndex(isSameType);
                             allMdt.splice(i, 0, mdtWrapper);
                         }
+                    }
+                    // brackets needs to be encoded since sfdc gives encoded chars
+                    for(var i=0; i<allMdt.length; i++){
+                        allMdt[i].n = (allMdt[i].n).replace("(","%28").replace(")","%29").replace("[","%5B").replace("]","%5D");
                     }
                     dw.u.upsertAttach(orgId, 'MetaData', JSON.stringify(allMdt));
                 }

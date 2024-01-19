@@ -10,7 +10,7 @@
         <name>copado__Apply_Schedule__c</name>
     </fields>
     <fields>
-        <help><!-- This is the Apex Job ID for the scheduled permission revokal --></help>
+        <help>これは、スケジュールされた権限のrevokalのApexジョブIDです。</help>
         <label><!-- End Schedule ID --></label>
         <name>copado__End_Schedule_ID__c</name>
     </fields>

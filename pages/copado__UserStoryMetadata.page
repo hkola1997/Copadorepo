@@ -63,57 +63,6 @@
                 $copado('.warningM3').removeClass('warningM3');
             }
         </script>
-    </head>
-
-    <body class="slds-scope">
-        <apex:form id="content">
-            <div>
-                <apex:outputPanel layout="block" id="pageMessages">
-                    <apex:pagemessages id="pmessage" />
-                </apex:outputPanel>
-                <apex:outputPanel layout="block" styleClass="slds-page-header" rendered="{!!isMultiCloud}" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
-                    <div class="slds-grid">
-                        <div class="slds-col slds-has-flexi-truncate">
-                            <div class="slds-media">
-                                <div class="slds-media__figure">
-                                    <span class="slds-icon_container slds-icon-standard-file" title="Description of icon when needed">
-                                        <svg class="slds-icon" aria-hidden="true">
-                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#file')}"></use>
-                                        </svg>
-                                    </span>
-                                </div>
-                                <div class="slds-media__body">
-                                    <p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.User_Story_Metadata__c.Label}</p>
-                                    <h1 class=" slds-page-header__title slds-truncate slds-align-middle">
-                                        {!IF(ISBLANK(usMetadata.ID),'' ,usMetadata.Name)}
-                                    </h1>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- ACTION BUTTONS -->
-                        <div class="slds-col slds-no-flex slds-grid slds-align-top ">
-                            <div class="slds-button-group" role="group">
-                                <apex:commandButton value="{!$Label.copado__DELETE}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages"
-                                    oncomplete="overridePageMessages()" />
-                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" id="statusDropdown">
-                                    <button class="slds-button slds-button_neutral actionButton" aria-haspopup="true" title="Show More" onclick="ToggleDropDown(this,event); return false">{!$Label.MarkAllAs}
-                                        <svg class="slds-button__icon" aria-hidden="true">
-                                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
-                                        </svg>
-                                        <span class="slds-assistive-text">{!$Label.MarkAllAs}</span>
-                                    </button>
-                                    <div class="slds-dropdown slds-dropdown_right">
-                                        <ul class="slds-dropdown__list" role="menu">
-                                            <apex:repeat value="{!statuses}" var="s">
-                                                <li class="slds-dropdown__item" role="presentation">
-                                                    <a href="#" role="menuitem" tabindex="0" onclick="markAllAs('{!JSINHTMLENCODE(s.value)}');">
-                                                        <span class="slds-truncate" title="Status" value="{!s.value}">{!s.label}</span>
-                                                    </a>
-                                                </li>
-                                            </apex:repeat>
-                                        </ul>
-                                    </div>
-                                </div>
                                 <script type="text/javascript">
                                     ToggleDropDown = function (elem, e) {
                                         e.stopPropagation();
@@ -158,7 +107,7 @@
                                                 win.focus();
                                             } else {
                                                 //Browser has blocked it
-                                                alert('{!JSENCODE($Label.POPUP_BLOCKER_MESSAGE)}');
+                        alert('{!JSENCODE($Label.copado__POPUP_BLOCKER_MESSAGE)}');
                                             }
                                         }
                                         overridePageMessages();
@@ -220,6 +169,58 @@
                                         }
                                     }
                                 </script>
+    </head>
+
+    <body class="slds-scope">
+        <apex:form id="content">
+            <div>
+                <apex:outputPanel layout="block" id="pageMessages">
+                    <apex:pagemessages id="pmessage" />
+                </apex:outputPanel>
+                <apex:outputPanel layout="block" styleClass="slds-page-header" rendered="{!!isMultiCloud}" style="{!IF($User.UIThemeDisplayed == 'Theme4d','background: #fdfdfd;margin-bottom: 12px;border-collapse: collapse;border-radius: 4px;','')}">
+                    <div class="slds-grid">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-file" title="Description of icon when needed">
+                                        <svg class="slds-icon" aria-hidden="true">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/standard-sprite/svg/symbols.svg#file')}"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <p class="slds-text-heading--label slds-line-height--reset">{!$ObjectType.User_Story_Metadata__c.Label}</p>
+                                    <h1 class=" slds-page-header__title slds-truncate slds-align-middle">
+                                        {!IF(ISBLANK(usMetadata.ID),'' ,usMetadata.Name)}
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ACTION BUTTONS -->
+                        <div class="slds-col slds-no-flex slds-grid slds-align-top ">
+                            <div class="slds-button-group" role="group">
+                                <apex:commandButton value="{!$Label.copado__DELETE}" action="{!deleteJob}" styleClass="slds-button slds-button--neutral" reRender="pageMessages"
+                                    oncomplete="overridePageMessages()" />
+                                <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" id="statusDropdown">
+                                    <button class="slds-button slds-button_neutral actionButton" aria-haspopup="true" title="Show More" onclick="ToggleDropDown(this,event); return false">{!$Label.MarkAllAs}
+                                        <svg class="slds-button__icon" aria-hidden="true">
+                                            <use xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#down')}"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">{!$Label.MarkAllAs}</span>
+                                    </button>
+                                    <div class="slds-dropdown slds-dropdown_right">
+                                        <ul class="slds-dropdown__list" role="menu">
+                                            <apex:repeat value="{!statuses}" var="s">
+                                                <li class="slds-dropdown__item" role="presentation">
+                                                    <a href="#" role="menuitem" tabindex="0" onclick="markAllAs('{!JSINHTMLENCODE(s.value)}');">
+                                                        <span class="slds-truncate" title="Status" value="{!s.value}">{!s.label}</span>
+                                                    </a>
+                                                </li>
+                                            </apex:repeat>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- / ACTION BUTTONS -->
@@ -348,7 +349,6 @@
                                                 </div>
                                             </td>
                                         </apex:repeat>
-                                        <apex:outputPanel layout="none" rendered="{!!isMultiCloud}">
                                             <td data-label="Pull Request" class="slds-cell-buffer_right">
                                                 <div class="slds-truncate" title="Compare">
                                                     <a tabindex="0" onclick="initPullRequest('{!usm.Id}');">
@@ -356,6 +356,7 @@
                                                     </a>
                                                 </div>
                                             </td>
+                                        <apex:outputPanel layout="none" rendered="{!!isMultiCloud}">
                                             <td data-label="Mark As" height="41px" class="slds-cell-buffer_right">
                                                 <div class="slds-dropdown-trigger slds-dropdown-trigger_click slds-button_last" id="statusDropdown{!usm.Id}" xmlns="http://www.w3.org/2000/svg"
                                                     xmlns:xlink="http://www.w3.org/1999/xlink">

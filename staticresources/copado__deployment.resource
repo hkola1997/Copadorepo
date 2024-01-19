@@ -6374,7 +6374,8 @@ dw.qb.createObjectSelector = function (selector, data, cb) {
         var args = event.args;
         if (args && !isNaN(args.index)) {
             var item = $objects.jqxComboBox('listBox').visibleItems[args.index];
-            cb && cb(item.label.split('(')[1].split(')')[0], item.label);
+            let arrayLength = item.label.split("(").length;
+            cb && cb(item.label.split('(')[arrayLength-1].split(')')[0], item.label);
         }
     });
 
@@ -6795,7 +6796,6 @@ dw.qb.init = function (force, orgId) {
         parentId: orgId,
         success: function (res, date) {
             dw.qb.createCacheDeleteButton(date);
-
             dw.qb.startQueryBuilder(res);
         },
         error: function (r) {
