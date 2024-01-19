@@ -528,6 +528,16 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>chandu_testing_field__c</fullName>
+        <externalId>false</externalId>
+        <label>chandu testing field</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>few_FLS_test_choosing_few_profiles__c</fullName>
         <externalId>false</externalId>
         <label>few FLS test choosing few profiles</label>
