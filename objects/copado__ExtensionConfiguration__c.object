@@ -166,6 +166,28 @@
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>copadoQuality__Latest_Job_Execution__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Latest Job Execution</label>
+        <referenceTo>copado__JobExecution__c</referenceTo>
+        <relationshipLabel>Extension Configurations</relationshipLabel>
+        <relationshipName>Extension_Configurations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>copadoQuality__Requires_Sync__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Requires Sync?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>copado__AcceptanceCriteria__c</fullName>
         <defaultValue>&quot;{}&quot;</defaultValue>
         <deprecated>false</deprecated>

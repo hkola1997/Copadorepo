@@ -1,4 +1,4 @@
-<apex:page id="PipelineManager" standardController="copado__Deployment_Flow__c" extensions="copado.PipelineManagerExtension,copado.BranchManagementExtension,copado.Settings" lightningStylesheets="true" sideBar="false" docType="html-5.0" title="{!$Label.copado__PipelineManager}" showHeader="true">
+<apex:page id="PipelineManager" standardController="copado__Deployment_Flow__c" extensions="copado.PipelineManagerExtension,copado.BranchManagementExtension,copado.Settings,copado.PromotionRemoter" lightningStylesheets="true" sideBar="false" docType="html-5.0" title="{!$Label.copado__PipelineManager}" showHeader="true">
     <apex:slds />
     <c:GAnalytics />
     <script>
@@ -554,6 +554,40 @@
         }
         /* end pipeline dialog */
 
+        function executePromotionActions(promotionWrappers, isValidation) {
+            let promotionIds = [];
+            if (Array.isArray(promotionWrappers)) {
+                for (let i = 0; i < promotionWrappers.length; i++) {
+                    promotionIds.push(promotionWrappers[i].promotion.Id);
+                }
+            } else if (typeof promotionWrappers === 'object' && promotionWrappers !== null) {
+                for (let key in promotionWrappers) {
+                    promotionIds.push(key);
+                }
+            }
+            let promises = [];
+            for (let i = 0; i < promotionIds.length; i++) {
+                promises.push(
+                    new Promise(function (resolve, reject) {
+                        Visualforce.remoting.Manager.invokeAction(
+                            '{!$RemoteAction.PromotionRemoter.executePromotionAction}',
+                            promotionIds[i],
+                            isValidation,
+                            function (result, event) {
+                                if (event.status) {
+                                    resolve(result);
+                                } else if (event.type === 'exception') {
+                                    console.error(event.message);
+                                    reject();
+                                }
+                            },
+                            { buffer: false, escape: true }
+                        );
+                    })
+                );
+            }
+            Promise.all(promises);
+        }
 
     </script>
 
@@ -1695,13 +1729,15 @@
                                         </apex:outputPanel>
                                         <apex:actionFunction action="{!createRebasePromotions}" name="createRebasePromotions" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons, notify" oncomplete="unlockScreen();" />
                                         <apex:actionFunction action="{!createRebasePromotionsAndDeploy}" name="createRebasePromotionsAndDeploy" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons, notify" oncomplete="unlockScreen();" />
+                                        <apex:actionFunction action="{!createRebasePromotionsAndDeploy}" name="createRebasePromotionsAndDeployMC" reRender="rebaseMessage,rebaseMainRender,rebaseEnvironments,rebasePromotionsPanel,createdPromotionButtons, notify" oncomplete="executePromotionActions({!rebasePromotionsMapJSON}, false);unlockScreen();" />
                                         <apex:outputPanel id="rebasePromotionButtons" layout="block" style="float: right; margin-top: 18px;">
                                             <apex:outputText value="{!$Label.copado__MASS_BP_DISABLE_AUTOSELECT_WARNING}" style="text-align: left;color:orange;" rendered="{!showHiddenCheckboxes}" />
 
                                             <apex:outputPanel rendered="{!AND(rebaseUserStoriesWrapper.size > 0, OR(AND(NOT(ISNULL(rebaseProject)), rebaseProject != $Label.copado__NONE_SELECTED),AND(NOT(ISNULL(rebaseRelease)), rebaseRelease != $Label.copado__NONE_SELECTED)))}" layout="none" id="rebaseButtons">
                                                 <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__Go_To_Promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
                                                 <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createRebasePromotions" oncomplete="createRebasePromotions();" reRender="noRender" />
-                                                <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote_and_Deploy}" onclick="lockScreen();" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="noRender" />
+                                                <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote_and_Deploy}" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}" onclick="lockScreen();" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createRebasePromotionsAndDeploy" oncomplete="createRebasePromotionsAndDeploy();" reRender="noRender" />
+                                                <apex:commandLink target="_blank" value="{!$Label.copado__Pipeline_Back_Promote_and_Deploy}" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}" onclick="lockScreen();" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createRebasePromotionsAndDeployMC" oncomplete="createRebasePromotionsAndDeployMC();" reRender="noRender" />
                                             </apex:outputPanel>
                                             <apex:outputPanel layout="block" rendered="{!rebaseUserStoriesWrapper.size == 0}">
                                                 <apex:commandLink action="{!goToPromotions}" rendered="{!rebasePromotionKeySize > 0}" target="_blank" value="{!$Label.copado__Go_To_Promotions}" onclick="lockScreen();" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" oncomplete="unlockScreen();" reRender="rebaseMainRender" />
@@ -2103,9 +2139,16 @@
                                 </button>
                             </div>
                             <apex:outputPanel id="GeneralActionButtons" styleClass="slds-col slds-size_1-of-2" style="text-align:right;">
-                                <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                </apex:outputPanel>
+                                <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
+                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelectionsMC" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="executePromotionActions({!promotionWrappersJSON}, true);openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                </apex:outputPanel>
                             </apex:outputPanel>
                         </div>
                         <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">

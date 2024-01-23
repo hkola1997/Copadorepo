@@ -5,6 +5,15 @@
         <value><!-- Extension Configuration --></value>
     </caseValues>
     <fields>
+        <label><!-- Latest Job Execution --></label>
+        <name>copadoQuality__Latest_Job_Execution__c</name>
+        <relationshipLabel><!-- Extension Configurations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requires Sync? --></label>
+        <name>copadoQuality__Requires_Sync__c</name>
+    </fields>
+    <fields>
         <label><!-- Acceptance Criteria --></label>
         <name>copado__AcceptanceCriteria__c</name>
     </fields>

@@ -264,6 +264,20 @@
                 </visibilityRule>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>ATF.Test.ResultsViewer</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Test Tool</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>Facet-yaqumdrdwv</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -378,22 +392,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Reference__c</fieldItem>
                 <identifier>RecordReference__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Reference__c}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Reference__c}</leftValue>

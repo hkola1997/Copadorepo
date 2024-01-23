@@ -126,6 +126,16 @@
                 <identifier>RecordIs_Sensitive_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Is_Public__c</fieldItem>
+                <identifier>RecordIs_Public_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-5a25efbe-d937-4ae4-ac73-db77c7b4a5c2</name>
         <type>Facet</type>
     </flexiPageRegions>

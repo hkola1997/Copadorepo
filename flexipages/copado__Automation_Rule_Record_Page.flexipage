@@ -238,20 +238,22 @@
         <itemInstances>
             <componentInstance>
                 <componentName>copado:automationRuleEvaluationScope</componentName>
-                <identifier>c_automationRuleEvaluationScope</identifier>
+                <identifier>c_automationRuleEvaluationScope2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-429eedf4-028d-48cc-9840-c479af23b17d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:dynamicComponentWrapper</componentName>
+                <identifier>c_dynamicComponentWrapper2</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>copado:automationRuleFilterCriteria</componentName>
-                <identifier>c_automationRuleFilterCriteria</identifier>
+                <identifier>c_automationRuleFilterCriteria2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</name>
+        <name>Facet-b07df94a-e34a-4000-a6c0-8dd2f172057b</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -277,29 +279,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-429eedf4-028d-48cc-9840-c479af23b17d</value>
+                    <value>Facet-b07df94a-e34a-4000-a6c0-8dd2f172057b</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>{!$Label.copado__Scope}</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>{!$Label.copado__CONDITIONS}</value>
+                    <value>{!$Label.copado__Configuration}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
@@ -327,6 +311,42 @@
             <componentInstance>
                 <componentName>copado:automationRuleConfiguration</componentName>
                 <identifier>c_automationRuleConfiguration</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0636a1ea-a8e7-459e-8f4d-4aecff3c201a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0636a1ea-a8e7-459e-8f4d-4aecff3c201a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__AUTOMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-32a11211-523d-4283-8028-aae5dcc287d7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>tabs</name>
+                    <value>Facet-32a11211-523d-4283-8028-aae5dcc287d7</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset2</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

@@ -20,6 +20,9 @@
     <fields>
         <help>表示される値は、組織で利用可能なアクティブなエクステンション設定レコードに基づいています。</help>
         <label><!-- Tool Configuration --></label>
+        <lookupFilter>
+            <errorMessage><!-- Make sure the selected Extension Configuration is valid and active. --></errorMessage>
+        </lookupFilter>
         <name>copado__ExtensionConfiguration__c</name>
         <relationshipLabel><!-- Tests --></relationshipLabel>
     </fields>
