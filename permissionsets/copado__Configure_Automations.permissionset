@@ -25,7 +25,15 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__BackPromotionAutomationScopeCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ContinuousDeliverySetupController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DynamicComponentWrapperCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <description>Enables users to configure and execute automations. This permission set will give admin access to users who need to create, configure and delete automations in their pipelines. Typically a Release Manager</description>
@@ -102,6 +110,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Automation_Rule__c.copado__Automation_Connector__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Automation_Rule__c.copado__Config_Json__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

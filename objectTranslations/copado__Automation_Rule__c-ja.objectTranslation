@@ -10,7 +10,7 @@
     </fields>
     <fields>
         <help>レコードのステータス更新や他のレコードの作成など、より具体的な操作を行うために使用するフローのAPI名です。</help>
-        <label><!-- Automated Action Callback --></label>
+        <label><!-- Flow or Class API Name --></label>
         <name>copado__Automated_Action_Callback__c</name>
     </fields>
     <fields>
@@ -20,8 +20,12 @@
     </fields>
     <fields>
         <help>ソースと自動アクションの間でペイロードとパラメータをマッピングするコネクター。カスタムコネクタクラスを指定する場合は、「カスタム」を選択します。</help>
-        <label><!-- Automation Connector --></label>
+        <label><!-- Automation Type --></label>
         <name>copado__Automation_Connector__c</name>
+    </fields>
+    <fields>
+        <label><!-- Config Json --></label>
+        <name>copado__Config_Json__c</name>
     </fields>
     <fields>
         <help>www.cronmaker.com を参照して、より複雑なクロン（Cron）を作成することができます。セールスフォースでサポートしていないCron表記もありますので、ご注意下さい。</help>
@@ -30,7 +34,7 @@
     </fields>
     <fields>
         <help>ソースと自動化されたアクションのペイロードとパラメータをマッピングするために使用されるApexクラスのAPI名</help>
-        <label><!-- Custom Automation Connector --></label>
+        <label><!-- Custom Automation Type (API Name) --></label>
         <name>copado__Custom_Automation_Connector__c</name>
     </fields>
     <fields>
@@ -50,7 +54,7 @@
     </fields>
     <fields>
         <help>自動化されたアクションがすぐに実行されるか、スケジュールされるかを指定します。</help>
-        <label><!-- Execution --></label>
+        <label><!-- Execution Time --></label>
         <name>copado__Execution__c</name>
         <picklistValues>
             <masterLabel>Immediate</masterLabel>
@@ -81,7 +85,7 @@
     </fields>
     <fields>
         <help>ソースアクションの実行が成功または失敗した後にオートメーションをトリガーするかどうかを定義します。</help>
-        <label><!-- Source Action Status --></label>
+        <label><!-- Trigger Action Status --></label>
         <name>copado__Source_Action_Status__c</name>
         <picklistValues>
             <masterLabel>Error</masterLabel>
@@ -94,7 +98,7 @@
     </fields>
     <fields>
         <help>オートメーションのトリガーとなるアクション</help>
-        <label><!-- Source Action --></label>
+        <label><!-- Trigger Action --></label>
         <name>copado__Source_Action__c</name>
     </fields>
     <fields>

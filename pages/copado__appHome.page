@@ -64,9 +64,13 @@
 
     <body>
         <apex:form id="theForm">
-            <apex:actionFunction name="performRemoteSiteSettingsCallout" action="{!setRemoteSite}" oncomplete="createNamedCredentials();"/>
-            <apex:actionFunction name="performNamedCredentialsCallout" action="{!setNamedCredential}" oncomplete="callRegisterCopadoBackend();"/>
-            <apex:actionFunction name="performCallOut" action="{!registerBackend}"/>
+            <apex:actionFunction name="performRemoteSiteSettingsCallout" action="{!setRemoteSite}" oncomplete="createNamedCredentials('{!registry}');"/>
+            <apex:actionFunction name="performNamedCredentialsCallout" action="{!setNamedCredential}" oncomplete="callRegisterCopadoBackend('{!registry}');">
+                <apex:param name="remoteSiteMessage" assignTo="{!registry}" value="" />
+            </apex:actionFunction>
+            <apex:actionFunction id="test" name="performCallOut" action="{!registerBackend}">
+                <apex:param name="namedCredMessage" assignTo="{!registry}" value="" />
+            </apex:actionFunction>
             <div class="copado-lightning-VF">
                 <apex:sectionHeader id="theHeader" title="Copado" subtitle="{!$Label.copado__ACCOUNT_SUMMARY}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}">
                     <div class="slds-grid" style="text-align: center;">
@@ -112,9 +116,6 @@
                 <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
                 <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                     <div class="slds-page-header">
-                        <apex:outputPanel id="messagesContainer" layout="block" styleClass="fixedMsg">
-                            <apex:pageMessages id="msg" />
-                        </apex:outputPanel>
                         <div class="slds-grid">
                             <div class="slds-col slds-has-flexi-truncate">
                                 <div class="slds-media">
@@ -161,17 +162,17 @@
                                                     <!--dropdown ends-->
                                                     <apex:outputPanel id="script-block">
                                                         <script>
-                                            function validateInput() {
-                                                if(!{!hasError}) {
-                                                    performRemoteSiteSettingsCallout();
-                                                }
-                                            }                
-                                            function createNamedCredentials() {
-                                                performNamedCredentialsCallout();       
-                                            }
-                                            function callRegisterCopadoBackend() {
-                                                performCallOut();   
-                                            }
+                                                            function validateInput() {
+                                                                if (!{!hasError}) {
+                                                                performRemoteSiteSettingsCallout();
+                                                                }
+                                                            }
+                                                            function createNamedCredentials(remoteMsg) {
+                                                                performNamedCredentialsCallout(remoteMsg);
+                                                            }
+                                                            function callRegisterCopadoBackend(namedMsg) {
+                                                                performCallOut(namedMsg);
+                                                            }
                                                         </script>
                                                     </apex:outputPanel>
                                                             </div>
@@ -227,6 +228,9 @@
                 <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
 
                     <apex:outputPanel id="thePanel" layout="block" styleClass="copado-lightning-container" style="padding-top:12px;">
+                        <apex:outputPanel id="messagesContainer" layout="block" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" >
+                            <apex:pageMessages id="msg" />
+                        </apex:outputPanel>
                         <c:credits id="cmp_credits" showGoToLicenseButton="true" />
                         <style>
                             .activeTab {

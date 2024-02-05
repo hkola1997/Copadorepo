@@ -37,6 +37,10 @@
         <label><!-- Rule Name --></label>
         <name>copado__Rule_Name__c</name>
         <picklistValues>
+            <masterLabel>Apex</masterLabel>
+            <translation><!-- Apex --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>ApexBadCrypto</masterLabel>
             <translation><!-- ApexBadCrypto --></translation>
         </picklistValues>
@@ -177,6 +181,10 @@
             <translation><!-- IfStmtsMustUseBraces --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>JavaScript</masterLabel>
+            <translation><!-- JavaScript --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>MethodNamingConventions</masterLabel>
             <translation><!-- MethodNamingConventions --></translation>
         </picklistValues>
@@ -197,6 +205,10 @@
             <translation><!-- NcssTypeCount --></translation>
         </picklistValues>
         <picklistValues>
+            <masterLabel>Salesforce VisualForce</masterLabel>
+            <translation><!-- Salesforce VisualForce --></translation>
+        </picklistValues>
+        <picklistValues>
             <masterLabel>StdCyclomaticComplexity</masterLabel>
             <translation><!-- StdCyclomaticComplexity --></translation>
         </picklistValues>
@@ -211,6 +223,10 @@
         <picklistValues>
             <masterLabel>WhileLoopsMustUseBraces</masterLabel>
             <translation><!-- WhileLoopsMustUseBraces --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XML</masterLabel>
+            <translation><!-- XML --></translation>
         </picklistValues>
     </fields>
     <fields>
