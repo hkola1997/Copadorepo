@@ -787,7 +787,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
                 that.render();
         };
         // Initialize the select all/unselect all buttons
-        var $unselectAll = $copado('<button id="unselectAll">Unselect All</button>').on('click', function(e) {
+        var $unselectAll = $copado('<button id="unselectAll">'+copadoLabels.unselect_all+'</button>').on('click', function(e) {
                 e.preventDefault();
                 selectAll(false);
             // setting tab to "All Metadata" when there is no selection.
@@ -796,7 +796,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             }
             });
 
-        var $selectAll = $copado('<button id="selectAll">Select All</button>').on('click', function(e) {
+        var $selectAll = $copado('<button id="selectAll">'+copadoLabels.select_all+'</button>').on('click', function(e) {
             e.preventDefault();
             selectAll(true);
         });
@@ -843,12 +843,6 @@ MetadataGrid2.defaultTypes =
     'ActionLinkGroupTemplate,AnalyticSnapshot,ApexClass,ApexComponent,ApexPage,ApexTestSuite,ApexTrigger,AppMenu,ApprovalProcess,AssignmentRule,AssignmentRules,AuraDefinitionBundle,AuthProvider,AutoResponseRule,AutoResponseRules,BrandingSet,BusinessProcess,CallCenter,CaseSubjectParticle,Certificate,ChannelLayout,ChatterExtension,CleanDataService,Community,CompactLayout,ConnectedApp,ContentAsset,CorsWhitelistOrigin,CspTrustedSite,CustomApplication,CustomApplicationComponent,CustomFeedFilter,CustomField,CustomLabel,CustomLabels,CustomMetadata,CustomObject,CustomObjectTranslation,CustomPageWebLink,CustomPermission,CustomSite,CustomTab,Dashboard,DataCategoryGroup,DelegateGroup,Document,DuplicateRule,EclairGeoData,EmailServicesFunction,EmailTemplate,EmbeddedServiceBranding,EmbeddedServiceConfig,EscalationRule,EscalationRules,EventDelivery,EventSubscription,ExternalDataSource,ExternalServiceRegistration,FieldSet,FlexiPage,Flow,FlowCategory,FlowDefinition,GlobalValueSet,GlobalValueSetTranslation,Group,HomePageComponent,HomePageLayout,Index,InstalledPackage,Layout,LeadConvertSettings,Letterhead,LightningBolt,LightningExperienceTheme,ListView,MatchingRule,MatchingRules,NamedCredential,NetworkBranding,PathAssistant,PermissionSet,PlatformCachePartition,PostTemplate,Profile,ProfilePasswordPolicy,ProfileSessionSetting,Queue,QuickAction,RecordType,RemoteSiteSetting,Report,ReportType,Role,SamlSsoConfig,Scontrol,Settings,SharingCriteriaRule,SharingOwnerRule,SharingReason,SharingRules,SharingSet,SiteDotCom,StandardValueSet,StandardValueSetTranslation,StaticResource,SynonymDictionary,TopicsForObjects,ValidationRule,Vlocity,WebLink,Workflow,WorkflowAlert,WorkflowFieldUpdate,WorkflowKnowledgePublish,WorkflowOutboundMessage,WorkflowRule,WorkflowSend,WorkflowTask';
 MetadataGrid2.prototype.loadMetaDataTypes = function(callbackFinished, forceReloading, preDefinedSource) {
     var that = this;
-    console.log('loadMetaDataTypes() calling forceReloading=', forceReloading);
-    console.log('loadMetaDataTypes() calling this.filterByTypeList=', this.filterByTypeList);
-    console.log('preDefinedSource===> ',preDefinedSource);
-    console.log('preDefinedSource==type=> ',typeof preDefinedSource);
-    console.log('that.filterByTypeList==type=> ',typeof that.filterByTypeList);
-    console.log('MetadataGrid2.defaultTypes=> ',MetadataGrid2.defaultTypes);
 
     // never reload the metadata types
     if(this.filterByTypeList.length &&!forceReloading) {
@@ -969,6 +963,20 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
                 );
             else allMetaData = [];
             var existingFlag = false;
+            // In Refresh Recent changes, diacritical marks and japanese chars decodes to unrpintable chars, 
+            // decoded below only for metadata names containing those chars.
+            for(var i=0; i<allMetaData.length; i++){
+                if(/[\x00-\x08\x0E-\x1F\x80-\xFF]/.test(allMetaData[i].n)) {
+                    try{
+                        // Deprecated escape() method is used due to lack of alternate options
+                        // TODO: custom escape method is one possible solution.
+                        allMetaData[i].n = decodeURI(escape(allMetaData[i].n));
+                    }
+                    catch(e) {
+                        // no action needed
+                    }
+                }
+            }
             for(var j=0; j<that.selectedMetadata.length; j++){
                 for(var i=0; i<allMetaData.length; i++){
                     if(allMetaData[i].n == that.selectedMetadata[j].n && allMetaData[i].t == that.selectedMetadata[j].t) existingFlag = true;

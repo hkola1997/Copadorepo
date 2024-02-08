@@ -6,7 +6,7 @@
     </fields>
     <fields>
         <help><!-- API name of the flow used to perform more specific operations, like updating records status, creating other records, etc. --></help>
-        <label><!-- Automated Action Callback --></label>
+        <label><!-- Flow or Class API Name --></label>
         <name>copado__Automated_Action_Callback__c</name>
     </fields>
     <fields>
@@ -16,8 +16,12 @@
     </fields>
     <fields>
         <help><!-- Connector that maps the payload and parameters between the source and automated actions.Select &quot;Custom&quot; if you want to specify a custom connector class --></help>
-        <label><!-- Automation Connector --></label>
+        <label><!-- Automation Type --></label>
         <name>copado__Automation_Connector__c</name>
+    </fields>
+    <fields>
+        <label><!-- Config Json --></label>
+        <name>copado__Config_Json__c</name>
     </fields>
     <fields>
         <help><!-- You can use www.cronmaker.com to create more sophisticated cron expressions. Please keep in mind that certain cron expressions might not be supported by Salesforce. --></help>
@@ -26,7 +30,7 @@
     </fields>
     <fields>
         <help><!-- API name of the Apex class used to map the source and automated actions payloads and parameters --></help>
-        <label><!-- Custom Automation Connector --></label>
+        <label><!-- Custom Automation Type (API Name) --></label>
         <name>copado__Custom_Automation_Connector__c</name>
     </fields>
     <fields>
@@ -46,7 +50,7 @@
     </fields>
     <fields>
         <help><!-- Indicate if the automated action should be immediately executed or it&apos;ll be scheduled --></help>
-        <label><!-- Execution --></label>
+        <label><!-- Execution Time --></label>
         <name>copado__Execution__c</name>
         <picklistValues>
             <masterLabel>Immediate</masterLabel>
@@ -56,6 +60,10 @@
             <masterLabel>Scheduled</masterLabel>
             <translation><!-- Scheduled --></translation>
         </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Filter Criteria --></label>
+        <name>copado__Filter_Criteria__c</name>
     </fields>
     <fields>
         <label><!-- Last Execution Date Time --></label>
@@ -73,7 +81,7 @@
     </fields>
     <fields>
         <help><!-- Define if the automation should be triggered after a successful or failed execution of the source action --></help>
-        <label><!-- Source Action Status --></label>
+        <label><!-- Trigger Action Status --></label>
         <name>copado__Source_Action_Status__c</name>
         <picklistValues>
             <masterLabel>Error</masterLabel>
@@ -86,7 +94,7 @@
     </fields>
     <fields>
         <help><!-- Action that will trigger the automation --></help>
-        <label><!-- Source Action --></label>
+        <label><!-- Trigger Action --></label>
         <name>copado__Source_Action__c</name>
     </fields>
     <fields>

@@ -275,7 +275,7 @@
                     <value>Test Tool</value>
                 </componentInstanceProperties>
                 <componentName>copado:dynamicUISectionContainer</componentName>
-                <identifier>c_dynamicUISectionContainer1</identifier>
+                <identifier>c_dynamicUISectionContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-yaqumdrdwv</name>
@@ -406,22 +406,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Status__c</fieldItem>
-                <identifier>RecordStatus__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.copado__Reference__c}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Priority__c</fieldItem>
                 <identifier>RecordPriority__cField</identifier>
                 <visibilityRule>
@@ -514,14 +498,8 @@
                     <name>fieldApiName</name>
                     <value>LatestJobExecution__c</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>noJobMessage</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>noJobTitle</name>
-                </componentInstanceProperties>
-                <componentName>copado:resultMonitor</componentName>
-                <identifier>c_resultMonitor</identifier>
+                <componentName>copado:enhancedResultViewer</componentName>
+                <identifier>c_enhancedResultViewer</identifier>
                 <visibilityRule>
                     <criteria>
                         <leftValue>{!Record.copado__Test_Tool__c}</leftValue>
@@ -536,6 +514,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-dabb2822-08e8-4e24-a9a6-44f4f4bd8a69</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

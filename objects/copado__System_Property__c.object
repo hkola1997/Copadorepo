@@ -141,7 +141,7 @@
         <type>Default</type>
     </actionOverrides>
     <allowInChatterGroups>false</allowInChatterGroups>
-    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <compactLayoutAssignment>copado__Property_Compact_Layout</compactLayoutAssignment>
     <compactLayouts>
         <fullName>copado__Hover_Layout</fullName>
         <fields>Name</fields>
@@ -152,6 +152,17 @@
         <fields>copado__Environment__c</fields>
         <fields>copado__User__c</fields>
         <label>Hover Layout</label>
+    </compactLayouts>
+    <compactLayouts>
+        <fullName>copado__Property_Compact_Layout</fullName>
+        <fields>Name</fields>
+        <fields>copado__API_Name__c</fields>
+        <fields>OwnerId</fields>
+        <fields>copado__Is_Sensitive__c</fields>
+        <fields>copado__Pipeline__c</fields>
+        <fields>copado__Environment__c</fields>
+        <fields>copado__User__c</fields>
+        <label>System Property Compact Layout</label>
     </compactLayouts>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
@@ -201,6 +212,17 @@
         <externalId>false</externalId>
         <inlineHelpText>Select this checkbox if you want to share the System Property among multiple pipelines and environments.</inlineHelpText>
         <label>Is Global?</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copado__Is_Public__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group</description>
+        <externalId>false</externalId>
+        <inlineHelpText>On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group</inlineHelpText>
+        <label>Is Public?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
     </fields>
@@ -352,6 +374,10 @@
         <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>copado__isPublic__c</fullName>
+        <label>Is Public</label>
+    </sharingReasons>
     <validationRules>
         <fullName>copado__API_Name_Cannot_Contain_Spaces</fullName>
         <active>true</active>

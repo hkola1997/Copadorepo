@@ -17,6 +17,11 @@
         <name>copado__Is_Global__c</name>
     </fields>
     <fields>
+        <help><!-- On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group --></help>
+        <label><!-- Is Public? --></label>
+        <name>copado__Is_Public__c</name>
+    </fields>
+    <fields>
         <help><!-- Select this checbox to hide the sensitive information. --></help>
         <label><!-- Hide Value --></label>
         <name>copado__Is_Sensitive__c</name>
@@ -48,6 +53,10 @@
         <label><!-- Value --></label>
         <name>copado__Value__c</name>
     </fields>
+    <sharingReasons>
+        <label><!-- Is Public --></label>
+        <name>copado__isPublic</name>
+    </sharingReasons>
     <validationRules>
         <errorMessage><!-- The API Name cannot contain blank spaces. --></errorMessage>
         <name>copado__API_Name_Cannot_Contain_Spaces</name>

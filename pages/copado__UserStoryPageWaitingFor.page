@@ -32,11 +32,11 @@
     <body class="slds-scope">
         <apex:form >
             <script type="text/javascript">
-                var wasJobStarted = (window.location.hash && window.location.hash.startsWith('#&jobStarted'));
                 var isPullRequest;
                 var isCommitChanges;
                 var isTestRun;
                 var newUrl = new window.URL(window.location.href);
+                var wasJobStarted = (window.location.hash && window.location.hash.startsWith('#&jobStarted'));
                 var isValidation = newUrl.href.indexOf('co_validation') >= 0;
                 if (!wasJobStarted) {
                     // added co_ in front of the type names, because customer test classes can contain those words and it will break the test run process
@@ -74,10 +74,10 @@
                 $copado(document).ready(function () {
                     setSVGStruct();
                     applyRenderSVG(svgButtonsId, svgButtonsClass);
-                    //if (wasJobStarted) {
+                    if (wasJobStarted) {
                         existingJobCheck();
-                        //return; // we do not want to start a new job every time the user reloads the page
-                    //}
+                        return; // we do not want to start a new job every time the user reloads the page
+                    }
                     if (isValidation) {
                         prepareValidationJob();
                     } else if (isPullRequest) {
@@ -215,7 +215,6 @@
 
                         <script>
                             function updateURLForRefresh() {
-                                var counter = localStorage.getItem("jobStartedFirstTimeInLex") != null ? localStorage.getItem("jobStartedFirstTimeInLex") + 1 : 1;
                                 var newUrls = new window.URL(window.location.href);
                                 var copadoJobId = '{!JSENCODE(copadoNotificationId)}';
                                 newUrls.hash = '&jobStarted=' + copadoJobId;

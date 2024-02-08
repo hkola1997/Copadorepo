@@ -1,7 +1,10 @@
-<apex:page standardController="copado__Continuous_Integration__c" extensions="copado.ContinuousIntegrationExtension,copado.Settings,copado.JsRemotingController" id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
+<apex:page standardController="copado__Continuous_Integration__c" extensions="copado.ContinuousIntegrationExtension,copado.Settings,copado.JsRemotingController"
+    id="thePage" showHeader="{!$User.UIThemeDisplayed=='Theme3'}" standardStylesheets="true" sidebar="{!$User.UIThemeDisplayed=='Theme3'}"
+    applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
     <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
 
 	<c:WizardUtils id="cmpWizardUtilities" />
+
 	<head>
 		<title>Continuous Integration {!copado__Continuous_Integration__c.Name} | Copado</title>
 		<c:IncludeStaticsResourceComponent addJquery="true" addCometdjs="true" addJcometdjs="true" addJSON2js="true"/>
@@ -20,7 +23,8 @@
 	<body>
 
 		<div class="copado-lightning-VF">
-			<apex:sectionHeader title="Copado Continuous Integration" subtitle="{!copado__Continuous_Integration__c.Name}"  rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
+            <apex:sectionHeader title="Copado Continuous Integration" subtitle="{!copado__Continuous_Integration__c.Name}" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"
+            />
             <apex:pageMessages id="pmessage" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"/>
 
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
@@ -40,7 +44,9 @@
                           </div>
                           <div class="slds-media__body">
                             <p class="slds-text-heading--label slds-line-height--reset">Copado Continuous Integration</p>
-                              <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Copado Continuous Integration"><apex:outputField value="{!copado__Continuous_Integration__c.Name}"/></h1>
+                                    <h1 class="slds-page-header__title slds-truncate slds-align-middle" title="Copado Continuous Integration">
+                                        <apex:outputField value="{!copado__Continuous_Integration__c.Name}" />
+                                    </h1>
                           </div>
                       </div>
                     </div>
@@ -68,7 +74,7 @@
 				
 				<script type="text/javascript">
 					var ci = {
-						ns: '{!namespace}',
+						ns: '{!JSENCODE(namespace)}',
 						isCheckOnly: false,
 						buildTasks: [],
 						buildTaskIds: [],
@@ -265,12 +271,13 @@
 				</script>
 				<script type="text/javascript">
 					var copadoApp = {
-						ns: '{!namespace}',
-
+						ns: '{!JSENCODE(namespace)}',
 						init: function(){
 							ci.ciId='{!ci.Id}';
-							ci.isCheckOnly = {!ci.copado__Check_Only__c};
-							ci.limitBuildTaskRows = {!mySettings.Build_Task_Rows__c};
+                            ci.isCheckOnly = {!ci.Check_Only__c                        
+};
+                        ci.limitBuildTaskRows = {!mySettings.Build_Task_Rows__c                    
+};
 							ci.imgUrlSuccess = '/img/msg_icons/confirm16.png';
 							ci.imgUrlError = '/img/msg_icons/error16.png';
 							
@@ -317,7 +324,8 @@
 					<apex:pageBlock id="pb" title="">
 						<apex:pageBlockButtons id="pbbs" location="top" rendered="{!isCIenabled}">
 							<apex:commandButton id="btnEdit" value="{!$Label.copado__EDIT}" action="{!edit}" />
-							<apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}" onclick="if(!confirm('{!$Label.copado__ARE_YOU_SURE}')){return false;};"/>
+                            <apex:commandButton id="btnDelete" value="{!$Label.copado__DELETE}" action="{!URLFOR($Action.Continuous_Integration__c.Delete, Continuous_Integration__c.Id)}"
+                                onclick="if(!confirm('{!JSENCODE($Label.copado__ARE_YOU_SURE)}')){return false;};" />
 							<apex:commandButton id="btnRun" value="Run Continuous Integration" action="{!executeCI}" disabled="{!!ci.copado__Active__c}" />
 							<apex:commandButton id="btnShowHookUrl" value="Show Hook URL" onclick="showWebhook(); return false;"/>
 						</apex:pageBlockButtons>
@@ -336,16 +344,16 @@
 							<apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.OwnerId.Label}" />
 								<apex:outputPanel >
-									<apex:outputField value="{!ci.OwnerId}" />
-									&nbsp;&nbsp;<apex:outputLink value="/{!ci.Id}/a?retURL=%2F{!ci.Id}">[Change Owner]</apex:outputLink>
+                                    <apex:outputField value="{!ci.OwnerId}" /> &nbsp;&nbsp;
+                                    <apex:outputLink value="/{!ci.Id}/a?retURL=%2F{!ci.Id}">[Change Owner]</apex:outputLink>
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 							<apex:outputField value="{!ci.copado__Git_Repository__c}"/>
 							<apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.copado__Status__c.Label}" />
 								<apex:outputPanel >
-									<apex:outputField value="{!ci.copado__Status__c}" />
-									&nbsp;&nbsp;<img src="{!URLFOR($Resource.Statics, ciStatusImgUrl)}" style="width:16px; height:16px;" />
+                                    <apex:outputField value="{!ci.copado__Status__c}" /> &nbsp;&nbsp;
+                                    <img src="{!URLFOR($Resource.Statics, ciStatusImgUrl)}" style="width:16px; height:16px;" />
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 							<apex:outputField value="{!ci.copado__Branch__c}" />
@@ -355,8 +363,8 @@
 							<apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.copado__Destination_Org_Credential__c.Label}" />
 								<apex:outputPanel >
-									<apex:outputField value="{!ci.copado__Destination_Org_Credential__c}" />
-									&nbsp;&nbsp;<img src="{!URLFOR($Resource.Statics, destOrgValidationStatus)}" style="width:16px; height:16px;"/>
+                                    <apex:outputField value="{!ci.copado__Destination_Org_Credential__c}" /> &nbsp;&nbsp;
+                                    <img src="{!URLFOR($Resource.Statics, destOrgValidationStatus)}" style="width:16px; height:16px;" />
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 			                <apex:outputField value="{!ci.copado__Run_All_Tests__c}" />
@@ -381,8 +389,8 @@
 			                <apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.copado__Status__c.Label}" />
 								<apex:outputPanel rendered="{!ci.Pre_Deployment_Jobs__r.copado__Status__c!='Draft'}">
-									<apex:outputField value="{!ci.Pre_Deployment_Jobs__r.copado__Status__c}" />
-									&nbsp;&nbsp;<img src="{!URLFOR($Resource.Statics, preCiStatusImgUrl)}" style="width:16px; height:16px;" />
+                                    <apex:outputField value="{!ci.Pre_Deployment_Jobs__r.copado__Status__c}" /> &nbsp;&nbsp;
+                                    <img src="{!URLFOR($Resource.Statics, preCiStatusImgUrl)}" style="width:16px; height:16px;" />
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 			                
@@ -390,8 +398,8 @@
 							<apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.copado__Status__c.Label}" />
 								<apex:outputPanel rendered="{!ci.Post_Success_Deployment_Jobs__r.copado__Status__c!='Draft'}">
-									<apex:outputField value="{!ci.Post_Success_Deployment_Jobs__r.copado__Status__c}" />
-									&nbsp;&nbsp;<img src="{!URLFOR($Resource.Statics, postSuccessImgUrl)}" style="width:16px; height:16px;" />
+                                    <apex:outputField value="{!ci.Post_Success_Deployment_Jobs__r.copado__Status__c}" /> &nbsp;&nbsp;
+                                    <img src="{!URLFOR($Resource.Statics, postSuccessImgUrl)}" style="width:16px; height:16px;" />
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 			                
@@ -399,8 +407,8 @@
 			                <apex:pageBlockSectionItem >
 								<apex:outputLabel value="{!$ObjectType.copado__Continuous_Integration__c.Fields.copado__Status__c.Label}" />
 								<apex:outputPanel rendered="{!ci.Post_Failed_Deployment_Jobs__r.copado__Status__c!='Draft'}">
-									<apex:outputField value="{!ci.Post_Failed_Deployment_Jobs__r.copado__Status__c}" />
-									&nbsp;&nbsp;<img src="{!URLFOR($Resource.Statics, postFailureImgUrl)}" style="width:16px; height:16px;" />
+                                    <apex:outputField value="{!ci.Post_Failed_Deployment_Jobs__r.copado__Status__c}" /> &nbsp;&nbsp;
+                                    <img src="{!URLFOR($Resource.Statics, postFailureImgUrl)}" style="width:16px; height:16px;" />
 								</apex:outputPanel>
 							</apex:pageBlockSectionItem>
 						</apex:pageBlockSection>
@@ -415,7 +423,8 @@
 
 				<apex:outputPanel layout="block" styleClass="copado-lightning-container">
 					<apex:pageBlock title="{!$ObjectType.copado__Build_Task__c.LabelPlural}">
-						<div id="tableLoader" style="text-align:center;"><img src="/img/loading.gif"/>&nbsp;&nbsp;{!$Label.Loading}</div>
+                        <div id="tableLoader" style="text-align:center;">
+                            <img src="/img/loading.gif" />&nbsp;&nbsp;{!$Label.Loading}</div>
 						<table id="buildTable" class="list" border="0" cellpadding="0" cellspacing="0" style="display:none;">
 							<thead>
 								<tr class="headerRow">
@@ -431,7 +440,8 @@
 							</tbody>
 						</table>
 					</apex:pageBlock>
-					<apex:relatedList list="Continuous_Integration_Permissions__r" title="{!$ObjectType.copado__Continuous_Integration_Permission__c.LabelPlural} and Notifications"/>
+                    <apex:relatedList list="Continuous_Integration_Permissions__r" title="{!$ObjectType.copado__Continuous_Integration_Permission__c.LabelPlural} and Notifications"
+                    />
 				</apex:outputPanel>
 			</apex:outputPanel>
 		</div>

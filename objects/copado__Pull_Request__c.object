@@ -267,6 +267,17 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Requested_Reviewers_Long__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field has been replaced by the copado__Requested_Reviewers_Long__c field.</description>
+        <externalId>false</externalId>
+        <label>Requested Reviewers</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>copado__Requested_Reviewers__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

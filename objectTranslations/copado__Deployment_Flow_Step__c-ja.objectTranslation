@@ -86,6 +86,10 @@
         <name>copado__Next_Stage__c</name>
     </fields>
     <fields>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
+    </fields>
+    <fields>
         <help>宛先ブランチをソースブランチにマージするときにCopadoによって自動的に解決されるコンフリクトファイルの一覧</help>
         <label><!-- Pull Auto Resolved Files --></label>
         <name>copado__Pull_Auto_Resolved_Files__c</name>
@@ -96,7 +100,7 @@
         <relationshipLabel><!-- Pipeline Connections (Source Environment) --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Stage Connection where the source environment belongs to. --></help>
+        <help>ソース環境が所属するステージ接続</help>
         <label><!-- Stage Connection --></label>
         <lookupFilter>
             <errorMessage><!-- You can only select Stage Connections that belong to the same Pipeline. --></errorMessage>
@@ -105,7 +109,7 @@
         <relationshipLabel><!-- Pipeline Connections --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Stage to which the source environment belongs. --></help>
+        <help>ソース環境が所属するステージ</help>
         <label><!-- Stage --></label>
         <name>copado__Stage__c</name>
     </fields>

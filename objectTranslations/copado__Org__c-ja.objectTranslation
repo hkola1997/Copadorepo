@@ -14,6 +14,12 @@
         <name>copado__Compliance_Status__c</name>
     </fields>
     <fields>
+        <help>独自のコネクテッドアプリを作成し、カスタムコネクテッドアプリとコパードコネクテッドアプリで認証される各組織ククレデンシャルについて、そのコネクテッドアプリを参照するためのメカニズムになります。選択しない場合は、従来の動作となります。</help>
+        <label><!-- Custom Connected App Info --></label>
+        <name>copado__Custom_Connected_App_Info__c</name>
+        <relationshipLabel><!-- Credentials --></relationshipLabel>
+    </fields>
+    <fields>
         <help>例えば：https://company.my.salesforce.com</help>
         <label><!-- Custom Domain --></label>
         <name>copado__Custom_Domain__c</name>
@@ -113,7 +119,7 @@
         <name>copado__Org_Type__c</name>
         <picklistValues>
             <masterLabel>Production/Developer</masterLabel>
-            <translation><!-- Production/Developer --></translation>
+            <translation>プロダクション/デベロッパー</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Sandbox</masterLabel>
