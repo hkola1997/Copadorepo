@@ -125,6 +125,7 @@
             <useReportChart>true</useReportChart>
         </components>
     </middleSection>
+    <owner>hkola@prod.copado</owner>
     <rightSection>
         <columnSize>Medium</columnSize>
         <components>

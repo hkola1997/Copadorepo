@@ -65,6 +65,7 @@
         <members>Industries</members>
         <members>IndustriesEinsteinFeature</members>
         <members>InvLatePymntRiskCalc</members>
+        <members>Inventory</members>
         <members>InvocableAction</members>
         <members>Knowledge</members>
         <members>KnowledgeGeneration</members>
@@ -115,7 +116,6 @@
         <members>ServiceSetupAssistant</members>
         <members>Sharing</members>
         <members>Site</members>
-        <members>SocialProfile</members>
         <members>SourceTracking</members>
         <members>Survey</members>
         <members>SystemNotification</members>

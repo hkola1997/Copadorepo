@@ -192,4 +192,8 @@
         <name>cmcSf__CMC_SFDX</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>standard__Commerce</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>
