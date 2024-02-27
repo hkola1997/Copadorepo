@@ -46,7 +46,7 @@
         <name>copado__Matching_Criteria__c</name>
         <picklistValues>
             <masterLabel>Equals</masterLabel>
-            <translation><!-- Equals --></translation>
+            <translation>同等</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Greater Than</masterLabel>

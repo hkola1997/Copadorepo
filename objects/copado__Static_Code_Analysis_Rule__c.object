@@ -438,6 +438,26 @@
                     <default>false</default>
                     <label>WhileLoopsMustUseBraces</label>
                 </value>
+                <value>
+                    <fullName>Apex</fullName>
+                    <default>false</default>
+                    <label>Apex</label>
+                </value>
+                <value>
+                    <fullName>XML</fullName>
+                    <default>false</default>
+                    <label>XML</label>
+                </value>
+                <value>
+                    <fullName>Salesforce VisualForce</fullName>
+                    <default>false</default>
+                    <label>Salesforce VisualForce</label>
+                </value>
+                <value>
+                    <fullName>JavaScript</fullName>
+                    <default>false</default>
+                    <label>JavaScript</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

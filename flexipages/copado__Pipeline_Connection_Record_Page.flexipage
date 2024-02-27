@@ -422,6 +422,10 @@
                     <value>Facet-bd953331-15da-4968-a71d-d9acee56c164</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__INFO}</value>
                 </componentInstanceProperties>
@@ -434,6 +438,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-59327755-bfc3-4446-b297-30ce126b99e5</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -457,6 +465,10 @@
                     <value>Facet-ca0b4b08-7bca-46a0-a111-a8875baa2531</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>{!$Label.copado__FIELDS_UPDATED_BY_COPADO}</value>
                 </componentInstanceProperties>
@@ -469,6 +481,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-5eb79849-aa04-4370-836f-b9f6a90af3d0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>

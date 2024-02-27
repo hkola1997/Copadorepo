@@ -6,6 +6,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Copado Developer</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
     <tabs>copado__Pipeline_Manager</tabs>

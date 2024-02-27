@@ -223,6 +223,16 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Extension Configuration</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Make sure the selected Extension Configuration is valid and active.</errorMessage>
+            <filterItems>
+                <field>copado__ExtensionConfiguration__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
         <referenceTo>copado__ExtensionConfiguration__c</referenceTo>
         <relationshipLabel>Quality Gate Rule Conditions</relationshipLabel>
         <relationshipName>Quality_Gate_Rule_Conditions</relationshipName>

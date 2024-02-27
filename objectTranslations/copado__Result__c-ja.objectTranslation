@@ -14,12 +14,12 @@
         <name>copado__CreditSyncStatus__c</name>
     </fields>
     <fields>
-        <help><!-- Copado credits used in the execution of the function. --></help>
+        <help>関数の実行に使用されるコパードクレジット</help>
         <label><!-- Copado Credits Used --></label>
         <name>copado__Custom_Function_Used_Credits__c</name>
     </fields>
     <fields>
-        <help><!-- Time taken in minutes to execute the function. --></help>
+        <help>関数の実行に要した時間（分）</help>
         <label><!-- Function Used Minutes --></label>
         <name>copado__Custom_Function_Used_Minutes__c</name>
     </fields>
@@ -30,7 +30,7 @@
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Description of the result record. --></help>
+        <help>結果レコードの説明</help>
         <label><!-- Description --></label>
         <name>copado__Description__c</name>
     </fields>
@@ -45,17 +45,17 @@
         <name>copado__End_Time__c</name>
     </fields>
     <fields>
-        <help><!-- Code that helps you quickly identify the issue. --></help>
+        <help>問題の特定に役立つコード</help>
         <label><!-- Error Code --></label>
         <name>copado__Error_Code__c</name>
     </fields>
     <fields>
-        <help><!-- Description of the error if the job has failed. --></help>
+        <help>ジョブが失敗した場合のエラーの説明</help>
         <label><!-- Error Message --></label>
         <name>copado__Error_Message__c</name>
     </fields>
     <fields>
-        <help><!-- Computational resources available for a function. --></help>
+        <help>関数で使用可能な計算リソース</help>
         <label><!-- Function Worker Size --></label>
         <name>copado__Function_Worker_Size__c</name>
         <picklistValues>
@@ -82,13 +82,13 @@
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- When this result is the outcome of a Job Step, that is executed as part of a Job Template, this field points to the Job Step. (note that Job Step and Function can be populated at the same time). --></help>
+        <help>この結果がジョブテンプレートの一部として実行されるジョブステップの結果である場合、このフィールドはジョブステップを指します。(ジョブステップと関数は同時に入力することができます。）</help>
         <label><!-- Job Step --></label>
         <name>copado__JobStep__c</name>
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Record link shortcutting to Job Step&apos;s Job Execution --></help>
+        <help>ジョブステップのジョブ実行へのショートカットの記録リンク</help>
         <label><!-- Job Execution --></label>
         <name>copado__Job_Execution__c</name>
     </fields>
@@ -98,7 +98,7 @@
         <name>copado__Job_Id__c</name>
     </fields>
     <fields>
-        <help><!-- API name of the job that triggered the result. This information can be used for reporting purposes. --></help>
+        <help>結果をトリガーしたジョブのAPI名。この情報はレポート作成に利用できます。</help>
         <label><!-- Job API Name --></label>
         <name>copado__Job_Type__c</name>
         <picklistValues>
@@ -112,7 +112,7 @@
         <name>copado__Link__c</name>
     </fields>
     <fields>
-        <help><!-- 15-digit Id of the record that triggered the process that generated the result. --></help>
+        <help>結果を生成したプロセスのトリガーとなったレコードの15桁のID。</help>
         <label><!-- Context ID --></label>
         <name>copado__ParentId__c</name>
     </fields>
@@ -132,7 +132,7 @@
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Includes all the returned data by the process. This can be used by other processes. --></help>
+        <help>プロセスによって返されたすべてのデータを含む。これは他のプロセスで使用できます。</help>
         <label><!-- Result Data --></label>
         <name>copado__Result_Data__c</name>
     </fields>
@@ -167,13 +167,13 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- The Test parent object which triggered the execution. --></help>
+        <help>実行をトリガーしたテストの親オブジェクト。</help>
         <label><!-- Test --></label>
         <name>copado__Test__c</name>
         <relationshipLabel><!-- Results --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- If you want Copado to update the status to Failed if there is no response from the function’s job after a certain period of time (e.g., 60 minutes), you can define it here. --></help>
+        <help>一定時間 (たとえば 60 分) 経過しても関数のジョブからの応答がない場合に、 コパードにステータスを”失敗（Failed）”に更新させたい場合は、 ここで定義します。</help>
         <label><!-- Timeout (minutes) --></label>
         <name>copado__Timeout__c</name>
     </fields>
