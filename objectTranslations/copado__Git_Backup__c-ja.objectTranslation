@@ -35,7 +35,7 @@
         <name>copado__Compliance_Status__c</name>
     </fields>
     <fields>
-        <help><!-- You can use www.cronmaker.com to create more sophisticated cron expressions. Please keep in mind that certain cron expressions might not be supported by Salesforce. --></help>
+        <help>www.cronmaker.com を参照して、より複雑なクロン（Cron）を作成することができます。セールスフォースでサポートしていないCron表記もありますので、ご注意下さい。</help>
         <label><!-- Cron Expression --></label>
         <name>copado__Cron_Expression__c</name>
     </fields>
@@ -112,27 +112,27 @@
         <name>copado__Other_Information__c</name>
     </fields>
     <fields>
-        <help><!-- Pipeline where the Git snapshot will be applied. It must be associated to the specified credential. --></help>
+        <help>Git スナップショットが適用されるパイプライン。指定したクレデンシャルに関連付けられている必要があります。</help>
         <label><!-- Pipeline --></label>
         <name>copado__Pipeline__c</name>
         <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Use this field to specify the files for which you want to take the snapshot. The format may vary depending on the extension that you are using. Please refer to your extension documentation. --></help>
+        <help>このフィールドを使用して、スナップショットを取得するファイルを指定します。フォーマットは使用している拡張子によって異なる場合があります。拡張機能のドキュメントを参照してください。</help>
         <label><!-- Scope --></label>
         <name>copado__Scope__c</name>
     </fields>
     <fields>
-        <help><!-- Use this field to configure automatic metadata backups. Copado will automatically commit the metadata components of the Org as per the frequency and cron expression defined. --></help>
+        <help>メタデータの自動バックアップを設定するには、このフィールドを使用します。コパードは、定義された頻度とcron式に従って、組織のメタデータコンポーネントを自動的にコミットします。</help>
         <label><!-- Frequency --></label>
         <name>copado__Snapshot_Frequency__c</name>
         <picklistValues>
             <masterLabel>None</masterLabel>
-            <translation><!-- None --></translation>
+            <translation>なし</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Schedule</masterLabel>
-            <translation><!-- Schedule --></translation>
+            <translation>スケジュール</translation>
         </picklistValues>
     </fields>
     <fields>

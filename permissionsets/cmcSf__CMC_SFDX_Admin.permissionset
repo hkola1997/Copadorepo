@@ -5,6 +5,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>cmcSf__ActionTemplate</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__AddApexTestsAcceptanceCriteriaCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -42,6 +46,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ContentDocumentHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CreateCopadoNotificationPushTopic</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -93,6 +101,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__HasVlocitySnapshotJobTemplate</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__InitializeSFDXProject</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -114,6 +126,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__JobStepDataDeployController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__LwcLabelsTranslation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>

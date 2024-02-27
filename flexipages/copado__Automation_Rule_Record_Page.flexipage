@@ -9,31 +9,59 @@
                         <valueListItems>
                             <value>copado__Automation_Rule__c.copado__Activate</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.copado__Active__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>false</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Automation_Rule__c.copado__Deactivate</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.copado__Active__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>true</rightValue>
                                 </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>NE</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Clone</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -69,6 +97,30 @@
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
                 <identifier>c_copadoAlertPlaceHolder</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
+                    <value>{!$Label.copado__Quality_Automation_Rule_Information}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>info</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -107,6 +159,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Description__c</fieldItem>
                 <identifier>RecordDescription_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Quality_Gate_Rule_Condition__c</fieldItem>
+                <identifier>RecordQuality_Gate_Rule_Condition_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a893f81-cc9d-4510-b2c7-938fbe7f0c3f</name>
@@ -238,20 +306,22 @@
         <itemInstances>
             <componentInstance>
                 <componentName>copado:automationRuleEvaluationScope</componentName>
-                <identifier>c_automationRuleEvaluationScope</identifier>
+                <identifier>c_automationRuleEvaluationScope2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-429eedf4-028d-48cc-9840-c479af23b17d</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:dynamicComponentWrapper</componentName>
+                <identifier>c_dynamicComponentWrapper2</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>copado:automationRuleFilterCriteria</componentName>
-                <identifier>c_automationRuleFilterCriteria</identifier>
+                <identifier>c_automationRuleFilterCriteria2</identifier>
             </componentInstance>
         </itemInstances>
-        <name>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</name>
+        <name>Facet-b07df94a-e34a-4000-a6c0-8dd2f172057b</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -277,29 +347,11 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>body</name>
-                    <value>Facet-429eedf4-028d-48cc-9840-c479af23b17d</value>
+                    <value>Facet-b07df94a-e34a-4000-a6c0-8dd2f172057b</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>{!$Label.copado__Scope}</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>flexipage_tab3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-1b72ce77-e918-4653-82f0-e8fbb0f258e4</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>{!$Label.copado__CONDITIONS}</value>
+                    <value>{!$Label.copado__Configuration}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>
@@ -327,6 +379,42 @@
             <componentInstance>
                 <componentName>copado:automationRuleConfiguration</componentName>
                 <identifier>c_automationRuleConfiguration</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-0636a1ea-a8e7-459e-8f4d-4aecff3c201a</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>active</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-0636a1ea-a8e7-459e-8f4d-4aecff3c201a</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__AUTOMATION}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-32a11211-523d-4283-8028-aae5dcc287d7</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>tabs</name>
+                    <value>Facet-32a11211-523d-4283-8028-aae5dcc287d7</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset2</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

@@ -36,6 +36,16 @@
         <label>Import Package</label>
     </customValue>
     <customValue>
+        <fullName>Rollback</fullName>
+        <default>false</default>
+        <label>Rollback</label>
+    </customValue>
+    <customValue>
+        <fullName>Take Snapshot</fullName>
+        <default>false</default>
+        <label>Take Snapshot</label>
+    </customValue>
+    <customValue>
         <fullName>PackageCreation</fullName>
         <default>false</default>
         <isActive>false</isActive>
