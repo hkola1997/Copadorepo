@@ -4,8 +4,8 @@
     <enableDefaultChannelForSCV>false</enableDefaultChannelForSCV>
     <enableEndUserForSCV>false</enableEndUserForSCV>
     <enableOmniCapacityForSCV>false</enableOmniCapacityForSCV>
+    <enableRZoneCloudVoiceOptIn>false</enableRZoneCloudVoiceOptIn>
     <enableSCVBYOT>false</enableSCVBYOT>
     <enableSCVSupportBannerDisplayed>false</enableSCVSupportBannerDisplayed>
     <enableServiceCloudVoice>false</enableServiceCloudVoice>
-    <enableVoiceInGovCloudOptIn>false</enableVoiceInGovCloudOptIn>
 </ServiceCloudVoiceSettings>
