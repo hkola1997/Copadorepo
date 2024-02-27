@@ -112,15 +112,13 @@
         <name>copado__Sandbox_Installation_URL__c</name>
     </fields>
     <fields>
-        <help><!-- Draft indicates that a placeholder record has been created.
+        <help>ドラフトは、プレースホルダ・レコードが作成されたことを示します。
 
-Pre-Release indicates a package version that has been generated but not yet promoted or is not ready for release. 
+ プレリリースは、生成されたがまだプロモートしていない、またはリリースの準備ができていないパッケージ・バージョンを示します。
 
-A package version with Published status, indicates it can be released or deployed to production. 
+ 公開(Published)ステータスを持つパッケージ・バージョンは、リリースまたは本番環境へのデプロイ が可能であることを示します。 
 
-Deprecated highlights a package version that has been deleted and is no longer available for use.
-
-Open, Locked and Cancelled are used for packages related to User Story bundles. --></help>
+　非推奨は、削除され使用できなくなったパッケージ・バージョンを強調表示します。</help>
         <label><!-- Status --></label>
         <name>copado__Status__c</name>
         <picklistValues>
@@ -129,11 +127,11 @@ Open, Locked and Cancelled are used for packages related to User Story bundles. 
         </picklistValues>
         <picklistValues>
             <masterLabel>Deprecated</masterLabel>
-            <translation><!-- Deprecated --></translation>
+            <translation>非推奨</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Draft</masterLabel>
-            <translation><!-- Draft --></translation>
+            <translation>下書き</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Locked</masterLabel>
@@ -145,11 +143,11 @@ Open, Locked and Cancelled are used for packages related to User Story bundles. 
         </picklistValues>
         <picklistValues>
             <masterLabel>Pre-Release</masterLabel>
-            <translation><!-- Pre-Release --></translation>
+            <translation>プレリリース</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Published</masterLabel>
-            <translation><!-- Published --></translation>
+            <translation>発行済み</translation>
         </picklistValues>
     </fields>
     <fields>

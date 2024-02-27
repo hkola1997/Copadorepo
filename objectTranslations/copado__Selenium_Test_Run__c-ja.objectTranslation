@@ -50,7 +50,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Queued</masterLabel>
-            <translation><!-- Queued --></translation>
+            <translation>キューイング</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Starting</masterLabel>
