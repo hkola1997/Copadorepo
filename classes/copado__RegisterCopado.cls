@@ -15,4 +15,7 @@ global class RegisterCopado {
     global static void setUpCopadoRegistration() {
 
     }
+    global static void setUpCopadoRegistration(String serverUrl) {
+
+    }
 }

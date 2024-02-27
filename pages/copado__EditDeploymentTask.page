@@ -1,5 +1,7 @@
 <apex:page docType="html-5.0" showHeader="true" sidebar="false" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController"
  standardStylesheets="false" title="{!$Label.copado__EDIT} {!$ObjectType.copado__Deployment_Task__c.Label}">
+
+ 	<apex:includeLightning />
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height:100%;">
 
 	<head>
@@ -780,6 +782,48 @@
 
 											} else {
 												$copado('[id$=jsFunction]').val(null);
+											}
+										}
+									</script>
+								</apex:outputPanel>
+								<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Test'}">
+									<div id="lightningvf" />
+									<script>
+										var previousData = {};
+										const namespace = '{!namespace}';
+										$Lightning.use(namespace + ":" + "crtAutomationApp", function () {
+											$Lightning.createComponent(namespace + ":" + "CrtAutomationComponent",
+												{ previousValue: previousData },
+												"lightningvf",
+												function (cmp) { }
+											);
+										});
+
+										var saveFunction = {};
+										document.addEventListener("selectedtestrecord", (event) => {
+											if (event.detail) {
+												saveFunction.testId = event.detail.testId;
+												saveFunction.testName = event.detail.testName;
+											} else {
+												saveFunction = {};
+											}
+										});
+
+										datasetup.save = function () {
+											if (!saveFunction.hasOwnProperty("testId")) {
+												alert('{!$Label.CRT_SELECT_RECORD}'); 
+												return false;
+											} else {
+												return JSON.stringify(saveFunction);
+											}
+
+										}
+
+										datasetup.setPreviousData = function (data) {
+											var objData = JSON.parse(data);
+											if (objData.hasOwnProperty("testId")) {
+												previousData = objData;
+												saveFunction = objData;
 											}
 										}
 									</script>

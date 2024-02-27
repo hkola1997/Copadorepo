@@ -237,6 +237,7 @@
     <dashboardType>SpecifiedUser</dashboardType>
     <description>Dashboard to view the different tests with their progress, status and much more.</description>
     <isGridLayout>true</isGridLayout>
+    <owner>hkola@prod.copado</owner>
     <runningUser>hkola@prod.copado</runningUser>
     <textColor>#000000</textColor>
     <title>Test Management Dashboard</title>

@@ -843,12 +843,6 @@ MetadataGrid2.defaultTypes =
     'ActionLinkGroupTemplate,AnalyticSnapshot,ApexClass,ApexComponent,ApexPage,ApexTestSuite,ApexTrigger,AppMenu,ApprovalProcess,AssignmentRule,AssignmentRules,AuraDefinitionBundle,AuthProvider,AutoResponseRule,AutoResponseRules,BrandingSet,BusinessProcess,CallCenter,CaseSubjectParticle,Certificate,ChannelLayout,ChatterExtension,CleanDataService,Community,CompactLayout,ConnectedApp,ContentAsset,CorsWhitelistOrigin,CspTrustedSite,CustomApplication,CustomApplicationComponent,CustomFeedFilter,CustomField,CustomLabel,CustomLabels,CustomMetadata,CustomObject,CustomObjectTranslation,CustomPageWebLink,CustomPermission,CustomSite,CustomTab,Dashboard,DataCategoryGroup,DelegateGroup,Document,DuplicateRule,EclairGeoData,EmailServicesFunction,EmailTemplate,EmbeddedServiceBranding,EmbeddedServiceConfig,EscalationRule,EscalationRules,EventDelivery,EventSubscription,ExternalDataSource,ExternalServiceRegistration,FieldSet,FlexiPage,Flow,FlowCategory,FlowDefinition,GlobalValueSet,GlobalValueSetTranslation,Group,HomePageComponent,HomePageLayout,Index,InstalledPackage,Layout,LeadConvertSettings,Letterhead,LightningBolt,LightningExperienceTheme,ListView,MatchingRule,MatchingRules,NamedCredential,NetworkBranding,PathAssistant,PermissionSet,PlatformCachePartition,PostTemplate,Profile,ProfilePasswordPolicy,ProfileSessionSetting,Queue,QuickAction,RecordType,RemoteSiteSetting,Report,ReportType,Role,SamlSsoConfig,Scontrol,Settings,SharingCriteriaRule,SharingOwnerRule,SharingReason,SharingRules,SharingSet,SiteDotCom,StandardValueSet,StandardValueSetTranslation,StaticResource,SynonymDictionary,TopicsForObjects,ValidationRule,Vlocity,WebLink,Workflow,WorkflowAlert,WorkflowFieldUpdate,WorkflowKnowledgePublish,WorkflowOutboundMessage,WorkflowRule,WorkflowSend,WorkflowTask';
 MetadataGrid2.prototype.loadMetaDataTypes = function(callbackFinished, forceReloading, preDefinedSource) {
     var that = this;
-    console.log('loadMetaDataTypes() calling forceReloading=', forceReloading);
-    console.log('loadMetaDataTypes() calling this.filterByTypeList=', this.filterByTypeList);
-    console.log('preDefinedSource===> ',preDefinedSource);
-    console.log('preDefinedSource==type=> ',typeof preDefinedSource);
-    console.log('that.filterByTypeList==type=> ',typeof that.filterByTypeList);
-    console.log('MetadataGrid2.defaultTypes=> ',MetadataGrid2.defaultTypes);
 
     // never reload the metadata types
     if(this.filterByTypeList.length &&!forceReloading) {
@@ -969,9 +963,19 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
                 );
             else allMetaData = [];
             var existingFlag = false;
-            // convert meatdata names from UTF-8 to ISO-8859-1 encoding
+            // In Refresh Recent changes, diacritical marks and japanese chars decodes to unrpintable chars, 
+            // decoded below only for metadata names containing those chars.
             for(var i=0; i<allMetaData.length; i++){
-                allMetaData[i].n = decodeURIComponent(escape((allMetaData[i].n).replace(/%2F/gi, "/").replace(/%24/gi, "$")));
+                if(/[\x00-\x08\x0E-\x1F\x80-\xFF]/.test(allMetaData[i].n)) {
+                    try{
+                        // Deprecated escape() method is used due to lack of alternate options
+                        // TODO: custom escape method is one possible solution.
+                        allMetaData[i].n = decodeURI(escape(allMetaData[i].n));
+                    }
+                    catch(e) {
+                        // no action needed
+                    }
+                }
             }
             for(var j=0; j<that.selectedMetadata.length; j++){
                 for(var i=0; i<allMetaData.length; i++){

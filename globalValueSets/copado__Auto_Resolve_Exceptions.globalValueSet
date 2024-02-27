@@ -30,6 +30,46 @@
         <default>false</default>
         <label>Layout</label>
     </customValue>
+    <customValue>
+        <fullName>CustomObject</fullName>
+        <default>false</default>
+        <label>CustomObject</label>
+    </customValue>
+    <customValue>
+        <fullName>CustomLabel</fullName>
+        <default>false</default>
+        <label>CustomLabel</label>
+    </customValue>
+    <customValue>
+        <fullName>Flow</fullName>
+        <default>false</default>
+        <label>Flow</label>
+    </customValue>
+    <customValue>
+        <fullName>PermissionSet</fullName>
+        <default>false</default>
+        <label>PermissionSet</label>
+    </customValue>
+    <customValue>
+        <fullName>PermissionSetGroup</fullName>
+        <default>false</default>
+        <label>PermissionSetGroup</label>
+    </customValue>
+    <customValue>
+        <fullName>StandardValueSet</fullName>
+        <default>false</default>
+        <label>StandardValueSet</label>
+    </customValue>
+    <customValue>
+        <fullName>Report</fullName>
+        <default>false</default>
+        <label>Report</label>
+    </customValue>
+    <customValue>
+        <fullName>CustomField</fullName>
+        <default>false</default>
+        <label>CustomField</label>
+    </customValue>
     <description>Metadata types to be excluded from the auto-resolve feature of Copado.</description>
     <masterLabel>Auto Resolve Exceptions</masterLabel>
     <sorted>false</sorted>
