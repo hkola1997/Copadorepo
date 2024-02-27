@@ -416,5 +416,12 @@ NOT(ISBLANK(copado__Pipeline__c))
 )</errorConditionFormula>
         <errorMessage>A non-global property can only be related to one parent: Environment, Pipeline, or User.</errorMessage>
     </validationRules>
+    <validationRules>
+        <fullName>copado__Value_cannot_be_empty</fullName>
+        <active>true</active>
+        <description>System property record must have a value</description>
+        <errorConditionFormula>ISBLANK(copado__Value__c)</errorConditionFormula>
+        <errorMessage>You must provide a value for this system property.</errorMessage>
+    </validationRules>
     <visibility>Public</visibility>
 </CustomObject>

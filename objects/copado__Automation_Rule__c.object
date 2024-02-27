@@ -355,6 +355,20 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
+        <fullName>copado__Quality_Gate_Rule_Condition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quality Gate Rule Condition</label>
+        <referenceTo>copado__Quality_Gate_Rule_Condition__c</referenceTo>
+        <relationshipLabel>Automation Rules</relationshipLabel>
+        <relationshipName>Automation_Rules</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Scheduled_Job_Id__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

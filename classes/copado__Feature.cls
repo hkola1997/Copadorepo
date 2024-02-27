@@ -12,4 +12,7 @@ global class Feature implements copado.CopadoDomain {
     global static Boolean isCCHEnabled() {
         return null;
     }
+    global static Boolean isCCMEnabled() {
+        return null;
+    }
 }
