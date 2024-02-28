@@ -55,7 +55,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Uncertain</masterLabel>
-            <translation><!-- Uncertain --></translation>
+            <translation>不確定</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Unstable</masterLabel>

@@ -17,17 +17,17 @@
         <name>copado__User_Story_Bundle_Metadata</name>
     </fieldSets>
     <fields>
-        <help><!-- Action to be performed with the current metadata when committing --></help>
+        <help>コミット時に現在のメタデータで実行されるアクション</help>
         <label><!-- Action --></label>
         <name>copado__Action__c</name>
     </fields>
     <fields>
-        <help><!-- Represents a grouping of metadata, i.e. vlocity, cpq --></help>
+        <help>メタデータのグループ化（vlocity、cpqなど）を表す。</help>
         <label><!-- Category --></label>
         <name>copado__Category__c</name>
     </fields>
     <fields>
-        <help><!-- Additional values associated with this commit --></help>
+        <help>このコミットに関連する追加の値</help>
         <label><!-- Json Information --></label>
         <name>copado__JsonInformation__c</name>
     </fields>
@@ -41,7 +41,7 @@
         <name>copado__Metadata_API_Name__c</name>
     </fields>
     <fields>
-        <help><!-- Folder where the metadata is allocated --></help>
+        <help>メタデータが配置されるフォルダー</help>
         <label><!-- Directory --></label>
         <name>copado__ModuleDirectory__c</name>
     </fields>
@@ -74,7 +74,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Type of the metadata --></help>
+        <help>メタデータタイプ</help>
         <label><!-- Type --></label>
         <name>copado__Type__c</name>
     </fields>

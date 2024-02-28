@@ -22,7 +22,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Outdated</masterLabel>
-            <translation><!-- Outdated --></translation>
+            <translation>古い（Outdated)</translation>
         </picklistValues>
     </fields>
     <fields>

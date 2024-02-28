@@ -5,5 +5,6 @@
     <enableDevOpsCenterGA>false</enableDevOpsCenterGA>
     <enablePackaging2>true</enablePackaging2>
     <enableScratchOrgManagementPref>true</enableScratchOrgManagementPref>
+    <enableScratchOrgSnapshotPref>false</enableScratchOrgSnapshotPref>
     <enableShapeExportPref>false</enableShapeExportPref>
 </DevHubSettings>

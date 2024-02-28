@@ -19,7 +19,7 @@
         <name>copado__Rule_Error_Message__c</name>
     </fields>
     <fields>
-        <help><!-- The severity of the Rule that has been violated --></help>
+        <help>違反されたルールの深刻度</help>
         <label><!-- Rule Severity --></label>
         <name>copado__Severity__c</name>
     </fields>
