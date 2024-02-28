@@ -21,4 +21,5 @@
     <tabs>copado__Artifact__c</tabs>
     <tabs>copado__Account_Summary</tabs>
     <tabs>standard-report</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

@@ -33,12 +33,12 @@
         <name>cmcSf__Apex_Test_Level__c</name>
     </fields>
     <fields>
-        <help><!-- Enable this checkbox if you want to review Vlocity logs regardless of the status of the deployment. If you include Vlocity logs, these can consume a considerable amount of file storage. --></help>
+        <help>デプロイのステータスに関係なく Vlocity ログを確認する場合は、このチェックボックスを有効にします。Vlocityログを含めると、かなりのファイルストレージを消費する可能性があります。</help>
         <label><!-- Attach Vlocity(SFI) Build File --></label>
         <name>cmcSf__Attach_Vlocity_Build_File__c</name>
     </fields>
     <fields>
-        <help><!-- Enabling this, you can see the source files deployed (as part of this promotion) to the destination org on your git repository branch named copadoDebug/&lt;PromotionNumber&gt; --></help>
+        <help>これを有効にすると、git リポジトリの copadoDebug/&lt;PromotionNumber&gt; というブランチにあるデプロイ先の組織に (このプロモーションの一部として) デプロイされたソースファイルを見ることができます。</help>
         <label><!-- Debug Mode --></label>
         <name>cmcSf__Debug_Mode__c</name>
     </fields>
@@ -55,31 +55,31 @@
         <name>cmcSf__Rollback_Status__c</name>
         <picklistValues>
             <masterLabel>Completed</masterLabel>
-            <translation><!-- Completed --></translation>
+            <translation>完了</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Failed</masterLabel>
-            <translation><!-- Failed --></translation>
+            <translation>失敗</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>In Progress</masterLabel>
-            <translation><!-- In Progress --></translation>
+            <translation>進行中</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>In Progress (Validation Only)</masterLabel>
-            <translation><!-- In Progress (Validation Only) --></translation>
+            <translation>進行中（検証のみ）</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Not Started</masterLabel>
-            <translation><!-- Not Started --></translation>
+            <translation>未着手</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Validated</masterLabel>
-            <translation><!-- Validated --></translation>
+            <translation>検証済み</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Validation Failed</masterLabel>
-            <translation><!-- Validation Failed --></translation>
+            <translation>検証失敗</translation>
         </picklistValues>
     </fields>
     <fields>
@@ -87,7 +87,7 @@
         <name>cmcSf__Rolled_Back_Date__c</name>
     </fields>
     <fields>
-        <help><!-- After a validation, if Quick Deploy is available on the target org, this field contains the validation id. If the promotion is deployed, the quick deploy will be used automatically. --></help>
+        <help>検証後、対象組織でクイックデプロイが利用可能な場合、このフィールドには検証IDが含まれます。プロモーションがデプロイされると、クイックデプロイが自動的に使用されます。</help>
         <label><!-- Validate Deploy Request Id --></label>
         <name>cmcSf__Validate_Deploy_Request_Id__c</name>
     </fields>
