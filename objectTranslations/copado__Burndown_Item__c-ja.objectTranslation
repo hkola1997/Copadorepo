@@ -5,7 +5,7 @@
         <value><!-- Sprint Snapshot --></value>
     </caseValues>
     <fields>
-        <help><!-- Sprint Actual Velocity on a particular date on which Sprint Snapshot Batch is executed --></help>
+        <help>スプリントスナップショットバッチが実行された特定の日のスプリント実速度</help>
         <label><!-- Actual Velocity --></label>
         <name>copado__Actual_Velocity__c</name>
     </fields>

@@ -77,7 +77,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Major</masterLabel>
-            <translation><!-- Major --></translation>
+            <translation>メジャー</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Minor</masterLabel>
@@ -122,7 +122,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Code Smell</masterLabel>
-            <translation><!-- Code Smell --></translation>
+            <translation>コードスメル（Code Smell）</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Vulnerability</masterLabel>

@@ -26,16 +26,16 @@
         <relationshipLabel><!-- Continuous Integrations --></relationshipLabel>
     </fields>
     <fields>
-        <help><!-- For supported metadata items only. --></help>
+        <help>サポートされているメタデータ項目のみ</help>
         <label><!-- Files to be deployed --></label>
         <name>copado__Files_to_be_deployed__c</name>
         <picklistValues>
             <masterLabel>Deploy all Files</masterLabel>
-            <translation><!-- Deploy all Files --></translation>
+            <translation>すべてのファイルをデプロイ</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Deploy only Committed Files</masterLabel>
-            <translation><!-- Deploy only Committed Files --></translation>
+            <translation>コミットされたファイルのみをデプロイ</translation>
         </picklistValues>
     </fields>
     <fields>
@@ -67,15 +67,15 @@
         <name>copado__Pre_Deployment_Options__c</name>
         <picklistValues>
             <masterLabel>Always run build task deployment</masterLabel>
-            <translation><!-- Always run build task deployment --></translation>
+            <translation>常にビルドタスクのデプロイメントを実行</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Run build task deployment only if pre deployment job is successful</masterLabel>
-            <translation><!-- Run build task deployment only if pre deployment job is successful --></translation>
+            <translation>プレデプロイメントジョブが成功した場合にのみビルドタスクのデプロイメントを実行</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- If this checkbox is checked, all apex tests will be run as part of the build. --></help>
+        <help>このチェックボックスがオンの場合、すべてのApexテストはビルドの一部として実行されます。</help>
         <label><!-- Run All Tests --></label>
         <name>copado__Run_All_Tests__c</name>
     </fields>

@@ -61,7 +61,8 @@ dw.qb.startQueryBuilder = function(data, parsed) {
                 var args = event.args;
                 if (args && !isNaN(args.index)) {
                     var item = $objects.jqxComboBox("listBox").visibleItems[args.index];
-                    dw.qb.objectSelected = item.label.split("(")[1].split(")")[0];
+                    let arrayLength = item.label.split("(").length;
+                    dw.qb.objectSelected = item.label.split("(")[arrayLength-1].split(")")[0];
                     dw.qb.selectedCompleteObject = item.label;
                     dw.qb.onSelectObject();
                 }

@@ -42,6 +42,10 @@
     </fields>
     <fields>
         <label><!-- Requested Reviewers --></label>
+        <name>copado__Requested_Reviewers_Long__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Reviewers --></label>
         <name>copado__Requested_Reviewers__c</name>
     </fields>
     <fields>

@@ -1,5 +1,6 @@
 <apex:page docType="html-5.0" showHeader="true" sidebar="true" standardController="copado__Deployment_Task__c" extensions="copado.DeploymentTaskExtension,copado.Settings,copado.JsRemotingController"
  standardStylesheets="true" title="{!$Label.copado__VIEW} {!$ObjectType.copado__Deployment_Task__c.Label}" lightningStylesheets="true">
+ 	<apex:includeLightning />
 	<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height:100%;">
 
 	<head>
@@ -568,6 +569,28 @@
 													$copado('[id$=jsFunction_View]').val(null);
 												}
 											}
+										</script>
+									</apex:outputPanel>
+									<apex:outputPanel layout="none" rendered="{!copado__Deployment_Task__c.copado__Type__c == 'Test'}">
+										<div id="lightningvf" />
+										<script>
+											var previousData = {};
+											const namespace = '{!namespace}';
+											$Lightning.use(namespace + ":" + "crtAutomationApp", function () {
+												$Lightning.createComponent(namespace + ":" + "CrtAutomationComponent",
+													{ readOnlyData: true, previousValue: previousData },
+													"lightningvf",
+													function (cmp) { }
+												);
+											});
+
+											datasetup.setPreviousData = function (data) {
+												var objData = JSON.parse(data);
+												if (objData.hasOwnProperty("testId")) {
+													previousData = objData;
+												}
+											}
+
 										</script>
 									</apex:outputPanel>
 								</div>
