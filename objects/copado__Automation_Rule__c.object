@@ -180,7 +180,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>API name of the flow used to perform more specific operations, like updating records status, creating other records, etc.</inlineHelpText>
-        <label>Automated Action Callback</label>
+        <label>Flow or Class API Name</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -191,7 +191,7 @@
     <fields>
         <fullName>copado__Automated_Action__c</fullName>
         <deprecated>false</deprecated>
-        <description>Action that will be executed based on the source action and its result.</description>
+        <description>Action that will be executed by the automation rule depending on the selected Automation Type.</description>
         <externalId>false</externalId>
         <inlineHelpText>Action that will be executed based on the source action and its result.</inlineHelpText>
         <label>Automated Action</label>
@@ -207,13 +207,24 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>Connector that maps the payload and parameters between the source and automated actions.Select &quot;Custom&quot; if you want to specify a custom connector class</inlineHelpText>
-        <label>Automation Connector</label>
+        <label>Automation Type</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>copado__Config_Json__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Config Json</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
     </fields>
     <fields>
         <fullName>copado__Cron_Expression__c</fullName>
@@ -233,7 +244,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>API name of the Apex class used to map the source and automated actions payloads and parameters</inlineHelpText>
-        <label>Custom Automation Connector</label>
+        <label>Custom Automation Type (API Name)</label>
         <length>255</length>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -284,7 +295,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>Indicate if the automated action should be immediately executed or it&apos;ll be scheduled</inlineHelpText>
-        <label>Execution</label>
+        <label>Execution Time</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -344,6 +355,20 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
+        <fullName>copado__Quality_Gate_Rule_Condition__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Quality Gate Rule Condition</label>
+        <referenceTo>copado__Quality_Gate_Rule_Condition__c</referenceTo>
+        <relationshipLabel>Automation Rules</relationshipLabel>
+        <relationshipName>Automation_Rules</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Scheduled_Job_Id__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -360,7 +385,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>Define if the automation should be triggered after a successful or failed execution of the source action</inlineHelpText>
-        <label>Source Action Status</label>
+        <label>Trigger Action Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
@@ -387,7 +412,7 @@
         <deprecated>false</deprecated>
         <externalId>false</externalId>
         <inlineHelpText>Action that will trigger the automation</inlineHelpText>
-        <label>Source Action</label>
+        <label>Trigger Action</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>

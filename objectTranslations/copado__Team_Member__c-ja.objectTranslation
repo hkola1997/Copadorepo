@@ -50,11 +50,11 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Doc Editor</masterLabel>
-            <translation><!-- Doc Editor --></translation>
+            <translation>Docエディター</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Doc Manager</masterLabel>
-            <translation><!-- Doc Manager --></translation>
+            <translation>Docマネージャー</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Network Engineer</masterLabel>
@@ -110,11 +110,11 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>SysAdmin</masterLabel>
-            <translation><!-- SysAdmin --></translation>
+            <translation>システムアドミン</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>SysAdmin Linux</masterLabel>
-            <translation><!-- SysAdmin Linux --></translation>
+            <translation>SysAdmin Storage</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>SysAdmin Storage</masterLabel>
@@ -134,7 +134,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Trust Engineer</masterLabel>
-            <translation><!-- Trust Engineer --></translation>
+            <translation>エンジニアを信頼</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>UE</masterLabel>

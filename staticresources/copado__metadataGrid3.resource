@@ -1445,18 +1445,30 @@ var MetadataGrid3 = (() => {
         if (isRollback) {
             assignFileData('', '');
             var targetJSON = JSON.parse(app.target[index]);
-            var sourceJSON = app.source[index];
-            window.preSourceRollback = [sourceJSON, ''];
+            let mdType = JSON.parse(app.target[index]).metadataType;
+            const sourceJSON = mdType.includes('Aura') || mdType.includes('Lightning') ? [...app.source[index]] : app.source[index];
+            window.preSourceRollback = sourceJSON.zipBytes === undefined ? sourceJSON === '' ? [sourceJSON, ''] : sourceJSON : [sourceJSON, ''];
+            if(mdType.includes('Aura') || mdType.includes('Lightning')) {
+                window.sourceCONTENT = window.preSourceRollback ? [...window.preSourceRollback] : '';
+            } else {
+                window.sourceCONTENT = window.preSourceRollback;
+            }
             var targetJSONbytes = targetJSON.zipBytes;
             unZipDecode(targetJSONbytes).then( function (zipContent){
                 var bundleTarget = zipContent ? zipContent : '';
                 var preTarget = [];
-                if(Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
-                    getContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then( function (content) {
-                        preTarget[0] = content ? content: '';
-                        preTarget[1] = bundleTarget[1][0];
-                        window.preTargetRollback = preTarget;
-                    });
+                //adding changes
+                if(bundleTarget[1][0].includes('lwc') || bundleTarget[1][0].includes('aura')) {
+                    window.preTargetRollback = bundleTarget;
+                    window.targetCONTENT = [...window.preTargetRollback];
+                } else {
+                    if(Object.keys(bundleTarget[0].files)[0] != 'package.xml') {
+                        getContent(bundleTarget[0].file(Object.keys(bundleTarget[0].files)[0])).then( function (content) {
+                            preTarget[0] = content ? content: '';
+                            preTarget[1] = bundleTarget[1][0];
+                            window.preTargetRollback = preTarget ? preTarget : '';
+                        });
+                    };
                 }
             }, function (e) {
                 console.log(e);
@@ -1600,7 +1612,10 @@ var MetadataGrid3 = (() => {
                 if (gitPromotionContent != null) {
                     unZipDecode(gitPromotionContent, { base64: true }).then( function (gitPromo){
                         gitPromotionZip = Object.keys(gitPromo[0].files).length ? gitPromo : '';
-                        if (gitPromotionZip != '' && gitPromotionZip[0].file(folder + '/' + name + '.' + ext) != null) {
+                        // Check if bundle component is present
+                        if(gitPromotionZip != '' && (gitPromotionZip[1][0].includes('lwc') || gitPromotionZip[1][0].includes('aura'))) {
+                            app.source[index] = gitPromotionZip;
+                        } else if (gitPromotionZip != '' && gitPromotionZip[0].file(folder + '/' + name + '.' + ext) != null) {
                             getContent(gitPromotionZip[0].file(folder + '/' + name + '.' + ext)).then( function (content) {
                                 app.source[index] = content ? content : '';
                             }, function (e) {

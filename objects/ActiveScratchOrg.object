@@ -152,6 +152,9 @@
     <fields>
         <fullName>SignupUsername</fullName>
     </fields>
+    <fields>
+        <fullName>Snapshot</fullName>
+    </fields>
     <listViews>
         <fullName>All_Active_Scratch_Orgs</fullName>
         <filterScope>Everything</filterScope>

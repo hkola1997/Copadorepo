@@ -4,39 +4,6 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>height</name>
-                    <value>800</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>pageName</name>
-                    <value>copado__UserStoryMetadata</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showLabel</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:visualforcePage</componentName>
-                <identifier>flexipage_visualforcePage1</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.copado__User_Story__r.copado__Platform__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Salesforce</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.copado__User_Story__r.copado__Platform__c}</leftValue>
-                        <operator>EQUAL</operator>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>actionNames</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -93,7 +60,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>height</name>
-                    <value>300</value>
+                    <value>600</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -153,6 +120,39 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>height</name>
+                    <value>800</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>pageName</name>
+                    <value>copado__UserStoryMetadata</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showLabel</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:visualforcePage</componentName>
+                <identifier>flexipage_visualforcePage1</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__User_Story__r.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__User_Story__r.copado__Platform__c}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>tabs</name>
                     <value>maintabs</value>
                 </componentInstanceProperties>
@@ -178,7 +178,7 @@
     <masterLabel>User Story Metadata Record Page</masterLabel>
     <sobjectType>copado__User_Story_Metadata__c</sobjectType>
     <template>
-        <name>flexipage:recordHomeSimpleViewTemplate</name>
+        <name>flexipage:recordHomeSingleColTemplateDesktop</name>
     </template>
     <type>RecordPage</type>
 </FlexiPage>

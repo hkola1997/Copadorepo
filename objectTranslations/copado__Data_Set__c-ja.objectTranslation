@@ -5,7 +5,7 @@
         <value><!-- Data Set --></value>
     </caseValues>
     <fields>
-        <help><!-- The selected Data Template will be used as a base for object relationships, related fields and filtering. --></help>
+        <help>選択したデータテンプレートは、オブジェクトの関係、関連フィールド、フィルタリングのベースとして使用されます。</help>
         <label><!-- Data Template --></label>
         <name>copado__Data_Template__c</name>
         <relationshipLabel><!-- Data Sets --></relationshipLabel>
