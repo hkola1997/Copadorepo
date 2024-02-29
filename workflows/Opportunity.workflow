@@ -10,6 +10,16 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/test_Account_Name_changed_Notification_1681104218751</template>
     </alerts>
+    <fieldUpdates>
+        <fullName>Status_field_of_Opportunity</fullName>
+        <field>Description</field>
+        <formula>&quot; chandu validation rule High Value&quot;</formula>
+        <name>Status field of Opportunity</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
     <rules>
         <fullName>Closed won test workflow</fullName>
         <actions>
@@ -22,6 +32,22 @@
             <operation>equals</operation>
             <value>Closed Won</value>
         </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>update status of oppurtunity if 10000</fullName>
+        <actions>
+            <name>Status_field_of_Opportunity</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterThan</operation>
+            <value>10000</value>
+        </criteriaItems>
+        <description>create a workflow rule that automatically updates the status of an opportunity when its amount exceeds $10,000.</description>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <tasks>

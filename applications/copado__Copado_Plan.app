@@ -20,4 +20,5 @@
     <tabs>copado__Team__c</tabs>
     <tabs>copado__Sprint__c</tabs>
     <tabs>copado__Kanban_Board__c</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

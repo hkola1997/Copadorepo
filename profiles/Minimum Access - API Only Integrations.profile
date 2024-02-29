@@ -680,6 +680,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__GetTestClassesForRollback</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetTestClassesForRollbackTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__GetTestClassesTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -1265,6 +1273,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__SystemProperty</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__TestClassNames</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__TestClassNamesTest</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
@@ -20321,6 +20337,9 @@
     <layoutAssignments>
         <layout>LocationGroupAssignment-Location Group Assignment Layout</layout>
     </layoutAssignments>
+    <layoutAssignments>
+        <layout>My_salesforce_topics__c-My salesforce topic Layout</layout>
+    </layoutAssignments>
     <pageAccesses>
         <apexPage>copado__AddCCHRuleCriteria</apexPage>
         <enabled>false</enabled>
@@ -21122,6 +21141,10 @@
     </recordTypeVisibilities>
     <tabVisibilities>
         <tab>Chandu_Lightening_Page_Test</tab>
+        <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>My_salesforce_topics__c</tab>
         <visibility>Hidden</visibility>
     </tabVisibilities>
     <tabVisibilities>

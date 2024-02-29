@@ -181,7 +181,11 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Opportunity</tabs>
     <tabs>standard-Lead</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
     <workspaceConfig>
+        <mappings>
+            <tab>My_salesforce_topics__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Account</tab>
         </mappings>
