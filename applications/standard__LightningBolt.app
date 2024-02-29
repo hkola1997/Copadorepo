@@ -8,5 +8,6 @@
     <label>LightningBolt</label>
     <navType>Standard</navType>
     <tabs>standard-LightningBoltHome</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
     <uiType>Lightning</uiType>
 </CustomApplication>

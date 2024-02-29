@@ -31,4 +31,5 @@
     <tabs>copado__JobTemplate__c</tabs>
     <tabs>copado__JobExecution__c</tabs>
     <tabs>copado__Stage__c</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>
