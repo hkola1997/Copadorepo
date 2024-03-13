@@ -518,6 +518,16 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>abhishek_field__c</fullName>
+        <externalId>false</externalId>
+        <label>abhishek field</label>
+        <length>60</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>automatedbackpromotionchecking__c</fullName>
         <externalId>false</externalId>
         <label>Automatedbackpromotionchecking</label>
