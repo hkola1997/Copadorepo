@@ -38,7 +38,9 @@
         <members>DocumentChecklist</members>
         <members>DynamicForms</members>
         <members>EAC</members>
+        <members>EinsteinAI</members>
         <members>EinsteinDocumentCapture</members>
+        <members>EinsteinGpt</members>
         <members>EmailAdministration</members>
         <members>EmailIntegration</members>
         <members>EmailTemplate</members>
