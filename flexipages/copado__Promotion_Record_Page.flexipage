@@ -163,6 +163,24 @@
                 <identifier>c_qualityGatesChecker</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:promotionProgressAlerts</componentName>
+                <identifier>c_promotionProgressAlerts</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
         <name>header</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -259,6 +277,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Back_Promotion__c</fieldItem>
                 <identifier>RecordBack_Promotion__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__View_in_Git__c</fieldItem>
+                <identifier>RecordView_in_Git_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Last_Promotion_Execution_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3db54dde-b584-4c1b-bdb6-8a316d79e10c</name>
@@ -424,6 +458,10 @@
                 <componentInstanceProperties>
                     <name>locationId</name>
                     <value>CCM.Promotion.ExtensionDetails</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>locationOnly</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentName>copado:dynamicUISectionContainer</componentName>
                 <identifier>c_dynamicUISectionContainer1</identifier>

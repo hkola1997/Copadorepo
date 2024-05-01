@@ -196,4 +196,8 @@
         <name>standard__Commerce</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>copado__Copado_Admin</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
 </AppMenu>

@@ -906,6 +906,10 @@ IMAGE(&apos;/resource/1516617568000/&apos;+IF($Setup.copado__Settings__c.copado_
         <searchResultsCustomButtons>copado__Add_to_Deployment</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>copado__Copado_Persona__c</fullName>
+        <label>Copado Persona</label>
+    </sharingReasons>
     <visibility>Public</visibility>
     <webLinks>
         <fullName>copado__Add_to_Deployment</fullName>
