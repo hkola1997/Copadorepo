@@ -2,6 +2,99 @@
 <FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
     <flexiPageRegions>
         <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>actionNames</name>
+                    <valueList>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Generate_Data_Set</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Generate_Data_Set_MC</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Deploy_Data_Set</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Deploy_Data_Set_MC</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>true</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Data_Set__c.copado__Remove_File_Versions</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Edit</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Clone</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
+                        </valueListItems>
+                    </valueList>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>collapsed</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsConfiguration</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>enableActionsInNative</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>hideChatterActions</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>numVisibleActions</name>
+                    <value>6</value>
+                </componentInstanceProperties>
+                <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:dataSetAlerts</componentName>
+                <identifier>dataSetAlerts</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>header</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
@@ -32,29 +125,7 @@
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Data_Template__c</fieldItem>
-                <identifier>RecordData_Template__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.CreatedBy.Username}</leftValue>
-                        <operator>EQUAL</operator>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Data_Template__c</fieldItem>
-                <identifier>RecordData_Template__cField2</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.CreatedBy.Username}</leftValue>
-                        <operator>NE</operator>
-                    </criteria>
-                </visibilityRule>
+                <identifier>RecordData_Template_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -109,10 +180,21 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Execution_Job__c</fieldItem>
                 <identifier>RecordExecution_Job__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Source_Org__c</fieldItem>
                 <identifier>RecordSource_Org__cField</identifier>
             </fieldInstance>
@@ -123,8 +205,19 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Execution_Status__c</fieldItem>
                 <identifier>RecordExecution_Status__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a297aa9-8aea-4e90-ac25-55c64b3452dc</name>
@@ -181,6 +274,10 @@
     <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.OwnerId</fieldItem>
                 <identifier>RecordOwnerIdField</identifier>
             </fieldInstance>
@@ -220,6 +317,10 @@
                     <value>Facet-036a51d0-718a-48cb-ab12-16fe79172c67</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>General Information</value>
                 </componentInstanceProperties>
@@ -232,6 +333,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-3ab2d554-bd50-41aa-91e4-c21687372f46</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -254,6 +359,10 @@
                     <value>Facet-c1d6c8b9-a556-4d21-873d-878a36980d21</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>System Information</value>
                 </componentInstanceProperties>
@@ -273,8 +382,72 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
+                    <value>{!$Label.copado__WaringMessageForDataSetFiles}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>info</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>parentFieldApiName</name>
+                    <value>copado__Data_Set__c.Id</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListApiName</name>
+                    <value>AttachedContentDocuments</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>relatedListComponentOverride</name>
+                    <value>GRID</value>
+                </componentInstanceProperties>
+                <componentName>force:relatedListSingleContainer</componentName>
+                <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-7cabf4fc-005b-4beb-874e-76b69fbb67a3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>fieldset</name>
+                    <value>Data_Set_Job_Executions</value>
+                </componentInstanceProperties>
+                <componentName>copado:dataSetJobExecutions</componentName>
+                <identifier>c_dataSetJobExecutions</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentName>copado:dataSetExecutionHistory</componentName>
                 <identifier>dataSetExecutionHistory</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>Facet-99b3e0ea-5454-4cc3-830c-05a702fda9b3</name>
@@ -303,6 +476,20 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>body</name>
+                    <value>Facet-7cabf4fc-005b-4beb-874e-76b69fbb67a3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Files</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
                     <value>Facet-99b3e0ea-5454-4cc3-830c-05a702fda9b3</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -320,88 +507,11 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>actionNames</name>
-                    <valueList>
-                        <valueListItems>
-                            <value>copado__Data_Set__c.copado__Generate_Data_Set</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>copado__Data_Set__c.copado__Deploy_Data_Set</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>copado__Data_Set__c.copado__Remove_File_Versions</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Edit</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Clone</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Delete</value>
-                        </valueListItems>
-                    </valueList>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>collapsed</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableActionsConfiguration</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>enableActionsInNative</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>hideChatterActions</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>numVisibleActions</name>
-                    <value>6</value>
-                </componentInstanceProperties>
-                <componentName>force:highlightsPanel</componentName>
-                <identifier>force_highlightsPanel</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>copado:dataSetAlerts</componentName>
-                <identifier>dataSetAlerts</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-5dc098f6-251d-4e37-b192-c34d093e16ab</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
                 <identifier>flexipage_tabset</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>header</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>copado__Data_Set__c.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>AttachedContentDocuments</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>GRID</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-                <identifier>force_relatedListSingleContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
@@ -411,23 +521,59 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>tip1</name>
-                    <value>{!$Label.copado__CopadoDataSetTip1}</value>
+                    <name>jobExecutionField</name>
+                    <value>copado__ParentId__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>tip2</name>
-                    <value>{!$Label.copado__CopadoDataSetTip2}</value>
+                    <name>jobTemplateApiName</name>
+                    <value>SFDX_Generate_Data_Set_1</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>tip3</name>
-                    <value>{!$Label.copado__CopadoDataSetTip3}</value>
+                    <name>noJobMessage</name>
+                    <value>{!$Label.copado__GenerateDataSetJobExecutionNotStartedMessage}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>title</name>
-                    <value>{!$Label.copado__CopadoDataSetTipTitle}</value>
+                    <name>noJobTitle</name>
+                    <value>{!$Label.copado__GenerateDataSetJobExecutionNotStartedTitle}</value>
                 </componentInstanceProperties>
-                <componentName>copado:copadocoreTips</componentName>
-                <identifier>copadocoreTips</identifier>
+                <componentName>copado:enhancedJobMonitor</componentName>
+                <identifier>c_enhancedJobMonitor2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>jobExecutionField</name>
+                    <value>copado__ParentId__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>jobTemplateApiName</name>
+                    <value>SFDX_Deploy_Data_Set_1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobMessage</name>
+                    <value>{!$Label.copado__DeployDataSetJobExecutionNotStartedMessage}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>noJobTitle</name>
+                    <value>{!$Label.copado__DeployDataSetJobExecutionNotStartedTitle}</value>
+                </componentInstanceProperties>
+                <componentName>copado:enhancedJobMonitor</componentName>
+                <identifier>c_enhancedJobMonitor</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__MCDD_Enabled__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

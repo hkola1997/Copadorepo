@@ -25,6 +25,10 @@
         <name>copado__Last_Generated_Date__c</name>
     </fields>
     <fields>
+        <label><!-- MCDD Enabled --></label>
+        <name>copado__MCDD_Enabled__c</name>
+    </fields>
+    <fields>
         <help><!-- The Environment where the data was extracted from in the last generation of Data Sets. --></help>
         <label><!-- Data Source Environment --></label>
         <name>copado__Source_Org__c</name>

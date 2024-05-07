@@ -404,6 +404,24 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>ATF.Release.RelatedList</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>locationOnly</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Platform</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__Release__c.Id</value>
                 </componentInstanceProperties>
@@ -592,6 +610,12 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:releaseRelatedListPublishMessage</componentName>
+                <identifier>c_releaseRelatedListPublishMessage</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

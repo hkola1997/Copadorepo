@@ -575,7 +575,7 @@
 										<div id="lightningvf" />
 										<script>
 											var previousData = {};
-											const namespace = '{!namespace}';
+											const namespace = _config.ns == '' ? 'c' : 'copado';
 											$Lightning.use(namespace + ":" + "crtAutomationApp", function () {
 												$Lightning.createComponent(namespace + ":" + "CrtAutomationComponent",
 													{ readOnlyData: true, previousValue: previousData },

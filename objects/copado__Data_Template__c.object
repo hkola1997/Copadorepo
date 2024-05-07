@@ -381,7 +381,7 @@
         <linkType>page</linkType>
         <masterLabel>Import Templates</masterLabel>
         <openType>sidebar</openType>
-        <page>copado__DataTemplateImport</page>
+        <page>copado__DataTemplateImportLWCContainer</page>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
     </webLinks>

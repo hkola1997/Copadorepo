@@ -368,6 +368,33 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copado__Is_repository_connected_via_copa_tunnel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Is repository connected via copa tunnel?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is repository connected via copa tunnel?</inlineHelpText>
+        <label>Is repository connected via copa tunnel?</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No</fullName>
+                    <default>true</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Pull_Request_Base_URL__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
