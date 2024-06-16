@@ -3,6 +3,7 @@
     <booleanFilter>1 AND 2</booleanFilter>
     <description>Ahmed</description>
     <masterLabel>test user access policy</masterLabel>
+    <order>10</order>
     <status>Active</status>
     <triggerType>CreateAndUpdate</triggerType>
     <userAccessPolicyActions>

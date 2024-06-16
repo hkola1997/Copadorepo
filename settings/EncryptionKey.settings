@@ -2,6 +2,7 @@
 <EncryptionKeySettings xmlns="http://soap.sforce.com/2006/04/metadata">
     <canOptOutOfDerivationWithBYOK>false</canOptOutOfDerivationWithBYOK>
     <dataCloudEncryption>false</dataCloudEncryption>
+    <enableBringYourOwnkms>false</enableBringYourOwnkms>
     <enableCacheOnlyKeys>false</enableCacheOnlyKeys>
     <enableReplayDetection>false</enableReplayDetection>
 </EncryptionKeySettings>
