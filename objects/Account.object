@@ -509,6 +509,14 @@
         <fullName>YearStarted</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
+    <fields>
+        <fullName>chanduworkbenchretrieveanddeploy__c</fullName>
+        <externalId>false</externalId>
+        <label>chanduworkbenchretrieveanddeploy</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>TextArea</type>
+    </fields>
     <listViews>
         <fullName>AllAccounts</fullName>
         <filterScope>Everything</filterScope>
