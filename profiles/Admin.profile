@@ -201,6 +201,18 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>ApexIntod2</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ApexIntro1</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Shitclass</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>TemparatureTestClass</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -214,6 +226,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>TemperatureConverterTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>Venkattest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
