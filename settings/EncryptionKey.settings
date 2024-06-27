@@ -5,4 +5,5 @@
     <enableBringYourOwnkms>false</enableBringYourOwnkms>
     <enableCacheOnlyKeys>false</enableCacheOnlyKeys>
     <enableReplayDetection>false</enableReplayDetection>
+    <tenantLevelEncryption>false</tenantLevelEncryption>
 </EncryptionKeySettings>

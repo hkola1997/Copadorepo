@@ -195,7 +195,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the environment which is linked to the system property.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Lookup field to the environment which is linked to the system property.</inlineHelpText>
         <label>Environment</label>
         <referenceTo>copado__Environment__c</referenceTo>
@@ -209,7 +208,6 @@
         <fullName>copado__Is_Global__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>Select this checkbox if you want to share the System Property among multiple pipelines and environments.</inlineHelpText>
         <label>Is Global?</label>
         <trackTrending>false</trackTrending>
@@ -220,7 +218,6 @@
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group</description>
-        <externalId>false</externalId>
         <inlineHelpText>On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group</inlineHelpText>
         <label>Is Public?</label>
         <trackTrending>false</trackTrending>
@@ -231,7 +228,6 @@
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>Select this checbox to hide the sensitive information.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Select this checbox to hide the sensitive information.</inlineHelpText>
         <label>Hide Value</label>
         <trackTrending>false</trackTrending>
@@ -255,7 +251,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the pipeline linked to the system property.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Lookup field to the pipeline linked to the system property.</inlineHelpText>
         <label>Pipeline</label>
         <referenceTo>copado__Deployment_Flow__c</referenceTo>
@@ -284,7 +279,6 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Lookup field to the user linked to the system property.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Lookup field to the user linked to the system property.</inlineHelpText>
         <label>User</label>
         <referenceTo>User</referenceTo>
@@ -297,7 +291,6 @@
         <fullName>copado__Value__c</fullName>
         <deprecated>false</deprecated>
         <description>This is the value of the system property.</description>
-        <externalId>false</externalId>
         <inlineHelpText>This is the value of the system property.</inlineHelpText>
         <label>Value</label>
         <length>131072</length>

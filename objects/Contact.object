@@ -420,7 +420,6 @@
     </fields>
     <fields>
         <fullName>Level__c</fullName>
-        <externalId>false</externalId>
         <label>Level</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>

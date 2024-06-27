@@ -3,7 +3,6 @@
     <fields>
         <fullName>copado__Default_Persona__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Default Persona</label>
         <referenceTo>copado__Default_Persona__mdt</referenceTo>
@@ -16,7 +15,6 @@
     <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Type</label>
         <required>false</required>

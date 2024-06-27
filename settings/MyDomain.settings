@@ -11,6 +11,7 @@
     <enableShareBrowserSessionAndroidForAuth>false</enableShareBrowserSessionAndroidForAuth>
     <enableShareBrowserSessionIOSForAuth>false</enableShareBrowserSessionIOSForAuth>
     <instancedUrlRedirectHandling>NoRedirect</instancedUrlRedirectHandling>
+    <isFirstPartyCookieUseRequired>false</isFirstPartyCookieUseRequired>
     <logRedirections>false</logRedirections>
     <myDomainName>copado-2c6-prod-ed-dev-ed</myDomainName>
     <myDomainSuffix>MySalesforce</myDomainSuffix>

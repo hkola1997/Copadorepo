@@ -194,7 +194,6 @@
         <fullName>copado__Callback_Type__c</fullName>
         <deprecated>false</deprecated>
         <description>Type of Callback selected for the function.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Type of Callback selected for the function.</inlineHelpText>
         <label>Callback Type</label>
         <required>false</required>
@@ -221,7 +220,6 @@
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
         <description>Description of the function.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Description of the function.</inlineHelpText>
         <label>Description</label>
         <required>false</required>
@@ -259,7 +257,6 @@
         <fullName>copado__Options__c</fullName>
         <deprecated>false</deprecated>
         <description>User can define few options like maxVolume and volumeTTL which can be used to run standalone function with these configurations</description>
-        <externalId>false</externalId>
         <inlineHelpText>Define the maxVolume and volumeTTL to be used to run a standalone function with these configurations.</inlineHelpText>
         <label>Options</label>
         <length>131072</length>
@@ -271,7 +268,6 @@
         <fullName>copado__Parameters__c</fullName>
         <deprecated>false</deprecated>
         <description>A parameter is a piece of information taken from outside the function that the function needs to be executed.</description>
-        <externalId>false</externalId>
         <inlineHelpText>This is used to validate if all required parameters are set before calling the execution.</inlineHelpText>
         <label>Parameters</label>
         <length>131072</length>
@@ -295,7 +291,6 @@
         <fullName>copado__Script__c</fullName>
         <deprecated>false</deprecated>
         <description>Provide the script with the commands you would like the function to execute.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Provide the script with the commands you would like the function to execute.</inlineHelpText>
         <label>Script</label>
         <length>131072</length>
@@ -322,7 +317,6 @@
         <defaultValue>&quot;Custom&quot;</defaultValue>
         <deprecated>false</deprecated>
         <description>The type of Copado function such as Custom or Standard.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Type of Copado function.</inlineHelpText>
         <label>Type</label>
         <required>true</required>
@@ -362,7 +356,6 @@
         <fullName>copado__Worker_Size__c</fullName>
         <deprecated>false</deprecated>
         <description>Picklist field that defines the size of the worker. The available options are S, M, L, and XL.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Picklist field that defines the size of the worker. The available options are S, M, L, and XL.</inlineHelpText>
         <label>Worker Size</label>
         <required>true</required>

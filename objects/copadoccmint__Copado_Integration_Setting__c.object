@@ -157,7 +157,6 @@
     <fields>
         <fullName>copadoccmint__External_System__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>External System</label>
         <required>true</required>
         <trackTrending>false</trackTrending>

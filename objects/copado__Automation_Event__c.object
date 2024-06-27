@@ -168,7 +168,6 @@
     <fields>
         <fullName>copado__Action_Result__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Action Result</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -211,7 +210,6 @@
     <fields>
         <fullName>copado__Log__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Automation Log</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -222,7 +220,6 @@
         <fullName>copado__Payload__c</fullName>
         <deprecated>false</deprecated>
         <description>This field contains information required by Submit User Stories Action.</description>
-        <externalId>false</externalId>
         <label>Payload</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -254,7 +251,6 @@
     <fields>
         <fullName>copado__Target_Action_Job_Execution_Ids__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Target Action Job Execution Ids</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
