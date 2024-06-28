@@ -10,6 +10,10 @@
         <name>copado__Icon_Name__c</name>
     </fields>
     <fields>
+        <label><!-- Order --></label>
+        <name>copado__Order__c</name>
+    </fields>
+    <fields>
         <label><!-- Type --></label>
         <name>copado__Type__c</name>
         <picklistValues>

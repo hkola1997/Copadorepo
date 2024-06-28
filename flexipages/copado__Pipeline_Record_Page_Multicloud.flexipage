@@ -49,6 +49,16 @@
                             <value>copado__Deployment_Flow__c.copado__Exclude_Completed_Stories</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>copado__Deployment_Flow__c.copado__Initialise</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.copado__Deployment_Flow__c.copado__Manage_Branches</value>
                         </valueListItems>
                         <valueListItems>

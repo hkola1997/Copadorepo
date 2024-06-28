@@ -7,7 +7,7 @@
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Custom Permission Name</label>
         <length>255</length>
-        <required>true</required>
+        <required>false</required>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -31,6 +31,18 @@
         <length>131072</length>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copado__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
     <fields>
         <fullName>copado__Short_Description__c</fullName>

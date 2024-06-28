@@ -3397,6 +3397,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__CheckFeatureEnabled</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CheckFeatureEnabledTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__CheckFeaturesController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -3502,6 +3510,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__CommitDataCtrlTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__CommitDataIntermediaryCtrlTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4601,6 +4617,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DisableFeatureServiceImplTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__DomainBuilder</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4706,6 +4730,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__EmailTemplatesSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__EnableFeatureServiceImplTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -4906,6 +4938,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__FeatureHelper</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__FeatureServiceHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -5801,6 +5837,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__MockFeatures</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__MockHttpResponseGenerator</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -6154,6 +6194,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__PersonaManagementCredentialServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__PersonaManagementFeatureServiceCtrlTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -10935,6 +10983,10 @@
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
+        <name>copado__AccessBundlesFeature</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
         <name>copado__Access_AQF</name>
     </customPermissions>
     <customPermissions>
@@ -10951,6 +11003,14 @@
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
+        <name>copado__DisplayEndOfLifeUserStory</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__DisplayResultsUserStory</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
         <name>copado__Edit_Filter_Data_Template_Task</name>
     </customPermissions>
     <customPermissions>
@@ -10964,6 +11024,14 @@
     <customPermissions>
         <enabled>true</enabled>
         <name>copado__Edit_User_Story_Commit_Base_Branch</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__EnableCopadoPlanAdvanced</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__EnableCopadoPlanBasic</name>
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
@@ -10984,6 +11052,18 @@
     <customPermissions>
         <enabled>true</enabled>
         <name>copado__Enable_Vlocity_Integration</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__ExecuteManualTestScripts</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__ManagePullRequestsFeature</name>
+    </customPermissions>
+    <customPermissions>
+        <enabled>true</enabled>
+        <name>copado__ManageReleasesFeature</name>
     </customPermissions>
     <customPermissions>
         <enabled>true</enabled>
@@ -17243,12 +17323,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Feature_Toggle_Group__mdt.copado__Order__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Feature_Toggle_Group__mdt.copado__Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Custom_Permission_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Feature_Toggle__mdt.copado__Full_Description__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Feature_Toggle__mdt.copado__Order__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -20459,6 +20554,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__User_Story_Data_Commit__c.copado__Execution_Job__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__User_Story_Data_Commit__c.copado__Generate_Data_Set_Job_Execution_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

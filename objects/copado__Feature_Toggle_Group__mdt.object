@@ -22,6 +22,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>copado__Order__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Order</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
         <fieldManageability>DeveloperControlled</fieldManageability>
