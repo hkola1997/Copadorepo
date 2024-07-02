@@ -309,6 +309,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__ApexTestsViewer</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__ApiVersionValidationPackageTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -337,6 +341,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__BuildDataTemplateContent</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__BuildDataTemplateContentTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CheckLicense</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -361,11 +373,27 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__CmcSfJobExecution</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CommitChanges</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__CommitChangesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CommitData</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CommitDataPayload</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CommitDataTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -489,6 +517,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__DXCommitData</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DXCommitDataTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__DataDeploy</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -529,6 +565,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__DataSetsSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__DataTemplate</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -546,6 +586,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__DataTemplatePayload</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DataTemplatePayloadImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DataTemplatePayloadImplTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -601,6 +649,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__DeleteSelectiveCommitFiles</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DeleteSelectiveCommitFilesTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__DeployPackages</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -646,6 +702,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__DestinationCredential</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DifferenceAnalysisForEnvironmentsImpl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -762,6 +822,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__GetDxNamespaceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetFileVersionIdOfTestClassTestSuite</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetFileVersionIdOfTestClassTestSuiteTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -997,6 +1065,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__JobStepDataSet</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__JobStepDataSetTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__JobStepsSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1201,6 +1277,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__PipelineDifferenceAnalysisCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineDifferenceAnalysisCallbackTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__PipelineDistributionCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1281,6 +1365,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerDiffAnalysisImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerDiffAnalysisImplTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__PipelineInitializerJobInformation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1294,6 +1386,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__PipelineInitializerMetadataSelectionTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerRefreshImplTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerRefreshMetadataImpl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1330,6 +1430,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__PollCopadoNotificationTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PollPipelineInitializerRefreshMetadata</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PollPipelineInitializerRefreshTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1374,6 +1482,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ProxyOrgResponse</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PublishEventFunctionCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PublishEventFunctionCallbackTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1557,6 +1673,26 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetup</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetupCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetupCallbackTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetupPayload</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetupTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__SetApexTestLevelTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1594,14 +1730,6 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__SystemProperty</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>cmcSf__TestClassNames</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>cmcSf__TestClassNamesTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -1773,6 +1901,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__UserStoryDataCommitsSelector</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__UserStoryMetadata</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1810,6 +1942,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ValidateCommitRequirements</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__ValidateMetadataSchema</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__ValidateMetadataSchemaTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -24855,6 +24995,10 @@
     </tabVisibilities>
     <tabVisibilities>
         <tab>My_salesforce_topics__c</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>cmcSf__DX_Commit_Data</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>

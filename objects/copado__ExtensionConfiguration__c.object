@@ -258,6 +258,11 @@
                     <default>false</default>
                     <label>Copado Robotic Testing</label>
                 </value>
+                <value>
+                    <fullName>Apex Tests</fullName>
+                    <default>false</default>
+                    <label>Apex Tests</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

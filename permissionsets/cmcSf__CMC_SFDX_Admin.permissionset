@@ -29,11 +29,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__BuildDataTemplateContent</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CheckPackageDistributionLicense</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__CheckVlocityEnabled</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CommitData</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -53,6 +61,22 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__CopadoDomain</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CopadoService</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CopadoServiceRequest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__CopadoServiceResult</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__CreateCopadoNotificationPushTopic</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -62,6 +86,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__CustomHighlightPanelController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DXCommitData</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -85,11 +113,23 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__DataTemplatePayloadImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__DataTemplatePayloadRetriever</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__DefaultSnapshotScopeConfiguration</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DeleteSelectiveCommitFiles</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__DifferenceAnalysisForEnvironmentsImpl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -177,6 +217,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__JobStepDataSet</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__LwcLabelsTranslation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -214,6 +258,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__PipelineDescriptor</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineDifferenceAnalysisCallback</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -261,11 +309,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerDiffAnalysisImpl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__PipelineInitializerJobInformation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__PipelineInitializerMetadataSelection</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineInitializerRefreshMetadataImpl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -281,11 +337,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__PollPipelineInitializerRefreshMetadata</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__PreStepsStatusImpl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__PromotionRollbackCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PublishEventFunctionCallback</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -318,6 +382,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__RunApexTestsCallback</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__SelectiveCommitSetup</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -358,6 +426,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ValidateCommitRequirements</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__ValidateMetadataSchema</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -714,6 +786,10 @@
         <object>copado__JobStep__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
+    <tabSettings>
+        <tab>cmcSf__DX_Commit_Data</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
     <tabSettings>
         <tab>cmcSf__DX_User_Story_Commit_Page</tab>
         <visibility>Available</visibility>
