@@ -158,7 +158,6 @@
         <fullName>copadoconnect__Copado_Integration__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Copado Integration</label>
         <referenceTo>copadoconnect__Copado_Integration__c</referenceTo>
         <relationshipLabel>Integration Logs</relationshipLabel>
@@ -170,7 +169,6 @@
     <fields>
         <fullName>copadoconnect__Description__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -191,7 +189,6 @@
     <fields>
         <fullName>copadoconnect__Error_Message__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Error Message</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -234,7 +231,6 @@
     <fields>
         <fullName>copadoconnect__Result_Data__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Result Data</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>
@@ -244,7 +240,6 @@
     <fields>
         <fullName>copadoconnect__Sync_Direction__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Sync Direction</label>
         <required>false</required>
         <trackTrending>false</trackTrending>

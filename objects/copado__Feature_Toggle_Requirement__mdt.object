@@ -3,7 +3,6 @@
     <fields>
         <fullName>copado__Feature_Toggle__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Feature Toggle</label>
         <referenceTo>copado__Feature_Toggle__mdt</referenceTo>
@@ -16,7 +15,6 @@
     <fields>
         <fullName>copado__Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <label>Type</label>
         <required>true</required>

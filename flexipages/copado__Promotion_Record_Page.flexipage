@@ -194,6 +194,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Release__c</fieldItem>
                 <identifier>RecordRelease__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.copado__ManageReleasesFeature}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>

@@ -253,6 +253,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>GroupAppointmentAccessType</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>IsAnonymousBooking</fullName>
         <trackHistory>false</trackHistory>
     </fields>

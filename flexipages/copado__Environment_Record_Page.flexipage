@@ -1937,6 +1937,12 @@
                 <identifier>force_relatedListSingleContainer14</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:publishEnvironmentPlatformMessage</componentName>
+                <identifier>c_publishEnvironmentPlatformMessage</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>sidebar</name>
         <type>Region</type>

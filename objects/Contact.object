@@ -348,6 +348,10 @@
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
     <fields>
+        <fullName>ContactSource</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+    </fields>
+    <fields>
         <fullName>Department</fullName>
         <trackFeedHistory>false</trackFeedHistory>
     </fields>
@@ -416,7 +420,6 @@
     </fields>
     <fields>
         <fullName>Level__c</fullName>
-        <externalId>false</externalId>
         <label>Level</label>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>

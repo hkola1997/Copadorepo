@@ -158,7 +158,6 @@
     <fields>
         <fullName>copadoQuality__Action__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>The action to be performed by Copado when a rule violation occurs. Abort Process stops the Copado action and documents the violation in the result, but doesn’t send an email notification. Continue with Alert sends an email notification and documents the violation in the result, but doesn’t stop the action. Document Only doesn’t send an email notification and doesn’t stop the action, but documents the violation in the result.</inlineHelpText>
         <label>Action</label>
         <required>true</required>
@@ -190,7 +189,6 @@
         <fullName>copadoQuality__Active__c</fullName>
         <defaultValue>true</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Active</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -198,7 +196,6 @@
     <fields>
         <fullName>copadoQuality__ConfigJSON__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>ConfigJSON</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -222,7 +219,6 @@ For ex. ‘Standard profile to have no access of customer’s PII fields’.</de
     <fields>
         <fullName>copadoQuality__Extension_Configuration__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>The extension configuration where you are creating the rule. Retain the default value.</inlineHelpText>
         <label>Extension Configuration</label>
         <referenceTo>copado__ExtensionConfiguration__c</referenceTo>
@@ -237,7 +233,6 @@ For ex. ‘Standard profile to have no access of customer’s PII fields’.</de
     <fields>
         <fullName>copadoQuality__Risk_Detail__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Risk Detail</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -258,7 +253,6 @@ For ex. ‘Standard profile to have no access of customer’s PII fields’.</de
     <fields>
         <fullName>copadoQuality__Severity__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>The severity assigned to rule violations. You can use the severity to sort and prioritize the violations when you view the results.</inlineHelpText>
         <label>Severity</label>
         <required>true</required>
@@ -294,7 +288,6 @@ For ex. ‘Standard profile to have no access of customer’s PII fields’.</de
     <fields>
         <fullName>copadoQuality__XPath_Expression__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>XPath Expression</label>
         <length>32768</length>
         <trackTrending>false</trackTrending>

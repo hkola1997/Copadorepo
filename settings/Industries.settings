@@ -10,12 +10,10 @@
     <enableDropInAppointmentsOrgPref>false</enableDropInAppointmentsOrgPref>
     <enableEventManagementOrgPref>false</enableEventManagementOrgPref>
     <enableEventWriteOrgPref>false</enableEventWriteOrgPref>
-    <enableIndustriesStageManagementPref>false</enableIndustriesStageManagementPref>
     <enableMultiResourceOrgPref>false</enableMultiResourceOrgPref>
     <enableMultipleTopicsForShiftsOrgPref>false</enableMultipleTopicsForShiftsOrgPref>
     <enableOverbookingOrgPref>false</enableOverbookingOrgPref>
     <enablePreBookedFallbackMechOrgPref>false</enablePreBookedFallbackMechOrgPref>
-    <enableReminders>false</enableReminders>
     <enableShareSaWithArOrgPref>false</enableShareSaWithArOrgPref>
     <enableTopicOrTemplate>false</enableTopicOrTemplate>
     <enableTopicTimeSlot>true</enableTopicTimeSlot>

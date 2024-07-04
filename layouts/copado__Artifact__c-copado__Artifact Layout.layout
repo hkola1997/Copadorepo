@@ -16,6 +16,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Description__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>copado__DataJSON__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
