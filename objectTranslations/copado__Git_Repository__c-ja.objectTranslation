@@ -56,7 +56,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Is repository connected via copa tunnel? --></help>
+        <help>リポジトリは copa トンネル経由で接続されていますか？</help>
         <label><!-- Is repository connected via copa tunnel? --></label>
         <name>copado__Is_repository_connected_via_copa_tunnel__c</name>
         <picklistValues>

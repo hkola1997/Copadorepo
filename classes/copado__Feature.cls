@@ -9,6 +9,9 @@ global class Feature implements copado.CopadoDomain {
     global Feature() {
 
     }
+    global static Boolean isApplicationRegistered() {
+        return null;
+    }
     global static Boolean isCCHEnabled() {
         return null;
     }

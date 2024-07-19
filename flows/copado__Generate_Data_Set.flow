@@ -2,6 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>50.0</apiVersion>
     <description>Flow to generate Data Set attachments with the records from the Data Template and selected org as source.</description>
+    <environments>Default</environments>
     <label>Generate Data Set</label>
     <processMetadataValues>
         <name>AssociatedRecord</name>

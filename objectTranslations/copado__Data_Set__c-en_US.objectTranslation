@@ -29,6 +29,22 @@
         <name>copado__MCDD_Enabled__c</name>
     </fields>
     <fields>
+        <label><!-- Platform --></label>
+        <name>copado__Platform__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDX</masterLabel>
+            <translation><!-- SFDX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce</masterLabel>
+            <translation><!-- Salesforce --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- The Environment where the data was extracted from in the last generation of Data Sets. --></help>
         <label><!-- Data Source Environment --></label>
         <name>copado__Source_Org__c</name>

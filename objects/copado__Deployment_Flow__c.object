@@ -164,6 +164,11 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>copado__Additional_Information</fullName>
+        <description>These are the necessary extra fields to create a Pipeline record based on your customization. If you want to change this list, edit the &quot;Additional Information&quot; Field Set.</description>
+        <label>Additional Information</label>
+    </fieldSets>
     <fields>
         <fullName>cmcSf__Initialization_Data__c</fullName>
         <deprecated>false</deprecated>

@@ -85,6 +85,9 @@ global class Execution implements copado.CopadoService {
     global copado.Jobs.ExecutionResult execute(copado.Jobs.ExecutionRequest request) {
         return null;
     }
+    global copado.Jobs.ExecutionStep getPrefetchedStepIfEnabled(copado.Jobs.GetPrefetchedStepIfEnabledRequest request) {
+        return null;
+    }
     global copado.Jobs.ExecutionResult resume(Id jobId) {
         return null;
     }
@@ -163,6 +166,15 @@ global class ExecutionStep {
 
     }
     global ExecutionStep(List<copado__JobStep__c> steps, String sequence, String resourceObservation) {
+
+    }
+}
+global class GetPrefetchedStepIfEnabledRequest implements copado.CopadoServiceRequest {
+    global String pipelineId;
+    global GetPrefetchedStepIfEnabledRequest() {
+
+    }
+    global GetPrefetchedStepIfEnabledRequest(String pipelineId) {
 
     }
 }

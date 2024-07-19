@@ -21,7 +21,7 @@
         <name>copado__Is_Global__c</name>
     </fields>
     <fields>
-        <help><!-- On setting this checkbox, this system property will be shared with &quot;All the Company&quot; Public Group --></help>
+        <help>このチェックボックスを設定すると、このシステムプロパティは「全社」公開グループで共有されます。</help>
         <label><!-- Is Public? --></label>
         <name>copado__Is_Public__c</name>
     </fields>

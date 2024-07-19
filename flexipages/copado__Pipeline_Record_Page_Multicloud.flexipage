@@ -10,6 +10,26 @@
                             <value>Edit</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.copado__Deployment_Flow__c.copado__Manage_Branches</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Deployment_Flow__c.copado__Initialise</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
                             <value>copado__Deployment_Flow__c.copado__Setup_Continuous_Delivery</value>
                             <visibilityRule>
                                 <criteria>
@@ -20,10 +40,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>CustomButton.copado__Deployment_Flow__c.copado__Find_Replace_Rule_Editor</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>copado__Deployment_Flow__c.copado__Clone_with_Environments</value>
+                            <value>copado__Deployment_Flow__c.copado__Exclude_Completed_Stories</value>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Deployment_Flow__c.copado__Configure_prefetch_volume</value>
@@ -46,34 +63,6 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>copado__Deployment_Flow__c.copado__Exclude_Completed_Stories</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>copado__Deployment_Flow__c.copado__Initialise</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
-                                    <operator>NE</operator>
-                                    <rightValue>Salesforce</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.copado__Deployment_Flow__c.copado__Manage_Branches</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Clone</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>Delete</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>CustomButton.copado__Deployment_Flow__c.copado__Select_Main_Branch</value>
-                        </valueListItems>
-                        <valueListItems>
-                            <value>ChangeOwnerOne</value>
-                        </valueListItems>
-                        <valueListItems>
                             <value>CustomButton.copado__Deployment_Flow__c.copado__Manage_Environment_Variables</value>
                             <visibilityRule>
                                 <criteria>
@@ -84,6 +73,15 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>CustomButton.copado__Deployment_Flow__c.copado__Find_Replace_Rule_Editor</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>copado__Deployment_Flow__c.copado__Clone_with_Environments</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>CustomButton.copado__Deployment_Flow__c.copado__Select_Main_Branch</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>CustomButton.copado__Deployment_Flow__c.copado__Manage_Regression_Tests</value>
                             <visibilityRule>
                                 <criteria>
@@ -92,6 +90,12 @@
                                     <rightValue>Salesforce</rightValue>
                                 </criteria>
                             </visibilityRule>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Clone</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Delete</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -1079,58 +1083,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Enable_Copado_DX__c</fieldItem>
-                <identifier>RecordEnable_Copado_DX__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-c256b83a-22ab-4129-ade8-faf565f2ccc3</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Copado_DX_Mode__c</fieldItem>
-                <identifier>RecordCopado_DX_Mode__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-2d8b369b-ca92-472d-bd6b-f8f2ed043607</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-c256b83a-22ab-4129-ade8-faf565f2ccc3</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column7</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-2d8b369b-ca92-472d-bd6b-f8f2ed043607</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column8</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-7eb302ca-74c7-4659-bc02-f8403acaf975</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
                 <identifier>RecordCreatedByIdField3</identifier>
             </fieldInstance>
@@ -1211,24 +1163,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-7eb302ca-74c7-4659-bc02-f8403acaf975</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>{!$Label.copado__Copado_DX}</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

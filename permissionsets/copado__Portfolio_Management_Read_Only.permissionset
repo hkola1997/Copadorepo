@@ -45,6 +45,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>copado__Application_Feature__c.copado__Parent_Feature__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>copado__Application_Feature__c.copado__Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>

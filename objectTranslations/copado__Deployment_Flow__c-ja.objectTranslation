@@ -4,6 +4,10 @@
         <plural>false</plural>
         <value><!-- Pipeline --></value>
     </caseValues>
+    <fieldSets>
+        <label><!-- Additional Information --></label>
+        <name>copado__Additional_Information</name>
+    </fieldSets>
     <fields>
         <label><!-- Initialization Data --></label>
         <name>cmcSf__Initialization_Data__c</name>
