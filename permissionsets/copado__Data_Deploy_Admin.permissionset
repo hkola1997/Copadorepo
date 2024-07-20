@@ -227,6 +227,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copado__Data_Set__c.copado__Platform__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copado__Data_Set__c.copado__Source_Org__c</field>
         <readable>true</readable>
     </fieldPermissions>

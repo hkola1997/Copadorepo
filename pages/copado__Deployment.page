@@ -211,7 +211,6 @@
 
                 $copado(document).ready(function () {
                     if (sforce.console.isInConsole()) {
-                        console.log('we are in console!');
                         $copado('[id$=btnDeploy]').hide();
                         $copado('[id$=btnDeployOutstanding]').hide();
                         $copado('[id$=btnLegacyDeploy]').hide();
@@ -233,27 +232,27 @@
             <apex:pageMessages id="theMessages" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}" />
             <c:ComplianceScanResult sId="{!copado__Deployment__c.Id}" apiName="Deployment__c" rendered="{!$User.UIThemeDisplayed != 'Theme4d'}"
             />
+            <apex:outputPanel layout="block" id="proceedToDeploymentBlock">
+                <script>
+                    function proceedToDeployment() {
+                        var goToDeployment = '{!goToDeployment}';
+                        if (goToDeployment == 'true') {
+                            if ((typeof sforce != 'undefined') && sforce && (!!sforce.one)) {
+                                sforce.one.navigateToSObject('{!deployment.Id}', 'view');
+                            } else {
+                                window.location.href = '/{!deployment.Id}';
+                            }
+                        } else {
+                            return false;
+                        }
+                    }
+                </script>
+            </apex:outputPanel>
             <apex:outputPanel layout="block" styleClass="slds-scope copado-lightning-container" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
                 <div class="slds-page-header">
                     <apex:outputPanel layout="block" id="pageMessages">
                         <apex:pagemessages id="messages" />
                         <c:ComplianceScanResult sId="{!copado__Deployment__c.Id}" apiName="Deployment__c" />
-                    </apex:outputPanel>
-                    <apex:outputPanel layout="block" id="proceedToDeploymentBlock">
-                        <script>
-                            function proceedToDeployment() {
-                                var goToDeployment = '{!goToDeployment}';
-                                if(goToDeployment == 'true') {
-                                    if( (typeof sforce != 'undefined') && sforce && (!!sforce.one) ) {
-                                        sforce.one.navigateToSObject('{!deployment.Id}', 'view');
-                                    } else {
-                                            window.location.href = '/{!deployment.Id}';
-                                    }
-                                } else {
-                                    return false;
-                                }
-                            }
-                        </script>
                     </apex:outputPanel>
                     <apex:form id="jobsManagerForm" style="padding-bottom:12px;">
                         <div id="schedule-popup" style="display:none;position: absolute;z-index: 10;background-color: rgba(33,33,33,0.2);width: 100%;height: 100%;">
@@ -525,6 +524,17 @@
                                 </apex:pageblock>
                             </apex:panelGrid>
                         </div>
+                        <apex:actionFunction action="{!confirmAll}" name="resetStatusForDeployment" oncomplete="updateDeployment();" status="buttonStatus">
+                            <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}" />
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!confirmOutstanding}" name="resetStatusDeploymentOutstanding" oncomplete="updateDeployment();"
+                            reRender="messagesPanel">
+                            <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}" />
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!confirm}" name="confirmDeployment" oncomplete="deployCall();" status="buttonStatus" />
+                        <apex:actionFunction action="{!deployCall}" name="deployCall" oncomplete="proceedToDeployment();unlockScreen();" reRender="messagesPanel, proceedToDeploymentBlock"
+                        />
+                        <c:JobsManager matchingKeys="{!jobsManagerMatchingKey}" rendered="{! !ISBLANK(jobsManagerMatchingKey)}" />
                     </apex:form>
                     <div class="row">
                         <apex:pageblock title="Steps" id="pbSteps">

@@ -169,6 +169,15 @@
         <description>Related Data Template record that defines related objects and their relationships for the attachments of this Data Set.</description>
         <inlineHelpText>The selected Data Template will be used as a base for object relationships, related fields and filtering.</inlineHelpText>
         <label>Data Template</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>copado__Data_Template__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
         <referenceTo>copado__Data_Template__c</referenceTo>
         <relationshipLabel>Data Sets</relationshipLabel>
         <relationshipName>Data_Sets</relationshipName>
@@ -232,6 +241,36 @@
         <trackHistory>false</trackHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copado__Platform__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
     </fields>
     <fields>
         <fullName>copado__Source_Org__c</fullName>
