@@ -155,7 +155,6 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>Learnt_Topics__c</fullName>
-        <externalId>false</externalId>
         <label>Learnt Topics</label>
         <required>true</required>
         <trackTrending>false</trackTrending>

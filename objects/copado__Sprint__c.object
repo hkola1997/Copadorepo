@@ -208,7 +208,6 @@
     <fields>
         <fullName>copado__End_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>End Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -242,7 +241,6 @@
     <fields>
         <fullName>copado__Objective__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Sprint Goal</label>
         <length>10000</length>
         <trackHistory>false</trackHistory>
@@ -280,7 +278,6 @@
         <fullName>copado__Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Project</label>
         <referenceTo>copado__Project__c</referenceTo>
         <relationshipLabel>Sprints</relationshipLabel>
@@ -293,7 +290,6 @@
         <fullName>copado__Release__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Release</label>
         <referenceTo>copado__Release__c</referenceTo>
         <relationshipLabel>Sprints</relationshipLabel>
@@ -305,7 +301,6 @@
     <fields>
         <fullName>copado__Start_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Start Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -314,7 +309,6 @@
     <fields>
         <fullName>copado__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -361,7 +355,6 @@
         <fullName>copado__Team__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Team</label>
         <referenceTo>copado__Team__c</referenceTo>
         <relationshipLabel>Sprints</relationshipLabel>
@@ -431,7 +424,6 @@
     <fields>
         <fullName>copadoconnect__Connect_log__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Connect log</label>
         <length>32768</length>
         <trackHistory>false</trackHistory>
@@ -453,7 +445,6 @@
     <fields>
         <fullName>copadoconnect__Last_Synced_Date__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Last Synced Date</label>
         <required>false</required>
         <trackHistory>false</trackHistory>

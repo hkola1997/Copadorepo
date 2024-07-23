@@ -14,6 +14,10 @@
         <name>copado__Hide_Copado_feedback__c</name>
     </fields>
     <fields>
+        <label><!-- Persona Id --></label>
+        <name>copado__Persona_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Show Copado Tips --></label>
         <name>copado__Show_Copado_Tips__c</name>
     </fields>
