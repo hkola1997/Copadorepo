@@ -33,4 +33,5 @@
     <tabs>copado__Burndown_Item__c</tabs>
     <tabs>copado__Application__c</tabs>
     <tabs>copado__Application_Feature__c</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

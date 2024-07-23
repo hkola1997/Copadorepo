@@ -76,6 +76,24 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>ATF.Epic.RelatedList</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>locationOnly</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Platform</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>c_dynamicUISectionContainer</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
@@ -145,6 +163,12 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:epicRelatedListPublishMessage</componentName>
+                <identifier>c_epicRelatedListPublishMessage</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>sidebar</name>
         <type>Region</type>
     </flexiPageRegions>

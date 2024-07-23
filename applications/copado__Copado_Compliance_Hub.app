@@ -19,4 +19,5 @@
     <tabs>copado__Git_Backup__c</tabs>
     <tabs>standard-report</tabs>
     <tabs>standard-Dashboard</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

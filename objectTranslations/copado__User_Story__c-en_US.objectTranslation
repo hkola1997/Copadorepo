@@ -644,6 +644,11 @@
         <name>copado__Parent_Epic_Title__c</name>
     </fields>
     <fields>
+        <help><!-- This field displays the total number of tests associated with this user story that are currently in progress or have failed. These tests might require further attention or resolution before you can promote this user story. --></help>
+        <label><!-- Pending Tests --></label>
+        <name>copado__Pending_Tests__c</name>
+    </fields>
+    <fields>
         <help><!-- Use this field to split your User Story effort estimation among different scopes. Example: Dev and QA, Frontend and Backend. You can label this field to match your scope. --></help>
         <label><!-- Planned Points Other --></label>
         <name>copado__Planned_Points_Other__c</name>

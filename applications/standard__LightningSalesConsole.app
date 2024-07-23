@@ -22,11 +22,15 @@
     <tabs>standard-Feed</tabs>
     <tabs>standard-CollaborationGroup</tabs>
     <tabs>standard-File</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>LightningSalesConsole_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>Chandu_Lightening_Page_Test</tab>
+        </mappings>
+        <mappings>
+            <tab>My_salesforce_topics__c</tab>
         </mappings>
         <mappings>
             <tab>standard-Account</tab>

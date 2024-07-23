@@ -91,6 +91,7 @@ global class ConfigureGitSnapshotRequest implements copado.CopadoServiceRequest 
     global String credentialId;
     global String cronExpression;
     global String externalId;
+    global String name;
     global String pipelineId;
     global String repositoryId;
     global String scope;

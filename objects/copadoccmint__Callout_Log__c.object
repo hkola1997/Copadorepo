@@ -158,7 +158,6 @@
         <fullName>copadoccmint__Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Project</label>
         <referenceTo>copado__Project__c</referenceTo>
         <relationshipLabel>Callout Logs</relationshipLabel>
@@ -170,7 +169,6 @@
     <fields>
         <fullName>copadoccmint__Response_Body__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Response Body</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -203,7 +201,6 @@
         <fullName>copadoccmint__User_Story__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>User Story</label>
         <referenceTo>copado__User_Story__c</referenceTo>
         <relationshipLabel>Callout Logs</relationshipLabel>

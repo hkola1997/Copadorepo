@@ -139,6 +139,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>HasAttended</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>ServiceAppointmentId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>

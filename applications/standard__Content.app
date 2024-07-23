@@ -10,4 +10,5 @@
     <tabs>standard-Workspace</tabs>
     <tabs>standard-ContentSearch</tabs>
     <tabs>standard-ContentSubscriptions</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>
