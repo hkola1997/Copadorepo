@@ -191,7 +191,6 @@
     <fields>
         <fullName>copadoconnect__Connection_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>The status of the named credential connection. Draft = Created and Saved, Connected = You have successfully authorized and connected to a Third Party application, Failed = Failed connection due to configuration or authorization issues.</inlineHelpText>
         <label>Connection Status</label>
         <required>false</required>
@@ -222,7 +221,6 @@
     <fields>
         <fullName>copadoconnect__Description__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -254,7 +252,6 @@
     <fields>
         <fullName>copadoconnect__Integration_Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>This represents the status of the integration and the syncing of records.</inlineHelpText>
         <label>Integration Status</label>
         <required>false</required>
@@ -308,7 +305,6 @@
         <fullName>copadoconnect__Project__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Project</label>
         <referenceTo>copado__Project__c</referenceTo>
         <relationshipLabel>Copado Integrations</relationshipLabel>
@@ -320,7 +316,6 @@
     <fields>
         <fullName>copadoconnect__Provider__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Provider</label>
         <required>true</required>
         <trackTrending>false</trackTrending>

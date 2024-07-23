@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Additional Information --></label>
+        <name>copado__Additional_Information</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Initialization Data --></label>
+        <name>cmcSf__Initialization_Data__c</name>
+    </fields>
     <fields>
         <help><!-- If checked, all Branch Management features will be enabled in the Deployment Flow. --></help>
         <label><!-- Active --></label>

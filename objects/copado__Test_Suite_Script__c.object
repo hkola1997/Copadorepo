@@ -169,7 +169,6 @@
     <fields>
         <fullName>copado__Test_Script__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Test Script</label>
         <referenceTo>copado__Test_Script__c</referenceTo>
         <relationshipLabel>Test Suite Scripts</relationshipLabel>
@@ -183,7 +182,6 @@
     <fields>
         <fullName>copado__Test__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Test</label>
         <referenceTo>copado__Test__c</referenceTo>
         <relationshipLabel>Test Suite Scripts</relationshipLabel>

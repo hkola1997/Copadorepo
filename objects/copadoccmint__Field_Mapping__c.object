@@ -159,7 +159,6 @@
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
         <description>Make this checkbox checked if you don&apos;t want this field to be updated from third party platform.</description>
-        <externalId>false</externalId>
         <inlineHelpText>Make this checkbox checked if you don&apos;t want this field to be updated from third party platform.</inlineHelpText>
         <label>Exclude from Salesforce update</label>
         <trackTrending>false</trackTrending>
@@ -171,7 +170,6 @@
         <deprecated>false</deprecated>
         <description>That field is defined to exclude Mapping records in use on code level for look up purposes(like developer id and project id Mapping)
 Make it checked for the fields which do not exist on external system.</description>
-        <externalId>false</externalId>
         <inlineHelpText>That field is defined to exclude Mapping records in use on code level for look up purposes(like developer id and project id Mapping)
 Make it checked for the fields which do not exist on external system.</inlineHelpText>
         <label>Exclude from Third Party update</label>
@@ -182,7 +180,6 @@ Make it checked for the fields which do not exist on external system.</inlineHel
         <fullName>copadoccmint__Project__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Project</label>
         <referenceTo>copado__Project__c</referenceTo>
         <relationshipLabel>Field Mappings</relationshipLabel>
@@ -206,7 +203,6 @@ Make it checked for the fields which do not exist on external system.</inlineHel
         <fullName>copadoccmint__Target_Field_Type__c</fullName>
         <deprecated>false</deprecated>
         <description>Default value is set to string if not selected.</description>
-        <externalId>false</externalId>
         <label>Target Field Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>

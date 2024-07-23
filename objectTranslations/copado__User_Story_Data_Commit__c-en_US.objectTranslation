@@ -19,6 +19,10 @@
         <relationshipLabel><!-- User Story Data Commits --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Generate Data Set Job Execution Id --></label>
+        <name>copado__Generate_Data_Set_Job_Execution_Id__c</name>
+    </fields>
+    <fields>
         <label><!-- Status --></label>
         <name>copado__Status__c</name>
     </fields>
