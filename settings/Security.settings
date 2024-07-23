@@ -6,7 +6,7 @@
     <enableAuraSecureEvalPref>true</enableAuraSecureEvalPref>
     <enableCoepHeader>false</enableCoepHeader>
     <enableCoopHeader>false</enableCoopHeader>
-    <enableCrossOrgRedirects>true</enableCrossOrgRedirects>
+    <enableCrossOrgRedirects>false</enableCrossOrgRedirects>
     <enablePermissionsPolicy>false</enablePermissionsPolicy>
     <enableRequireHttpsConnection>true</enableRequireHttpsConnection>
     <networkAccess/>
@@ -62,8 +62,8 @@
         <lockSessionsToDomain>true</lockSessionsToDomain>
         <lockSessionsToIp>false</lockSessionsToIp>
         <lockerServiceCSP>true</lockerServiceCSP>
-        <lockerServiceNext>true</lockerServiceNext>
-        <lockerServiceNextControl>false</lockerServiceNextControl>
+        <lockerServiceNext>false</lockerServiceNext>
+        <lockerServiceNextControl>true</lockerServiceNextControl>
         <redirectBlockModeEnabled>false</redirectBlockModeEnabled>
         <redirectionWarning>true</redirectionWarning>
         <referrerPolicy>true</referrerPolicy>

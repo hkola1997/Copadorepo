@@ -116,6 +116,9 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>EndTime</fullName>
+    </fields>
+    <fields>
         <fullName>JobStatus</fullName>
     </fields>
     <fields>

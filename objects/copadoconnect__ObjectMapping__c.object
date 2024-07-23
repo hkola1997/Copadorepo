@@ -187,7 +187,6 @@
     <fields>
         <fullName>copadoconnect__Copado_Integration__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Copado Integration</label>
         <referenceTo>copadoconnect__Copado_Integration__c</referenceTo>
         <relationshipLabel>Object Mappings</relationshipLabel>
@@ -278,7 +277,6 @@
     <fields>
         <fullName>copadoconnect__Status__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Status</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -304,7 +302,6 @@
         <fullName>copadoconnect__Synced__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Synced?</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>

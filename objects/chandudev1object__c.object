@@ -155,7 +155,6 @@
     <externalSharingModel>Private</externalSharingModel>
     <fields>
         <fullName>chandutextareadev1__c</fullName>
-        <externalId>false</externalId>
         <label>chandutextareadev1</label>
         <required>false</required>
         <trackHistory>false</trackHistory>
@@ -164,7 +163,6 @@
     </fields>
     <fields>
         <fullName>my_picklist_country__c</fullName>
-        <externalId>false</externalId>
         <label>my picklist country</label>
         <required>false</required>
         <trackHistory>false</trackHistory>

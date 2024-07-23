@@ -219,6 +219,10 @@
         <name>copado__is_Developer_Hub_Org__c</name>
     </fields>
     <nameFieldLabel><!-- Credential Name --></nameFieldLabel>
+    <sharingReasons>
+        <label><!-- Copado Persona --></label>
+        <name>copado__Copado_Persona</name>
+    </sharingReasons>
     <webLinks>
         <label><!-- Add_to_Deployment --></label>
         <name>copado__Add_to_Deployment</name>
