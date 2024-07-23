@@ -7,7 +7,6 @@
         <fullName>copado__Exception_Details__c</fullName>
         <deprecated>false</deprecated>
         <description>Exception Details if any</description>
-        <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
@@ -34,7 +33,6 @@
         <fullName>copado__Limits_Usage__c</fullName>
         <deprecated>false</deprecated>
         <description>Details of the limits used while publishing log event</description>
-        <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>
@@ -61,7 +59,6 @@
         <fullName>copado__Payload__c</fullName>
         <deprecated>false</deprecated>
         <description>Payload of the log</description>
-        <externalId>false</externalId>
         <isFilteringDisabled>false</isFilteringDisabled>
         <isNameField>false</isNameField>
         <isSortingDisabled>false</isSortingDisabled>

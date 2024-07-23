@@ -4,7 +4,6 @@
         <fullName>copado__Automate_Test_Readiness__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <fieldManageability>DeveloperControlled</fieldManageability>
         <inlineHelpText>If ticked, test records created in the Test object or as a quality gate are automatically marked as Ready to Run. No manual configuration is required before their execution.</inlineHelpText>
         <label>Automate Test Readiness</label>

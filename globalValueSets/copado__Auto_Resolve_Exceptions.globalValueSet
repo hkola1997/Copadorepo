@@ -70,6 +70,11 @@
         <default>false</default>
         <label>CustomField</label>
     </customValue>
+    <customValue>
+        <fullName>Custom Object</fullName>
+        <default>false</default>
+        <label>Custom Object</label>
+    </customValue>
     <description>Metadata types to be excluded from the auto-resolve feature of Copado.</description>
     <masterLabel>Auto Resolve Exceptions</masterLabel>
     <sorted>false</sorted>

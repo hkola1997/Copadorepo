@@ -167,9 +167,17 @@
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
         <description>Related Data Template record that defines related objects and their relationships for the attachments of this Data Set.</description>
-        <externalId>false</externalId>
         <inlineHelpText>The selected Data Template will be used as a base for object relationships, related fields and filtering.</inlineHelpText>
         <label>Data Template</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>copado__Data_Template__c.copado__Active__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
         <referenceTo>copado__Data_Template__c</referenceTo>
         <relationshipLabel>Data Sets</relationshipLabel>
         <relationshipName>Data_Sets</relationshipName>
@@ -182,7 +190,6 @@
         <fullName>copado__Description__c</fullName>
         <deprecated>false</deprecated>
         <description>Brief description of what data contains this Data Set.</description>
-        <externalId>false</externalId>
         <label>Description</label>
         <length>256</length>
         <trackHistory>false</trackHistory>
@@ -194,7 +201,6 @@
         <fullName>copado__Execution_Job__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Execution Job</label>
         <referenceTo>copado__Deployment__c</referenceTo>
         <relationshipLabel>Data Sets</relationshipLabel>
@@ -220,7 +226,6 @@
         <fullName>copado__Last_Generated_Date__c</fullName>
         <deprecated>false</deprecated>
         <description>Date and time of the last time the data set was generated (i.e. attached files were updated).</description>
-        <externalId>false</externalId>
         <inlineHelpText>This date is automatically updated by Copado when generating the data set CSV files from a source environment. Update this value when generating the CSV files from an external database or process.</inlineHelpText>
         <label>Last Generated Date</label>
         <required>false</required>
@@ -229,10 +234,48 @@
         <type>DateTime</type>
     </fields>
     <fields>
+        <fullName>copado__MCDD_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <label>MCDD Enabled</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>copado__Platform__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Platform</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce</fullName>
+                    <default>false</default>
+                    <label>Salesforce</label>
+                </value>
+                <value>
+                    <fullName>SFDX</fullName>
+                    <default>false</default>
+                    <label>SFDX</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
         <fullName>copado__Source_Org__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <inlineHelpText>The Environment where the data was extracted from in the last generation of Data Sets.</inlineHelpText>
         <label>Data Source Environment</label>
         <referenceTo>copado__Org__c</referenceTo>

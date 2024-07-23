@@ -169,7 +169,6 @@
         <fullName>copadoconnect__Field_Mapping__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Field Mapping</label>
         <referenceTo>copadoconnect__FieldMapping__c</referenceTo>
         <relationshipLabel>Field Value Mappings</relationshipLabel>

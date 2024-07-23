@@ -344,8 +344,8 @@
                                 <!-- start Toast Message block -->
                                 <!-- Toast Message block repeated from PipelineManager because this page has different scope and extension controller -->
                                 <apex:outputPanel layout="block" id="notify">
-                                    <apex:outputPanel layout="none" rendered="{!pageMessagesMap != null}">
-                                        <apex:repeat value="{!pageMessagesMap}" var="status">
+                                    <apex:outputPanel layout="none" rendered="{!branchPageMessagesMap != null}">
+                                        <apex:repeat value="{!branchPageMessagesMap}" var="status">
                                             <div class="slds-notify_container slds-is-absolute">
                                                 <div class="slds-notify slds-notify_toast slds-theme_{!status}" role="status" >
                                                     <span class="slds-assistive-text">{!status}</span>
@@ -356,7 +356,7 @@
                                                     </span>
                                                     <div class="slds-notify__content">
                                                         <h2 class="slds-text-heading_small ">
-                                                            <apex:repeat value="{!pageMessagesMap[status]}" var="message">
+                                                            <apex:repeat value="{!branchPageMessagesMap[status]}" var="message">
                                                                 {!message}
                                                             </apex:repeat>
                                                         </h2>

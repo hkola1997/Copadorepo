@@ -144,16 +144,6 @@
                 <identifier>RecordOwnerIdField1</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Type__c</fieldItem>
-                <identifier>RecordType_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-c7bb79c9-37de-4e64-b490-03603842d75f</name>
         <type>Facet</type>
     </flexiPageRegions>

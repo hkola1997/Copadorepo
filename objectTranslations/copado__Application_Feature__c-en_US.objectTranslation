@@ -28,6 +28,11 @@
         <name>copado__Estimated_Value__c</name>
     </fields>
     <fields>
+        <label><!-- Parent Feature --></label>
+        <name>copado__Parent_Feature__c</name>
+        <relationshipLabel><!-- Child Features --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Priority --></label>
         <name>copado__Priority__c</name>
         <picklistValues>
