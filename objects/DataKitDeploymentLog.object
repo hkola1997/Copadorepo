@@ -3,7 +3,16 @@
     <enableFeeds>false</enableFeeds>
     <externalSharingModel>Private</externalSharingModel>
     <fields>
+        <fullName>BundleName</fullName>
+    </fields>
+    <fields>
+        <fullName>ComponentName</fullName>
+    </fields>
+    <fields>
         <fullName>ComponentType</fullName>
+    </fields>
+    <fields>
+        <fullName>DataSpaceName</fullName>
     </fields>
     <fields>
         <fullName>DeployJob</fullName>
