@@ -52,6 +52,19 @@
         </picklistValues>
     </fields>
     <fields>
+        <help><!-- Is repository connected via copa tunnel? --></help>
+        <label><!-- Is repository connected via copa tunnel? --></label>
+        <name>copado__Is_repository_connected_via_copa_tunnel__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
         <help><!-- Base URL of your Repository, e.g.: https://github.com/[COMPANY]/[REPOSITORY]/ https://bitbucket.org/[COMPANY]/[REPOSITORY]/ https://gitlab.org/[COMPANY]/[REPOSITORY]/ --></help>
         <label><!-- Pull Request Base URL --></label>
         <name>copado__Pull_Request_Base_URL__c</name>

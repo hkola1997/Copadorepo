@@ -648,6 +648,11 @@
         <name>copado__Parent_Epic_Title__c</name>
     </fields>
     <fields>
+        <help>この項目には、このユーザーストーリーに関連する、現在進行中または失敗したテストの合計数が表示されます。これらのテストは、このユーザー ストーリーをプロモートする前に、さらなる注意または解決が必要な場合があります。</help>
+        <label><!-- Pending Tests --></label>
+        <name>copado__Pending_Tests__c</name>
+    </fields>
+    <fields>
         <help>このフィールドは、ユーザーストーリーの工数見積もりを異なるスコープで分割するために使用します。例 開発部門とQA部門、フロントエンドとバックエンドなど。スコープに合わせて、このフィールドにラベルを付けることができます。</help>
         <label><!-- Planned Points Other --></label>
         <name>copado__Planned_Points_Other__c</name>

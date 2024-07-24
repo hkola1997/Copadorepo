@@ -110,7 +110,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Value__c</fieldItem>
                 <identifier>RecordValue_cField</identifier>

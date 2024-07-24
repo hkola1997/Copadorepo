@@ -113,11 +113,60 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
+                    <value>{!$Label.copado__CANCELLED_PROMOTIONS}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>error</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Cancelled</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>communicationId</name>
                     <value>promotionRecordPageAlerts</value>
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
                 <identifier>copadoAlertPlaceHolder</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Salesforce</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copado__Platform__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:qualityGatesChecker</componentName>
+                <identifier>c_qualityGatesChecker</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:promotionProgressAlerts</componentName>
+                <identifier>c_promotionProgressAlerts</identifier>
                 <visibilityRule>
                     <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
@@ -208,6 +257,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Release__c</fieldItem>
                 <identifier>RecordRelease__cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR (2 AND 3)</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>EQUAL</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.copado__Persona_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$Permission.CustomPermission.copado__ManageReleasesFeature}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -228,6 +293,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Back_Promotion__c</fieldItem>
                 <identifier>RecordBack_Promotion__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__View_in_Git__c</fieldItem>
+                <identifier>RecordView_in_Git_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Last_Promotion_Execution_Id__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-3db54dde-b584-4c1b-bdb6-8a316d79e10c</name>
@@ -377,31 +458,11 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>showFilter</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showNewButton</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>showRefreshIcon</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showRowActions</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showRunAllTestButton</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showSearch</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>copado:testsManager</componentName>
-                <identifier>c_testsManager</identifier>
+                <componentName>copado:latestTestsRuns</componentName>
+                <identifier>c_latestTestsRuns</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-81e1b4ed-1b80-45f0-8ce7-8c0bbffaec3f</name>
@@ -413,6 +474,10 @@
                 <componentInstanceProperties>
                     <name>locationId</name>
                     <value>CCM.Promotion.ExtensionDetails</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>locationOnly</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentName>copado:dynamicUISectionContainer</componentName>
                 <identifier>c_dynamicUISectionContainer1</identifier>

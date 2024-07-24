@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="{!URLFOR($Resource.PipelineCSS)}" />
 
     <script>
+        var tableIdPaginationObject = {};
         var copadoApp = {
             ns: '{!JSENCODE(namespace)}',
             data: {
@@ -408,6 +409,10 @@
             tabDatatable.dataTable({
                 paging: true,
                 pageLength: 50,
+                lengthMenu: [
+                    [10, 25, 50, -1],
+                    [10, 25, 50, 'All']
+                ],
                 language: {
                     lengthMenu: '{!JSENCODE($Label.Display_MENU_records_per_page)}',
                     zeroRecords: '{!JSENCODE($Label.Nothing_found_sorry)}',
@@ -589,6 +594,36 @@
             Promise.all(promises);
         }
 
+        expandDataTable = function(tableId) {
+            var rows, activePaginationSelected, table;
+            var info = {};
+            var currentPage = 0;
+            var searchInput = $copado(`#${tableId}_wrapper #${tableId}_filter`).find('input');
+            var sortOrderArray = [];
+            var searchValue = searchInput.val();
+
+            activePaginationSelected = $copado(`#${tableId}_length`)
+                .find('select')
+                .val();
+
+            var table = $copado(`#${tableId}`).DataTable();
+            // dataTable is the oldschool dataTables constructur, which returns a jQuery object. This jQuery object is enriched with a set of API methods in hungarian notation format, such as fnFilter, fnDeleteRow and so on.
+            sortOrderArray = $copado(`#${tableId}`)
+                .dataTable()
+                .fnSettings().aaSorting;
+            var tableData = {
+                paginationSize: activePaginationSelected,
+                currentPage: table.page.info().page,
+                searchValue: searchValue,
+                sortOrderArray: sortOrderArray
+            };
+            table.search('').draw();
+            $copado(`#${tableId}_length`)
+                .find('select')
+                .val(-1)
+                .trigger('change');
+            tableIdPaginationObject[tableId] = tableData;
+        };
     </script>
 
     <!-- pipeline promotion and diagram -->
@@ -1684,9 +1719,9 @@
                                 <!-- start Toast Message block -->
                                 <!-- Toast Message block repeated from PipelineManager because this page has different scope and extension controller -->
                                 <apex:outputPanel layout="block" id="notify">
-                                    <apex:outputPanel layout="none" rendered="{!pageMessagesMap != null}">
-                                        <apex:repeat value="{!pageMessagesMap}" var="status">
-                                            <div class="slds-notify_container slds-is-absolute">
+                                    <apex:outputPanel layout="none" rendered="{!branchPageMessagesMap != null}">
+                                        <apex:repeat value="{!branchPageMessagesMap}" var="status">
+                                            <div class="slds-notify_container slds-is-relative">
                                                 <div class="slds-notify slds-notify_toast slds-theme_{!status}" role="status" >
                                                     <span class="slds-assistive-text">{!status}</span>
                                                     <span class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top" title="{!status}">
@@ -1696,7 +1731,7 @@
                                                     </span>
                                                     <div class="slds-notify__content">
                                                         <h2 class="slds-text-heading_small ">
-                                                            <apex:repeat value="{!pageMessagesMap[status]}" var="message">
+                                                            <apex:repeat value="{!branchPageMessagesMap[status]}" var="message">
                                                                 {!message}
                                                             </apex:repeat>
                                                         </h2>
@@ -2140,14 +2175,14 @@
                             </div>
                             <apex:outputPanel id="GeneralActionButtons" styleClass="slds-col slds-size_1-of-2" style="text-align:right;">
                                 <apex:outputPanel layout="none" rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
-                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelections" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotion" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeploy" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                                 <apex:outputPanel layout="none" rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
-                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelectionsMC" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();" oncomplete="executePromotionActions({!promotionWrappersJSON}, true);openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote, $Label.copado__Pipeline_Back_Promote)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
-                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
+                                    <apex:commandButton value="{!$Label.copado__Pipeline_Validate_Selections}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="validateSelectionsMC" action="{!createPromotionforValidation}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" oncomplete="executePromotionActions({!promotionWrappersJSON}, true);openPromotionListModal();renderPromotionPoller();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Create_Promotion, $Label.copado__Create_Back_Promotion)}" styleClass="slds-button slds-button_neutral slds-m-horizontal_small" id="createPromotionMC" action="{!createPromotion}" reRender="copadoErrorPanel,notify,modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListButtons,createdPromotionListPanel" onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="openPromotionListModal();" disabled="{!NOT(showUserStories)}"/>
+                                    <apex:commandButton value="{!IF(newOverlay.pathType == 'merge', $Label.copado__Pipeline_Promote_and_Deploy, $Label.copado__Pipeline_Back_Promote_and_Deploy)}" styleClass="slds-button slds-button_brand slds-m-horizontal_small" id="createPromotionAndDeployMC" action="{!createPromotionListAndDeploy}"  onClick="lockScreen();expandDataTable('userStoriesTable');" onComplete="executePromotionActions({!promotionWrappersJSON}, false);openPromotionListModal();" disabled="{!NOT(showUserStories)}" reRender="modalHeader,operationModal,copadoErrorPanelForDialog,createdPromotionListPanel,promotionPoller"/>
                                 </apex:outputPanel>
                             </apex:outputPanel>
                         </div>
@@ -2646,7 +2681,12 @@
                         <apex:outputPanel id="createdPromotionListButtons" layout="block" style="float: right">
                             <apex:outputPanel rendered="{!promotionListOnly}">
                                 <button class="slds-button slds-button_neutral" onclick="lockScreen();resetPromotionList(); return false;">{!$Label.copado__Prepare_Another_Promotion}</button>
-                                <button class="slds-button slds-button_brand" id="depPros" onclick="lockScreen();deployPromotionList(); return false;">{!$Label.copado__Deploy_Promotions}</button>
+                                <apex:outputPanel rendered="{!OR(currentPipeline.copado__Platform__c == 'Salesforce',currentPipeline.copado__Platform__c == null)}">
+                                    <button class="slds-button slds-button_brand" id="depPros" onclick="lockScreen();deployPromotionList(); return false;">{!$Label.copado__Deploy_Promotions}</button>
+                                </apex:outputPanel>
+                                <!--<apex:outputPanel rendered="{!AND(currentPipeline.copado__Platform__c != 'Salesforce',currentPipeline.copado__Platform__c != null)}">
+                                    <button class="slds-button slds-button_brand slds-m-horizontal_small" id="depPros" onclick="lockScreen();executePromotionActions({!promotionWrappersJSON}, false); unlockScreen(); return false;">{!$Label.Merge_and_Deploy}</button>
+                                </apex:outputPanel>-->
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:actionPoller action="{!checkPromotionsStatuses}" id="promotionPoller" enabled="{!enabledPromotionBackPromotionPoller}" interval="10" reRender="createdPromotionListPanel,promotionPoller, createdPromotionListButtons" />

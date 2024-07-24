@@ -83,7 +83,7 @@
                         alert(copadoLabels.DESTINATION_ORG_CREDENTIAL_REQUIRED_FOR_DEPLOYMENT);
                         return false;
                     }
-                    if (isTestOnly == true) setLockScreenMessage('{!$Label.copado__Creating_Validation_Deployment_Message}');
+                    if (isTestOnly == true) setLockScreenMessage('{!JSENCODE($Label.copado__Creating_Validation_Deployment_Message)}');
 
                     copadoApp.callBackEnd(deploymentName, isTestOnly, testLevel, '', attachdeploymentfile, deployNow);
                 },
@@ -123,7 +123,7 @@
             var pullType = gitRepo ? "{!JSENCODE(flowDetails.flow.Git_Repository__r.copado__Git_Provider__c)}" : null;
 
             var createPullRequestLinks = function () {
-                $copado('a[href*="{!JSENCODE(deploymentPrefix)}"]:contains("Edit")').each(function () {
+                $copado('a[href*="{!JSENCODE(deploymentPrefix)}"]:contains("{!JSENCODE($Label.copado__EDIT)}")').each(function () {
                     var depName;
                     $copado(this).closest('tr').children().find('a').not(".actionLink").each(function () {
                         if ($copado(this).attr('href').indexOf("{!JSENCODE(deploymentPrefix)}") > -1) {
@@ -131,7 +131,7 @@
                         }
                     })
                     if (depName) {
-                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!$Label.copado__Create_Pull_Request}</a>');
+                        var pullLink = $copado('<a href="#" onclick="getPullRequest(\'' + depName + '\');return false;"> | {!JSENCODE($Label.copado__Create_Pull_Request)}</a>');
                         pullLink.appendTo($copado(this).parent());
                     }
                 });
@@ -209,7 +209,7 @@
                 if ('{!AND(openCreateDeployment, enableCreateDeploymentButton)}' === 'true' && attPc == null) {
                     openModal();
                 } else if ('{!AND(openCreateDeployment, !enableCreateDeploymentButton)}' === 'true') {
-                    alert('{!$Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED}');
+                    alert('{!JSENCODE($Label.copado__CONFLICT_RESOLUTION_DEPLOYMENT_NOT_ENABLED)}');
                 }
 
                 //Buttons To middle No PBtitle

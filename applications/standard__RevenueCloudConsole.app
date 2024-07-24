@@ -4,13 +4,18 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Subscription Management</label>
     <navType>Console</navType>
     <tabs>standard-Product2</tabs>
     <tabs>standard-Pricebook2</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>RevenueCloudConsole_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>My_salesforce_topics__c</tab>
+        </mappings>
         <mappings>
             <tab>standard-Pricebook2</tab>
         </mappings>

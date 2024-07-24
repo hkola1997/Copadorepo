@@ -9,31 +9,59 @@
                         <valueListItems>
                             <value>copado__Automation_Rule__c.copado__Activate</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.copado__Active__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>false</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>copado__Automation_Rule__c.copado__Deactivate</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.copado__Active__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>true</rightValue>
                                 </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Edit</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>NE</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Delete</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Clone</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -69,6 +97,30 @@
                 </componentInstanceProperties>
                 <componentName>copado:copadoAlertPlaceHolder</componentName>
                 <identifier>c_copadoAlertPlaceHolder</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>dismissible</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>message</name>
+                    <value>{!$Label.copado__Quality_Automation_Rule_Information}</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>variant</name>
+                    <value>info</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlert</componentName>
+                <identifier>c_copadoAlert</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -107,6 +159,22 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Description__c</fieldItem>
                 <identifier>RecordDescription_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Quality_Gate_Rule_Condition__c</fieldItem>
+                <identifier>RecordQuality_Gate_Rule_Condition_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Quality_Gate_Rule_Condition__r.Name}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a893f81-cc9d-4510-b2c7-938fbe7f0c3f</name>

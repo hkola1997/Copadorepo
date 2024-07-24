@@ -6,6 +6,7 @@
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
     <label>Copado Release Manager</label>
     <logo>copado__Copado/copado__Copado_Logo.png</logo>
     <tabs>copado__Getting_Started</tabs>
@@ -30,4 +31,5 @@
     <tabs>copado__JobTemplate__c</tabs>
     <tabs>copado__JobExecution__c</tabs>
     <tabs>copado__Stage__c</tabs>
+    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

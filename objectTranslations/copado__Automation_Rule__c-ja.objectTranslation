@@ -80,6 +80,11 @@
         <relationshipLabel><!-- Automation Rules --></relationshipLabel>
     </fields>
     <fields>
+        <label><!-- Quality Gate Rule Condition --></label>
+        <name>copado__Quality_Gate_Rule_Condition__c</name>
+        <relationshipLabel><!-- Automation Rules --></relationshipLabel>
+    </fields>
+    <fields>
         <label><!-- Scheduled Job Id --></label>
         <name>copado__Scheduled_Job_Id__c</name>
     </fields>

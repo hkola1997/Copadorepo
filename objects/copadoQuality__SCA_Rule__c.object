@@ -158,7 +158,6 @@
         <fullName>copadoQuality__Active__c</fullName>
         <defaultValue>true</defaultValue>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Active</label>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
@@ -166,7 +165,6 @@
     <fields>
         <fullName>copadoQuality__Category__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Category</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -225,7 +223,6 @@
     <fields>
         <fullName>copadoQuality__ConfigJson__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Config Json</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -235,7 +232,6 @@
     <fields>
         <fullName>copadoQuality__Extension_Configuration__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Extension Configuration</label>
         <referenceTo>copado__ExtensionConfiguration__c</referenceTo>
         <relationshipLabel>SCA Rules</relationshipLabel>
@@ -249,7 +245,6 @@
     <fields>
         <fullName>copadoQuality__FilePath__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>File Path</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -259,7 +254,6 @@
     <fields>
         <fullName>copadoQuality__Message__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Message</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -268,7 +262,6 @@
     <fields>
         <fullName>copadoQuality__Priority__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Priority</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -341,7 +334,6 @@
     <fields>
         <fullName>copadoQuality__Rule_Type__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>Rule Type</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
@@ -366,7 +358,6 @@
     <fields>
         <fullName>copadoQuality__XPath_Expression__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>XPath Expression</label>
         <length>131072</length>
         <trackTrending>false</trackTrending>
@@ -376,7 +367,6 @@
     <fields>
         <fullName>copadoQuality__XPath_Version__c</fullName>
         <deprecated>false</deprecated>
-        <externalId>false</externalId>
         <label>XPath Version</label>
         <required>false</required>
         <trackTrending>false</trackTrending>
