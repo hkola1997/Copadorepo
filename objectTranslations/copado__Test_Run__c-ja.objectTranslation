@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Test Run --></value>
+        <value>テスト実行</value>
     </caseValues>
     <fieldSets>
         <label><!-- InputFields --></label>
@@ -143,7 +143,7 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel><!-- Test Runs --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Test Run Name --></nameFieldLabel>
+    <nameFieldLabel>テスト実行名</nameFieldLabel>
     <webLinks>
         <label><!-- Copado_DX --></label>
         <name>copado__Copado_DX</name>

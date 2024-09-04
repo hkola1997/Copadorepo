@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Step --></value>
+        <value>ステップ</value>
     </caseValues>
     <fieldSets>
         <label><!-- Deployment Steps --></label>
@@ -207,5 +207,5 @@
         <label><!-- dataJson --></label>
         <name>copado__dataJson__c</name>
     </fields>
-    <nameFieldLabel><!-- Step Name --></nameFieldLabel>
+    <nameFieldLabel>ステップ名</nameFieldLabel>
 </CustomObjectTranslation>

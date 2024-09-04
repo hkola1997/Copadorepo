@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Test Run Step --></value>
+        <value>テスト実行ステップ</value>
     </caseValues>
     <fieldSets>
         <label><!-- TestRunExecutionFieldSet --></label>
@@ -54,5 +54,5 @@
         <name>copado__Test_Run__c</name>
         <relationshipLabel><!-- Test Run Steps --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Test Run Step Name --></nameFieldLabel>
+    <nameFieldLabel>テスト実行ステップ名</nameFieldLabel>
 </CustomObjectTranslation>

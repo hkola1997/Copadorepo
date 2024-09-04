@@ -43,6 +43,7 @@
     <label>CMC SFDX</label>
     <navType>Standard</navType>
     <tabs>copado__Project__c</tabs>
+    <tabs>cmcSf__Quick_Start</tabs>
     <tabs>copado__Release__c</tabs>
     <tabs>copado__Epic__c</tabs>
     <tabs>copado__Sprint__c</tabs>

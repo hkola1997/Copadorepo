@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Compliance Rule Criteria --></value>
+        <value>コンプライアンス・ルール基準</value>
     </caseValues>
     <fields>
         <label><!-- Compliance Rule --></label>
@@ -37,5 +37,5 @@
         <label><!-- Value --></label>
         <name>copado__Value__c</name>
     </fields>
-    <nameFieldLabel><!-- Compliance Rule Criteria Name --></nameFieldLabel>
+    <nameFieldLabel>コンプライアンス・ルール基準名</nameFieldLabel>
 </CustomObjectTranslation>

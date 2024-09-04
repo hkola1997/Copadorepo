@@ -10,6 +10,10 @@ global class Persona implements copado.CopadoDomain {
         get;
         set;
     }
+    global static copado.Persona.UserService UserService {
+        get;
+        set;
+    }
     global Persona() {
 
     }

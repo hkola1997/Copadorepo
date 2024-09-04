@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Pipeline Connection --></value>
+        <value>パイプライン接続</value>
     </caseValues>
     <fields>
         <label><!-- Automatically Merge and Deploy --></label>
@@ -190,7 +190,7 @@
             <translation>指定されたテストを実行</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Pipeline Connection Reference --></nameFieldLabel>
+    <nameFieldLabel>パイプライン接続リファレンス</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Platform for pipeline and Environment must match --></errorMessage>
         <name>copado__EnvironmentAndPipelinePlatformMustBeSame</name>

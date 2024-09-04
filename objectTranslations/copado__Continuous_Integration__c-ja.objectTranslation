@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Continuous Integration --></value>
+        <value>継続的インテグレーション</value>
     </caseValues>
     <fieldSets>
         <label><!-- CustomFields --></label>
@@ -103,7 +103,7 @@
             <translation>成功</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Continuous Integration Name --></nameFieldLabel>
+    <nameFieldLabel>継続的インテグレーション名</nameFieldLabel>
     <sharingReasons>
         <label><!-- Continuous Integration Permission --></label>
         <name>copado__ContinuousIntegrationPermission</name>

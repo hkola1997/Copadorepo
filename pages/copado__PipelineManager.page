@@ -570,13 +570,12 @@
                     promotionIds.push(key);
                 }
             }
-            let promises = [];
-            for (let i = 0; i < promotionIds.length; i++) {
-                promises.push(
-                    new Promise(function (resolve, reject) {
+            const executeSequentially = promotionIds.reduce((previousPromise, promotionId) => {
+                return previousPromise.then(() => {
+                    return new Promise((resolve, reject) => {
                         Visualforce.remoting.Manager.invokeAction(
                             '{!$RemoteAction.PromotionRemoter.executePromotionAction}',
-                            promotionIds[i],
+                            promotionId,
                             isValidation,
                             function (result, event) {
                                 if (event.status) {
@@ -588,10 +587,15 @@
                             },
                             { buffer: false, escape: true }
                         );
-                    })
-                );
-            }
-            Promise.all(promises);
+                    });
+                });
+            }, Promise.resolve());
+
+            executeSequentially.then(() => {
+                console.log('All promotions executed sequentially.');
+            }).catch((error) => {
+                console.error('An error occurred during the execution of promotions:', error);
+            });
         }
 
         expandDataTable = function(tableId) {
