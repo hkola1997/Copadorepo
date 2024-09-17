@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Compliance Rule Group --></value>
+        <value>コンプライアンスルールグループ</value>
     </caseValues>
-    <nameFieldLabel><!-- Compliance Rule Group Name --></nameFieldLabel>
+    <nameFieldLabel>コンプライアンスルールグループ名</nameFieldLabel>
 </CustomObjectTranslation>

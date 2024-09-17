@@ -174,26 +174,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.copado__Promotion_Default_Credential__c</fieldItem>
-                <identifier>RecordPromotion_Default_Credential_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Validation_Promotion_Default_Credential__c</fieldItem>
-                <identifier>RecordValidation_Promotion_Default_Credential_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.copado__Index_Back_Promotion_metadata__c</fieldItem>
                 <identifier>RecordIndex_Back_Promotion_metadata_cField1</identifier>
             </fieldInstance>
@@ -202,16 +182,6 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.copado__Latest_Deployment__c</fieldItem>
-                <identifier>RecordLatest_Deployment_cField1</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-fa51b080-a562-4607-865f-b1a6e6760fdc</name>
         <type>Facet</type>
     </flexiPageRegions>

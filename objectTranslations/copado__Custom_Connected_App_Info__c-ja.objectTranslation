@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Custom Connected App --></value>
+        <value>カスタム接続アプリ</value>
     </caseValues>
     <fields>
         <label><!-- Callback URL --></label>
@@ -20,5 +20,5 @@
         <label><!-- Connected App Id --></label>
         <name>copado__Connected_App_Id__c</name>
     </fields>
-    <nameFieldLabel><!-- Custom Connected App Info Name --></nameFieldLabel>
+    <nameFieldLabel>カスタム接続アプリ情報名</nameFieldLabel>
 </CustomObjectTranslation>

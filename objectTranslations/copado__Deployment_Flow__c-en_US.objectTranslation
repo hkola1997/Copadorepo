@@ -5,6 +5,10 @@
         <name>copado__Additional_Information</name>
     </fieldSets>
     <fields>
+        <label><!-- Builder Data --></label>
+        <name>cmcSf__Builder_Data__c</name>
+    </fields>
+    <fields>
         <label><!-- Initialization Data --></label>
         <name>cmcSf__Initialization_Data__c</name>
     </fields>

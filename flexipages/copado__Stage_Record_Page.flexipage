@@ -89,7 +89,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Stage Connections</value>
+                    <value>{!$Label.copado__STAGE_CONNECTIONS}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab1</identifier>

@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Automation Rule --></value>
+        <value>オートメーションルール</value>
     </caseValues>
     <fields>
         <label><!-- Is Active --></label>
@@ -111,7 +111,7 @@
         <label><!-- Selected Stages --></label>
         <name>copado__Stage__c</name>
     </fields>
-    <nameFieldLabel><!-- Automation Rule Name --></nameFieldLabel>
+    <nameFieldLabel>オートメーション・ルール名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Environment and Stage fields cannot be selected at the same time. Define the most granular filters using Environments, or broader filters using Stage. --></errorMessage>
         <name>copado__Stage_and_Environment_both_populated</name>

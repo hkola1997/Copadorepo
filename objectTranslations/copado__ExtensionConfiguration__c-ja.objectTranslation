@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Extension Configuration --></value>
+        <value>エクステンション構成</value>
     </caseValues>
     <fields>
         <label><!-- Latest Job Execution --></label>
@@ -74,7 +74,7 @@
         <label><!-- Test Type --></label>
         <name>copado__TestType__c</name>
     </fields>
-    <nameFieldLabel><!-- Name --></nameFieldLabel>
+    <nameFieldLabel>名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- This Extension Tool cannot be modified. Please create a new Extension Configuration record instead. --></errorMessage>
         <name>copado__PreventUpdatingExtensionTool</name>

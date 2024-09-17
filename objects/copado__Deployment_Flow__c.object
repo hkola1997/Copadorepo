@@ -170,6 +170,16 @@
         <label>Additional Information</label>
     </fieldSets>
     <fields>
+        <fullName>cmcSf__Builder_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Builder Data</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>cmcSf__Initialization_Data__c</fullName>
         <deprecated>false</deprecated>
         <label>Initialization Data</label>
