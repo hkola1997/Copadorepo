@@ -213,6 +213,14 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>EvaluateCodeScanResult</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EvaluateCodeScanResultTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>Shitclass</apexClass>
         <enabled>false</enabled>
     </classAccesses>
