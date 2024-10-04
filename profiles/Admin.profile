@@ -3909,6 +3909,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copado__ConnectionBehaviorController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__ConnectionBehaviorControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__ConnectionBehaviorTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -4934,6 +4942,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copado__DomainBuilder</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copado__DummySchedulableClass</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -17849,6 +17861,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Git_Backup__c.copado__Pipeline__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Git_Backup__c.copado__Scheduled_Commit_Message__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -59,7 +59,7 @@
     </fields>
     <fields>
         <help>1に設定すると、各ストーリーを個別にデプロイします。デプロイをバッチ処理すると、プロセスが高速化されますが、バッチ内のすべてのストーリーが一緒に成功または失敗するようになります。このため、エラー原因の特定が難しくなったり、いくつかの問題のないユーザーストーリーも遅れる可能性があります。</help>
-        <label><!-- Scheduled Back-Promotion US Group Size --></label>
+        <label><!-- Back-Promotion Batch Size --></label>
         <name>copado__Max_Scheduled_Back_Promotion_Batch_Size__c</name>
     </fields>
     <fields>

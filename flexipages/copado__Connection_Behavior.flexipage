@@ -332,6 +332,10 @@
                     <value>Facet-7dff7f82-f010-4b21-a96a-39cb5edd9b91</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Information</value>
                 </componentInstanceProperties>
@@ -346,6 +350,10 @@
                     <value>Facet-8860cf79-d13b-4e1a-8a53-fd2df34d09ce</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>label</name>
                     <value>Promotion Details</value>
                 </componentInstanceProperties>
@@ -358,6 +366,10 @@
                 <componentInstanceProperties>
                     <name>columns</name>
                     <value>Facet-26b20880-d349-4ab4-b079-62fe9e9bef10</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>label</name>
@@ -502,6 +514,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>communicationId</name>
+                    <value>connectionBehaviorAlerts</value>
+                </componentInstanceProperties>
+                <componentName>copado:copadoAlertPlaceHolder</componentName>
+                <identifier>c_copadoAlertPlaceHolder</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-63d50753-8d7a-40a6-b8c8-71227d92d8f3</value>
                 </componentInstanceProperties>
@@ -512,10 +534,20 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:connectionBehaviorsConsideration</componentName>
+                <identifier>c_connectionBehaviorsConsideration</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>sidebar</name>
+        <type>Region</type>
+    </flexiPageRegions>
     <masterLabel>Connection Behavior</masterLabel>
     <sobjectType>copado__Connection_Behavior__c</sobjectType>
     <template>
-        <name>flexipage:recordHomeSimpleViewTemplate</name>
+        <name>flexipage:recordHomeTemplateDesktop</name>
     </template>
     <type>RecordPage</type>
 </FlexiPage>
