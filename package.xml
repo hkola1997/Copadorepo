@@ -63,7 +63,9 @@
         <members>IdentityProvider</members>
         <members>IncidentMgmt</members>
         <members>Industries</members>
+        <members>IndustriesContext</members>
         <members>IndustriesEinsteinFeature</members>
+        <members>IndustriesPricing</members>
         <members>InvLatePymntRiskCalc</members>
         <members>Inventory</members>
         <members>InvocableAction</members>
@@ -93,6 +95,7 @@
         <members>PardotEinstein</members>
         <members>PartyDataModel</members>
         <members>PathAssistant</members>
+        <members>Payments</members>
         <members>PaymentsManagementEnabled</members>
         <members>Picklist</members>
         <members>PlatformEncryption</members>

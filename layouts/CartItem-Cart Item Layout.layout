@@ -123,6 +123,10 @@
                 <field>UnitAdjustmentAmount</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ParentCartItemId</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>TotalLineNetAmount</field>
             </layoutItems>
@@ -169,6 +173,7 @@
         <style>CustomLinks</style>
     </layoutSections>
     <miniLayout>
+        <fields>ParentCartItemId</fields>
         <fields>TotalLineNetAmount</fields>
         <fields>TotalLineGrossAmount</fields>
         <fields>TotalPriceTaxAmount</fields>
