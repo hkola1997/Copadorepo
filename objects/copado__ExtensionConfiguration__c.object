@@ -263,6 +263,11 @@
                     <default>false</default>
                     <label>Apex Tests</label>
                 </value>
+                <value>
+                    <fullName>CodeScan</fullName>
+                    <default>false</default>
+                    <label>CodeScan</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>

@@ -26,6 +26,10 @@
                 <behavior>Required</behavior>
                 <field>copado__User_Default_Notification__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

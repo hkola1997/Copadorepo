@@ -118,6 +118,11 @@
         <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Message to use when committing the snapshot to Git --></help>
+        <label><!-- Commit Message --></label>
+        <name>copado__Scheduled_Commit_Message__c</name>
+    </fields>
+    <fields>
         <help>このフィールドを使用して、スナップショットを取得するファイルを指定します。フォーマットは使用している拡張子によって異なる場合があります。拡張機能のドキュメントを参照してください。</help>
         <label><!-- Scope --></label>
         <name>copado__Scope__c</name>
