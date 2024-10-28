@@ -287,7 +287,7 @@ var isRollback = isRollback ? isRollback : undefined;
         app.conf.data.stepId = stepId || null;
         // get selected
         coGridHelper.datasource = app.grid.datasource;
-        sel = sel || coGridHelper.getSelectedObj();
+        sel = sel || coGridHelper.getSelectedObj(isRollback);
         // Attachment Name
         var attachmentName = isRollback ? 'Selected items to rollback' : 'MetaData';
         // get originalDeployment

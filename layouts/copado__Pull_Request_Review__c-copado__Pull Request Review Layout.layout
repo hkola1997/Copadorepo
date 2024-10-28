@@ -27,6 +27,10 @@
                 <behavior>Readonly</behavior>
                 <field>copado__User_Avatar__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

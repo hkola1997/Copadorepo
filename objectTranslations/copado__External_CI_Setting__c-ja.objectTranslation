@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- External CI Setting --></value>
+        <value>外部CI設定</value>
     </caseValues>
     <fields>
         <label><!-- CI Tool --></label>
@@ -28,5 +28,5 @@
         <label><!-- Endpoint --></label>
         <name>copado__Endpoint__c</name>
     </fields>
-    <nameFieldLabel><!-- External CI Settings Name --></nameFieldLabel>
+    <nameFieldLabel>外部CI設定名</nameFieldLabel>
 </CustomObjectTranslation>
