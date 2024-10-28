@@ -33,6 +33,10 @@
     <columns>
         <field>CLEAN_STATUS</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SALES</field>
+    </columns>
     <description>Hareesh report</description>
     <filter>
         <criteriaItems>
