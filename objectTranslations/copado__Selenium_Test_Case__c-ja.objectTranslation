@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Selenium Test Case --></value>
+        <value>Seleniumテストケース</value>
     </caseValues>
     <fields>
         <help>コパードレコーダーで開く</help>
@@ -18,7 +18,7 @@
         <label><!-- Version --></label>
         <name>copado__Version__c</name>
     </fields>
-    <nameFieldLabel><!-- Selenium Test Case Name --></nameFieldLabel>
+    <nameFieldLabel>Selenium テストケース名</nameFieldLabel>
     <webLinks>
         <label><!-- New_Version --></label>
         <name>copado__New_Version</name>

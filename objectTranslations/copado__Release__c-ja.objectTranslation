@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Release --></value>
+        <value>リリース</value>
     </caseValues>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -109,7 +109,7 @@
         <label><!-- Pipeline definition --></label>
         <name>copadoconnect__Pipeline_definition__c</name>
     </fields>
-    <nameFieldLabel><!-- Release Name --></nameFieldLabel>
+    <nameFieldLabel>リリース名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- please dont include spaces in version field --></errorMessage>
         <name>copado__Validate_spaces_in_version</name>

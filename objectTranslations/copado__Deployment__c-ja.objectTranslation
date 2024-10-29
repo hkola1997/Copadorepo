@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Deployment --></value>
+        <value>デプロイメント</value>
     </caseValues>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -213,7 +213,7 @@
         <name>copado__Template__c</name>
         <relationshipLabel><!-- Template Execution --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Deployment Name --></nameFieldLabel>
+    <nameFieldLabel>デプロイメント名</nameFieldLabel>
     <recordTypes>
         <description><!-- Create multiple types of deployment steps. (Technical knowledge needed) --></description>
         <label><!-- Advanced (multi-step) --></label>

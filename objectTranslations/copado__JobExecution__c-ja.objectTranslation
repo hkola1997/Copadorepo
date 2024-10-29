@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Job Execution --></value>
+        <value>ジョブ実行</value>
     </caseValues>
     <fieldSets>
         <label><!-- Data Set Job Executions --></label>
@@ -128,5 +128,5 @@
         <label><!-- VolumeOptions --></label>
         <name>copado__VolumeOptions__c</name>
     </fields>
-    <nameFieldLabel><!-- Job Execution Name --></nameFieldLabel>
+    <nameFieldLabel>ジョブ実行名</nameFieldLabel>
 </CustomObjectTranslation>

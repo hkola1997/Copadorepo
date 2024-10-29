@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Sprint --></value>
+        <value>スプリント</value>
     </caseValues>
     <fields>
         <help><!-- Calculated by adding up the points of User Stories based on their status changes to Completed. This can be changed in the &quot;Actual Velocity Statuses&quot; Custom Metadata Type. Refer to Copado Docs for more info. --></help>
@@ -112,7 +112,7 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
-    <nameFieldLabel><!-- Sprint Name --></nameFieldLabel>
+    <nameFieldLabel>スプリント名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- You must introduce an End Date greater than the Start Date. --></errorMessage>
         <name>copado__EndDate_Should_be_Greater_than_StartDate</name>

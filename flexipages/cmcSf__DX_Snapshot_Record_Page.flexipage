@@ -198,6 +198,23 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copado__Scheduled_Commit_Message__c</fieldItem>
+                <identifier>Recordcopado_Scheduled_Commit_Message_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.copado__Snapshot_Frequency__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Schedule</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.copado__Pipeline__c</fieldItem>

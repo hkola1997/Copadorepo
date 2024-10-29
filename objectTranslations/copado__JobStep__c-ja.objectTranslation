@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value>取引先qwrt</value>
+        <value>ジョブ・ステップ</value>
     </caseValues>
     <fields>
         <help>結果をトリガーしたジョブのAPI名。この情報はレポート作成に利用できます。</help>
@@ -165,7 +165,7 @@
         <name>copado__UserStory__c</name>
         <relationshipLabel><!-- Deployment Steps --></relationshipLabel>
     </fields>
-    <nameFieldLabel>取引先</nameFieldLabel>
+    <nameFieldLabel>ジョブ・ステップ名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Execution Sequence is required for Deployment steps --></errorMessage>
         <name>copado__Execution_Sequence_Required</name>

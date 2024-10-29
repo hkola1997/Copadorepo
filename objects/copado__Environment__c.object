@@ -154,6 +154,21 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_Environment_Extension_Fields</fullName>
+        <description>Environment Extension Details</description>
+        <displayedFields>
+            <field>copado__Minimum_Apex_Test_Coverage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Apex_Test_Level__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SFDX Environment Extension Fields</label>
+    </fieldSets>
     <fields>
         <fullName>cmcSf__Apex_Test_Level__c</fullName>
         <deprecated>false</deprecated>

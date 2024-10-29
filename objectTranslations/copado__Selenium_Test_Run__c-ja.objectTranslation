@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Selenium Test Run --></value>
+        <value>Seleniumテスト実行</value>
     </caseValues>
     <fields>
         <help>組織クレデンシャルが指定されていない場合、このテストが実行されるオプションのベースURL</help>
@@ -80,7 +80,7 @@
         <name>copado__Selenium_Test_Suite__c</name>
         <relationshipLabel><!-- Selenium Test Runs --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Selenium Test Run Name --></nameFieldLabel>
+    <nameFieldLabel>Seleniumテスト実行名</nameFieldLabel>
     <recordTypes>
         <description><!-- Test a generic web application --></description>
         <label><!-- Generic Web Application --></label>

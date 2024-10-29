@@ -30,6 +30,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Selenium_Test_Group__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
