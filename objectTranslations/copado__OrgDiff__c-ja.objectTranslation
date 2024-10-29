@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Org Difference --></value>
+        <value>組織差分</value>
     </caseValues>
     <fieldSets>
         <label><!-- Copado Header Fields --></label>
@@ -40,7 +40,7 @@
         <name>copado__To_Org__c</name>
         <relationshipLabel><!-- Org Differences (Destination Credential) --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Org Difference Name --></nameFieldLabel>
+    <nameFieldLabel>組織差分名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- The Org&apos;s to be compared can not be the same. --></errorMessage>
         <name>copado__Should_be_differents</name>

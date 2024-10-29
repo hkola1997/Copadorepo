@@ -216,6 +216,10 @@
         <trackHistory>true</trackHistory>
     </fields>
     <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>true</trackHistory>
+    </fields>
+    <fields>
         <fullName>CustomerSignedDate</fullName>
         <trackHistory>true</trackHistory>
     </fields>

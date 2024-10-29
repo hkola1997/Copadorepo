@@ -19,6 +19,10 @@
                 <behavior>Readonly</behavior>
                 <field>copado__To_Org_Name__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

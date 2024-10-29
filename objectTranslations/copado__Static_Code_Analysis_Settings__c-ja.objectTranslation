@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Static Code Analysis Settings --></value>
+        <value>静的コード分析設定</value>
     </caseValues>
     <fields>
         <help>この組織IDは、セットアップメニューの「私の組織」の「あなたのプロファイル」の下にあるCodeScan Cloudで取得することができます。</help>
@@ -35,7 +35,7 @@
         <label><!-- Report Issues From Latest Commit --></label>
         <name>copado__ReportIssuesFromLatestCommit__c</name>
     </fields>
-    <nameFieldLabel><!-- Static Code Analysis Settings Name --></nameFieldLabel>
+    <nameFieldLabel>静的コード分析設定名</nameFieldLabel>
     <recordTypes>
         <description><!-- Record Type for CodeScan integration. Requires CodeScan licensing. --></description>
         <label><!-- CodeScan --></label>

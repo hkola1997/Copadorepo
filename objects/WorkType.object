@@ -160,6 +160,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>DefaultAppointmentType</fullName>
         <trackHistory>false</trackHistory>
         <type>Picklist</type>

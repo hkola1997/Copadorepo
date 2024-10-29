@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- User Story Metadata --></value>
+        <value>ユーザーストーリーメタデータ</value>
     </caseValues>
     <fieldSets>
         <label><!-- Copado User Story Metadata Columns --></label>
@@ -87,5 +87,5 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel><!-- User Story Metadata --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- User Story Metadata Name --></nameFieldLabel>
+    <nameFieldLabel>ユーザーストーリーメタデータ名</nameFieldLabel>
 </CustomObjectTranslation>

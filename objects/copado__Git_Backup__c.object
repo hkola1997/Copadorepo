@@ -846,6 +846,16 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>copado__Scheduled_Commit_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message to use when committing the snapshot to Git</description>
+        <inlineHelpText>Message to use when committing the snapshot to Git</inlineHelpText>
+        <label>Commit Message</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>copado__Scope__c</fullName>
         <deprecated>false</deprecated>
         <inlineHelpText>Use this field to specify the files for which you want to take the snapshot. The format may vary depending on the extension that you are using. Please refer to your extension documentation.</inlineHelpText>

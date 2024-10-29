@@ -5,6 +5,11 @@
         <default>false</default>
         <label>None</label>
     </customValue>
+    <customValue>
+        <fullName>CodeScan</fullName>
+        <default>false</default>
+        <label>CodeScan</label>
+    </customValue>
     <masterLabel>Copado Test Tool</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

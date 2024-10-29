@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Epic --></value>
+        <value>エピック</value>
     </caseValues>
     <fields>
         <label><!-- Application --></label>
@@ -70,5 +70,5 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
-    <nameFieldLabel><!-- Epic Ref --></nameFieldLabel>
+    <nameFieldLabel>エピックリファレンス</nameFieldLabel>
 </CustomObjectTranslation>
