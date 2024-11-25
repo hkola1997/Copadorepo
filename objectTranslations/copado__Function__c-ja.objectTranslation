@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Function --></value>
+        <value>関数</value>
     </caseValues>
     <fields>
         <help>この機能を識別するための一意な名前になります。関数の結果レコードには、レポートやダッシュボードでこれらの結果をフィルタリングするためのジョブタイプフィールドがあり、このAPI名も含まれています。</help>
@@ -107,7 +107,7 @@
             <translation><!-- XL --></translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Function Name --></nameFieldLabel>
+    <nameFieldLabel>関数名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Api name can only contain alphanumeric characters and must begin with a letter --></errorMessage>
         <name>copado__Function_Name_must_Be_Alpha_Numeric</name>

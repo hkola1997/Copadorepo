@@ -29,10 +29,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>cmcSf__BuildDataTemplateContent</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>cmcSf__CheckPackageDistributionLicense</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -113,14 +109,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>cmcSf__DataTemplatePayloadImpl</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>cmcSf__DataTemplatePayloadRetriever</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>cmcSf__DefaultSnapshotScopeConfiguration</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -134,6 +122,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__DistributePackages</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__EscapeUtil</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -153,11 +145,23 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__GetCurrentEnvId</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetDataTemplateContinueOnError</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__GetDxNamespace</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__GetInstallationKeys</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__GetMainDataTemplateInfo</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -353,6 +357,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__QuickStartCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__QuickStartGitRepositoryCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__RefreshMetadataCallback</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -402,6 +414,10 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__UpdateTestsInfoOnStories</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__UserStoryBundleOperationReconciliation</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -559,6 +575,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copado__Artifact__c.cmcSf__PackagePath__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copado__Deployment_Flow__c.cmcSf__Builder_Data__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -800,6 +821,10 @@
     </tabSettings>
     <tabSettings>
         <tab>cmcSf__Promotion_Rollback</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>cmcSf__Quick_Start</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>

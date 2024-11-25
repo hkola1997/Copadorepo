@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- AuxiliaryObject --></value>
+        <value>AuxiliaryObject</value>
     </caseValues>
     <fields>
         <label><!-- Continuous Integration --></label>
@@ -125,5 +125,5 @@
         <name>copado__User__c</name>
         <relationshipLabel><!-- AuxiliaryObjects --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- AuxiliaryObject Name --></nameFieldLabel>
+    <nameFieldLabel>AuxiliaryObject名</nameFieldLabel>
 </CustomObjectTranslation>

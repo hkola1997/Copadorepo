@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Promotion --></value>
+        <value>プロモーション</value>
     </caseValues>
     <fieldSets>
         <label><!-- Rollback Page --></label>
@@ -234,7 +234,7 @@
         <label><!-- View in Git --></label>
         <name>copado__View_in_Git__c</name>
     </fields>
-    <nameFieldLabel><!-- Promotion Name --></nameFieldLabel>
+    <nameFieldLabel>プロモーション名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Back Promotions to Scratch Orgs are not allowed --></errorMessage>
         <name>copado__Scratch_Orgs_Disabled_for_Back_Promoting</name>

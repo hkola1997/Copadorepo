@@ -116,7 +116,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Git Snapshots</value>
+                    <value>{!$Label.copado__GIT_SNAPSHOT}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>

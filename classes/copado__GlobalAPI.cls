@@ -45,6 +45,9 @@ global class GlobalAPI {
     global String upsertCopadoLicense(Id userId, copado.GlobalAPI.UserLicense licenseDetails) {
         return null;
     }
+    global static Boolean validateOrg(Id orgId) {
+        return null;
+    }
 global class CopadoAPIException extends Exception {
 }
 global class CopadoLicenses {

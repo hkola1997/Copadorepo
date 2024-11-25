@@ -20,6 +20,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__DataJSON__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

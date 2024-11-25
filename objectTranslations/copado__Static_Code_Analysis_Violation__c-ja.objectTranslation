@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Static Code Analysis Violation --></value>
+        <value>静的コード分析違反</value>
     </caseValues>
     <fields>
         <label><!-- File --></label>
@@ -129,7 +129,7 @@
             <translation>脆弱性</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Static Code Analysis Violation Name --></nameFieldLabel>
+    <nameFieldLabel>静的コード分析違反名</nameFieldLabel>
     <recordTypes>
         <description><!-- Record Type for CodeScan integration. Requires CodeScan licensing. --></description>
         <label><!-- CodeScan --></label>

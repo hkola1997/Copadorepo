@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Scratch Org Definition --></value>
+        <value>スクラッチ組織定義</value>
     </caseValues>
     <fields>
         <label><!-- Developer Hub Org --></label>
@@ -21,5 +21,5 @@
         <label><!-- Scratch Org Definition JSON --></label>
         <name>copado__Scratch_Org_Definition_JSON__c</name>
     </fields>
-    <nameFieldLabel><!-- Scratch Org Definitions Name --></nameFieldLabel>
+    <nameFieldLabel>スクラッチ組織定義名</nameFieldLabel>
 </CustomObjectTranslation>

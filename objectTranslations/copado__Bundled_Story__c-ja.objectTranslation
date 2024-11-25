@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Bundled Story --></value>
+        <value>バンドルストーリー</value>
     </caseValues>
     <fieldSets>
         <label><!-- Bundle --></label>
@@ -18,5 +18,5 @@
         <name>copado__User_Story__c</name>
         <relationshipLabel><!-- Bundled Stories --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Bundled Story Name --></nameFieldLabel>
+    <nameFieldLabel>バンドルストーリー名</nameFieldLabel>
 </CustomObjectTranslation>
