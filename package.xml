@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>chandu digital xperience.Banned</members>
-        <name>KeywordList</name>
-    </types>
-    <types>
-        <members>chandu digital xperience</members>
-        <name>ManagedTopics</name>
-    </types>
-    <types>
-        <members>chandu digital xperience.Block_banned_keywords</members>
-        <members>chandu digital xperience.Flag_banned</members>
-        <members>chandu digital xperience.Freeze_for_frequent_posting</members>
-        <name>ModerationRule</name>
-    </types>
-    <types>
-        <members>chandu digital xperience</members>
-        <name>Network</name>
-    </types>
-    <types>
-        <members>cbchandu_digital_xperience</members>
-        <name>NetworkBranding</name>
-    </types>
-    <types>
-        <members>chandu digital xperience Profile</members>
-        <name>Profile</name>
-    </types>
-    <types>
-        <members>chandu digital xperience.Customer_Members</members>
-        <members>chandu digital xperience.Members_without_contribution</members>
-        <members>chandu digital xperience.Partner_and_Customer_members</members>
-        <name>UserCriteria</name>
+        <members>Account.Darwin__c</members>
+        <name>CustomField</name>
     </types>
     <version>62.0</version>
 </Package>
