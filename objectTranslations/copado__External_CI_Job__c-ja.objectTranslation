@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- External CI Job --></value>
+        <value>外部CIジョブ</value>
     </caseValues>
     <fieldSets>
         <label><!-- Related List Fields --></label>
@@ -55,5 +55,5 @@
         <label><!-- dataJSON --></label>
         <name>copado__dataJSON__c</name>
     </fields>
-    <nameFieldLabel><!-- External CI Jobs Name --></nameFieldLabel>
+    <nameFieldLabel>外部CIジョブ名</nameFieldLabel>
 </CustomObjectTranslation>

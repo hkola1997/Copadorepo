@@ -2,12 +2,16 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Pipeline --></value>
+        <value>パイプライン</value>
     </caseValues>
     <fieldSets>
         <label><!-- Additional Information --></label>
         <name>copado__Additional_Information</name>
     </fieldSets>
+    <fields>
+        <label><!-- Builder Data --></label>
+        <name>cmcSf__Builder_Data__c</name>
+    </fields>
     <fields>
         <label><!-- Initialization Data --></label>
         <name>cmcSf__Initialization_Data__c</name>
@@ -195,7 +199,7 @@
         <name>copado__Static_Code_Analysis_Settings__c</name>
         <relationshipLabel><!-- Pipelines --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Pipeline Name --></nameFieldLabel>
+    <nameFieldLabel>パイプライン名</nameFieldLabel>
     <webLinks>
         <label><!-- Find_Replace_Rule_Editor --></label>
         <name>copado__Find_Replace_Rule_Editor</name>

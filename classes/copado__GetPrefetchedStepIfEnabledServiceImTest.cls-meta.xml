@@ -3,7 +3,7 @@
     <apiVersion>59.0</apiVersion>
     <packageVersions>
         <majorNumber>23</majorNumber>
-        <minorNumber>0</minorNumber>
+        <minorNumber>12</minorNumber>
         <namespace>copado</namespace>
     </packageVersions>
     <status>Active</status>

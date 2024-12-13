@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Test Script Step --></value>
+        <value>テストスクリプトステップ</value>
     </caseValues>
     <fields>
         <label><!-- Action/Description --></label>
@@ -45,5 +45,5 @@
         <name>copado__Test_Script__c</name>
         <relationshipLabel><!-- Test Script Steps --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Script Step Name --></nameFieldLabel>
+    <nameFieldLabel>スクリプトステップ名</nameFieldLabel>
 </CustomObjectTranslation>

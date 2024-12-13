@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Build Task --></value>
+        <value>ビルドタスク</value>
     </caseValues>
     <fields>
         <label><!-- Continuous Integration --></label>
@@ -54,5 +54,5 @@
             <translation>検証</translation>
         </picklistValues>
     </fields>
-    <nameFieldLabel><!-- Build Task Name --></nameFieldLabel>
+    <nameFieldLabel>ビルドタスク名</nameFieldLabel>
 </CustomObjectTranslation>

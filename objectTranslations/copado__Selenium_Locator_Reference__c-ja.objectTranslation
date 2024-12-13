@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Selenium Locator Reference --></value>
+        <value>Seleniumロケーターリファレンス</value>
     </caseValues>
     <fields>
         <label><!-- External ID --></label>
@@ -22,5 +22,5 @@
         <name>copado__Selenium_Test_Case__c</name>
         <relationshipLabel><!-- Selenium Locator References --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Ref# --></nameFieldLabel>
+    <nameFieldLabel>リファレンス#</nameFieldLabel>
 </CustomObjectTranslation>

@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Git Snapshot --></value>
+        <value>Gitスナップショット</value>
     </caseValues>
     <fieldSets>
         <label><!-- Commit Files Information --></label>
@@ -118,6 +118,11 @@
         <relationshipLabel><!-- Git Snapshots --></relationshipLabel>
     </fields>
     <fields>
+        <help><!-- Message to use when committing the snapshot to Git --></help>
+        <label><!-- Commit Message --></label>
+        <name>copado__Scheduled_Commit_Message__c</name>
+    </fields>
+    <fields>
         <help>このフィールドを使用して、スナップショットを取得するファイルを指定します。フォーマットは使用している拡張子によって異なる場合があります。拡張機能のドキュメントを参照してください。</help>
         <label><!-- Scope --></label>
         <name>copado__Scope__c</name>
@@ -140,7 +145,7 @@
         <label><!-- View in Git --></label>
         <name>copado__View_in_Git__c</name>
     </fields>
-    <nameFieldLabel><!-- Git Snapshot Name --></nameFieldLabel>
+    <nameFieldLabel>Gitスナップショット名</nameFieldLabel>
     <webLinks>
         <label><!-- Select_Branch --></label>
         <name>copado__Select_Branch</name>

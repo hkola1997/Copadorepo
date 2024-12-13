@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Stage Connection --></value>
+        <value>ステージ接続</value>
     </caseValues>
     <fields>
         <help>パイプラインの最終ステージである場合は、このフィールドを空欄にします。そうでない場合は、次の上位ステージを選択します。ステージ接続は、このパイプラインに属するもののみ選択できます。</help>
@@ -27,5 +27,5 @@
         <name>copado__Stage__c</name>
         <relationshipLabel><!-- Stage Connections --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Stage Connection Name --></nameFieldLabel>
+    <nameFieldLabel>ステージ接続名</nameFieldLabel>
 </CustomObjectTranslation>

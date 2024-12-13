@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Selenium Test Suite --></value>
+        <value>Seleniumテストスイート</value>
     </caseValues>
     <fields>
         <help>このテストスイートを実行した後に実行するオプションのApexコードです。変数 {!NS} を使って、実行中の環境の名前空間に置き換えることができます。</help>
@@ -24,7 +24,7 @@
         <name>copado__Test_Script__c</name>
         <relationshipLabel><!-- Selenium Test Suites --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Selenium Test Suite Name --></nameFieldLabel>
+    <nameFieldLabel>Seleniumテスト・スイート名</nameFieldLabel>
     <webLinks>
         <label><!-- Add_Remove_Test_Cases --></label>
         <name>copado__Add_Remove_Test_Cases</name>

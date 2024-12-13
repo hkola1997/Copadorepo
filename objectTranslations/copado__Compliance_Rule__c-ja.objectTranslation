@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Compliance Rule --></value>
+        <value>コンプライアンス・ルール</value>
     </caseValues>
     <fieldSets>
         <label><!-- Criteria Page Fields --></label>
@@ -95,7 +95,7 @@
         <label><!-- Severity --></label>
         <name>copado__Severity__c</name>
     </fields>
-    <nameFieldLabel><!-- Compliance Rule Name --></nameFieldLabel>
+    <nameFieldLabel>コンプライアンス・ルール名</nameFieldLabel>
     <recordTypes>
         <description><!-- Use this record type to define scan rules run by Copado. --></description>
         <label><!-- Copado --></label>
