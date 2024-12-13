@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- SFDX Environment Extension Fields --></label>
+        <name>cmcSf__SFDX_Environment_Extension_Fields</name>
+    </fieldSets>
     <fields>
         <label><!-- Apex Test Level --></label>
         <name>cmcSf__Apex_Test_Level__c</name>

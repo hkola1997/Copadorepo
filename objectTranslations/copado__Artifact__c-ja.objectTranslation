@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Package --></value>
+        <value>パッケージ</value>
     </caseValues>
     <fieldSets>
         <label><!-- SFDX Package Lightning Page --></label>
@@ -292,7 +292,7 @@ Note that if Api Version has also been specified in the child Package Version, t
         <name>copado__Target_Dev_Hub_Org__c</name>
         <relationshipLabel><!-- Packages (Target Dev Hub Org) --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Package Name --></nameFieldLabel>
+    <nameFieldLabel>パッケージ名</nameFieldLabel>
     <recordTypes>
         <description><!-- Version Control System centric package --></description>
         <label><!-- Git Package --></label>

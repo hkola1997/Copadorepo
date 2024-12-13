@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Persona Permission --></value>
+        <value>ペルソナ権限</value>
     </caseValues>
     <fields>
         <label><!-- Permission Set Name --></label>
@@ -13,5 +13,5 @@
         <name>copado__Persona__c</name>
         <relationshipLabel><!-- Persona Permissions --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Persona Permission Ref --></nameFieldLabel>
+    <nameFieldLabel>ペルソナ権限参照</nameFieldLabel>
 </CustomObjectTranslation>

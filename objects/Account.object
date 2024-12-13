@@ -326,6 +326,16 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Harshatestfield__c</fullName>
+        <externalId>false</externalId>
+        <label>Harshatestfield</label>
+        <length>55</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
@@ -538,16 +548,6 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>school__c</fullName>
-        <externalId>false</externalId>
-        <label>school</label>
-        <length>255</length>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <type>Text</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>ketandev1__c</fullName>
         <externalId>false</externalId>
         <label>ketandev1</label>
@@ -562,6 +562,16 @@
         <externalId>false</externalId>
         <label>ketandev2</label>
         <length>37</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>school__c</fullName>
+        <externalId>false</externalId>
+        <label>school</label>
+        <length>255</length>
         <required>false</required>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Text</type>

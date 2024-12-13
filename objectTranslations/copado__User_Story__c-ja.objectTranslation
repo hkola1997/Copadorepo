@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- User Story --></value>
+        <value>ユーザーストーリー</value>
     </caseValues>
     <fieldSets>
         <label><!-- Add Test Classes --></label>
@@ -888,7 +888,7 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
-    <nameFieldLabel><!-- User Story Reference --></nameFieldLabel>
+    <nameFieldLabel>ユーザーストーリーリファレンス</nameFieldLabel>
     <recordTypes>
         <label><!-- Bug --></label>
         <name>copado__Bug</name>

@@ -159,6 +159,30 @@
                 <identifier>force_highlightsPanel2</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:userStoryMetadataOperationDeleteChecker</componentName>
+                <identifier>copado_userStoryMetadataOperationDeleteChecker</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>locationId</name>
+                    <value>CCM.PackageVersion.DX.USB.Banner</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>locationOnly</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>requiredInformation</name>
+                    <value>Platform</value>
+                </componentInstanceProperties>
+                <componentName>copado:dynamicUISectionContainer</componentName>
+                <identifier>copado_dynamicUISectionContainer</identifier>
+            </componentInstance>
+        </itemInstances>
         <mode>Replace</mode>
         <name>header</name>
         <type>Region</type>
@@ -1867,6 +1891,12 @@
                 </componentInstanceProperties>
                 <componentName>force:relatedListSingleContainer</componentName>
                 <identifier>force_relatedListSingleContainer1</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:packageVersionPublishMessage</componentName>
+                <identifier>copado_packageVersionPublishMessage</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
