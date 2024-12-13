@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Test Suite Script --></value>
+        <value>テスト・スイート・スクリプト</value>
     </caseValues>
     <fields>
         <label><!-- Order --></label>
@@ -18,5 +18,5 @@
         <name>copado__Test__c</name>
         <relationshipLabel><!-- Test Suite Scripts --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Test Suite Script Name --></nameFieldLabel>
+    <nameFieldLabel>テスト・スイート・スクリプト名</nameFieldLabel>
 </CustomObjectTranslation>

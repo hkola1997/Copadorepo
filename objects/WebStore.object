@@ -147,6 +147,10 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>SupportedCurrencies</fullName>
+        <inlineHelpText>The currencies to make available to buyers. Options come from the currencies that are supported by your org.</inlineHelpText>
+    </fields>
+    <fields>
         <fullName>SupportedLanguages</fullName>
         <inlineHelpText>The languages to make available to buyers. Language options come from Translation Workbench.</inlineHelpText>
     </fields>

@@ -9,6 +9,35 @@
 			<apex:stylesheet value="{!URLFOR($Resource.copado__SLDS, 'assets/styles/salesforce-lightning-design-system-vf.min.css')}" />
 
 			<style type="text/css">
+			.lookupInput input {
+				background-color: rgb(255, 255, 255);
+				border: 1px solid rgb(221, 219, 218);
+				border-radius: .25rem;
+				width: 100%;
+				transition: border .1s linear, background-color .1s linear;
+				display: inline-block;
+				padding: 0 1rem 0 .75rem;
+				line-height: 1.875rem;
+				min-height: calc(1.875rem + (1px * 2));
+			}
+
+			.lookupInput a {
+				position: absolute;
+				height: 22px !important;
+				width: 33px !important;
+				margin-left: -33px;
+				margin-top: 3px;
+				background-image: url(/img/setup/search-icon.png) !important;
+				background-repeat: no-repeat !important;
+				background-position: center !important;
+				display: inline-flex !important;
+			}
+
+			.lookupInput a img,
+			.lookupInput a svg {
+				display: none !important;
+			}
+
 	      	.col-right{
 	      		margin-left : 15px;
 	      	}

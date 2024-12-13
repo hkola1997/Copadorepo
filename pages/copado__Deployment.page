@@ -279,8 +279,8 @@
                                             <apex:pageBlockSectionItem >
                                                 <apex:outputPanel >
                                                     <center>
-                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();hideSchedule();resetStatusForDeployment('Deploy later');return false;" id="btnDeploy2"/>
-                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();hideSchedule();resetStatusDeploymentOutstanding('Deploy later'); return false;" id="btnDeployOutstanding2"/>
+                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_ALL}" onclick="lockScreen();hideSchedule();resetStatusForDeployments('Deploy later');return false;" id="btnDeploy2"/>
+                                                        <apex:commandButton value="{!$Label.copado__DEPLOY_OUTSTANDING}" onclick="lockScreen();hideSchedule();resetStatusDeploymentOutstandings('Deploy later'); return false;" id="btnDeployOutstanding2"/>
                                                         <button id="btnScheduleCancel" class="{!IF($User.UIThemeDisplayed=='Theme3','','copado-lightning')}" onclick="hideSchedule();return false;">Close</button>
                                                     </center>
                                                 </apex:outputPanel>
@@ -291,10 +291,10 @@
                                 </span>
                             </center>
                         </div>
-                        <apex:actionFunction action="{!confirmAll}" name="resetStatusForDeployment" oncomplete="updateDeployment();" status="buttonStatus">
+                        <apex:actionFunction action="{!confirmAll}" name="resetStatusForDeployments" oncomplete="updateDeployment();" status="buttonStatus">
                             <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}"/>    
                         </apex:actionFunction>
-                        <apex:actionFunction action="{!confirmOutstanding}" name="resetStatusDeploymentOutstanding" oncomplete="updateDeployment();" reRender="messagesPanel">
+                        <apex:actionFunction action="{!confirmOutstanding}" name="resetStatusDeploymentOutstandings" oncomplete="updateDeployment();" reRender="messagesPanel">
                             <apex:param name="scheduleType" value="" assignTo="{!deployment.Schedule__c}"/>    
                         </apex:actionFunction>
                         <apex:actionFunction action="{!confirm}" name="confirmDeployment" oncomplete="deployCall();" status="buttonStatus"/>

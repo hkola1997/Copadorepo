@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Persona --></value>
+        <value>ペルソナ</value>
     </caseValues>
     <fields>
         <label><!-- Description --></label>
         <name>copado__Description__c</name>
     </fields>
-    <nameFieldLabel><!-- Persona Name --></nameFieldLabel>
+    <nameFieldLabel>ペルソナ名</nameFieldLabel>
 </CustomObjectTranslation>

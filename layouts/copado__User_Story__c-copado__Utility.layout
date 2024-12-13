@@ -56,6 +56,10 @@
                 <behavior>Readonly</behavior>
                 <field>copado__Platform__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -306,6 +310,11 @@
             <sortOrder>7</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
+            <actionName>copado__Create_Scratch_Org</actionName>
+            <actionType>CustomButton</actionType>
+            <sortOrder>12</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>copado__Run_Static_Code_Analysis</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>8</sortOrder>
@@ -319,11 +328,6 @@
             <actionName>copado__Run_Compliance_Scan</actionName>
             <actionType>CustomButton</actionType>
             <sortOrder>10</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>copado__Create_Scratch_Org</actionName>
-            <actionType>CustomButton</actionType>
-            <sortOrder>12</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>copado__Copado_DX</actionName>

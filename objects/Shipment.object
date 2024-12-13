@@ -134,6 +134,10 @@
         <trackHistory>false</trackHistory>
     </fields>
     <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
         <fullName>DeliveredToId</fullName>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>

@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Deployment Job --></value>
+        <value>デプロイメント・ジョブ</value>
     </caseValues>
     <fields>
         <label><!-- Async Job ID --></label>
@@ -109,5 +109,5 @@
         <label><!-- Validation ID --></label>
         <name>copado__Validation_ID__c</name>
     </fields>
-    <nameFieldLabel><!-- Deployment Job Name --></nameFieldLabel>
+    <nameFieldLabel>デプロイメント・ジョブ名</nameFieldLabel>
 </CustomObjectTranslation>

@@ -55,6 +55,10 @@
                 <behavior>Readonly</behavior>
                 <field>copado__Info_URL_Link__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns/>
         <style>TwoColumnsTopToBottom</style>

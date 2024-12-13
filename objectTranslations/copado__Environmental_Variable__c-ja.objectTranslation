@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Environment Variable --></value>
+        <value>環境変数</value>
     </caseValues>
     <fieldSets>
         <label><!-- Related List --></label>
@@ -22,7 +22,7 @@
         <label><!-- Value --></label>
         <name>copado__Value__c</name>
     </fields>
-    <nameFieldLabel><!-- Environment Variable Name --></nameFieldLabel>
+    <nameFieldLabel>環境変数名</nameFieldLabel>
     <validationRules>
         <errorMessage><!-- Value is required --></errorMessage>
         <name>copado__Value_is_required</name>

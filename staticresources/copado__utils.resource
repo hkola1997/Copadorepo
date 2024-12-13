@@ -822,6 +822,11 @@ var coGridHelper = {
                 //should never be undefined in the attachment that we create for backend to use
                 o.r = false;
             }
+            // add for vlocity rollback items.
+            // added typeof check to keep it aligned with above checks but also added if it is null/undefined
+            if (isRollback && (typeof data[len].vk !== 'undefined' || data[len].vk)) { 
+                o.v = true;
+            }
            if(o.r == true) {
                data[len].s && coGridHelper._retrieveOnlyNames.push(o);
             }
