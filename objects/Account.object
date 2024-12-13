@@ -350,6 +350,16 @@
         <type>TextArea</type>
     </fields>
     <fields>
+        <fullName>Harshatestfield__c</fullName>
+        <externalId>false</externalId>
+        <label>Harshatestfield</label>
+        <length>55</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Industry</fullName>
         <trackFeedHistory>false</trackFeedHistory>
         <type>Picklist</type>
