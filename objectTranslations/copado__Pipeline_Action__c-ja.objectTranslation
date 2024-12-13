@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Pipeline Action --></value>
+        <value>パイプラインアクション</value>
     </caseValues>
     <fields>
         <label><!-- Action --></label>
@@ -42,5 +42,5 @@
         <label><!-- Platform --></label>
         <name>copado__Platform__c</name>
     </fields>
-    <nameFieldLabel><!-- Pipeline Action Name --></nameFieldLabel>
+    <nameFieldLabel>パイプライン・アクション名</nameFieldLabel>
 </CustomObjectTranslation>

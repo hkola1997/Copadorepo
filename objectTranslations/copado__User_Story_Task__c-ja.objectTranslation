@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- User Story Task --></value>
+        <value>ユーザーストーリータスク</value>
     </caseValues>
     <fields>
         <label><!-- Comments --></label>
@@ -57,5 +57,5 @@
         <label><!-- Last Synced Date --></label>
         <name>copadoconnect__Last_Synced_Date__c</name>
     </fields>
-    <nameFieldLabel><!-- User Story Task Name --></nameFieldLabel>
+    <nameFieldLabel>ユーザーストーリータスク名</nameFieldLabel>
 </CustomObjectTranslation>

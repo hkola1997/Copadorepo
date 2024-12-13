@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Persona --></value>
+        <value>ペルソナ’</value>
     </caseValues>
     <fields>
         <label><!-- Config JSON --></label>
@@ -16,5 +16,5 @@
         <label><!-- Is Standard --></label>
         <name>copado__Is_Standard__c</name>
     </fields>
-    <nameFieldLabel><!-- Persona Name --></nameFieldLabel>
+    <nameFieldLabel>ペルソナ名</nameFieldLabel>
 </CustomObjectTranslation>

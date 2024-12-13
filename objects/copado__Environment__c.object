@@ -154,6 +154,21 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>cmcSf__SFDX_Environment_Extension_Fields</fullName>
+        <description>Environment Extension Details</description>
+        <displayedFields>
+            <field>copado__Minimum_Apex_Test_Coverage__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Apex_Test_Level__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SFDX Environment Extension Fields</label>
+    </fieldSets>
     <fields>
         <fullName>cmcSf__Apex_Test_Level__c</fullName>
         <deprecated>false</deprecated>
@@ -587,7 +602,7 @@
     <sharingModel>ReadWrite</sharingModel>
     <validationRules>
         <fullName>cmcSf__Prevent_RunSpecifiedTest_For_Environment</fullName>
-        <active>true</active>
+        <active>false</active>
         <errorConditionFormula>ISPICKVAL(cmcSf__Apex_Test_Level__c,&apos;Run Specified Tests&apos;)</errorConditionFormula>
         <errorMessage>We do not recommend to set “Run Specified Test” on an environment level, unless you are 100% sure that ALL deployments contain Apex. If this is the case, you can deactivate this Validation Rule.</errorMessage>
     </validationRules>

@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Static Code Analysis Result --></value>
+        <value>静的コード分析結果</value>
     </caseValues>
     <fields>
         <label><!-- Blocker --></label>
@@ -107,7 +107,7 @@
         <label><!-- Won&apos;t fix --></label>
         <name>copado__Wont_fix__c</name>
     </fields>
-    <nameFieldLabel><!-- Static Code Analysis Result Name --></nameFieldLabel>
+    <nameFieldLabel>静的コード分析結果名</nameFieldLabel>
     <recordTypes>
         <description><!-- Record Type for CodeScan integration. Requires CodeScan licensing. --></description>
         <label><!-- CodeScan --></label>

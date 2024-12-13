@@ -32,6 +32,10 @@
                 <behavior>Edit</behavior>
                 <field>copado__Risk__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CurrencyIsoCode</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

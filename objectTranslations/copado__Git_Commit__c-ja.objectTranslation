@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Git Commit --></value>
+        <value>Gitコミット</value>
     </caseValues>
     <fields>
         <label><!-- Branch --></label>
@@ -33,5 +33,5 @@
         <name>copado__Git_Repository__c</name>
         <relationshipLabel><!-- Git Commits --></relationshipLabel>
     </fields>
-    <nameFieldLabel><!-- Git Commit Name --></nameFieldLabel>
+    <nameFieldLabel>Git コミット名</nameFieldLabel>
 </CustomObjectTranslation>

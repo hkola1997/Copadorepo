@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Project --></value>
+        <value>プロジェクト</value>
     </caseValues>
     <fields>
         <help>このフィールドは、アクションでプロジェクトレコードを参照する際に、その識別子として使用します。</help>
@@ -124,7 +124,7 @@ Usage exp: issueType=Story and resolution=Duplicate --></help>
         <label><!-- Organization --></label>
         <name>copadoconnect__Organization__c</name>
     </fields>
-    <nameFieldLabel><!-- Project Name --></nameFieldLabel>
+    <nameFieldLabel>プロジェクト名</nameFieldLabel>
     <webLinks>
         <label><!-- Sync_External_User_Stories --></label>
         <name>copadoccmint__Sync_External_User_Stories</name>
