@@ -29,6 +29,8 @@ public virtual with sharing class VSTSIntegrationConstants extends CommonIntegra
     protected final String CLOSING_TAG = '>';
     protected final String VALUE_KEYWORD = 'value';
     //tpu field names
+    protected final String TEAM_FIELD = 'System.AreaPath';
+    protected final String THEME_TAGS = 'System.Tags';
     protected final String ASSIGNED_TO = Label.ADODeveloperFieldName;
     protected final String PROJECT = 'System.TeamProject';
     protected final String WORK_ITEM_TYPE = 'System.WorkItemType';
@@ -42,7 +44,7 @@ public virtual with sharing class VSTSIntegrationConstants extends CommonIntegra
     protected final String ITERATION_PATH = '/_apis/work/teamsettings/iterations';
     //endpoint api versions
     protected final String authApiVersion = '?api-version=4.1';
-    protected final String AUTH_API_VERSION_SIX = '?api-version=6.0-preview.1';
+    protected final String AUTH_API_VERSION_SIX = '?api-version='+Label.ADOApiVersion;
     //endpoint path to reach work items returned from query callout
     protected final String workspacePath = '/_apis/wit/workitems?ids=';
     //endpoint path to use on patch operation

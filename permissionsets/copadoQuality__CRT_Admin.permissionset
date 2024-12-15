@@ -16,6 +16,10 @@
         <apexClass>copadoQuality__OpenCrtCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <classAccesses>
+        <apexClass>copadoQuality__TestSelectorController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <hasActivationRequired>false</hasActivationRequired>
     <label>CRT Admin</label>
 </PermissionSet>

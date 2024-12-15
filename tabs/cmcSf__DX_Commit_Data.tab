@@ -2,6 +2,6 @@
 <CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
     <description>Created by Lightning App Builder</description>
     <flexiPage>cmcSf__DX_Commit_Data</flexiPage>
-    <label>DX Commit Data</label>
+    <label>Commit Data</label>
     <motif>Custom14: Hands</motif>
 </CustomTab>
