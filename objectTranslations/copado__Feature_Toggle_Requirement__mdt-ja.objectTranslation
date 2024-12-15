@@ -14,19 +14,19 @@
         <name>copado__Type__c</name>
         <picklistValues>
             <masterLabel>Copado License</masterLabel>
-            <translation><!-- Copado License --></translation>
+            <translation>コパードライセンス</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Custom Permission</masterLabel>
-            <translation><!-- Custom Permission --></translation>
+            <translation>カスタム権限</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Permission Set</masterLabel>
-            <translation><!-- Permission Set --></translation>
+            <translation>権限セット</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Permission Set Group</masterLabel>
-            <translation><!-- Permission Set Group --></translation>
+            <translation>権限セットグループ</translation>
         </picklistValues>
     </fields>
     <fields>

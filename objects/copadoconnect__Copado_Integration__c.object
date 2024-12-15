@@ -186,8 +186,25 @@
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>
+        <displayedFields>
+            <field>copadoconnect__Appendix__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
         <label>ConnectionDetailFieldSet</label>
     </fieldSets>
+    <fields>
+        <fullName>copadoconnect__Appendix__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>When creating one to multiple project mapping between JIRA and Salesforce, use this field by providing unique text values for each Copado Integration record under same project Key. This is used only for JIRA as provider.</inlineHelpText>
+        <label>Appendix</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
     <fields>
         <fullName>copadoconnect__Connection_Status__c</fullName>
         <deprecated>false</deprecated>
@@ -280,6 +297,16 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copadoconnect__JQL_Extended_Filter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field to store the JIRA provider JQL query</description>
+        <inlineHelpText>JQL filter defines the syncing criteria. To check for duplicates, validate the jql filter before activating.Syncing will fail if multiple integration records (with same JIRA projects) have the same JQL filter values.</inlineHelpText>
+        <label>JQL Extended Filter</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
         <fullName>copadoconnect__Named_Credential__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -333,6 +360,55 @@
                     <fullName>ServiceNow</fullName>
                     <default>false</default>
                     <label>ServiceNow</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Server_Info__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Server Info</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Validation_Error_Message__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field to store the validation error messages</description>
+        <label>Validation Error Message</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>copadoconnect__Validation_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is used to show the Validation status of the integration records</description>
+        <label>Validation Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not Validated</fullName>
+                    <default>true</default>
+                    <label>Not Validated</label>
+                </value>
+                <value>
+                    <fullName>Success</fullName>
+                    <default>false</default>
+                    <label>Success</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
                 </value>
             </valueSetDefinition>
         </valueSet>

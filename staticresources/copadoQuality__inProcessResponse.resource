@@ -1,4 +1,4 @@
-{
+[{
     "message": "Build fetched",
     "data": {
         "id": 66148,
@@ -364,4 +364,4 @@
         "hasTestGenerationStatistics": false,
         "recorded": "all"
     }
-}
+}]

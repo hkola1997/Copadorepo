@@ -107,18 +107,18 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
     public Boolean thirdParty = FALSE;
     public Map<String, String> fieldMap {
         get {
-            if (thirdParty && null == fieldMap) {
-                fieldMap = CopadoCCMutilities.returnFieldMap(pId, DONT_EXCLUDE_FROM_SALESFORCE);
-            } else if (null == fieldMap) {
+            if(thirdParty && null == fieldMap){
+                fieldMap = CopadoCCMutilities.returnFieldMap(pId, DONT_EXCLUDE_FROM_SALESFORCE );
+            }else if (null == fieldMap) {
                 fieldMap = CopadoCCMutilities.returnFieldMap(pId, DONT_EXCLUDE_FROM_THIRD_PARTY);
-            }
+            } 
             return fieldMap;
         }
-        set;
+        private set;
     }
 
     //string comma seperated queries to us on sObject record query on updateRecord method
-    public String queryFields {
+    private String queryFields {
         get {
             if (String.isBlank(queryFields)) {
                 queryFields = String.join(new List<String>(fieldMap.keyset()), COMMA);
@@ -137,7 +137,7 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
         projectExtId = usItem.copado__Project__r.Project_External_Id__c;
         workspaceId = usItem.copado__Project__r.Workspace_Id__c;
         Id usId = usItem.id;
-        Sobject cUserStory = Database.query('SELECT ' + queryFields + ',enable_logs__c FROM copado__user_story__c WHERE id=:usId');
+        Sobject cUserStory = Database.query('SELECT ' + String.escapeSingleQuotes(queryFields) + ',enable_logs__c FROM copado__user_story__c WHERE id=:usId');
         String finalJson = '[{';
         for (String fieldName : fieldMap.keyset()) {
             if (null != cUserStory.get(fieldName)) {
@@ -168,7 +168,6 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
             cUserStory,
             null
         );
-        CopadoCCMutilities.createLogRecords();
     }
 
     /**
@@ -391,8 +390,13 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                 if (sprintIdByName.containsKey(sprintName)) {
                     keyValuepairTempMap.put(SPRINT_ID, sprintIdByName.get(sprintName));
                 }
+            }  else if(sItem == TEAM_FIELD){
+                List<String> teamArray = String.valueOf(fields.get(sItem)).split('\\\\');
+                keyValuepairTempMap.put(TEAM_WORD, teamArray[teamArray.size() - 1]);
+            } else if(sItem == THEME_TAGS){
+                keyValuepairTempMap.put(THEME_KEYWORD, String.valueOf(fields.get(sItem)));
             } else if (sItem == ASSIGNED_TO) {
-                String userEmail;
+                String userEmail, userName;
                 if (String.valueOf(fields.get(sItem)).contains(OPENING_TAG)) {
                     //fills up user look up fields, if email address in use on Third Party Platform matches any of the email addresses on current salesforce org.
                     userEmail = String.valueOf(fields.get(sItem)).subStringAfter(OPENING_TAG).subsTringBefore(CLOSING_TAG);
@@ -401,10 +405,16 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                     if (currentValue.containsKey(UNIQUE_NAME)) {
                         userEmail = String.valueOf(currentValue.get(UNIQUE_NAME));
                     }
+                    if(currentValue.containsKey(DISPLAY_NAME)){
+                        userName = String.valueOf(currentValue.get(DISPLAY_NAME));
+                    }
                 }
                 if(String.isNotBlank(userEmail)){
                     userEmail = userEmail.toLowerCase();
                     keyValuepairTempMap.put(DEVELOPER_KEYWORD, userEmail);
+                }
+                if(String.isNotBlank(userName)){
+                    keyValuepairTempMap.put(DEVELOPER_KEYWORD+'__dname', userName);
                 }
             } else if (
                 fields.get(sItem) instanceof String ||
@@ -428,11 +438,10 @@ public with sharing class VSTSIntegration extends VSTSIntegrationConstants imple
                 keyValuepairTempMap.put(sItem.toLowerCase(), String.valueOf(fields.get(sItem)));
             }
         }
-        //Adding developer key for unassigned workitems
+        
         if(!keyValuepairTempMap.containskey(DEVELOPER_KEYWORD)){
             keyValuepairTempMap.put(DEVELOPER_KEYWORD,null);
         }
-
         return keyValuepairTempMap;
     }
 
