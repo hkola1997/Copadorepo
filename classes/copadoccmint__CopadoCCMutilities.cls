@@ -6,7 +6,53 @@
  * @version 1.0
  * @since CCM Integrations 1.0
  */
-public with sharing class CopadoCCMutilities {
+global with sharing class CopadoCCMutilities {
+    
+    @InvocableMethod(Label='Clone project with child records' Description='Clone project with child records' category='Integration Project creation')
+    global static List<String> cloneProjectWithChildRecords(List<Id> proIds) {
+        copado__project__c project = [SELECT Id, Name, copado__Deployment_Flow__c, copado__Description__c, copado__End_Date__c, copado__Start_Date__c, copado__Status__c, copado__Index_Metadata__c, copado__Exclude_Tabs_from_Promotion_Page__c, copadoccmint__Copado_Integration_Setting__c, copadoccmint__Enable_Community_User__c, copadoccmint__Enable_Logs__c, copadoccmint__JQL_Extended_Filter__c, copadoccmint__Project_External_Id__c, copadoccmint__Sprint_Per_Batch_Chunk_Size__c, copadoccmint__Team_Info__c, copadoccmint__Workspace_Id__c,
+            (SELECT Id, copadoccmint__Project__c, copadoccmint__SF_Theme_Name__c, copadoccmint__TP_Theme_Name__c FROM copadoccmint__Theme_Mappings__r), 
+            (SELECT Id, copadoccmint__Project__c, copadoccmint__Salesforce_Record_Type_Name__c, copadoccmint__Third_Party_Record_Type_Name__c FROM copadoccmint__Record_Type_Mappings__r),
+            (SELECT Id, copadoccmint__Exclude_from_su__c, copadoccmint__Exclude_from_tpu__c, copadoccmint__Project__c, copadoccmint__Salesforce_Field_Name__c, copadoccmint__Target_Field_Type__c, copadoccmint__Third_Party_Field_Name__c FROM copadoccmint__Field_Mappings__r) FROM copado__Project__c WHERE Id IN : proIds WITH USER_MODE];
+        
+        copado__project__c clonedProject = project.clone(false, false, false, false);
+        clonedProject.Name = clonedProject.Name + ' (cloned project)';
+        insert clonedProject;    
+        
+        List<copadoccmint__Theme_Mapping__c> themeMappings = new List<copadoccmint__Theme_Mapping__c>();
+        for(copadoccmint__Theme_Mapping__c theme : project.copadoccmint__Theme_Mappings__r){
+            copadoccmint__Theme_Mapping__c newTheme = new copadoccmint__Theme_Mapping__c();
+            newTheme.copadoccmint__Project__c = clonedProject.Id;
+            newTheme.copadoccmint__SF_Theme_Name__c = theme.copadoccmint__SF_Theme_Name__c;
+            newTheme.copadoccmint__TP_Theme_Name__c = theme.copadoccmint__TP_Theme_Name__c;
+            themeMappings.add(newTheme);
+        }
+        insert themeMappings;
+        
+        List<copadoccmint__Field_Mapping__c> fieldMappings = new List<copadoccmint__Field_Mapping__c>();
+        for(copadoccmint__Field_Mapping__c fieldMapping : project.copadoccmint__Field_Mappings__r){
+            copadoccmint__Field_Mapping__c newFieldMapping = new copadoccmint__Field_Mapping__c();
+            newFieldMapping.copadoccmint__Project__c = clonedProject.Id;
+            newFieldMapping.copadoccmint__Exclude_from_su__c = fieldMapping.copadoccmint__Exclude_from_su__c;
+            newFieldMapping.copadoccmint__Exclude_from_tpu__c = fieldMapping.copadoccmint__Exclude_from_tpu__c;
+            newFieldMapping.copadoccmint__Salesforce_Field_Name__c = fieldMapping.copadoccmint__Salesforce_Field_Name__c;
+            newFieldMapping.copadoccmint__Target_Field_Type__c = fieldMapping.copadoccmint__Target_Field_Type__c;
+            newFieldMapping.copadoccmint__Third_Party_Field_Name__c = fieldMapping.copadoccmint__Third_Party_Field_Name__c;
+            fieldMappings.add(newFieldMapping);
+        }
+        insert fieldMappings;
+        
+        List<copadoccmint__Record_Type_Mapping__c> recordTypes = new List<copadoccmint__Record_Type_Mapping__c>();
+        for(copadoccmint__Record_Type_Mapping__c recortTypeMapping : project.copadoccmint__Record_Type_Mappings__r){
+            copadoccmint__Record_Type_Mapping__c newrecortTypeMapping = new copadoccmint__Record_Type_Mapping__c();
+            newrecortTypeMapping.copadoccmint__Project__c = clonedProject.Id;
+            newrecortTypeMapping.copadoccmint__Salesforce_Record_Type_Name__c = recortTypeMapping.copadoccmint__Salesforce_Record_Type_Name__c;
+            newrecortTypeMapping.copadoccmint__Third_Party_Record_Type_Name__c = recortTypeMapping.copadoccmint__Third_Party_Record_Type_Name__c;
+            recordTypes.add(newrecortTypeMapping);
+        }
+        insert recordTypes;
+        return new List<String>{clonedProject.Id};
+    }
     //callout log list to be inserted as a final action
     public static List<Callout_Log__c> callOutLogList2Insert {
         get {
@@ -127,6 +173,29 @@ public with sharing class CopadoCCMutilities {
         return String.valueOf(param).replace('T', ' ');
     }
 
+    public static Map<String, Id> returnThemeMap() {
+        Map<String, Id> themeMap = new Map<String, Id>();
+        for (copado__Theme__c theme : [SELECT Id, Name FROM copado__Theme__c]){
+            themeMap.put(theme.Name.toLowerCase(), theme.Id);
+        }
+        return themeMap;
+    }
+    public static Map<String, Id> returnTeamMap() {
+        Map<String, Id> teamMap = new Map<String, Id>();
+        for (copado__Team__c team : [SELECT Id, Name FROM copado__Team__c]){
+            teamMap.put(team.Name.toLowerCase(), team.Id);
+        }
+        return teamMap;
+    }
+
+    public static Map<String, String> returnThemeMappingForProject(Id projectId){
+        Map<String, String> themeMapping = new Map<String, String>();
+        for(Theme_Mapping__c tm : [SELECT SF_Theme_Name__c, TP_Theme_Name__c FROM Theme_Mapping__c WHERE Project__c = : projectId]){
+            themeMapping.put(tm.TP_Theme_Name__c.toLowerCase(), tm.SF_Theme_Name__c.toLowerCase());
+        }
+        return themeMapping;
+    }
+
     //Field mapping values between salesforce and third party platform fields under related project
     public static Map<String, String> returnFieldMap(id pid, String additionalWhereClause) {
         Map<String, String> fieldMap;
@@ -135,7 +204,7 @@ public with sharing class CopadoCCMutilities {
             for (
                 Field_Mapping__c fm : database.query(
                     'SELECT Salesforce_Field_Name__c, Third_Party_Field_Name__c FROM Field_Mapping__c WHERE project__c =: pid ' +
-                    additionalWhereClause
+                    CommonIntegrationConstants.MAP_ADDITIONAL_WHERE.get(additionalWhereClause)
                 )
             ) {
                 fieldMap.put(fm.Salesforce_Field_Name__c.toLowerCase(), fm.Third_Party_Field_Name__c.toLowerCase());
@@ -189,7 +258,7 @@ public with sharing class CopadoCCMutilities {
             for (
                 Field_Mapping__c fm : database.query(
                     'SELECT Salesforce_Field_Name__c, Third_Party_Field_Name__c, Target_Field_Type__c FROM Field_Mapping__c WHERE project__c =: pid ' +
-                    additionalWhereClause
+                    CommonIntegrationConstants.MAP_ADDITIONAL_WHERE.get(additionalWhereClause)
                 )
             ) {
                 fieldMap.put(

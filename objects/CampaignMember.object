@@ -209,5 +209,27 @@
     <fields>
         <fullName>Title</fullName>
     </fields>
+    <fields>
+        <fullName>et4ae5__Activity__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Activity</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Unsubscribed</fullName>
+                    <default>false</default>
+                    <label>Unsubscribed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
     <sharingModel>ControlledByCampaign</sharingModel>
 </CustomObject>

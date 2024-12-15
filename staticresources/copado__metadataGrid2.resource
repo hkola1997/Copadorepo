@@ -598,7 +598,7 @@ MetadataGrid2.prototype.render = function(cbAfterRender) {
             console.debug('args===> ',args);
             if (args) {
                 that.filterByTypeSelectedIndex = args.index;
-                that.filterByType = args.item.label;
+                that.filterByType = args.item != null ? args.item.label : '';
             }
         });
         this.eltMetaDataTypeFilter.bind('close', function(event) {
@@ -944,6 +944,8 @@ MetadataGrid2.prototype.loadMetaData = function(callbackFinished, forceRefresh) 
         url = rock.config.metadata_url;
     }
     console.debug('MetadataGrid2.loadMetaData', 'force?' + forceRefresh, conf.data.orgId, this.filterByType, url);
+    that._enableRefreshSelectedMtdataBtn();
+    
     dw.u.getCachedRemote({
        url: url,
        name: this.filterByType || conf.attachmentName,
@@ -1046,16 +1048,32 @@ MetadataGrid2.prototype.loadData = function(callbackFinished) {
 MetadataGrid2.prototype.refreshCache = function(callbackFinished) {
     var that = this;
     lockScreen();
+
     this.loadMetaData(function(cachedDate) {
+        $copado('[id="refreshComplete"]').val('true');
         console.info('MetadataGrid2.refreshCache() grid data refreshed');
         that.render();
         unlockScreen();
         // set refresh cache done
         $copado('[id="notificationModalRefresh"]').hide();
         $copado('[id="backDropRefresh"]').hide();
-        clearMessagesMap();
-        if (callbackFinished) callbackFinished(cachedDate);
+        if (typeof clearMessagesMap !== 'undefined') {
+            clearMessagesMap();
+        }
+        if (callbackFinished) {
+            callbackFinished(cachedDate);
+        }
     }, true);
+ };
+
+MetadataGrid2.prototype._enableRefreshSelectedMtdataBtn = function() {
+    var that = this;
+    const REFRESH = 'Refresh ';
+    let refreshSelectedMetadata = $copado('[id="btnRefreshSelectedMetadata"]');
+    if(refreshSelectedMetadata){
+        refreshSelectedMetadata.text(REFRESH+that.filterByType);
+        refreshSelectedMetadata.prop('disabled', false);
+    }
  };
 
  // calls the API to refresh the metadata attachment (filtered or not)
