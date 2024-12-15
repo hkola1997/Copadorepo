@@ -129,6 +129,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__CopadoIntegrationActivationCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__CopadoIntegrationSelector</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -277,6 +281,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__JiraGetCreatableProjectFieldsModel</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__JiraGetIssueAdaptor</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -354,6 +362,14 @@
     </classAccesses>
     <classAccesses>
         <apexClass>copadoconnect__JiraGetReleasesServiceTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetServerInfoModel</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__JiraGetServerInfoService</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -685,6 +701,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>copadoconnect__ValidateIntegrationCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>copadoconnect__ValidateIntegrationCtrlTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copadoconnect__WebhookPayload</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -863,6 +887,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Appendix__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copadoconnect__Copado_Integration__c.copadoconnect__Connection_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -888,6 +917,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__JQL_Extended_Filter__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>copadoconnect__Copado_Integration__c.copadoconnect__Named_Credential__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -899,6 +933,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>copadoconnect__Copado_Integration__c.copadoconnect__Project__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Server_Info__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Validation_Error_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>copadoconnect__Copado_Integration__c.copadoconnect__Validation_Status__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

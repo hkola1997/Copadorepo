@@ -29,6 +29,7 @@
 
     <script>
         var tableIdPaginationObject = {};
+        var outOfSyncUserStories = [];
         var copadoApp = {
             ns: '{!JSENCODE(namespace)}',
             data: {
@@ -430,6 +431,10 @@
             });
             tabDatatable.css("border-top","0");
 
+            tabDatatable.on('draw.dt', function() {
+                showWarningForOutOfSyncUserStories();
+            });
+
             var filterObj = $copado('#userStoriesTable_filter');
             reParentFilter(filterObj);
         }
@@ -628,6 +633,57 @@
                 .trigger('change');
             tableIdPaginationObject[tableId] = tableData;
         };
+
+        function callBackPromoteNotify() {
+            const requiredCheck = document.getElementById('userStoriesTable');
+            if(requiredCheck) {
+                backPromoteNotify();
+            } else {
+                setTimeout(callBackPromoteNotify, 1000);
+            }
+        }
+
+        function showWarningForOutOfSyncUserStories() {
+            if(outOfSyncUserStories?.length) {
+                for(let i=0; i< outOfSyncUserStories.length; i++) {
+                    $copado('#userStoryTable_'+outOfSyncUserStories[i])?.removeClass('slds-hide');
+                }
+            }
+        }
+
+        function backPromoteNotify() {
+            try {
+                const newOverlayJson = $copado('[id$="newOverlayJsonMap"]').val();
+                const parsedJson = JSON.parse(newOverlayJson);
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.PipelineManagerExtension.outOfSyncEnvironmentWithUserStories}',
+                    newOverlayJson,
+                    '{!currentPipeline.Id}',
+                    function(result, event) {
+                        if (event.status) {
+                            try {
+                                outOfSyncUserStories = JSON.parse(result);
+                                 if(outOfSyncUserStories?.length) {
+                                    document.querySelector('.outofsyncmanager').classList.remove('slds-hide');
+                                    document.querySelector('#out-of-sync_user-stories').innerHTML = document.querySelector('#out-of-sync_user-stories').innerHTML + ': ' + outOfSyncUserStories.length + ' ' + '{!JSENCODE($Label.User_Stories)}'; 
+                                    showWarningForOutOfSyncUserStories();
+                                }
+                            } catch (error) {
+                                console.error('Parsing error on Back Promotion Awareness:', error);
+                            }
+                        } else if (event.type === 'exception') {
+                            console.error('Back Promotion Awareness Exception:', event.message);
+                        } else {
+                            console.error('Back Promotion Awareness Error:', event.message);
+                        }
+                    },
+                    {escape: false}
+                );
+            }
+            catch(err) {
+               console.error('Error occurred while identifying User Stories from back promotion criteria', err);
+            }
+        }    
     </script>
 
     <!-- pipeline promotion and diagram -->
@@ -648,7 +704,33 @@
             width:34%;
             min-width: 250px;
         }
-        /* end pipeline diagram */
+
+        /* Back Promotion Notification*/
+        .outofsyncmanager {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .outofsyncmanager .out-of-sync_tooltip {
+            position: absolute;
+            top: -125px;
+            left: 30%;
+            z-index: 99999;
+            width: 20rem;
+        }
+
+        .outofsyncmanager .slds-badge {
+            font-size: 1rem !important;
+            font-weight: 200 !important;
+        }
+
+        .out-of-sync_tooltip {
+            display:none !important; 
+        }
+
+        .outofsyncmanager:hover .out-of-sync_tooltip {
+            display: block !important; 
+        }
     </style>
     <!-- end pipeline promotion and diagram -->
 
@@ -2125,7 +2207,7 @@
         <apex:actionFunction name="promotionInfo" action="{!promotionInfo}" reRender="copadoErrorPanelForDialog" />
         <apex:actionFunction name="switchToSelenium" action="{!showSeleniumResultsTab}" onComplete="renderTable4Selenium();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
         <apex:actionFunction name="switchToCompliance" action="{!showComplianceResultsTab}" onComplete="renderTable4Compliance();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
-        <apex:actionFunction name="switchToUserStory" action="{!showUserStoriesTab}" onComplete="renderTable();unlockScreen();" reRender="fieldSets,GeneralActionButtons" />
+        <apex:actionFunction name="switchToUserStory" action="{!showUserStoriesTab}" onComplete="renderTable();unlockScreen();callBackPromoteNotify();" reRender="fieldSets,GeneralActionButtons" />
         <apex:actionFunction name="prepareEnvApprovals" reRender="approvalRenderPanel" onComplete="rerenderApprovalDatatable()">
             <apex:param name="approvalEnvId" value="" />
         </apex:actionFunction>
@@ -2246,15 +2328,36 @@
                                 </span>
                             </apex:outputPanel>
                             <apex:outputPanel layout="none" rendered="{!newOverlay.pathType != 'merge'}">
+                            <div>
                                 <span class="slds-text-heading_medium">
                                     {!newOverlay.toEnvName}
+                                </span>
+                                <span class="outofsyncmanager slds-hide">
+                                    <span class="slds-badge slds-theme_error">
+                                        <span class="slds-badge__icon slds-badge__icon_left slds-badge__icon_inverse">
+                                            <span class="slds-icon_container slds-icon-utility-warning slds-current-color" title="Description of icon when needed">
+                                                <svg class="slds-icon slds-icon_xx-small" aria-hidden="true">
+                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span id="out-of-sync_user-stories"><strong>{!$Label.EnvironmentOutOfSyncTitleOnBackPromotionPage}</strong></span>
+                                    </span>
+                                    <div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left out-of-sync_tooltip" role="tooltip" id="help">
+                                        <div class="slds-popover__body">
+                                            <strong>{!$Label.ActionRequired}</strong>: {!$Label.EnvironmentOutOfSyncMessageOnBackPromotionPage}
+                                        </div>
+                                    </div>
+                                </span>
+                                <span>
                                     <svg class="slds-button__icon slds-button__icon_right" aria-hidden="true">
                                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#back')}"></use>
                                     </svg>
                                 </span>
                                 <span class="slds-text-heading_medium">
                                         {!newOverlay.fromEnvName}
-                                    </span>
+                                </span>
+                            </div>
                             </apex:outputPanel>
                         </apex:outputPanel>
                         <apex:outputPanel id="pins" layout="block" styleClass="slds-grid" style="width: 100%; margin-top: 15px;">
@@ -2316,6 +2419,11 @@
                                         <apex:repeat value="{!newOverlay.userStories}" var="us" id="userStoryRepeat">
                                             <tr class="slds-hint-parent">
                                                 <td role="gridcell" class="slds-text-align_right" style="width: 3.25rem;">
+                                                    <span id="userStoryTable_{!us.userStory['Id']}" class="slds-hide">
+                                                        <svg class="slds-button__icon slds-button__icon_left slds-icon-text-warning" aria-hidden="true">
+                                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{!URLFOR($Asset.SLDS, '/assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                                                        </svg>
+                                                    </span>
                                                     <apex:inputCheckbox id="checkbox-2" value="{!us.isSelected}" onClick="changeSelectAll('userStoriesTable', 'selectAll');" />
                                                 </td>
                                                 <apex:repeat value="{!$ObjectType.copado__User_Story__c.FieldSets.copado__CBM_Fields}" var="fld">
@@ -2338,6 +2446,7 @@
                                         </tbody>
                                     </table>
                                 </fieldset>
+                                <apex:inputHidden value="{!newOverlayJSON}" id="newOverlayJsonMap" />
                             </apex:outputPanel>
                             <!-- END OF USER STORIES FIELDSET -->
                             <!-- COMPLIANCE RESULT FIELDSET -->

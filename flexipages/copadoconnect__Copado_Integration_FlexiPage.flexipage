@@ -235,6 +235,109 @@
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Name</fieldItem>
+                <identifier>RecordNameField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>required</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoconnect__Provider__c</fieldItem>
+                <identifier>RecordProvider_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoconnect__JQL_Extended_Filter__c</fieldItem>
+                <identifier>RecordJQL_Extended_Filter_cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Provider__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>JIRA</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Named_Credential__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.copadoconnect__Description__c</fieldItem>
+                <identifier>RecordDescription_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-3d25c20c-a1ce-43ef-9f7e-b2018544183c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>Facet-afa84d48-9784-4e7a-b47f-f55b48264ffb</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-3d25c20c-a1ce-43ef-9f7e-b2018544183c</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-afa84d48-9784-4e7a-b47f-f55b48264ffb</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-da2b31c9-8054-458e-bd80-db5e25bd3287</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copadoconnect:validateIntegration</componentName>
+                <identifier>c_validateIntegration</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Provider__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>JIRA</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.copadoconnect__Connection_Status__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Connected</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentName>copadoconnect:connectionDetailsCard</componentName>
                 <identifier>connectionDetailsCard</identifier>
@@ -248,8 +351,26 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>force:detailPanel</componentName>
-                <identifier>force_detailPanel</identifier>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-da2b31c9-8054-458e-bd80-db5e25bd3287</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>force:recordDetailPanelMobile</componentName>
+                <identifier>force_recordDetailPanelMobile</identifier>
             </componentInstance>
         </itemInstances>
         <name>sidebar</name>

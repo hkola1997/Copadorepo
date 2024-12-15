@@ -97,6 +97,16 @@
                         <valueListItems>
                             <value>Delete</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>copado__Deployment_Flow__c.copado__Pipeline_Builder</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.copado__Platform__c}</leftValue>
+                                    <operator>NE</operator>
+                                    <rightValue>Salesforce</rightValue>
+                                </criteria>
+                            </visibilityRule>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -385,6 +395,12 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>copado:pipelineResumeWizard</componentName>
+                <identifier>c_pipelineResumeWizard</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-21e4d7a3-4876-4e6c-895a-a453f558fa40</name>
@@ -719,6 +735,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:outOfSyncAlerts</componentName>
+                <identifier>c_outOfSyncAlerts</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-05005379-b235-4f81-a5d1-042ccea3b3ab</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__Deployment_Flow__c.Id</value>
@@ -843,6 +869,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab9</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-05005379-b235-4f81-a5d1-042ccea3b3ab</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__OutOfSyncAlerts}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1340,6 +1380,16 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:outOfSyncAlerts</componentName>
+                <identifier>c_outOfSyncAlerts2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-d742c32d-79b7-4157-909a-e54762cac9f9</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>parentFieldApiName</name>
                     <value>copado__Deployment_Flow__c.Id</value>
@@ -1454,6 +1504,20 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>customTab4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-d742c32d-79b7-4157-909a-e54762cac9f9</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>{!$Label.copado__OutOfSyncAlerts}</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab4</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

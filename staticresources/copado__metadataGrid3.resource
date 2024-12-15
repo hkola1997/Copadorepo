@@ -1496,8 +1496,11 @@ var MetadataGrid3 = (() => {
                 if (gitPromotionContent != null) {
                     unZipDecode(gitPromotionContent, { base64: true }).then( function (gitPromo){
                         gitPromotionZip = Object.keys(gitPromo[0].files).length ? gitPromo : '';
-                        if (gitPromotionZip != '' && gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) {
-                            sourceContent = gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
+                        if (gitPromotionZip != '' && ((gitPromotionZip instanceof Array && gitPromotionZip[0].file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json')) ||
+                                                        gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json'))) {
+                            sourceContent = gitPromotionZip instanceof Array ?
+                                gitPromotionZip[0].file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json') :
+                                gitPromotionZip.file('vlocity/' + type + '/' + name + '/' + name + '_DataPack.json');
                             getContent(sourceContent).then( function(content) {
                                 content = content ? content : '';
                                 app.target[index] = targetText;

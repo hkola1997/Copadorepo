@@ -91,8 +91,7 @@ public with sharing class JiraIntegration extends JiraIntegrationConstants imple
                 fieldMap = CopadoCCMutilities.returnFieldMap(pId, DONT_EXCLUDE_FROM_THIRD_PARTY);
             }
             return fieldMap;
-        }
-        set;
+        } private set;
     }
 
     public String fieldsToFetch {
@@ -125,7 +124,7 @@ public with sharing class JiraIntegration extends JiraIntegrationConstants imple
     }
 
     //String comma seperated queries to us on sObject record query on updateRecord method
-    public String queryFields {
+    private String queryFields {
         get {
             if (String.isBlank(queryFields)) {
                 queryFields = String.join(new List<String>(fieldMap.keyset()), COMMA);
@@ -153,7 +152,7 @@ public with sharing class JiraIntegration extends JiraIntegrationConstants imple
         projectExtId = usItem.copado__Project__r.Project_External_Id__c;
         namedCredential = usItem.copado__Project__r.Copado_Integration_Setting__r.Named_Credential__c;
         Id usId = usItem.Id;
-        sObject cUserStory = database.query('SELECT ' + queryFields + ' FROM copado__User_Story__c WHERE Id = : usId');
+        sObject cUserStory = database.query('SELECT ' + String.escapeSingleQuotes(queryFields) + ' FROM copado__User_Story__c WHERE Id = : usId');
 
         String responseText = CopadoCCMutilities.MakeCallout(
             namedCredential,
@@ -183,7 +182,6 @@ public with sharing class JiraIntegration extends JiraIntegrationConstants imple
             cUserStory,
             null
         );
-        CopadoCCMutilities.createLogRecords();
     }
 
     /**

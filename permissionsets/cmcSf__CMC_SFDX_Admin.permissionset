@@ -21,11 +21,19 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>cmcSf__AddNewEnvironmentCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>cmcSf__ApexTestSuitesAndClasses</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ApexTestsResult</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__AuthenticateEnvironmentCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -258,6 +266,18 @@
     </classAccesses>
     <classAccesses>
         <apexClass>cmcSf__ParseImportPackageJson</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineBuilderEnvironmentCtrl</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineBuilderHeader</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>cmcSf__PipelineBuilderSettingsCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -814,6 +834,10 @@
     <tabSettings>
         <tab>cmcSf__DX_User_Story_Commit_Page</tab>
         <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>cmcSf__Pipeline_Builder</tab>
+        <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
         <tab>cmcSf__Pipeline_Initializer</tab>

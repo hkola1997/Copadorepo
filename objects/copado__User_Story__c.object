@@ -1991,6 +1991,11 @@
             <isRequired>false</isRequired>
         </availableFields>
         <availableFields>
+            <field>copado__US_Feature__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </availableFields>
+        <availableFields>
             <field>copado__Validate_Only__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -6963,6 +6968,19 @@
         </valueSet>
     </fields>
     <fields>
+        <fullName>copadoQuality__Functional_Review__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Functional Review</label>
+        <referenceTo>copadoQuality__Functional_Review__c</referenceTo>
+        <relationshipLabel>User Stories</relationshipLabel>
+        <relationshipName>User_Stories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>copado__Acceptance_Criteria_Status__c</fullName>
         <deprecated>false</deprecated>
         <label>Acceptance Criteria Status</label>
@@ -10679,7 +10697,7 @@ copado__Environment__c != copado__Org_Credential__r.copado__Environment__c</erro
         <openType>replace</openType>
         <protected>false</protected>
         <requireRowSelection>true</requireRowSelection>
-        <url>/apex/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}UserStoryBundle</url>
+        <url>/flow/{!IF(CONTAINS($Action.copado__User_Story__c.New, &apos;copado__&apos;), &apos;copado__&apos;, &apos;&apos;)}User_Story_Bundle</url>
     </webLinks>
     <webLinks>
         <fullName>copado__Create_Scratch_Org</fullName>

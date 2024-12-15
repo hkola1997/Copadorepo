@@ -5984,6 +5984,12 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
+                <componentName>copado:userStoryBackPromoteNotfication</componentName>
+                <identifier>c_userStoryBackPromoteNotfication</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>tabs</name>
                     <value>Facet-5a32884e-37a8-48de-b9e4-b34488c2b5a4</value>
@@ -6085,7 +6091,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>title</name>
-                    <value>Overlap Awareness</value>
+                    <value>{!$Label.copado__Overlap_Awareness}</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
                 <identifier>flexipage_tab</identifier>

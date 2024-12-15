@@ -204,4 +204,12 @@
         <name>standard__ExpressionSetConsole</name>
         <type>CustomApplication</type>
     </appMenuItems>
+    <appMenuItems>
+        <name>copadoQuality__Copado_Explorer</name>
+        <type>CustomApplication</type>
+    </appMenuItems>
+    <appMenuItems>
+        <name>Copado_Robotic_Testing</name>
+        <type>ConnectedApp</type>
+    </appMenuItems>
 </AppMenu>
