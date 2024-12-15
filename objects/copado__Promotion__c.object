@@ -204,16 +204,6 @@
     <fieldSets>
         <fullName>cmcSf__SFDX_Extension_Fields</fullName>
         <availableFields>
-            <field>cmcSf__Attach_Vlocity_Build_File__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
-            <field>cmcSf__Debug_Mode__c</field>
-            <isFieldManaged>false</isFieldManaged>
-            <isRequired>false</isRequired>
-        </availableFields>
-        <availableFields>
             <field>cmcSf__Recreate_Promotion_Branch__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
@@ -226,6 +216,41 @@
         <description>This field set contains the fields for SFDX extension</description>
         <displayedFields>
             <field>cmcSf__Apex_Test_Level__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Attach_Vlocity_Build_File__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Exclude_From_Auto_Resolve__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Merge_Conflict__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Is_Rolled_Back__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__View_in_Git__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>cmcSf__Debug_Mode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>copado__Connection_Behavior__c</field>
             <isFieldManaged>false</isFieldManaged>
             <isRequired>false</isRequired>
         </displayedFields>

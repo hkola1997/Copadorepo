@@ -26,5 +26,6 @@ global with sharing class UserStoryHandler{
         for(copado__User_Story__c usItem:userStoryList){
             IntegrationFactory.returnInstance(usItem.copado__Project__r.Copado_Integration_Setting__r.External_System__c).updateRecord(usItem);
         }
+        CopadoCCMutilities.createLogRecords();
     }
 }

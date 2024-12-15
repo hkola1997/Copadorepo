@@ -9,7 +9,7 @@ global class CallIterable implements System.Iterable<Object> {
     global CallIterable(List<Object> listObjParam) {
 
     }
-    global System.Iterator Iterator() {
+    global System.Iterator iterator() {
         return null;
     }
 }

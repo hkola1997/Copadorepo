@@ -9,8 +9,9 @@
 global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements Database.Batchable<Object>, Database.AllowsCallouts {
     private String salesforceAssigneeApiName;
     private Map<String, Id> userIdsByUserEmails = new Map<String, Id>();
+    private Map<String, Id> userIdsByUserFullName = new Map<String, Id>();
+    private Map<String, String> userFullNameByUserEmails = new Map<String, String>();
     private Map<String, List<copado__User_Story__c>> userStoriesByAssignee = new Map<String, List<copado__User_Story__c>>();
-    private final String DONT_EXCLUDE_FROM_SALESFORCE = ' and Exclude_from_su__c = false';
     global copado__Project__c gProject;
     private Boolean isSprint;
     List<copado__User_Story__c> userStories2Upsert;
@@ -35,14 +36,48 @@ global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements 
         }
         set;
     }
-    //User Story object record Type name=>Id Map
-    global Map<String, String> UserStoryRecordTypeMap {
+    
+    //Theme object records Name=>Id Map
+    global Map<String, Id> themeMap {
         get {
-            if (null == UserStoryRecordTypeMap) {
-                Boolean forJIRA = false;
-                UserStoryRecordTypeMap = CopadoCCMutilities.returnUserStoryRecordTypeMap(forJIRA);
+            if (null == themeMap) {
+                themeMap = CopadoCCMutilities.returnThemeMap();
             }
-            return UserStoryRecordTypeMap;
+            return themeMap;
+        }
+        set;
+    }
+
+    //Theme mapping object records tp Name=>sf Name Map
+    global Map<String, String> themeMapping {
+        get {
+            if (null == themeMapping) {
+                themeMapping = CopadoCCMutilities.returnThemeMappingForProject(gProject.Id);
+            }
+            return themeMapping;
+        }
+        set;
+    }
+    
+    //Team object records Name=>Id Map
+    global Map<String, Id> teamMap {
+        get {
+            if (null == teamMap) {
+                teamMap = CopadoCCMutilities.returnTeamMap();
+            }
+            return teamMap;
+        }
+        set;
+    }
+    
+    //User Story object record Type name=>Id Map
+    global Map<String, String> userStoryRecordTypeMap {
+        get {
+            if (null == userStoryRecordTypeMap) {
+                Boolean forJIRA = false;
+                userStoryRecordTypeMap = CopadoCCMutilities.returnUserStoryRecordTypeMap(forJIRA);
+            }
+            return userStoryRecordTypeMap;
         }
         set;
     }
@@ -69,7 +104,7 @@ global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements 
             return new CallIterable(userStoryList);
         } else {
             return new CallIterable(
-                IntegrationFactory.returnInstance(gProject.Copado_Integration_Setting__r.External_System__c).fetchRecords(gProject, isSprint, TRUE)
+                IntegrationFactory.returnInstance(gProject.Copado_Integration_Setting__r.External_System__c).fetchRecords(gProject, isSprint , true)
             );
         }
     }
@@ -82,12 +117,13 @@ global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements 
             if (!tempMap.containsKey(ASSIGNEE) && !tempMap.containsKey(DEVELOPER_KEYWORD)){
                 tempMap.put(ASSIGNEE,null);
             }
+            
             //loops among field Mapping items under related project
             for (String fieldName : fieldMap.keyset()) {
                 fieldName = fieldName.toLowerCase();
                 //puts the value on sf Object if the current user story item value Map stores current field Map keyset
-                if (tempMap.containsKey(fieldMap.get(fieldName))) {
-                    String thirdPartyApiName = fieldMap.get(fieldName);
+                String thirdPartyApiName = fieldMap.get(fieldName);
+                if (tempMap.containsKey(thirdPartyApiName)) {
                     if (fieldName == COPADO_RELEASE) {
                         if(CopadoCCMutilities.returnCastedValue(tempMap.get(fieldMap.get(fieldName)), fieldName) != null){
                             Sobject releaseObj = Schema.getGlobalDescribe().get(fieldName).newSObject();
@@ -103,23 +139,43 @@ global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements 
                             Id sfTypeId = UserStoryRecordTypeMap.get(sfType);
                             sobj.put(fieldName, sfTypeId);
                         }
-                    } else if(fieldMap.get(fieldName) != ASSIGNEE && fieldMap.get(fieldName) != DEVELOPER_KEYWORD){ 
-                        sobj.put(fieldName, CopadoCCMutilities.returnCastedValue(tempMap.get(fieldMap.get(fieldName)), fieldName));
-                    }
-                    if (thirdPartyApiName == ASSIGNEE || thirdPartyApiName == DEVELOPER_KEYWORD) {
+                    } else if (thirdPartyApiName == THEME_KEYWORD) {
+                        String lowercaseName = tempMap.get(thirdPartyApiName).toLowercase();
+                        for(String splitted : lowercaseName.split(';')){
+                            if(null != themeMapping.get(splitted) && themeMap.containsKey(themeMapping.get(splitted)) || themeMap.containsKey(splitted)){
+                                String fieldValue = themeMap.containsKey(splitted) ? themeMap.get(splitted) : themeMap.get(themeMapping.get(splitted));
+                                sobj.put(fieldName, fieldValue); 
+                                //break is implemented to finish the iteration when we catch a match
+                                break;
+                            }
+                        }
+                    } else if (thirdPartyApiName == TEAM_WORD) {
+                        String lowercaseName = tempMap.get(thirdPartyApiName).toLowercase();
+                        if(teamMap.containsKey(lowercaseName)){
+                            sobj.put(fieldName, teamMap.get(lowercaseName)); 
+                        }
+                    } else if (thirdPartyApiName == ASSIGNEE || thirdPartyApiName == DEVELOPER_KEYWORD) {
                         salesforceAssigneeApiName = fieldName;
-                        String emailValue = tempMap.get(fieldMap.get(fieldName));
+                        String emailValue = tempMap.get(thirdPartyApiName), nameValue;
+                        if(tempMap.containsKey(thirdPartyApiName+'__dname')){
+                            nameValue = tempMap.get(thirdPartyApiName+'__dname');
+                        }
                         List<copado__User_Story__c> userStories = new List<copado__User_Story__c>();
                         if(userStoriesByAssignee.containsKey(emailValue)){
                             userStories = userStoriesByAssignee.get(emailValue);
                         }
                         userStories.add((copado__User_Story__c) sobj);
-                        userIdsByUserEmails.put(tempMap.get(fieldMap.get(fieldName)), null);
+                        userIdsByUserEmails.put(emailValue, null);
+                        userIdsByUserFullName.put(nameValue, null);
                         userStoriesByAssignee.put(emailValue, userStories);
+                        userFullNameByUserEmails.put(emailValue, nameValue);
+                    } else {
+                        sobj.put(fieldName, CopadoCCMutilities.returnCastedValue(tempMap.get(fieldMap.get(fieldName)), fieldName));
                     }
                 }
             }
         }
+
         List <AggregateResult> usersWithCommonEmail = [SELECT Count(Id), Email FROM User WHERE Email IN : userIdsByUserEmails.keySet() Group By Email Having Count(Id) > 1];
         Set <String> duplicateEmailSet = new Set<String>();
 
@@ -136,13 +192,20 @@ global class ExecuteUserStoryUpsert extends JiraIntegrationConstants implements 
                 userStoriesByAssignee.remove(email);
             }
         }
-        for(User userItem : [SELECT Id, Email FROM User WHERE Email IN : userIdsByUserEmails.keySet()]){
-            userIdsByUserEmails.put(userItem.Email, userItem.Id);
+        for(User userItem : [SELECT Id, Name, Email FROM User WHERE Email IN : userIdsByUserEmails.keySet() OR NAME IN : userIdsByUserFullName.keyset()]){
+            if(userIdsByUserEmails.containsKey(userItem.Email)){
+                userIdsByUserEmails.put(userItem.Email, userItem.Id);
+            } else {
+                userIdsByUserFullName.put(userItem.Name, userItem.Id);
+            }
         }
         for(String email : userStoriesByAssignee.keySet()){
             for(copado__User_Story__c userStory : userStoriesByAssignee.get(email)){
+                String fullName = userFullNameByUserEmails.get(email);
                 if(userIdsByUserEmails.containsKey(email) && userIdsByUserEmails.get(email) !=null){
                     userStory.put(salesforceAssigneeApiName, userIdsByUserEmails.get(email));
+                } else if(userIdsByUserFullName.containsKey(fullName) && userIdsByUserFullName.get(fullName) !=null){
+                    userStory.put(salesforceAssigneeApiName, userIdsByUserFullName.get(fullName));
                 }
                 userStories2Upsert.add(userStory);
             }
