@@ -966,6 +966,7 @@
         <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>chandunewbutton2</searchResultsCustomButtons>
     </searchLayouts>
     <sharingModel>ReadWriteTransfer</sharingModel>
     <webLinks>
