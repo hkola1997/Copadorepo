@@ -1057,7 +1057,9 @@ MetadataGrid2.prototype.refreshCache = function(callbackFinished) {
         // set refresh cache done
         $copado('[id="notificationModalRefresh"]').hide();
         $copado('[id="backDropRefresh"]').hide();
-        clearMessagesMap();
+        if (typeof clearMessagesMap !== 'undefined') {
+            clearMessagesMap();
+        }
         if (callbackFinished) {
             callbackFinished(cachedDate);
         }

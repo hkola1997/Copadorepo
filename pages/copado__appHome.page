@@ -1,11 +1,10 @@
 <apex:page controller="copado.appHome" title="{!$Label.copado__ACCOUNT_SUMMARY}" standardStylesheets="true" sidebar="false" showHeader="true"
     id="thePage" cache="false" applyHtmlTag="{!$User.UIThemeDisplayed=='Theme3'}" applyBodyTag="false" docType="html-5.0" lightningStylesheets="true">
-    <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" />
-
+    <apex:slds rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" /> 
     <head>
         <c:GAnalytics />
         <c:IncludeStaticsResourceComponent addJquery="true" addUIjs="true" addCometdjs="true" addJSON2js="true" addJcometdjs="true" addUIcss="true" addATRcss="true" addWizardcss="true"/>
-        <apex:stylesheet id="lexss" value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" />
+        <apex:stylesheet id="lexss" value="{!IF($User.UIThemeDisplayed == 'Theme4d',URLFOR($Resource.copado__CopadoLightningCSS),'')}" /> 
         <apex:outputPanel rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
             <style>
                 .rich-tabpanel-content {
@@ -59,8 +58,9 @@
                     toggleVlocityCheckbox('{!AND(VlocityFeature != null,VlocityFeature.copado__Enabled__c)}');
                 });
             })(jQuery);
+
         </script>
-    </head>
+    </head> 
 
     <body>
         <apex:form id="theForm">
@@ -228,12 +228,28 @@
                     </div>
                 </apex:outputPanel>
                 <apex:outputPanel layout="block" styleClass="copado-lightning-container copado-lightning-radius">
-
                     <apex:outputPanel id="thePanel" layout="block" styleClass="copado-lightning-container" style="padding-top:12px;">
                         <apex:outputPanel id="messagesContainer" layout="block" rendered="{!$User.UIThemeDisplayed == 'Theme4d'}" >
                             <apex:pageMessages id="msg" />
                         </apex:outputPanel>
-                        <c:credits id="cmp_credits" showGoToLicenseButton="true" />
+
+                        <apex:outputPanel id="panelWithoutJwt" layout="block" rendered="{!!isAutomateGovOrgFeatureEnabled}">
+                            <c:credits id="cmp_credits1" showGoToLicenseButton="true" />
+                        </apex:outputPanel>
+
+                        <apex:outputPanel id="panelWithJwt" layout="block" rendered="{!isAutomateGovOrgFeatureEnabled}">
+                            <div class="slds-scope">
+                                <div class="slds-grid slds-gutters slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                                        <c:credits id="cmp_credits2" showGoToLicenseButton="true" />
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-1 slds-large-size_6-of-12">
+                                        <c:jwt id="cmp_jwt" />
+                                    </div>
+                                </div>
+                            </div>
+                        </apex:outputPanel>
+                        
                         <style>
                             .activeTab {
                                 background-color: #236FBD;
@@ -398,7 +414,7 @@
                         </style>
                         <apex:tabPanel switchType="client" selectedTab="features" id="theTabPanel" tabClass="{!IF($User.UIThemeDisplayed=='Theme3','activeTab','')}"
                             inactiveTabClass="{!IF($User.UIThemeDisplayed=='Theme3','inactiveTab','')}">
-                            <apex:tab label="{!$Label.copado__FEATURES}" name="t_features" id="tabOne" rendered="true">
+                           <apex:tab label="{!$Label.copado__FEATURES}" name="t_features" id="tabOne" rendered="true">
                                 <apex:pageBlock id="pbFeatures" title="{!$Label.copado__FEATURES}">
                                     <apex:pageBlockButtons location="top">
                                         <div class="slds-scope" style="display: flex;justify-content: flex-end;">
@@ -490,12 +506,12 @@
                                         </apex:column>
                                     </apex:pageBlockTable>
                                 </apex:pageBlock>
-                            </apex:tab>
+                            </apex:tab> 
                         </apex:tabPanel>
                         <c:CheckFeaturesComponent />
                     </apex:outputPanel>
                 </apex:outputPanel>
             </div>
         </apex:form>
-    </body>
+    </body> 
 </apex:page>

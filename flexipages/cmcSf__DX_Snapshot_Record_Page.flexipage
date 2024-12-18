@@ -552,7 +552,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>relatedListLabel</name>
-                    <value>Snapshot Commits</value>
+                    <value>{!$Label.copado__SnapshotCommits}</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showActionBar</name>
