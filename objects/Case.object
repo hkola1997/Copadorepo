@@ -1008,4 +1008,17 @@
         <showsStatus>false</showsStatus>
         <url>{!Case.IsEscalated} = false</url>
     </webLinks>
+    <webLinks>
+        <fullName>chandusushmilistbutton</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>chandusushmilistbutton</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!Case.AccountId} = true</url>
+    </webLinks>
 </CustomObject>
