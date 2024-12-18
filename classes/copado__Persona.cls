@@ -70,6 +70,15 @@ global class UserService implements copado.CopadoService {
     global void add3(copado.Persona.AddUserRequest request) {
 
     }
+    global void add4(copado.Persona.AddUserRequest request) {
+
+    }
+    global void add5(copado.Persona.AddUserRequest request) {
+
+    }
+    global void add6(copado.Persona.AddUserRequest request) {
+
+    }
     global void remove1(copado.Persona.RemoveUserRequest request) {
 
     }

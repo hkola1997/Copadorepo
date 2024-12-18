@@ -10,5 +10,4 @@
     <tabs>copado__Sprint__c</tabs>
     <tabs>copado__User_Story__c</tabs>
     <tabs>copadoccmint__Copado_Integration_Setting__c</tabs>
-    <tabs>My_salesforce_topics__c</tabs>
 </CustomApplication>

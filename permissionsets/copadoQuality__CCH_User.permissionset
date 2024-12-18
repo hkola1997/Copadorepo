@@ -64,6 +64,16 @@
         <field>copadoQuality__Compliance_Rule__c.copadoQuality__XPath_Expression__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__ExtensionConfiguration__c.copadoQuality__Latest_Job_Execution__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>copado__ExtensionConfiguration__c.copadoQuality__Requires_Sync__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>CCH User</label>
     <objectPermissions>

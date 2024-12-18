@@ -30,10 +30,6 @@
                 <behavior>Edit</behavior>
                 <field>copadoccmint__Project__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>CurrencyIsoCode</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

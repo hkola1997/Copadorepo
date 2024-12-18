@@ -5,6 +5,10 @@
         <visible>true</visible>
     </applicationVisibilities>
     <classAccesses>
+        <apexClass>copado__CreateAPIKey</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>copado__PersonaManagementCredentialServiceCtrl</apexClass>
         <enabled>true</enabled>
     </classAccesses>
