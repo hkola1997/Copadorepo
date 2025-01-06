@@ -15585,6 +15585,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Event.akhila_test_field__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Idea.Attachment</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -17296,6 +17301,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.WhoId</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Task.akhila_test_field__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -26837,10 +26847,6 @@
     <layoutAssignments>
         <layout>copadoccmint__Record_Type_Mapping__c-copadoccmint__Record Type Mapping Layout</layout>
     </layoutAssignments>
-    <loginIpRanges>
-        <endAddress>255.255.255.255</endAddress>
-        <startAddress>0.0.0.0</startAddress>
-    </loginIpRanges>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -32122,10 +32128,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>Packaging2Delete</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>Packaging2PromoteVersion</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
