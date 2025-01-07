@@ -205,7 +205,7 @@
             <targetReference>See_if_we_should_check_this_Promotion</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>BACK_PROMOTIONS_ALLOWED</name>
         <dataType>Number</dataType>

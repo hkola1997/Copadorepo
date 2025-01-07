@@ -268,6 +268,11 @@
                     <default>false</default>
                     <label>CodeScan</label>
                 </value>
+                <value>
+                    <fullName>BackPromotionChecker</fullName>
+                    <default>false</default>
+                    <label>BackPromotionChecker</label>
+                </value>
             </valueSetDefinition>
         </valueSet>
     </fields>
