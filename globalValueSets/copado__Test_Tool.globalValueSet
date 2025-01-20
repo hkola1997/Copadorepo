@@ -10,6 +10,11 @@
         <default>false</default>
         <label>CodeScan</label>
     </customValue>
+    <customValue>
+        <fullName>BackPromotionChecker</fullName>
+        <default>false</default>
+        <label>BackPromotionChecker</label>
+    </customValue>
     <masterLabel>Copado Test Tool</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>

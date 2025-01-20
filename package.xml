@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Event.akhila_test_field__c</members>
-        <members>Task.akhila_test_field__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
         <members>Admin</members>
-        <members>Partner Community Login User</members>
-        <members>Silver Partner User</members>
         <name>Profile</name>
     </types>
     <version>62.0</version>
